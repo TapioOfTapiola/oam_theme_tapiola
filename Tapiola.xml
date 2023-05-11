@@ -16,6 +16,7 @@
 	- Removed Hiking Nodes from menu
 	- Forest, Meadow, Farmland, Farmyard: Transparency removed, preventing patterns from protected areas
 	- Neighbourhood text color change
+        - Greener forest green, WIP
 -->
 	<stylemenu id="menu" defaultvalue="hiking" defaultlang="en">
 		<layer id="L_hikingtrails" enabled="false" visible="false">
