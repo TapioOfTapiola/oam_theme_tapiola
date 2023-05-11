@@ -12,7 +12,7 @@
 	- Display="always": Cities, Towns, Villages, Neighbourhoods, Parking, Huts, Shelters, Picnic, Viewpoint, Benches
 	- Different Parking display rules
 	- Bigger symbols: Parking, Huts, Shelters, Picnic, Viewpoint, Benches
-	- Less priority to peaks: all peak_dist zoom-min minus one
+	- Lower priority peaks text, ZL decreased
 	- Removed Hiking Nodes from menu
 	- Forest, Meadow, Farmland, Farmyard: Transparency removed, preventing patterns from protected areas
 	- Neighbourhood text color change
