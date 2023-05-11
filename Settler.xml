@@ -3,22 +3,19 @@
 <!--
     Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 	
-    Andrey Nekrasov
-    Contact: andrey.nekrasov@gmail.com		
+    2023.may.11
+    Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com
+        Based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
 
-    2023.may.10
-    v2.0.25
-
-    ###
-    Когда то давно это была тема "active RT5 (active RenderTheme Version 5)"
-    https://github.com/FrankSchoeneck/active_RT5
-
-    Многое подсмотрено в темах Elevate, TOTM, LocusMap и Voluntary
-
-    https://www.openandromaps.org/en/legend/elevate-mountain-hike-theme
-    https://github.com/IgorMagellan/TOTM
-    https://github.com/asamm/lomaps-mapsforge/tree/main/theme
-    https://voluntary.nichesite.org/
+    Changes by Tapio:
+	- Removed all Uppercase conversions, Removed italics from Neighbourhoods and decreased their font size 1pt
+	- Display="always": Cities, Towns, Villages, Neighbourhoods, Parking, Huts, Shelters, Picnic, Viewpoint, Benches
+	- Different Parking display rules
+	- Bigger symbols: Parking, Huts, Shelters, Picnic, Viewpoint, Benches
+	- Less priority to peaks: all peak_dist zoom-min minus one
+	- Removed Hiking Nodes from menu
+	- Forest, Meadow, Farmland, Farmyard: Transparency removed, preventing patterns from protected areas
+	- Neighbourhood text color change
 -->
 	<stylemenu id="menu" defaultvalue="hiking" defaultlang="en">
 		<layer id="L_hikingtrails" enabled="false" visible="false">
@@ -27,12 +24,12 @@
 			<name lang="en" value="Waymarked Trails" />
 			<cat id="hikingtrails" />
 		</layer>
-		<layer id="L_hikingnodes" enabled="false" visible="false">
+		<!-- layer id="L_hikingnodes" enabled="false" visible="false">
 			<name lang="ru" value="Указатель номера маршрута" />
 			<name lang="de" value="Wanderwege Knotenpunkte" />
 			<name lang="en" value="Hiking Nodes" />
 			<cat id="hikingnodes" />
-		</layer>
+		</layer -->
 		<layer id="L_mtb_trails_park" enabled="false" visible="false">
 			<name lang="ru" value="Трассы для горного велосипеда в байкпарках" />
 			<name lang="en" value="MTB trails in bikeparks" />
@@ -314,16 +311,16 @@
 	<!-- <rule e="way" k="boundary" v="~"> -->
 	<rule e="way" k="leisure" v="park" closed="yes" zoom-min="11">
 		<line stroke="#4000661A" stroke-width="0.18" stroke-dasharray="0.3, 2" />
-		<area fill="#4090d67e" />
+		<area fill="#FF90d67e" />
 	</rule>
 	<!-- </rule> -->
 	<!-- лес - фон рисуется всегда -->
 	<rule e="way" k="natural|landuse" v="forest|wood">
 		<rule e="way" k="natural|landuse" v="forest|wood" zoom-min="9" zoom-max="13">
-			<area fill="#b6db86" />
+			<area fill="#FFA3E030" />
 		</rule>
 		<rule e="way" k="natural|landuse" v="forest|wood" zoom-min="14">
-			<area fill="#99a3cf69" />
+			<area fill="#FFA3E030" />
 		</rule>
 	</rule>
 	<!-- лес - детали, можно отключать -->
@@ -514,7 +511,7 @@
 	</rule>
 	<!-- пастбище/луг -->
 	<rule e="way" k="landuse" v="grass|meadow" zoom-min="10" closed="yes">
-		<area fill="#80DAE5C1" />
+		<area fill="#FFDBFA95" />
 		<rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
 			<area src="file:patterns/meadow.svg" symbol-width="5" />
 		</rule>
@@ -545,8 +542,7 @@
 
 	<!-- Площадь сельскохозяйственных угодий, используемых в основном для обработки почвы (однолетние культуры) -->
 	<rule e="way" k="landuse" v="farmland|farm" zoom-min="12">
-		<area fill="#ffffef" stroke="#C3C3C3" stroke-width="0.2" />
-
+		<area fill="#FFFFFFEF" stroke="#C3C3C3" stroke-width="0.2" />
 		<rule e="way" k="landuse" v="*" zoom-min="13" zoom-max="14">
 			<area src="file:patterns/farmland.svg" symbol-width="7" />
 		</rule>
@@ -558,7 +554,7 @@
 
 	<!-- скотный двор -->
 	<rule e="way" k="landuse" v="farmyard">
-		<area fill="#E7E7E7" stroke="#e4e4e4" stroke-width="0.2" />
+		<area fill="#FFE7E7E7" stroke="#e4e4e4" stroke-width="0.2" />
 	</rule>
 	<!-- виноградник -->
 	<rule e="way" k="landuse" v="vineyard" zoom-min="10" closed="yes">
@@ -1159,18 +1155,15 @@
 		<area fill="#F3F3F3" stroke="#888888" stroke-width="0.1" />
 		<rule e="any" k="access" v="private|acc_no|permit|permissive" cat="parking">
 			<area src="file:patterns/access-private.svg" symbol-percent="30" />
-			<symbol src="file:symbols/parking_private.svg" symbol-percent="50" />
+			<symbol src="file:symbols/parking_private.svg" symbol-percent="75"  display="always" />
 		</rule>
 		<rule e="any" k="access" v="destination">
 			<area src="file:patterns/access-destination.svg" symbol-percent="50" />
-			<symbol src="file:symbols/parking_private.svg" symbol-percent="50" />
+			<symbol src="file:symbols/parking_private.svg" symbol-percent="75"  display="always" />
 		</rule>
 		<rule e="any" k="access" v="~|yes|public">
-			<rule e="any" k="parking" v="~|surface">
-				<symbol src="file:symbols/parking.svg" symbol-percent="50" />
-			</rule>
-			<rule e="any" k="parking" v="multi-storey">
-				<symbol src="file:symbols/parking_multi-storey.svg" symbol-percent="50" />
+			<rule e="any" k="parking" v="*">
+				<symbol src="file:symbols/parking.svg" symbol-percent="75" display="always" />
 			</rule>
 		</rule>
 	</rule>
@@ -2388,21 +2381,24 @@
 				<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="130" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="12" zoom-max="12">
-				<caption k="name" font-style="bold" font-size="12" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="130" />
+				<caption k="name" font-style="bold" font-size="12" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="130" display="always" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
-				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="140" />
+				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="140" display="always" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="15" zoom-max="16">
-				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" />
+				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" display="always" />
 			</rule>
 		</rule>
 		<!-- район или отдельная часть города, имеющая своё название (не административное) -->
-		<rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="12" zoom-max="12">
-			<caption k="name" font-style="bold_italic" font-family="serif" font-size="11" fill="#90000000" stroke="#c0ffffff" stroke-width="3" priority="103" text-wrap-width="120" />
+		<rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="12" zoom-max="13">
+			<caption k="name" font-style="bold_italic" font-family="serif" font-size="10" fill="#CC1145D0" stroke="#CCFFFFFF" stroke-width="2" priority="103" text-wrap-width="180" display="always" />
 		</rule>
-		<rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="13" zoom-max="16">
-			<caption k="name" font-style="bold_italic" font-family="serif" font-size="13" fill="#90000000" stroke="#c0ffffff" stroke-width="3" priority="103" text-wrap-width="120" />
+        <rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="14" zoom-max="14">
+			<caption k="name" font-style="bold_italic" font-family="serif" font-size="13" fill="#CC1145D0" stroke="#CCFFFFFF" stroke-width="2" priority="103" text-wrap-width="180" display="always" />
+		</rule>
+		<rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="15" zoom-max="16">
+			<caption k="name" font-style="bold_italic" font-family="serif" font-size="15" fill="#FF1155E0" stroke="#CCFFFFFF" stroke-width="3" priority="103" text-wrap-width="180" display="always" />
 		</rule>
 		<!-- небольшой город -->
 		<rule e="node" k="place" v="town" zoom-min="6">
@@ -2419,13 +2415,13 @@
 				<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="9" zoom-max="11">
-				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
+				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" display="always" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="12" zoom-max="12">
-				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="104" text-transform="uppercase" text-wrap-width="130" />
+				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="104" text-wrap-width="130" display="always"/>
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="13" zoom-max="16">
-				<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="104" text-transform="uppercase" text-wrap-width="250" />
+				<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="104" text-wrap-width="250" display="always" />
 			</rule>
 		</rule>
 		<!-- город -->
@@ -2435,10 +2431,10 @@
 					<caption k="name" font-style="bold" font-size="12" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="105" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="9" zoom-max="12">
-					<caption k="name" font-style="bold" text-transform="uppercase" font-size="16" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="105" />
+					<caption k="name" font-style="bold" font-size="16" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="105" display="always"/>
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="16">
-					<caption k="name" font-style="bold" text-transform="uppercase" font-size="20" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="105" />
+					<caption k="name" font-style="bold" font-size="20" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="105" display="always" />
 				</rule>
 			</rule>
 			<rule e="any" k="capital" v="4">
@@ -2446,10 +2442,10 @@
 					<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="106" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="9" zoom-max="12">
-					<caption k="name" font-style="bold" text-transform="uppercase" font-size="18" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="106" />
+					<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="106" display="always" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="16">
-					<caption k="name" font-style="bold" text-transform="uppercase" font-size="22" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="106" />
+					<caption k="name" font-style="bold" font-size="22" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="106" display="always" />
 				</rule>
 			</rule>
 			<rule e="any" k="capital" v="2">
@@ -2457,10 +2453,10 @@
 					<caption k="name" font-style="bold" font-size="16" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="108" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="9" zoom-max="12">
-					<caption k="name" font-style="bold" text-transform="uppercase" font-size="20" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="108" />
+					<caption k="name" font-style="bold" font-size="20" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="108" display="always" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="16">
-					<caption k="name" font-style="bold" text-transform="uppercase" font-size="24" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="108" />
+					<caption k="name" font-style="bold" font-size="24" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="108" display="always" />
 				</rule>
 			</rule>
 		</rule>
@@ -2669,8 +2665,8 @@
 		<!-- вершина горы / вулкана -->
 		<rule e="node" k="natural" v="peak|volcano">
 			<!-- 1 -->
-			<rule e="node" k="peak_dist" v="pd_1" zoom-min="9">
-				<rule e="node" k="*" v="*" zoom-min="9" zoom-max="14">
+			<rule e="node" k="peak_dist" v="pd_1" zoom-min="11">
+				<rule e="node" k="*" v="*" zoom-min="11" zoom-max="14">
 					<!-- иконка вершины -->
 					<rule e="node" k="natural" v="peak">
 						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="70" display="always" />
@@ -2696,8 +2692,8 @@
 				</rule>
 			</rule>
 			<!-- 2 -->
-			<rule e="node" k="peak_dist" v="pd_2" zoom-min="10">
-				<rule e="node" k="*" v="*" zoom-min="10" zoom-max="14">
+			<rule e="node" k="peak_dist" v="pd_2" zoom-min="12">
+				<rule e="node" k="*" v="*" zoom-min="12" zoom-max="14">
 					<!-- иконка вершины -->
 					<rule e="node" k="natural" v="peak">
 						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="70" display="always" />
@@ -2723,38 +2719,9 @@
 				</rule>
 			</rule>
 			<!-- 3 например "Каменный столб" в Красной Поляне -->
-			<rule e="node" k="peak_dist" v="pd_3|~" zoom-min="11">
+			<rule e="node" k="peak_dist" v="pd_3|~" zoom-min="13">
 				<!-- иконка вершины -->
-				<rule e="node" k="*" v="*" zoom-min="11" zoom-max="14">
-					<rule e="node" k="natural" v="peak">
-						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="65" display="always" />
-					</rule>
-					<rule e="node" k="natural" v="volcano">
-						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="65" display="always" />
-					</rule>
-				</rule>
-				<rule e="node" k="*" v="*" zoom-min="15">
-					<rule e="node" k="natural" v="peak">
-						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="80" display="always" />
-					</rule>
-					<rule e="node" k="natural" v="volcano">
-						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="80" display="always" />
-					</rule>
-				</rule>
-				<!-- название и высота -->
-				<rule e="node" k="*" v="*" zoom-min="12" zoom-max="14">
-					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="12" fill="#303030" stroke="#ffffff" stroke-width="3" priority="415" text-transform="capitalize" text-wrap-width="120" />
-					<caption symbol-id="id_peak" k="ele" dy="-3" position="below" font-family="sans_serif" font-size="11" fill="#303030" stroke="#ffffff" stroke-width="3" priority="414" />
-				</rule>
-				<rule e="node" k="*" v="*" zoom-min="15">
-					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="13" fill="#303030" stroke="#ffffff" stroke-width="3" priority="415" text-transform="capitalize" text-wrap-width="120" />
-					<caption symbol-id="id_peak" k="ele" dy="-3" position="below" font-family="sans_serif" font-size="11" fill="#303030" stroke="#ffffff" stroke-width="3" priority="414" />
-				</rule>
-			</rule>
-			<!-- 4+5 например Чегет -->
-			<rule e="node" k="peak_dist" v="pd_4|pd_5" zoom-min="12">
-				<!-- иконка вершины -->
-				<rule e="node" k="*" v="*" zoom-min="12" zoom-max="14">
+				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
 					<rule e="node" k="natural" v="peak">
 						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="65" display="always" />
 					</rule>
@@ -2772,6 +2739,35 @@
 				</rule>
 				<!-- название и высота -->
 				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
+					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="12" fill="#303030" stroke="#ffffff" stroke-width="3" priority="415" text-transform="capitalize" text-wrap-width="120" />
+					<caption symbol-id="id_peak" k="ele" dy="-3" position="below" font-family="sans_serif" font-size="11" fill="#303030" stroke="#ffffff" stroke-width="3" priority="414" />
+				</rule>
+				<rule e="node" k="*" v="*" zoom-min="15">
+					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="13" fill="#303030" stroke="#ffffff" stroke-width="3" priority="415" text-transform="capitalize" text-wrap-width="120" />
+					<caption symbol-id="id_peak" k="ele" dy="-3" position="below" font-family="sans_serif" font-size="11" fill="#303030" stroke="#ffffff" stroke-width="3" priority="414" />
+				</rule>
+			</rule>
+			<!-- 4+5 например Чегет -->
+			<rule e="node" k="peak_dist" v="pd_4|pd_5" zoom-min="13">
+				<!-- иконка вершины -->
+				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
+					<rule e="node" k="natural" v="peak">
+						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="80" display="always" />
+					</rule>
+					<rule e="node" k="natural" v="volcano">
+						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="80" display="always" />
+					</rule>
+				</rule>
+				<rule e="node" k="*" v="*" zoom-min="15">
+					<rule e="node" k="natural" v="peak">
+						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="80" display="always" />
+					</rule>
+					<rule e="node" k="natural" v="volcano">
+						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="80" display="always" />
+					</rule>
+				</rule>
+				<!-- название и высота -->
+				<rule e="node" k="*" v="*" zoom-min="14" zoom-max="14">
 					<!-- На Кавказе перевалы начинают показываться всегда при display="always" - проверить это на LoMaps v4, когда они появятся
 					Может это связано с тегом rtsa_scale=* который применяется только в России, потому что в Альпах
 					такого глюка вроде нет -->
@@ -3080,13 +3076,6 @@
 				<caption priority="118" k="name" symbol-id="id_ferry" position="below" font-style="bold" font-size="11" fill="#0080c0" stroke="#E5FFFFFF" stroke-width="2" />
 			</rule>
 		</rule>
-		<!-- укрытие/приют -->
-		<rule cat="refuge" e="any" k="amenity" v="shelter" zoom-min="14">
-			<symbol id="id_shelter" src="file:symbols/shelter.svg" symbol-percent="85" />
-			<rule e="any" k="*" v="*" zoom-min="16">
-				<caption symbol-id="id_shelter" k="name" priority="10" font-style="normal" font-family="sans_serif" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="1.8" />
-			</rule>
-		</rule>
 		<!-- охотничья вышка -->
 		<rule e="any" k="amenity" v="hunting_stand" zoom-min="14">
 			<symbol src="file:symbols/hunting_stand.svg" symbol-percent="60" />
@@ -3105,13 +3094,20 @@
 				<symbol src="file:symbols/fountain.svg" symbol-percent="90" />
 			</rule>
 		</rule>
+		<!-- туалеты -->
+		<rule cat="toilets" e="any" k="amenity" v="toilets" zoom-min="15">
+			<symbol src="file:symbols/toilets.svg" symbol-percent="75" display="always" />
+		</rule>
 		<!-- лавочки -->
 		<rule cat="benches" e="any" k="amenity" v="bench" zoom-min="15">
 			<symbol src="file:symbols/bench.svg" symbol-percent="80" display="always" />
 		</rule>
-		<!-- туалеты -->
-		<rule cat="toilets" e="any" k="amenity" v="toilets" zoom-min="15">
-			<symbol src="file:symbols/toilets.svg" symbol-percent="75" display="always" />
+		<!-- укрытие/приют -->
+		<rule cat="refuge" e="any" k="amenity" v="shelter" zoom-min="14">
+			<symbol id="id_shelter" src="file:symbols/shelter.svg" symbol-percent="100" display="always" />
+			<rule e="any" k="*" v="*" zoom-min="16">
+				<caption symbol-id="id_shelter" k="name" priority="10" font-style="normal" font-family="sans_serif" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="1.8" />
+			</rule>
 		</rule>
 	</rule>
 	<rule e="any" k="building" v="monastery" zoom-min="12">
@@ -3219,22 +3215,7 @@
 	<!-- туристические объекты -->
 	<rule e="any" k="tourism" v="*">
 		<rule e="any" k="tourism" v="*" zoom-min="14">
-			<rule e="node" k="tourism" v="viewpoint">
-				<symbol id="id_viewpoint" src="file:symbols/viewpoint.svg" symbol-percent="80" />
-				<rule e="any" k="*" v="*" zoom-min="15">
-					<caption symbol-id="id_viewpoint" k="name" priority="1" font-family="sans_serif" font-style="normal" font-size="11" fill="#313140" stroke="#E5FFFFFF" stroke-width="2" text-wrap-width="120" />
-				</rule>
-			</rule>
 			<rule e="any" k="tourism" v="information" zoom-min="16">
-				<!-- -->
-				<rule e="node" k="information" v="guidepost">
-					<symbol id="id_guidepost" src="file:symbols/guidepost.svg" symbol-percent="70" />
-					<rule e="node" k="information" v="*" zoom-min="16">
-						<caption symbol-id="id_guidepost" k="name" position="below" font-style="bold_italic" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="1.5" text-wrap-width="120" />
-						<caption symbol-id="id_guidepost" k="addr:housenumber" position="above" font-style="bold_italic" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
-					</rule>
-				</rule>
-				<!-- -->
 				<rule e="any" k="information" v="office|information_office">
 					<symbol id="info_office" src="file:symbols/information.svg" symbol-height="16" display="always" />
 					<rule e="any" k="*" v="*" zoom-min="18">
@@ -3255,6 +3236,15 @@
 						<caption k="name" symbol-id="info" font-style="italic" font-size="12" fill="#222222" stroke="#E5FFFFFF" stroke-width="1.8" text-wrap-width="120" />
 					</rule>
 				</rule>
+				<!-- -->
+				<rule e="node" k="information" v="guidepost">
+					<symbol id="id_guidepost" src="file:symbols/guidepost.svg" symbol-percent="70" />
+					<rule e="node" k="information" v="*" zoom-min="16">
+						<caption symbol-id="id_guidepost" k="name" position="below" font-style="bold_italic" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="1.5" text-wrap-width="120" />
+						<caption symbol-id="id_guidepost" k="addr:housenumber" position="above" font-style="bold_italic" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+					</rule>
+				</rule>
+				<!-- -->
 			</rule>
 			<!-- кемпинг -->
 			<rule e="any" k="tourism" v="camp_site" zoom-min="13">
@@ -3321,21 +3311,11 @@
 					<caption symbol-id="id_hotel" k="name" font-style="bold" font-family="sans_serif" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="1.5" text-wrap-width="120" />
 				</rule>
 			</rule>
-		</rule>
-		<!-- точечные объекты - столы и т.п. -->
-		<rule cat="benches" e="node" k="tourism" v="picnic_site" zoom-min="15">
-			<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="90" />
-			<rule e="any" k="*" v="*" zoom-min="15">
-				<caption symbol-id="id_picnic_table" k="name" font-style="normal" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="0.5" text-wrap-width="120" />
-			</rule>
-		</rule>
-		<!-- территория для пикника -->
-		<rule e="way" k="tourism" v="picnic_site" zoom-min="13">
-			<line stroke="#8077b045" stroke-width="0.2" />
-			<area fill="#D7E9CE" />
-			<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="90" />
-			<rule e="any" k="*" v="*" zoom-min="15">
-				<caption symbol-id="id_picnic_table" k="name" font-style="normal" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="0.5" text-wrap-width="120" />
+			<rule e="node" k="tourism" v="viewpoint">
+				<symbol id="id_viewpoint" src="file:symbols/viewpoint.svg" symbol-percent="100" display="always" />
+				<rule e="any" k="*" v="*" zoom-min="15">
+					<caption symbol-id="id_viewpoint" k="name" priority="1" font-family="sans_serif" font-style="normal" font-size="11" fill="#313140" stroke="#E5FFFFFF" stroke-width="2" text-wrap-width="120" />
+				</rule>
 			</rule>
 		</rule>
 		<!-- -->
@@ -3357,6 +3337,22 @@
 			<symbol id="id_zoo" src="file:symbols/zoo.svg" symbol-percent="100" />
 			<rule e="way" k="tourism" v="zoo" zoom-min="14">
 				<caption symbol-id="id_zoo" k="name" font-style="italic" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="1.5" text-wrap-width="120" />
+			</rule>
+		</rule>
+				<!-- точечные объекты - столы и т.п. -->
+		<rule cat="benches" e="node" k="tourism" v="picnic_site" zoom-min="15">
+			<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="100" display="always" />
+			<rule e="any" k="*" v="*" zoom-min="15">
+				<caption symbol-id="id_picnic_table" k="name" font-style="normal" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="0.5" text-wrap-width="120" />
+			</rule>
+		</rule>
+		<!-- территория для пикника -->
+		<rule e="way" k="tourism" v="picnic_site" zoom-min="13">
+			<line stroke="#8077b045" stroke-width="0.2" />
+			<area fill="#D7E9CE" />
+			<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="100" display="always" />
+			<rule e="any" k="*" v="*" zoom-min="15">
+				<caption symbol-id="id_picnic_table" k="name" font-style="normal" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="0.5" text-wrap-width="120" />
 			</rule>
 		</rule>
 	</rule>
@@ -3381,8 +3377,8 @@
 			<caption symbol-id="id_fitness_station" k="name" dy="-4" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" text-wrap-width="120" />
 		</rule>
 	</rule>
-	<rule cat="benches" e="node" k="leisure" v="picnic_table" zoom-min="15">
-		<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="95" />
+	<rule cat="benches" e="node" k="leisure" v="picnic_table" zoom-min="14">
+		<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="100" display="always" />
 		<rule e="any" k="*" v="*" zoom-min="15">
 			<caption symbol-id="id_picnic_table" k="name" dy="-4" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" text-wrap-width="120" />
 		</rule>
