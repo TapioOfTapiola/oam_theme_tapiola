@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rendertheme xmlns="http://mapsforge.org/renderTheme" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
-    Tapiola 1.0 - 2023-05-11 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
-    Tapio is the god of forest in finnish mythology. Tapiola is his realm. Tapiola is Sibelius' Op. 112.
+Tapiola 1.0 - 2023-05-11 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapio is the god of forest in finnish mythology. Tapiola is his realm. Tapiola is Sibelius' Op. 112.
 
-    Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
-        Based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
+Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
+-> Based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
 
-    Differences to Settler:
-	- Removed all Uppercase conversions, Removed italics from Neighbourhoods and decreased their font size 1pt
-	- Display="always": Cities, Towns, Villages, Neighbourhoods, Parking, Huts, Shelters, Picnic, Viewpoint, Benches
-	- Different Parking display rules
-	- Bigger symbols: Parking, Huts, Shelters, Picnic, Viewpoint, Benches
-	- Lower priority peaks text, ZL decreased
-	- Removed Hiking Nodes from menu
-	- Forest, Meadow, Farmland, Farmyard: Transparency removed, preventing patterns from protected areas
-	- Neighbourhood text color change
-        - Greener forest green, WIP
+Differences from Settler:
+- City/town/neighbourhood/village names are out of the priority game and will be always displayed
+- More power to: Parking, Huts, Shelters, Picnic tables, Viewpoints
+- Tamed peak names. Peak names appear a bit later.
+- Some color changes
 -->
 	<stylemenu id="menu" defaultvalue="hiking" defaultlang="en">
 		<layer id="L_hikingtrails" enabled="false" visible="false">
@@ -318,10 +313,10 @@
 	<!-- лес - фон рисуется всегда -->
 	<rule e="way" k="natural|landuse" v="forest|wood">
 		<rule e="way" k="natural|landuse" v="forest|wood" zoom-min="9" zoom-max="13">
-			<area fill="#FFA3E030" />
+			<area fill="#FFB3D090" />
 		</rule>
 		<rule e="way" k="natural|landuse" v="forest|wood" zoom-min="14">
-			<area fill="#FFA3E030" />
+			<area fill="#FFC3D050" />
 		</rule>
 	</rule>
 	<!-- лес - детали, можно отключать -->
@@ -2393,13 +2388,13 @@
 		</rule>
 		<!-- район или отдельная часть города, имеющая своё название (не административное) -->
 		<rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="12" zoom-max="13">
-			<caption k="name" font-style="bold_italic" font-family="serif" font-size="10" fill="#CC1145D0" stroke="#CCFFFFFF" stroke-width="2" priority="103" text-wrap-width="180" display="always" />
+			<caption k="name" font-style="bold_italic" font-family="serif" font-size="11" fill="#EE214570" stroke="#CCFFFFFF" stroke-width="2" priority="103" text-wrap-width="180" display="always" />
 		</rule>
         <rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="14" zoom-max="14">
-			<caption k="name" font-style="bold_italic" font-family="serif" font-size="13" fill="#CC1145D0" stroke="#CCFFFFFF" stroke-width="2" priority="103" text-wrap-width="180" display="always" />
+			<caption k="name" font-style="bold_italic" font-family="serif" font-size="14" fill="#EE214570" stroke="#CCFFFFFF" stroke-width="2" priority="103" text-wrap-width="180" display="always" />
 		</rule>
 		<rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="15" zoom-max="16">
-			<caption k="name" font-style="bold_italic" font-family="serif" font-size="15" fill="#FF1155E0" stroke="#CCFFFFFF" stroke-width="3" priority="103" text-wrap-width="180" display="always" />
+			<caption k="name" font-style="bold_italic" font-family="serif" font-size="16" fill="#EE214570" stroke="#CCFFFFFF" stroke-width="3" priority="103" text-wrap-width="180" display="always" />
 		</rule>
 		<!-- небольшой город -->
 		<rule e="node" k="place" v="town" zoom-min="6">
@@ -2670,10 +2665,10 @@
 				<rule e="node" k="*" v="*" zoom-min="11" zoom-max="14">
 					<!-- иконка вершины -->
 					<rule e="node" k="natural" v="peak">
-						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="70" display="always" />
+						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="110" display="always" />
 					</rule>
 					<rule e="node" k="natural" v="volcano">
-						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="70" display="always" />
+						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="110" display="always" />
 					</rule>
 					<!-- название и высота -->
 					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="12" fill="#303030" stroke="#ffffff" stroke-width="3" priority="415" text-transform="capitalize" text-wrap-width="120" />
@@ -2682,10 +2677,10 @@
 				<rule e="node" k="*" v="*" zoom-min="15">
 					<!-- иконка вершины -->
 					<rule e="node" k="natural" v="peak">
-						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="85" display="always" />
+						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="110" display="always" />
 					</rule>
 					<rule e="node" k="natural" v="volcano">
-						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="85" display="always" />
+						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="110" display="always" />
 					</rule>
 					<!-- название и высота -->
 					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="13" fill="#303030" stroke="#ffffff" stroke-width="3" priority="415" text-transform="capitalize" text-wrap-width="120" />
@@ -2697,10 +2692,10 @@
 				<rule e="node" k="*" v="*" zoom-min="12" zoom-max="14">
 					<!-- иконка вершины -->
 					<rule e="node" k="natural" v="peak">
-						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="70" display="always" />
+						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="110" display="always" />
 					</rule>
 					<rule e="node" k="natural" v="volcano">
-						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="70" display="always" />
+						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="110" display="always" />
 					</rule>
 					<!-- название и высота -->
 					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="12" fill="#303030" stroke="#ffffff" stroke-width="3" priority="415" text-transform="capitalize" text-wrap-width="120" />
@@ -2709,10 +2704,10 @@
 				<rule e="node" k="*" v="*" zoom-min="15">
 					<!-- иконка вершины -->
 					<rule e="node" k="natural" v="peak">
-						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="85" display="always" />
+						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="110" display="always" />
 					</rule>
 					<rule e="node" k="natural" v="volcano">
-						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="85" display="always" />
+						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="110" display="always" />
 					</rule>
 					<!-- название и высота -->
 					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="13" fill="#303030" stroke="#ffffff" stroke-width="3" priority="415" text-transform="capitalize" text-wrap-width="120" />
@@ -2720,22 +2715,22 @@
 				</rule>
 			</rule>
 			<!-- 3 например "Каменный столб" в Красной Поляне -->
-			<rule e="node" k="peak_dist" v="pd_3|~" zoom-min="13">
+			<rule e="node" k="peak_dist" v="pd_3|~" zoom-min="12">
 				<!-- иконка вершины -->
-				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
+				<rule e="node" k="*" v="*" zoom-min="12" zoom-max="14">
 					<rule e="node" k="natural" v="peak">
-						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="65" display="always" />
+						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="95" display="always" />
 					</rule>
 					<rule e="node" k="natural" v="volcano">
-						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="65" display="always" />
+						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="95" display="always" />
 					</rule>
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="15">
 					<rule e="node" k="natural" v="peak">
-						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="80" display="always" />
+						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="95" display="always" />
 					</rule>
 					<rule e="node" k="natural" v="volcano">
-						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="80" display="always" />
+						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="95" display="always" />
 					</rule>
 				</rule>
 				<!-- название и высота -->
@@ -2749,9 +2744,9 @@
 				</rule>
 			</rule>
 			<!-- 4+5 например Чегет -->
-			<rule e="node" k="peak_dist" v="pd_4|pd_5" zoom-min="13">
+			<rule e="node" k="peak_dist" v="pd_4|pd_5" zoom-min="12">
 				<!-- иконка вершины -->
-				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
+				<rule e="node" k="*" v="*" zoom-min="12" zoom-max="14">
 					<rule e="node" k="natural" v="peak">
 						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="80" display="always" />
 					</rule>
@@ -2768,7 +2763,7 @@
 					</rule>
 				</rule>
 				<!-- название и высота -->
-				<rule e="node" k="*" v="*" zoom-min="14" zoom-max="14">
+				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
 					<!-- На Кавказе перевалы начинают показываться всегда при display="always" - проверить это на LoMaps v4, когда они появятся
 					Может это связано с тегом rtsa_scale=* который применяется только в России, потому что в Альпах
 					такого глюка вроде нет -->
