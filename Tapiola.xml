@@ -276,7 +276,7 @@ Differences from Settler:
 	<rule e="way" k="natural" v="nosea">
 		<area fill="#f8f8f8" />
 	</rule>
-	<!-- 
+	<!--
 	На будущее - в картах уже зашит и учитывается уровень объекта через тег layer="*"
 	И если где то кто то поставил зданию "-1" (вероятно подразумевая подвал)
 	то рисоваться оно целиком будет ниже уровня фона для некоторой области, которая задается например через тег amenity="*"
@@ -340,17 +340,20 @@ Differences from Settler:
 		<rule e="way" k="*" v="*" zoom-min="12" zoom-max="13">
 			<!-- лиственные -->
 			<rule e="any" k="wood|leaf_type" v="deciduous|broadleaved">
-				<area fill="#b7db88" />
+				<!-- Tapio - area fill="#FFb7db88" / -->
+				<area fill="#FFb7db88" />
 				<area src="file:patterns/wood_deciduous.svg" symbol-width="40" />
 			</rule>
 			<!-- смешанный или не задано -->
 			<rule e="any" k="wood|leaf_type" v="~|mixed|leafless">
-				<area fill="#b6db86" />
+				<!-- Tapio - area fill="#b6db86" /-->
+				<area fill="#FFb6db86" />
 				<area src="file:patterns/wood_mixed.svg" symbol-width="40" />
 			</rule>
 			<!-- ёлки -->
 			<rule e="any" k="wood|leaf_type" v="coniferous|needleleaved">
-				<area fill="#add47b" />
+				<!-- Tapio - area fill="#add47b" /-->
+				<area fill="#FFadd47b" />
 				<area src="file:patterns/wood_coniferous.svg" symbol-width="40" />
 			</rule>
 		</rule>
@@ -358,17 +361,20 @@ Differences from Settler:
 		<rule e="way" k="*" v="*" zoom-min="14">
 			<!-- лиственные -->
 			<rule e="any" k="wood|leaf_type" v="deciduous|broadleaved">
-				<area fill="#99b8de85" />
+				<!-- Tapio - area fill="#99b8de85" /-->
+				<area fill="#FFb8de85" />
 				<area src="file:patterns/wood_deciduous.svg" symbol-width="40" />
 			</rule>
 			<!-- смешанный или не задано -->
 			<rule e="any" k="wood|leaf_type" v="~|mixed|leafless">
-				<area fill="#99b4db7f" />
+				<!-- Tapio - area fill="#99b4db7f" /-->
+				<area fill="#FFb4db7f" />
 				<area src="file:patterns/wood_mixed.svg" symbol-width="40" />
 			</rule>
 			<!-- ёлки -->
 			<rule e="any" k="wood|leaf_type" v="coniferous|needleleaved">
-				<area fill="#99a3cf69" />
+				<!-- Tapio - -area fill="#99a3cf69" /-->
+				<area fill="#FFa3cf69" />
 				<area src="file:patterns/wood_coniferous.svg" symbol-width="40" />
 			</rule>
 		</rule>
@@ -538,7 +544,8 @@ Differences from Settler:
 
 	<!-- Площадь сельскохозяйственных угодий, используемых в основном для обработки почвы (однолетние культуры) -->
 	<rule e="way" k="landuse" v="farmland|farm" zoom-min="12">
-		<area fill="#FFFFFFEF" stroke="#C3C3C3" stroke-width="0.2" />
+		<!-- Tapio - area fill="#FFFFFFEF" stroke="#C3C3C3" stroke-width="0.2" /-->
+		<area fill="#FFFFFFEF" />
 		<rule e="way" k="landuse" v="*" zoom-min="13" zoom-max="14">
 			<area src="file:patterns/farmland.svg" symbol-width="7" />
 		</rule>
@@ -652,7 +659,8 @@ Differences from Settler:
 		<rule e="way" k="natural" v="*" zoom-min="5">
 			<!-- пастбища, горные луга -->
 			<rule e="way" k="natural" v="grassland" closed="yes">
-				<area fill="#f1faeb" />
+				<!-- Tapio - area fill="#f1faeb" /-->
+				<area fill="#FFfaeb" />
 				<rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
 					<area src="file:patterns/meadow.svg" symbol-width="5" />
 				</rule>
