@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rendertheme xmlns="http://mapsforge.org/renderTheme" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
-Tapiola 1.0.2 - 2023-05-13 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
-Tapio is the god of forest in finnish mythology. Tapiola is his realm. Tapiola is Sibelius' Op. 112.
+Tapiola 1.0.3 - 2023-05-19 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+
+Tapio is the god of forest in finnish mythology.
+Tapiola is his realm.
+Tapiola is Sibelius' Op. 112.
 
 Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 -> Settler based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
@@ -74,6 +77,12 @@ Differences from Settler:
 			<name lang="de" value="Parkplätze" />
 			<name lang="en" value="Parking" />
 			<cat id="parking" />
+		</layer>
+		<layer id="L_parking_prio" enabled="false" visible="false">
+			<name lang="ru" value="Парковки +" />
+			<name lang="de" value="Parkplätze +" />
+			<name lang="en" value="Parking +" />
+			<cat id="c_parking_prio" />
 		</layer>
 		<layer id="L_publictransport" enabled="true" visible="false">
 			<name lang="ru" value="Общественный транспорт" />
@@ -224,7 +233,7 @@ Differences from Settler:
 			<name lang="de" value="Hiking and trekking" />
 			<name lang="en" value="Hiking and trekking" />
 			<overlay id="L_hikingtrails" />
-			<overlay id="L_hikingnodes" />
+			<!-- overlay id="L_hikingnodes" /-->
 			<overlay id="L_mtb_trails" />
 			<overlay id="L_cycling" />
 			<overlay id="L_sports" />
@@ -234,6 +243,7 @@ Differences from Settler:
 			<overlay id="L_villages_neighbourhoods" />
 			<overlay id="L_publictransport" />
 			<overlay id="L_parking" />
+			<!-- overlay id="L_parking_prio" /-->
 			<overlay id="L_restaurants" />
 			<overlay id="L_shops" />
 			<overlay id="L_accommodation" />
@@ -1156,7 +1166,7 @@ Differences from Settler:
 			<area src="file:patterns/access-destination.svg" symbol-percent="50" />
 			<symbol src="file:symbols/parking_private.svg" symbol-percent="75"  display="always" />
 		</rule>
-		<rule e="any" k="access" v="~|yes|public">
+		<rule e="any" k="access" v="~|yes|public" >
 			<!--rule e="any" k="parking" v="*|~" -->
 				<symbol src="file:symbols/parking.svg" symbol-percent="75" display="always" />
 			<!-- /rule -->
@@ -1490,12 +1500,12 @@ Differences from Settler:
 					<line stroke="#30FFFFFF" stroke-width="0.6" scale="all" stroke-dasharray="0,2.4,2.4,0" stroke-linecap="butt" />
 				</rule>
 				<rule e="way" k="highway" v="motorway" zoom-min="6">
-					<line stroke="#50FFD466" stroke-width="2.6" stroke-linecap="butt" />
+					<line stroke="#502f8bd6" stroke-width="2.2" stroke-linecap="butt" />
 					<line stroke="#707070" dy="1.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-1.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
 				<rule e="way" k="highway" v="motorway_link" zoom-min="11">
-					<line stroke="#50FFD466" stroke-width="1.4" stroke-linecap="butt" />
+					<line stroke="#502f8bd6" stroke-width="1.4" stroke-linecap="butt" />
 					<line stroke="#707070" dy="0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
@@ -1714,13 +1724,13 @@ Differences from Settler:
 						<line stroke="#575757" stroke-width="1.8" stroke-linecap="butt" />
 					</rule>
 					<rule e="way" k="highway" v="secondary|secondary_link" zoom-min="9">
-						<line stroke="#575757" stroke-width="2.0" stroke-linecap="butt" />
+						<line stroke="#373737" stroke-width="2.0" stroke-linecap="butt" />
 					</rule>
 					<rule e="way" k="highway" v="primary" zoom-min="9">
-						<line stroke="#575757" stroke-width="2.2" stroke-linecap="butt" />
+						<line stroke="#000000" stroke-width="2.2" stroke-linecap="butt" />
 					</rule>
 					<rule e="way" k="highway" v="primary_link" zoom-min="9">
-						<line stroke="#575757" stroke-width="2.0" stroke-linecap="butt" />
+						<line stroke="#000000" stroke-width="2.0" stroke-linecap="butt" />
 					</rule>
 					<rule e="way" k="highway" v="trunk_link" zoom-min="11">
 						<line stroke="#575757" stroke-width="2.0" stroke-linecap="butt" />
@@ -1729,10 +1739,10 @@ Differences from Settler:
 						<line stroke="#575757" stroke-width="2.2" stroke-linecap="butt" />
 					</rule>
 					<rule e="way" k="highway" v="motorway_link" zoom-min="11">
-						<line stroke="#575757" stroke-width="2.0" stroke-linecap="butt" />
+						<line stroke="#000000" stroke-width="2.0" stroke-linecap="butt" />
 					</rule>
 					<rule e="way" k="highway" v="motorway" zoom-min="6">
-						<line stroke="#575757" stroke-width="2.4" stroke-linecap="butt" />
+						<line stroke="#000000" stroke-width="2.4" stroke-linecap="butt" />
 					</rule>
 				</rule>
 				<rule e="node" k="highway" v="turning_circle|passing_place|mini_roundabout" zoom-min="11">
@@ -1949,30 +1959,30 @@ Differences from Settler:
 					<line stroke="#ffffff" stroke-width="1.4" />
 				</rule>
 				<rule e="way" k="highway" v="secondary_link" zoom-min="9">
-					<line stroke="#FFF2C7" stroke-width="1.4" />
+					<line stroke="#ffe253" stroke-width="1.4" />
 				</rule>
 				<rule e="way" k="highway" v="primary_link" zoom-min="9">
-					<line stroke="#FFE58F" stroke-width="1.4" />
+					<line stroke="#e09a0d" stroke-width="1.4" />
 				</rule>
 				<rule e="way" k="highway" v="trunk_link" zoom-min="11">
 					<line stroke="#FFE58F" stroke-width="1.4" />
 				</rule>
 				<rule e="way" k="highway" v="motorway_link" zoom-min="11">
-					<line stroke="#F7AA58" stroke-width="1.4" />
+					<line stroke="#2f8bd6" stroke-width="1.4" />
 				</rule>
 				<rule e="way" k="highway" v="tertiary|raceway" zoom-min="11">
 					<line stroke="#FFF2C7" stroke-width="1.4" />
 					<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
 				</rule>
 				<rule e="way" k="highway" v="secondary" zoom-min="9">
-					<line stroke="#FFE58F" stroke-width="1.6" />
+					<line stroke="#ffe253" stroke-width="1.6" />
 					<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
 					<rule e="way" k="hknetwork" v="~" zoom-min="14">
 						<pathText k="ref" repeat-start="50" repeat-gap="200" font-family="sans_serif" font-style="bold" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
 					</rule>
 				</rule>
 				<rule e="way" k="highway" v="primary" zoom-min="9">
-					<line stroke="#ffBf3c" stroke-width="1.8" />
+					<line stroke="#e09a0d" stroke-width="1.8" />
 					<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
 					<rule e="way" k="hknetwork" v="~" zoom-min="14">
 						<pathText k="ref" repeat-start="50" repeat-gap="200" font-family="sans_serif" font-style="bold" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
@@ -1986,8 +1996,8 @@ Differences from Settler:
 					</rule>
 				</rule>
 				<rule e="way" k="highway" v="motorway" zoom-min="6">
-					<line stroke="#F7AA58" stroke-width="1.8" stroke-linecap="butt" />
-					<pathText k="ref" repeat-start="50" repeat-gap="400" font-family="sans_serif" font-style="bold" font-size="12" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
+					<line stroke="#2f8bd6" stroke-width="1.8" stroke-linecap="butt" />
+					<pathText k="ref" repeat-start="50" repeat-gap="400" font-family="sans_serif" font-style="bold" font-size="11" fill="#FFFFFF" stroke="#000000" stroke-width="2.0" />
 				</rule>
 				<rule e="way" k="toll" v="yes|tl_yes" zoom-min="12">
 					<line stroke="#88DD0000" stroke-width="1.0" stroke-dasharray="1,12" stroke-linecap="round" />
