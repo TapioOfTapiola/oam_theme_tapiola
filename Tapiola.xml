@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rendertheme xmlns="http://mapsforge.org/renderTheme" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
-Tapiola 1.0.4 - 2023-05-21 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.0.5 - 2023-05-24 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapio is the god of forest in finnish mythology.
 Tapiola is his realm.
@@ -2385,19 +2385,9 @@ Differences from Settler:
 			<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="1.2" text-transform="capitalize" text-wrap-width="120" priority="100" />
 		</rule>
 		<!-- деревня -->
-		<rule e="node" k="place" v="village" zoom-min="8">
-			<rule e="node" k="popcat" v="pc_5000|pc_10000|pc_20000|pc_30000|pc_50000|pc_100000|pc_200000|pc_500000|pc_1000000" zoom-max="8">
-				<caption k="name" font-style="normal" font-size="11" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="130" />
-			</rule>
-			<rule e="node" k="popcat" v="pc_0|pc_1|~" zoom-min="9" zoom-max="9">
-				<caption k="name" font-style="normal" font-size="11" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="130" />
-			</rule>
-			<rule e="node" k="popcat" v="pc_1000|pc_5000|pc_10000|pc_20000|pc_30000|pc_50000|pc_100000|pc_200000|pc_500000|pc_1000000" zoom-min="9" zoom-max="9">
-				<caption k="name" font-style="normal" font-size="11" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="130" />
-			</rule>
-
-            <rule e="node" k="*" v="*" zoom-min="10" zoom-max="12">
-				<caption k="name" font-style="normal" font-size="13" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="130" />
+		<rule e="node" k="place" v="village" zoom-min="12">
+            <rule e="node" k="*" v="*" zoom-min="12" zoom-max="12">
+				<caption k="name" font-style="normal" font-size="13" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="130" display="always" />
 			</rule>
 
 			<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
@@ -2408,61 +2398,63 @@ Differences from Settler:
 			</rule>
 		</rule>
 		<!-- район или отдельная часть города, имеющая своё название (не административное) -->
-
-<rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="13" zoom-max="13">
-			<caption k="name" font-style="bold_italic" font-family="serif" font-size="11" fill="#EE214570" stroke="#CCFFFFFF" stroke-width="2" priority="103" text-wrap-width="180" display="always" />
+        <rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="12" zoom-max="12">
+			<caption k="name" font-style="italic" font-family="sans_serif" font-size="10" fill="#EE666666" stroke="#EEFFFFFF" stroke-width="2" priority="103" text-wrap-width="200" display="always" />
+		</rule>
+        <rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="13" zoom-max="13">
+			<caption k="name" font-style="bold_italic" font-family="serif" font-size="13" fill="#CC666666" stroke="#EEFFFFFF" stroke-width="2.5" priority="103" text-wrap-width="200" display="always" />
 		</rule>
         <rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="14" zoom-max="14">
-			<caption k="name" font-style="bold_italic" font-family="serif" font-size="14" fill="#EE214570" stroke="#CCFFFFFF" stroke-width="2" priority="103" text-wrap-width="180" display="always" />
+			<caption k="name" font-style="bold_italic" font-family="serif" font-size="15" fill="#CC666666" stroke="#FFFFFFFF" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
 		</rule>
-		<rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="15" zoom-max="16">
-			<caption k="name" font-style="bold_italic" font-family="serif" font-size="16" fill="#EE214570" stroke="#CCFFFFFF" stroke-width="3" priority="103" text-wrap-width="180" display="always" />
+		<rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="15" zoom-max="15">
+			<caption k="name" font-style="bold_italic" font-family="serif" font-size="17" fill="#CC666666" stroke="#FFFFFFFF" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
 		</rule>
 		</rule>
 		<!-- небольшой город -->
 		<rule e="node" k="place" v="town" zoom-min="6">
 			<rule e="node" k="popcat" v="pc_20000|pc_30000|pc_50000|pc_100000|pc_200000|pc_500000|pc_1000000" zoom-max="6">
-				<caption k="name" font-style="normal" font-size="10" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
+				<caption k="name" font-style="normal" font-size="10" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
 			</rule>
 			<rule e="node" k="popcat" v="pc_0|pc_1|pc_1000|pc_5000|pc_10000|~" zoom-min="7" zoom-max="7">
-				<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
+				<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
 			</rule>
 			<rule e="node" k="popcat" v="pc_20000|pc_30000|pc_50000|pc_100000|pc_200000|pc_500000|pc_1000000" zoom-min="7" zoom-max="7">
-				<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
+				<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="8" zoom-max="9">
-				<caption k="name" font-style="normal" font-size="11" fill="#000000" stroke="#C0FFFFFF" stroke-width="3" priority="104" text-transform="capitalize" text-wrap-width="130" />
+				<caption k="name" font-style="normal" font-size="11" fill="#000000" stroke="#DDFFFFFF" stroke-width="3" priority="104" text-transform="capitalize" text-wrap-width="130" display="always" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="10" zoom-max="10">
-				<caption k="name" font-style="bold" font-size="12" fill="#000000" stroke="#C0FFFFFF" stroke-width="3" priority="104" text-transform="capitalize" text-wrap-width="130" display="always" />
+				<caption k="name" font-style="bold" font-size="12" fill="#000000" stroke="#DDFFFFFF" stroke-width="3" priority="104" text-transform="capitalize" text-wrap-width="130" display="always" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="11" zoom-max="11">
-				<caption k="name" font-style="bold" font-size="13" fill="#000000" stroke="#C0FFFFFF" stroke-width="3" priority="104" text-transform="capitalize" text-wrap-width="130" display="always" />
+				<caption k="name" font-style="bold" font-size="13" fill="#000000" stroke="#DDFFFFFF" stroke-width="3" priority="104" text-transform="capitalize" text-wrap-width="130" display="always" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="12" zoom-max="12">
-				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="3" priority="104" text-wrap-width="130" display="always"/>
+				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#DDFFFFFF" stroke-width="3" priority="104" text-wrap-width="130" display="always"/>
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="13" zoom-max="16">
-				<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="104" text-wrap-width="250" display="always" />
+				<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-wrap-width="250" display="always" />
 			</rule>
 		</rule>
 		<!-- город -->
 		<rule e="node" k="place" v="city" zoom-min="5">
 			<rule e="any" k="capital" v="~">
 				<rule e="node" k="*" v="*" zoom-max="8">
-					<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#D0FFFFFF" stroke-width="2" priority="105" />
+					<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#D0FFFFFF" stroke-width="2" priority="105" display="always" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="9" zoom-max="9">
-					<caption k="name" font-style="bold" font-size="15" fill="#000000" stroke="#E0FFFFFF" stroke-width="3" priority="105" display="always"/>
+					<caption k="name" font-style="bold" font-size="15" fill="#000000" stroke="#E0FFFFFF" stroke-width="2.5" priority="105" display="always"/>
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="10" zoom-max="10">
-					<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#D0FFFFFF" stroke-width="3" priority="105" display="always"/>
+					<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#D0FFFFFF" stroke-width="2.5" priority="105" display="always"/>
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="11" zoom-max="12">
-					<caption k="name" font-style="bold" font-size="16" fill="#000000" stroke="#D0FFFFFF" stroke-width="3" priority="105" display="always"/>
+					<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#D0FFFFFF" stroke-width="2.5" priority="105" display="always"/>
 				</rule>
-				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="16">
-					<caption k="name" font-style="bold" font-size="20" fill="#000000" stroke="#D0FFFFFF" stroke-width="3" priority="105" display="always" />
+				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
+					<caption k="name" font-style="bold" font-size="20" fill="#000000" stroke="#D0FFFFFF" stroke-width="2.5" priority="105" display="always" />
 				</rule>
 			</rule>
 			<rule e="any" k="capital" v="4">
@@ -2472,7 +2464,7 @@ Differences from Settler:
 				<rule e="node" k="*" v="*" zoom-min="9" zoom-max="12">
 					<caption k="name" font-style="bold" font-size="16" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="106" display="always" />
 				</rule>
-				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="16">
+				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
 					<caption k="name" font-style="bold" font-size="22" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="106" display="always" />
 				</rule>
 			</rule>
@@ -2483,7 +2475,7 @@ Differences from Settler:
 				<rule e="node" k="*" v="*" zoom-min="9" zoom-max="12">
 					<caption k="name" font-style="bold" font-size="16" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="108" display="always" />
 				</rule>
-				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="16">
+				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
 					<caption k="name" font-style="bold" font-size="24" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="108" display="always" />
 				</rule>
 			</rule>
@@ -3392,7 +3384,7 @@ Differences from Settler:
 			</rule>
 		</rule>
 		<!-- зоопарк -->
-		<rule e="way" k="tourism" v="zoo" zoom-min="12">
+		<rule e="way" k="tourism" v="zoo" zoom-min="14">
 			<area fill="#20aaeb8a" stroke="#6fc18e" stroke-width="0.35" />
 			<symbol id="id_zoo" src="file:symbols/zoo.svg" symbol-percent="100" />
 			<rule e="way" k="tourism" v="zoo" zoom-min="14">
