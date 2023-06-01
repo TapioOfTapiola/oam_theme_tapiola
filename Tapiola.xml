@@ -32,15 +32,16 @@ Differences from Settler:
 			<name lang="en" value="Hiking Nodes" />
 			<cat id="hikingnodes" />
 		</layer -->
+		<layer id="L_cycling" enabled="false" visible="false">
+			<name lang="ru" value="Велосипед" />
+			<name lang="en" value="Cycling networks" />
+			<cat id="cycling" />
+		</layer>
 		<layer id="L_mtb_trails" enabled="false" visible="false">
 			<name lang="ru" value="Трассы для горного велосипеда" />
 			<name lang="en" value="MTB trails" />
+			<name lang="de" value="MTB trails" />
 			<cat id="mtb_trails" />
-		</layer>
-		<layer id="L_cycling" enabled="false" visible="false">
-			<name lang="ru" value="Велосипед" />
-			<name lang="en" value="Cycling" />
-			<cat id="cycling" />
 		</layer>
 		<layer id="L_sports" enabled="true" visible="false">
 			<name lang="ru" value="Спорт" />
@@ -55,7 +56,7 @@ Differences from Settler:
 			<cat id="winter_sports" />
 		</layer>
 		<layer id="L_villages_neighbourhoods" enabled="true" visible="false">
-			<name lang="ru" value="ббб" />
+			<name lang="ru" value="Villages and neighbourhoods" />
 			<name lang="de" value="Dorf- und Stadtteilnamen" />
 			<name lang="en" value="Villages and neighbourhoods" />
 			<cat id="villages_neighbourhoods" />
@@ -77,12 +78,6 @@ Differences from Settler:
 			<name lang="de" value="Parkplätze" />
 			<name lang="en" value="Parking" />
 			<cat id="parking" />
-		</layer>
-		<layer id="L_parking_prio" enabled="false" visible="false">
-			<name lang="ru" value="Парковки +" />
-			<name lang="de" value="Parkplätze +" />
-			<name lang="en" value="Parking +" />
-			<cat id="c_parking_prio" />
 		</layer>
 		<layer id="L_publictransport" enabled="true" visible="false">
 			<name lang="ru" value="Общественный транспорт" />
@@ -234,8 +229,8 @@ Differences from Settler:
 			<name lang="en" value="Hiking and trekking" />
 			<overlay id="L_hikingtrails" />
 			<!-- overlay id="L_hikingnodes" /-->
-			<overlay id="L_mtb_trails" />
 			<overlay id="L_cycling" />
+			<overlay id="L_mtb_trails" />
 			<overlay id="L_sports" />
 			<overlay id="L_winter_sports" />
 			<overlay id="L_protected_area" />
@@ -1149,12 +1144,6 @@ Differences from Settler:
 			</rule>
 		</rule>
 	</rule>
-	<!-- церкви и монастыри -->
-	<rule e="way" k="amenity" v="church|monastery" zoom-min="12">
-		<rule e="way" k="area" v="yes|true">
-			<area fill="#EBE3E1" stroke="#DBBDBA" stroke-width="0.1" />
-		</rule>
-	</rule>
 	<!-- площадка для парковки -->
 	<rule e="any" k="amenity" v="parking" cat="parking" zoom-min="14">
 		<area fill="#F3F3F3" />
@@ -1266,28 +1255,28 @@ Differences from Settler:
 	<rule cat="landscapefeat" e="any" k="*" v="*">
 		<rule e="way" k="man_made" v="~">
 			<rule e="way" k="embankment" v="emb_yes" closed="no">
-				<rule e="way" k="highway" v="motorway">
-					<line stroke="#948e88" stroke-width="2.8" stroke-dasharray="1,8" stroke-linecap="butt" />
+				<rule e="way" k="highway" v="motorway" >
+					<line stroke="#005a8c" stroke-width="2.8" stroke-dasharray="1,8" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="motorway_link|tertiary|tertiary_link|secondary_link|primary_link|trunk_link|secondary|primary|trunk">
-					<line stroke="#948e88" stroke-width="2.4" stroke-dasharray="1,8" stroke-linecap="butt" />
+				<rule e="way" k="highway" v="motorway_link|tertiary|tertiary_link|secondary_link|primary_link|trunk_link|secondary|primary|trunk" >
+					<line stroke="#005a8c" stroke-width="2.4" stroke-dasharray="1,8" stroke-linecap="butt" />
 				</rule>
-				<line stroke="#948e88" stroke-width="2.2" stroke-dasharray="1,8" stroke-linecap="butt" />
-				<line stroke="#948e88" stroke-width="1.2" stroke-linecap="butt" />
+				<line stroke="#005a8c" stroke-width="2.2" stroke-dasharray="1,8" stroke-linecap="butt" />
+				<line stroke="#005a8c" stroke-width="1.2" stroke-linecap="butt" />
 				<line stroke="#F8F8F8" stroke-width="1" stroke-linecap="butt" />
 			</rule>
 		</rule>
 		<rule e="way" k="man_made" v="embankment" closed="no">
-			<line stroke="#948e88" stroke-width="0.6" dy="0.3" stroke-dasharray="1,8" stroke-linecap="butt" />
-			<line stroke="#948e88" stroke-width="0.1" stroke-linecap="butt" />
+			<line stroke="#005a8c" stroke-width="0.6" dy="0.3" stroke-dasharray="1,8" stroke-linecap="butt" />
+			<line stroke="#005a8c" stroke-width="0.1" stroke-linecap="butt" />
 		</rule>
 		<rule e="way" k="man_made|embankment" v="embankment|emb_yes" closed="yes">
-			<line stroke="#948e88" stroke-width="0.6" dy="-0.3" stroke-dasharray="1,8" stroke-linecap="butt" />
-			<line stroke="#948e88" stroke-width="0.1" stroke-linecap="butt" />
+			<line stroke="#005a8c" stroke-width="0.6" dy="-0.3" stroke-dasharray="1,8" stroke-linecap="butt" />
+			<line stroke="#005a8c" stroke-width="0.1" stroke-linecap="butt" />
 		</rule>
 		<rule e="way" k="man_made" v="dyke" zoom-min="15">
-			<line stroke="#948e88" stroke-width="2.2" stroke-dasharray="1,8" stroke-linecap="butt" />
-			<line stroke="#948e88" stroke-width="1.1" stroke-linecap="butt" />
+			<line stroke="#005a8c" stroke-width="2.2" stroke-dasharray="1,8" stroke-linecap="butt" />
+			<line stroke="#005a8c" stroke-width="1.1" stroke-linecap="butt" />
 			<line stroke="#F8F8F8" stroke-width="1" stroke-linecap="butt" />
 		</rule>
 		<rule e="way" k="man_made" v="groyne" closed="no" zoom-min="15">
@@ -1315,14 +1304,14 @@ Differences from Settler:
 			<area fill="#E6F0FF" />
 		</rule>
 		<rule e="way" k="barrier" v="ditch" closed="no">
-			<line stroke="#948e88" dy="0.25" stroke-width="0.4" stroke-dasharray="1,8" stroke-linecap="butt" />
-			<line stroke="#948e88" dy="-0.25" stroke-width="0.4" stroke-dasharray="0,4,1,4" stroke-linecap="butt" />
-			<line stroke="#948e88" dy="0.4" stroke-width="0.1" stroke-linecap="butt" />
-			<line stroke="#948e88" dy="-0.4" stroke-width="0.1" stroke-linecap="butt" />
+			<line stroke="#005a8c" dy="0.25" stroke-width="0.4" stroke-dasharray="1,8" stroke-linecap="butt" />
+			<line stroke="#005a8c" dy="-0.25" stroke-width="0.4" stroke-dasharray="0,4,1,4" stroke-linecap="butt" />
+			<line stroke="#005a8c" dy="0.4" stroke-width="0.1" stroke-linecap="butt" />
+			<line stroke="#005a8c" dy="-0.4" stroke-width="0.1" stroke-linecap="butt" />
 		</rule>
 		<rule e="way" k="barrier" v="ditch" closed="yes">
-			<line stroke="#948e88" dy="0.2" stroke-width="0.4" stroke-dasharray="0,4,1,4" stroke-linecap="butt" />
-			<line stroke="#948e88" stroke-width="0.1" stroke-linecap="butt" />
+			<line stroke="#005a8c" dy="0.2" stroke-width="0.4" stroke-dasharray="0,4,1,4" stroke-linecap="butt" />
+			<line stroke="#005a8c" stroke-width="0.1" stroke-linecap="butt" />
 		</rule>
 	</rule>
 	<!-- пирс/причал -->
@@ -1459,6 +1448,23 @@ Differences from Settler:
 			<caption k="addr:housenumber" font-style="normal" font-size="10" fill="#424251" priority="10" />
 		</rule>
 	</rule>
+	<!-- hiking network high ZL: behind path -->
+	<rule e="way" k="hknetwork" v="*" cat="hikingtrails" zoom-min="14" zoom-max="15">
+		<rule e="way" k="hknetwork" v="iwn|nwn" >
+			<line stroke="#eefc3d03" stroke-width="3.0" />
+		</rule>
+		<rule e="way" k="hknetwork" v="lwn|rwn|own" >
+			<line stroke="#eefc3d03" stroke-width="3.2" stroke-dasharray="1,1" stroke-linecap="butt" scale="all"/>
+		</rule>
+	</rule>
+	<rule e="way" k="hknetwork" v="*" cat="hikingtrails" zoom-min="16" >
+		<rule e="way" k="hknetwork" v="iwn|nwn" >
+			<line stroke="#ccfc3d03" stroke-width="2.5" />
+		</rule>
+		<rule e="way" k="hknetwork" v="lwn|rwn|own" >
+			<line stroke="#ccfc3d03" stroke-width="2.7" stroke-dasharray="1,1" stroke-linecap="butt" scale="all"/>
+		</rule>
+	</rule>
 	<!-- дороги. NOTE тут бардак с мостиками-тоннелями и их комбинациями. хорошо бы разобраться как нибудь -->
 	<rule e="any" k="highway|railway" v="*">
 		<rule e="any" k="area" v="~|no|false">
@@ -1499,12 +1505,12 @@ Differences from Settler:
 					<line stroke="#30000000" stroke-width="0.6" scale="all" stroke-dasharray="2.4,2.4" stroke-linecap="butt" />
 					<line stroke="#30FFFFFF" stroke-width="0.6" scale="all" stroke-dasharray="0,2.4,2.4,0" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="motorway" zoom-min="6">
+				<rule e="way" k="highway" v="motorway" zoom-min="6" >
 					<line stroke="#502f8bd6" stroke-width="2.2" stroke-linecap="butt" />
 					<line stroke="#707070" dy="1.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-1.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="motorway_link" zoom-min="11">
+				<rule e="way" k="highway" v="motorway_link" zoom-min="11" cat="c_roads">
 					<line stroke="#502f8bd6" stroke-width="1.4" stroke-linecap="butt" />
 					<line stroke="#707070" dy="0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
@@ -1630,12 +1636,12 @@ Differences from Settler:
 					<line stroke="#ffffff" stroke-width="2.5" stroke-linecap="butt" />
 					<line stroke="#666666" stroke-width="2.1" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="motorway" zoom-min="6">
+				<rule e="way" k="highway" v="motorway" zoom-min="6" >
 					<line stroke="#353535" stroke-width="3.4" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="3.0" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="2.4" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="motorway_link" zoom-min="11">
+				<rule e="way" k="highway" v="motorway_link" zoom-min="11" >
 					<line stroke="#353535" stroke-width="2.8" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="2.4" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="2.0" stroke-linecap="butt" />
@@ -1730,7 +1736,7 @@ Differences from Settler:
 						<line stroke="#000000" stroke-width="2.2" stroke-linecap="butt" />
 					</rule>
 					<rule e="way" k="highway" v="primary_link" zoom-min="9">
-						<line stroke="#000000" stroke-width="2.0" stroke-linecap="butt" />
+						<line stroke="#000000" stroke-width="2.2" stroke-linecap="butt" />
 					</rule>
 					<rule e="way" k="highway" v="trunk_link" zoom-min="11">
 						<line stroke="#575757" stroke-width="2.0" stroke-linecap="butt" />
@@ -1738,10 +1744,10 @@ Differences from Settler:
 					<rule e="way" k="highway" v="trunk" zoom-min="6">
 						<line stroke="#575757" stroke-width="2.2" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="highway" v="motorway_link" zoom-min="11">
+					<rule e="way" k="highway" v="motorway_link" zoom-min="11" >
 						<line stroke="#000000" stroke-width="2.0" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="highway" v="motorway" zoom-min="6">
+					<rule e="way" k="highway" v="motorway" zoom-min="6" >
 						<line stroke="#000000" stroke-width="2.4" stroke-linecap="butt" />
 					</rule>
 				</rule>
@@ -1813,38 +1819,50 @@ Differences from Settler:
 					</rule>
 				</rule>
 				<!-- лесные дороги, неофициальные грунтовки, "козьи тропы" - NOTE - проверить -->
-				<rule e="way" k="highway" v="track|byway" zoom-min="11">
-					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="12" zoom-max="15" >
-						<line stroke="#53534e" stroke-width="1.2" stroke-linecap="butt" />
-						<line stroke="#dddddd" stroke-width="0.9" />
+				<rule e="way" k="highway" v="track|byway" zoom-min="12">
+					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="13" zoom-max="13" >
+						<line stroke="#dd53534e" stroke-width="2" stroke-linecap="butt" />
+						<line stroke="#dde2dcc1" stroke-width="1.5" />
 					</rule>
-					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="16" >
-						<line stroke="#53534e" stroke-width="1.2" stroke-dasharray="8,4" stroke-linecap="butt" />
-						<line stroke="#dddddd" stroke-width="0.9" />
+					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="14" >
+						<line stroke="#53534e" stroke-width="1.5" stroke-dasharray="8,4" stroke-linecap="butt" />
+						<line stroke="#e2dcc1" stroke-width="1.1" />
 					</rule>
-					<rule e="way" k="tracktype" v="grade3" zoom-min="12" zoom-max="15" >
-						<line stroke="#53534e" stroke-width="1.2" stroke-linecap="butt" />
-						<line stroke="#eeeeee" stroke-width="0.9" />
+					<rule e="way" k="tracktype" v="grade3" zoom-min="13" zoom-max="13" >
+						<line stroke="#dd53534e" stroke-width="2" stroke-linecap="butt" />
+						<line stroke="#dde8e2c7" stroke-width="1.5" />
+					</rule>
+					<rule e="way" k="tracktype" v="grade3" zoom-min="14" zoom-max="15" >
+						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
+						<line stroke="#e8e2c7" stroke-width="1.1" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade3" zoom-min="16" >
-						<line stroke="#53534e" stroke-width="1.2" stroke-dasharray="8,4" stroke-linecap="butt" />
-						<line stroke="#eeeeee" stroke-width="0.9" />
+						<line stroke="#53534e" stroke-width="1.5" stroke-dasharray="8,4" stroke-linecap="butt" />
+						<line stroke="#e8e2c7" stroke-width="1.1" />
 					</rule>
-					<rule e="way" k="tracktype" v="grade2" zoom-min="11">
-						<line stroke="#53534e" stroke-width="1.2" stroke-dasharray="8,4" stroke-linecap="butt" />
-						<line stroke="#eeeeee" stroke-width="0.9" />
+					<rule e="way" k="tracktype" v="grade2" zoom-min="12" zoom-max="13" >
+						<line stroke="#dd53534e" stroke-width="2" stroke-linecap="butt" />
+						<line stroke="#ddf4e3c7" stroke-width="1.5" />
 					</rule>
-					<rule e="way" k="tracktype" v="grade1">
-						<line stroke="#53534e" stroke-width="1.2" stroke-linecap="butt" />
-						<line stroke="#eeeeee" stroke-width="0.9" />
+					<rule e="way" k="tracktype" v="grade2" zoom-min="14">
+						<line stroke="#53534e" stroke-width="1.5" stroke-dasharray="8,4" stroke-linecap="butt" />
+						<line stroke="#f4e3c7" stroke-width="1.1" />
+					</rule>
+					<rule e="way" k="tracktype" v="grade1" zoom-max="13">
+						<line stroke="#53534e" stroke-width="2" stroke-linecap="butt" />
+						<line stroke="#ffffff" stroke-width="1.5" />
+					</rule>
+					<rule e="way" k="tracktype" v="grade1" zoom-min="14">
+						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
+						<line stroke="#ffffff" stroke-width="1.1" />
 					</rule>
 					<rule e="way" k="tracktype" v="~|no|false" zoom-min="12" zoom-max="15" >
-						<line stroke="#53534e" stroke-width="1.2" stroke-linecap="butt" />
-						<line stroke="#dddddd" stroke-width="0.9" />
+						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
+						<line stroke="#f5d7a4" stroke-width="1.1" />
 					</rule>
 					<rule e="way" k="tracktype" v="~|no|false" zoom-min="16">
-						<line stroke="#53534e" stroke-width="1.2" stroke-dasharray="12,3" stroke-linecap="butt" />
-						<line stroke="#dddddd" stroke-width="0.9" />
+						<line stroke="#53534e" stroke-width="1.5" stroke-dasharray="12,3" stroke-linecap="butt" />
+						<line stroke="#f5d7a4" stroke-width="1.1" />
 					</rule>
 					<rule e="way" k="foot" v="ft_no">
 						<line stroke="#FF4000" stroke-width="0.4" stroke-dasharray="3,5" stroke-linecap="butt" scale="stroke" />
@@ -1955,48 +1973,55 @@ Differences from Settler:
 						</rule>
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="tertiary_link" zoom-min="11">
+				<rule e="way" k="highway" v="tertiary_link" zoom-min="11" zoom-max="12" >
 					<line stroke="#ffffff" stroke-width="1.4" />
 				</rule>
+				<rule e="way" k="highway" v="tertiary_link" zoom-min="13">
+					<line stroke="#ffff33" stroke-width="1.4" />
+				</rule>
 				<rule e="way" k="highway" v="secondary_link" zoom-min="9">
-					<line stroke="#ffe253" stroke-width="1.4" />
+					<line stroke="#f5cf19" stroke-width="1.4" />
 				</rule>
 				<rule e="way" k="highway" v="primary_link" zoom-min="9">
 					<line stroke="#e09a0d" stroke-width="1.4" />
 				</rule>
 				<rule e="way" k="highway" v="trunk_link" zoom-min="11">
-					<line stroke="#FFE58F" stroke-width="1.4" />
+					<line stroke="#26a965" stroke-width="1.4" />
 				</rule>
-				<rule e="way" k="highway" v="motorway_link" zoom-min="11">
-					<line stroke="#2f8bd6" stroke-width="1.4" />
+				<rule e="way" k="highway" v="motorway_link" zoom-min="11" >
+					<line stroke="#0083d7" stroke-width="1.4" />
 				</rule>
-				<rule e="way" k="highway" v="tertiary|raceway" zoom-min="11">
-					<line stroke="#FFF2C7" stroke-width="1.4" />
+				<rule e="way" k="highway" v="tertiary|raceway" zoom-min="11"zoom-max="12" >
+					<line stroke="#ffffff" stroke-width="1.4" />
+					<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
+				</rule>
+				<rule e="way" k="highway" v="tertiary|raceway" zoom-min="13" >
+					<line stroke="#ffff33" stroke-width="1.4" />
 					<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
 				</rule>
 				<rule e="way" k="highway" v="secondary" zoom-min="9">
-					<line stroke="#ffe253" stroke-width="1.6" />
+					<line stroke="#f5cf19" stroke-width="1.6" />
 					<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
 					<rule e="way" k="hknetwork" v="~" zoom-min="14">
 						<pathText k="ref" repeat-start="50" repeat-gap="200" font-family="sans_serif" font-style="bold" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
 					</rule>
 				</rule>
 				<rule e="way" k="highway" v="primary" zoom-min="9">
-					<line stroke="#e09a0d" stroke-width="1.8" />
+					<line stroke="#f79616" stroke-width="1.8" />
 					<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
 					<rule e="way" k="hknetwork" v="~" zoom-min="14">
 						<pathText k="ref" repeat-start="50" repeat-gap="200" font-family="sans_serif" font-style="bold" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
 					</rule>
 				</rule>
 				<rule e="way" k="highway" v="trunk" zoom-min="6">
-					<line stroke="#FFE58F" stroke-width="1.6" />
+					<line stroke="#26a965" stroke-width="1.6" />
 					<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
 					<rule e="way" k="hknetwork" v="~" zoom-min="14">
 						<pathText k="ref" repeat-start="50" repeat-gap="200" font-family="sans_serif" font-style="bold" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="motorway" zoom-min="6">
-					<line stroke="#2f8bd6" stroke-width="1.8" stroke-linecap="butt" />
+				<rule e="way" k="highway" v="motorway" zoom-min="6" >
+					<line stroke="#0083d7" stroke-width="1.8" stroke-linecap="butt" />
 					<pathText k="ref" repeat-start="50" repeat-gap="400" font-family="sans_serif" font-style="bold" font-size="11" fill="#FFFFFF" stroke="#000000" stroke-width="2.0" />
 				</rule>
 				<rule e="way" k="toll" v="yes|tl_yes" zoom-min="12">
@@ -2385,19 +2410,9 @@ Differences from Settler:
 			<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="1.2" text-transform="capitalize" text-wrap-width="120" priority="100" />
 		</rule>
 		<!-- деревня -->
-		<rule e="node" k="place" v="village" zoom-min="8">
-			<rule e="node" k="popcat" v="pc_5000|pc_10000|pc_20000|pc_30000|pc_50000|pc_100000|pc_200000|pc_500000|pc_1000000" zoom-max="8">
-				<caption k="name" font-style="normal" font-size="11" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="130" />
-			</rule>
-			<rule e="node" k="popcat" v="pc_0|pc_1|~" zoom-min="9" zoom-max="9">
-				<caption k="name" font-style="normal" font-size="11" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="130" />
-			</rule>
-			<rule e="node" k="popcat" v="pc_1000|pc_5000|pc_10000|pc_20000|pc_30000|pc_50000|pc_100000|pc_200000|pc_500000|pc_1000000" zoom-min="9" zoom-max="9">
-				<caption k="name" font-style="normal" font-size="11" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="130" />
-			</rule>
-
-            <rule e="node" k="*" v="*" zoom-min="10" zoom-max="12">
-				<caption k="name" font-style="normal" font-size="13" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="130" />
+		<rule e="node" k="place" v="village" zoom-min="12">
+            <rule e="node" k="*" v="*" zoom-min="12" zoom-max="12">
+				<caption k="name" font-style="normal" font-size="13" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="130" display="always" />
 			</rule>
 
 			<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
@@ -2408,61 +2423,63 @@ Differences from Settler:
 			</rule>
 		</rule>
 		<!-- район или отдельная часть города, имеющая своё название (не административное) -->
-
-<rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="13" zoom-max="13">
-			<caption k="name" font-style="bold_italic" font-family="serif" font-size="11" fill="#EE214570" stroke="#CCFFFFFF" stroke-width="2" priority="103" text-wrap-width="180" display="always" />
+        <rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="12" zoom-max="12">
+			<caption k="name" font-style="italic" font-family="sans_serif" font-size="10" fill="#EE666666" stroke="#EEFFFFFF" stroke-width="2" priority="103" text-wrap-width="200" display="always" />
+		</rule>
+        <rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="13" zoom-max="13">
+			<caption k="name" font-style="bold_italic" font-family="serif" font-size="13" fill="#CC666666" stroke="#EEFFFFFF" stroke-width="2.5" priority="103" text-wrap-width="200" display="always" />
 		</rule>
         <rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="14" zoom-max="14">
-			<caption k="name" font-style="bold_italic" font-family="serif" font-size="14" fill="#EE214570" stroke="#CCFFFFFF" stroke-width="2" priority="103" text-wrap-width="180" display="always" />
+			<caption k="name" font-style="bold_italic" font-family="serif" font-size="15" fill="#CC666666" stroke="#FFFFFFFF" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
 		</rule>
-		<rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="15" zoom-max="16">
-			<caption k="name" font-style="bold_italic" font-family="serif" font-size="16" fill="#EE214570" stroke="#CCFFFFFF" stroke-width="3" priority="103" text-wrap-width="180" display="always" />
+		<rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="15" zoom-max="15">
+			<caption k="name" font-style="bold_italic" font-family="serif" font-size="17" fill="#CC666666" stroke="#FFFFFFFF" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
 		</rule>
 		</rule>
 		<!-- небольшой город -->
 		<rule e="node" k="place" v="town" zoom-min="6">
 			<rule e="node" k="popcat" v="pc_20000|pc_30000|pc_50000|pc_100000|pc_200000|pc_500000|pc_1000000" zoom-max="6">
-				<caption k="name" font-style="normal" font-size="10" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
+				<caption k="name" font-style="normal" font-size="10" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
 			</rule>
 			<rule e="node" k="popcat" v="pc_0|pc_1|pc_1000|pc_5000|pc_10000|~" zoom-min="7" zoom-max="7">
-				<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
+				<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
 			</rule>
 			<rule e="node" k="popcat" v="pc_20000|pc_30000|pc_50000|pc_100000|pc_200000|pc_500000|pc_1000000" zoom-min="7" zoom-max="7">
-				<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
+				<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="8" zoom-max="9">
-				<caption k="name" font-style="normal" font-size="11" fill="#000000" stroke="#C0FFFFFF" stroke-width="3" priority="104" text-transform="capitalize" text-wrap-width="130" />
+				<caption k="name" font-style="normal" font-size="11" fill="#000000" stroke="#DDFFFFFF" stroke-width="3" priority="104" text-transform="capitalize" text-wrap-width="130" display="always" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="10" zoom-max="10">
-				<caption k="name" font-style="bold" font-size="12" fill="#000000" stroke="#C0FFFFFF" stroke-width="3" priority="104" text-transform="capitalize" text-wrap-width="130" display="always" />
+				<caption k="name" font-style="bold" font-size="12" fill="#000000" stroke="#DDFFFFFF" stroke-width="3" priority="104" text-transform="capitalize" text-wrap-width="130" display="always" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="11" zoom-max="11">
-				<caption k="name" font-style="bold" font-size="13" fill="#000000" stroke="#C0FFFFFF" stroke-width="3" priority="104" text-transform="capitalize" text-wrap-width="130" display="always" />
+				<caption k="name" font-style="bold" font-size="13" fill="#000000" stroke="#DDFFFFFF" stroke-width="3" priority="104" text-transform="capitalize" text-wrap-width="130" display="always" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="12" zoom-max="12">
-				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="3" priority="104" text-wrap-width="130" display="always"/>
+				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#DDFFFFFF" stroke-width="3" priority="104" text-wrap-width="130" display="always"/>
 			</rule>
-			<rule e="node" k="*" v="*" zoom-min="13" zoom-max="16">
-				<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="104" text-wrap-width="250" display="always" />
+			<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
+				<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-wrap-width="250" display="always" />
 			</rule>
 		</rule>
 		<!-- город -->
 		<rule e="node" k="place" v="city" zoom-min="5">
 			<rule e="any" k="capital" v="~">
 				<rule e="node" k="*" v="*" zoom-max="8">
-					<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#D0FFFFFF" stroke-width="2" priority="105" />
+					<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#D0FFFFFF" stroke-width="2" priority="105" display="always" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="9" zoom-max="9">
-					<caption k="name" font-style="bold" font-size="15" fill="#000000" stroke="#E0FFFFFF" stroke-width="3" priority="105" display="always"/>
+					<caption k="name" font-style="bold" font-size="15" fill="#000000" stroke="#E0FFFFFF" stroke-width="2.5" priority="105" display="always"/>
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="10" zoom-max="10">
-					<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#D0FFFFFF" stroke-width="3" priority="105" display="always"/>
+					<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#D0FFFFFF" stroke-width="2.5" priority="105" display="always"/>
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="11" zoom-max="12">
-					<caption k="name" font-style="bold" font-size="16" fill="#000000" stroke="#D0FFFFFF" stroke-width="3" priority="105" display="always"/>
+					<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#D0FFFFFF" stroke-width="2.5" priority="105" display="always"/>
 				</rule>
-				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="16">
-					<caption k="name" font-style="bold" font-size="20" fill="#000000" stroke="#D0FFFFFF" stroke-width="3" priority="105" display="always" />
+				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
+					<caption k="name" font-style="bold" font-size="20" fill="#000000" stroke="#D0FFFFFF" stroke-width="2.5" priority="105" display="always" />
 				</rule>
 			</rule>
 			<rule e="any" k="capital" v="4">
@@ -2472,7 +2489,7 @@ Differences from Settler:
 				<rule e="node" k="*" v="*" zoom-min="9" zoom-max="12">
 					<caption k="name" font-style="bold" font-size="16" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="106" display="always" />
 				</rule>
-				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="16">
+				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
 					<caption k="name" font-style="bold" font-size="22" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="106" display="always" />
 				</rule>
 			</rule>
@@ -2483,7 +2500,7 @@ Differences from Settler:
 				<rule e="node" k="*" v="*" zoom-min="9" zoom-max="12">
 					<caption k="name" font-style="bold" font-size="16" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="108" display="always" />
 				</rule>
-				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="16">
+				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
 					<caption k="name" font-style="bold" font-size="24" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="108" display="always" />
 				</rule>
 			</rule>
@@ -2697,25 +2714,25 @@ Differences from Settler:
 				<rule e="node" k="*" v="*" zoom-min="11" zoom-max="14">
 					<!-- иконка вершины -->
 					<rule e="node" k="natural" v="peak">
-						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="110" display="always" />
+						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="90" display="always" />
 					</rule>
 					<rule e="node" k="natural" v="volcano">
-						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="110" display="always" />
+						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="90" display="always" />
 					</rule>
 					<!-- Name/Elevation -->
-					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="12" fill="#303030" stroke="#ffffff" stroke-width="3" priority="415" text-transform="capitalize" text-wrap-width="120" />
+					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="11" fill="#303030" stroke="#ffffff" stroke-width="2" priority="415" text-transform="capitalize" text-wrap-width="120" />
 					<caption symbol-id="id_peak" k="ele" dy="-3" position="below" font-family="sans_serif" font-size="11" fill="#303030" stroke="#ffffff" stroke-width="3" priority="414" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="15">
 					<!-- иконка вершины -->
 					<rule e="node" k="natural" v="peak">
-						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="110" display="always" />
+						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="90" display="always" />
 					</rule>
 					<rule e="node" k="natural" v="volcano">
-						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="110" display="always" />
+						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="90" display="always" />
 					</rule>
 					<!-- Name/Elevation -->
-					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="13" fill="#303030" stroke="#ffffff" stroke-width="3" priority="415" text-transform="capitalize" text-wrap-width="120" />
+					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="12" fill="#303030" stroke="#ffffff" stroke-width="2" priority="415" text-transform="capitalize" text-wrap-width="120" />
 					<caption symbol-id="id_peak" k="ele" dy="-3" position="below" font-family="sans_serif" font-size="11" fill="#303030" stroke="#ffffff" stroke-width="3" priority="414" />
 				</rule>
 			</rule>
@@ -2724,10 +2741,10 @@ Differences from Settler:
 				<rule e="node" k="*" v="*" zoom-min="12" zoom-max="14">
 					<!-- иконка вершины -->
 					<rule e="node" k="natural" v="peak">
-						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="110" display="always" />
+						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="90" display="always" />
 					</rule>
 					<rule e="node" k="natural" v="volcano">
-						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="110" display="always" />
+						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="90" display="always" />
 					</rule>
 					<!-- Name/Elevation -->
 					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="12" fill="#303030" stroke="#ffffff" stroke-width="3" priority="415" text-transform="capitalize" text-wrap-width="120" />
@@ -2736,10 +2753,10 @@ Differences from Settler:
 				<rule e="node" k="*" v="*" zoom-min="15">
 					<!-- иконка вершины -->
 					<rule e="node" k="natural" v="peak">
-						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="110" display="always" />
+						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="90" display="always" />
 					</rule>
 					<rule e="node" k="natural" v="volcano">
-						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="110" display="always" />
+						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="90" display="always" />
 					</rule>
 					<!-- Name/Elevation -->
 					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="13" fill="#303030" stroke="#ffffff" stroke-width="3" priority="415" text-transform="capitalize" text-wrap-width="120" />
@@ -2751,27 +2768,27 @@ Differences from Settler:
 				<!-- иконка вершины -->
 				<rule e="node" k="*" v="*" zoom-min="12" zoom-max="14">
 					<rule e="node" k="natural" v="peak">
-						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="95" display="always" />
+						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="75" display="always" />
 					</rule>
 					<rule e="node" k="natural" v="volcano">
-						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="95" display="always" />
+						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="75" display="always" />
 					</rule>
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="15">
 					<rule e="node" k="natural" v="peak">
-						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="95" display="always" />
+						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="75" display="always" />
 					</rule>
 					<rule e="node" k="natural" v="volcano">
-						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="95" display="always" />
+						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="75" display="always" />
 					</rule>
 				</rule>
 				<!-- Name/Elevation -->
 				<rule e="node" k="*" v="*" zoom-min="12" zoom-max="14">
-					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="12" fill="#303030" stroke="#ffffff" stroke-width="3" priority="415" text-transform="capitalize" text-wrap-width="120" />
+					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="12" fill="#303030" stroke="#ffffff" stroke-width="2.5" priority="415" text-transform="capitalize" text-wrap-width="120" />
 					<caption symbol-id="id_peak" k="ele" dy="-3" position="below" font-family="sans_serif" font-size="11" fill="#303030" stroke="#ffffff" stroke-width="3" priority="414" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="15">
-					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="13" fill="#303030" stroke="#ffffff" stroke-width="3" priority="415" text-transform="capitalize" text-wrap-width="120" />
+					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="13" fill="#303030" stroke="#ffffff" stroke-width="2.5" priority="415" text-transform="capitalize" text-wrap-width="120" />
 					<caption symbol-id="id_peak" k="ele" dy="-3" position="below" font-family="sans_serif" font-size="11" fill="#303030" stroke="#ffffff" stroke-width="3" priority="414" />
 				</rule>
 			</rule>
@@ -2780,18 +2797,18 @@ Differences from Settler:
 				<!-- иконка вершины -->
 				<rule e="node" k="*" v="*" zoom-min="12" zoom-max="14">
 					<rule e="node" k="natural" v="peak">
-						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="80" display="always" />
+						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="60" display="always" />
 					</rule>
 					<rule e="node" k="natural" v="volcano">
-						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="80" display="always" />
+						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="60" display="always" />
 					</rule>
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="15">
 					<rule e="node" k="natural" v="peak">
-						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="80" display="always" />
+						<symbol id="id_peak" src="file:symbols/s_peak.svg" symbol-percent="60" display="always" />
 					</rule>
 					<rule e="node" k="natural" v="volcano">
-						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="80" display="always" />
+						<symbol id="id_peak" src="file:symbols/volcano.svg" symbol-percent="60" display="always" />
 					</rule>
 				</rule>
 				<!-- Name/Elevation -->
@@ -2799,11 +2816,11 @@ Differences from Settler:
 					<!-- На Кавказе перевалы начинают показываться всегда при display="always" - проверить это на LoMaps v4, когда они появятся
 					Может это связано с тегом rtsa_scale=* который применяется только в России, потому что в Альпах
 					такого глюка вроде нет -->
-					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="12" fill="#303030" stroke="#ffffff" stroke-width="3" priority="415" text-transform="capitalize" text-wrap-width="120" />
+					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="12" fill="#303030" stroke="#ffffff" stroke-width="2.5" priority="415" text-transform="capitalize" text-wrap-width="120" />
 					<caption symbol-id="id_peak" k="ele" dy="-3" position="below" font-family="sans_serif" font-size="11" fill="#303030" stroke="#ffffff" stroke-width="3" priority="414" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="15">
-					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="13" fill="#303030" stroke="#ffffff" stroke-width="3" priority="415" text-transform="capitalize" text-wrap-width="120" />
+					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="13" fill="#303030" stroke="#ffffff" stroke-width="2.5" priority="415" text-transform="capitalize" text-wrap-width="120" />
 					<caption symbol-id="id_peak" k="ele" dy="-3" position="below" font-family="sans_serif" font-size="11" fill="#303030" stroke="#ffffff" stroke-width="3" priority="414" />
 				</rule>
 			</rule>
@@ -3392,7 +3409,7 @@ Differences from Settler:
 			</rule>
 		</rule>
 		<!-- зоопарк -->
-		<rule e="way" k="tourism" v="zoo" zoom-min="12">
+		<rule e="way" k="tourism" v="zoo" zoom-min="14">
 			<area fill="#20aaeb8a" stroke="#6fc18e" stroke-width="0.35" />
 			<symbol id="id_zoo" src="file:symbols/zoo.svg" symbol-percent="100" />
 			<rule e="way" k="tourism" v="zoo" zoom-min="14">
@@ -3508,34 +3525,41 @@ Differences from Settler:
 			<pathText priority="10" k="ref_cycle" font-style="bold" font-size="10" fill="#b266ff" stroke="#ffffff" stroke-width="2.5" dy="0" repeat-start="30" repeat-gap="300" />
 		</rule>
 	</rule>
-
-    <!-- hiking network -->
-	<rule e="way" k="hknetwork" v="*" cat="hikingtrails" zoom-min="8">
-		<!--
-		<rule e="way" k="hknetwork" v="iwn|nwn" zoom-min="8" zoom-max="9">
-			<line stroke="#F2221E" stroke-width="1.8" />
-			<line stroke="#E7B3B3" stroke-width="1.3" />
-		</rule> -->
-		<rule e="way" k="hknetwork" v="iwn|nwn" zoom-min="10" zoom-max="13" >
-
-			<line stroke="#B0008967" stroke-width="2.4" />
+	<!-- hiking network low zl, on top of paths-->
+	<rule e="way" k="hknetwork" v="*" cat="hikingtrails" zoom-min="10" zoom-max="13" >
+		<rule e="way" k="hknetwork" v="iwn|nwn" >
+			<line stroke="#fc3d03" stroke-width="1.0" />
 		</rule>
 		<rule e="way" k="hknetwork" v="lwn|rwn|own" zoom-min="12" zoom-max="13" >
-			<line stroke="#B0128900" stroke-width="0.8" />
-		</rule>
-		<rule e="way" k="hknetwork" v="iwn|nwn" zoom-min="14">
-
-			<line stroke="#85008967" stroke-width="1.8" />
-		</rule>
-		<rule e="way" k="hknetwork" v="lwn|rwn|own" zoom-min="14">
-			<line stroke="#85128900" stroke-width="1.8" />
+			<line stroke="#fc3d03" stroke-width="1.0" stroke-dasharray="1,1" stroke-linecap="butt" scale="all" />
 		</rule>
 		<!-- Название маршрута -->
 		<rule e="any" k="*" v="*" zoom-min="13">
-			<pathText dy="-1" priority="11" k="name" font-style="bold" font-size="11" fill="#ee7700" stroke="#ffffff" stroke-width="2.0" repeat-start="60" repeat-gap="300" />
-			<pathText dy="-1" priority="11" k="ref" font-style="bold" font-size="11" fill="#631f1f" stroke="#ffffff" stroke-width="2.0" repeat-start="30" repeat-gap="300" />
+			<pathText dy="-1" priority="11" k="name" font-style="bold" font-size="10" fill="#ee7700" stroke="#ffffff" stroke-width="2.0" repeat-start="60" repeat-gap="300" />
+			<pathText dy="-1" priority="11" k="ref" font-style="bold" font-size="10" fill="#631f1f" stroke="#ffffff" stroke-width="2.0" repeat-start="30" repeat-gap="300" />
 		</rule>
 	</rule>
+	<!-- Captions for Hiking-Routes -->
+		<!-- OAM maps-->
+		<rule e="way" k="hknetwork" v="iwn|nwn" zoom-min="11" zoom-max="14" >
+           <pathText repeat-gap="120" k="ref_hike" font-style="normal" font-size="9" fill="#f00d00" stroke="#FFFFFF" stroke-width="3" priority="200"/>
+
+		</rule>
+		<rule e="way" k="hknetwork" v="rwn|lwn">
+			<rule e="way" k="highway" v="footway|footpath|path|bridleway|cycleway|steps|track|byway|pedestrian|service|residential|living_street|construction|road|ford|unclassified|tertiary|secondary" zoom-min="14" zoom-max="14">
+				<pathText repeat-gap="120" k="ref_hike" font-style="normal" font-size="9" fill="#f00d00" stroke="#FFFFFF" stroke-width="3" priority="200"/>
+			</rule>
+		</rule>
+		<rule e="way" k="hknetwork|network" v="iwn|nwn|rwn|lwn">
+		    <rule e="way" k="highway" v="footway|footpath|path|bridleway|cycleway|steps|track|byway|pedestrian|service|residential|living_street|construction|road|ford|unclassified|tertiary|secondary" zoom-min="15">
+				<rule e="way" k="*" v="*" zoom-max="17">
+					<pathText repeat-gap="170" repeat-start="10" k="ref_hike" font-style="normal" font-size="10" fill="#f00d00" stroke="#FFFFFF" stroke-width="3" dy="1.7" priority="200"/>
+				</rule>
+				<rule e="way" k="*" v="*" zoom-min="18">
+					<pathText repeat-gap="220" repeat-start="20" k="ref_hike" font-style="bold" font-size="13" fill="#f00d00" stroke="#FFFFFF" stroke-width="3" dy="1.3" priority="200"/>
+				</rule>
+			</rule>
+		</rule>
 	<!-- Горнолыжные трассы, беговые лыжи, санки // Целиком скопировано из темы TOTM -->
 	<rule cat="winter_sports" e="way" k="piste:type" v="*" zoom-min="13">
 		<!-- piste areas -->
