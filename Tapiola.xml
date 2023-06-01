@@ -3541,16 +3541,15 @@ Differences from Settler:
 	</rule>
 	<!-- Captions for Hiking-Routes -->
 		<!-- OAM maps-->
-		<rule e="way" k="hknetwork" v="iwn|nwn" zoom-min="11" zoom-max="14" >
+		<rule e="way" k="hknetwork" v="iwn|nwn" cat="hikingtrails" zoom-min="11" zoom-max="14" >
            <pathText repeat-gap="120" k="ref_hike" font-style="normal" font-size="9" fill="#f00d00" stroke="#FFFFFF" stroke-width="3" priority="200"/>
-
 		</rule>
-		<rule e="way" k="hknetwork" v="rwn|lwn">
+		<rule e="way" k="hknetwork" v="rwn|lwn" cat="hikingtrails">
 			<rule e="way" k="highway" v="footway|footpath|path|bridleway|cycleway|steps|track|byway|pedestrian|service|residential|living_street|construction|road|ford|unclassified|tertiary|secondary" zoom-min="14" zoom-max="14">
 				<pathText repeat-gap="120" k="ref_hike" font-style="normal" font-size="9" fill="#f00d00" stroke="#FFFFFF" stroke-width="3" priority="200"/>
 			</rule>
 		</rule>
-		<rule e="way" k="hknetwork|network" v="iwn|nwn|rwn|lwn">
+		<rule e="way" k="hknetwork|network" v="iwn|nwn|rwn|lwn" cat="hikingtrails" >
 		    <rule e="way" k="highway" v="footway|footpath|path|bridleway|cycleway|steps|track|byway|pedestrian|service|residential|living_street|construction|road|ford|unclassified|tertiary|secondary" zoom-min="15">
 				<rule e="way" k="*" v="*" zoom-max="17">
 					<pathText repeat-gap="170" repeat-start="10" k="ref_hike" font-style="normal" font-size="10" fill="#f00d00" stroke="#FFFFFF" stroke-width="3" dy="1.7" priority="200"/>
