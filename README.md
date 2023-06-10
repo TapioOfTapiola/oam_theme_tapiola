@@ -1,1 +1,3 @@
-Mapsforge rendertheme for LocusMap. Support OpenAndroMaps and new LoMaps V4+. Fork of Settler theme from Andrey Nekrassov. Menu in ru/en/de.
+Mapsforge rendertheme for LocusMap. Support of OpenAndroMaps. Not yet optimized for LoMaps V4+ - some small issues there.
+
+Fork of Settler theme from Andrey Nekrassov. Menu in ru/en/de.
