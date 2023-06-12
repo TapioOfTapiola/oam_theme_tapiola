@@ -23,7 +23,7 @@ Differences from Settler:
 		<layer id="L_hikingtrails" enabled="false" visible="false">
 			<name lang="ru" value="Пешеходные маршруты" />
 			<name lang="de" value="Wanderwege" />
-			<name lang="en" value="Waymarked Trails" />
+			<name lang="en" value="Hiking networks" />
 			<cat id="hikingtrails" />
 		</layer>
 		<layer id="L_hikingnodes" enabled="false" visible="false">
@@ -3493,14 +3493,14 @@ Differences from Settler:
 		<line dy="-0.9" stroke="#cc00cc" stroke-width="1.5" stroke-dasharray="18,5" stroke-linecap="butt" scale="stroke" />
 	</rule>
 	<!-- велодорожки -->
-	<rule e="any" k="*" v="*" cat="cycling" zoom-min="11">
+	<rule e="any" k="*" v="*" cat="cycling" zoom-min="10">
 		<rule e="way" k="network" v="icn|ncn|rcn|lcn|ocn" zoom-max="12" >
-			<line dy="-0.9" stroke="#A9fc3512" stroke-width="2" stroke-linecap="butt" scale="stroke" />
+			<line dy="-0.9" stroke="#474aff" stroke-width="1.5" stroke-linecap="butt" />
 		</rule>
 		<rule e="way" k="network" v="icn|ncn|rcn|lcn|ocn" zoom-min="13" >
-			<line dy="-0.9" stroke="#77fc3512" stroke-width="1.6" stroke-linecap="butt" scale="stroke" />
+			<line dy="-0.9" stroke="#474aff" stroke-width="1.6" stroke-linecap="butt" />
 		</rule>
-		<rule e="any" k="network" v="icn|ncn|rcn|lcn|ocn" zoom-min="14">
+		<rule e="any" k="network" v="icn|ncn|rcn|lcn|ocn" zoom-min="11">
 			<pathText priority="10" k="ref_cycle" font-style="bold" font-size="10" fill="#b266ff" stroke="#ffffff" stroke-width="2.5" dy="0" repeat-start="30" repeat-gap="300" />
 		</rule>
 	</rule>
