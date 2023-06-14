@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rendertheme xmlns="http://mapsforge.org/renderTheme" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
-Tapiola 1.0.4 - 2023-05-21 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.1.3- 2023-06-14 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapio is the god of forest in finnish mythology.
 Tapiola is his realm.
@@ -9,15 +9,6 @@ Tapiola is Sibelius' Op. 112.
 
 Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 -> Settler based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
-
-Differences from Settler:
-- City/town/neighbourhood/village names are out of the priority game and will be always displayed
-- Changes to theme options
-- More importance to: Parking, Huts, Shelters, Picnic tables, Viewpoints
-- Tamed peak names
-- Color changes to forest, greens, hiking/cycling/mtb routes
--   MTB: violet, Cycle: orange, Hike: green, Important hike: greenblue
-- Hiking/cycling/mtb network visibility changes
 -->
 	<stylemenu id="menu" defaultvalue="hiking" defaultlang="en">
 		<layer id="L_hikingtrails" enabled="false" visible="false">
@@ -55,10 +46,16 @@ Differences from Settler:
 			<name lang="en" value="Winter sport" />
 			<cat id="winter_sports" />
 		</layer>
+		<layer id="L_cities_towns" enabled="true" visible="false">
+			<name lang="ru" value="Cities, towns, villages" />
+			<name lang="de" value="Städte" />
+			<name lang="en" value="Cities, towns, villages" />
+			<cat id="cities_towns" />
+		</layer>
 		<layer id="L_villages_neighbourhoods" enabled="true" visible="false">
-			<name lang="ru" value="Villages and neighbourhoods" />
-			<name lang="de" value="Dorf- und Stadtteilnamen" />
-			<name lang="en" value="Villages and neighbourhoods" />
+			<name lang="ru" value="Neighbourhoods, suburbs, quarters" />
+			<name lang="de" value="Stadtteile" />
+			<name lang="en" value="Neighbourhoods, suburbs, quarters" />
 			<cat id="villages_neighbourhoods" />
 		</layer>
 		<layer id="L_protected_area" enabled="false" visible="false">
@@ -217,6 +214,7 @@ Differences from Settler:
 			<overlay id="L_winter_sports" />
 			<overlay id="L_protected_area" />
 			<overlay id="L_boundaries_areas" />
+			<overlay id="L_cities_towns" />
 			<overlay id="L_villages_neighbourhoods" />
 			<overlay id="L_publictransport" />
 			<overlay id="L_parking" />
@@ -2376,10 +2374,11 @@ Differences from Settler:
 	</rule>
 	<!-- Населенные пункты -->
 	<rule e="node" k="place" v="*">
+       <rule cat="villages_neighbourhoods" e="node" k="place" v="farm|isolated_dwelling|hamlet|village|suburb|neighbourhood|quarter" >
 		<rule e="node" k="place" v="farm" zoom-min="14">
 			<caption k="name" dy="16" font-style="normal" font-size="10" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="99" />
 		</rule>
-		<rule e="node" k="place" v="village|suburb|neighbourhood|quarter|isolated_dwelling" cat="villages_neighbourhoods" >
+
 		<!-- хутор -->
 		<rule e="node" k="place" v="isolated_dwelling" zoom-min="13" zoom-max="17">
 			<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="1.2" text-transform="capitalize" text-wrap-width="120" priority="99" />
@@ -2388,8 +2387,27 @@ Differences from Settler:
 		<rule e="node" k="place" v="hamlet" zoom-min="13" zoom-max="15">
 			<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="1.2" text-transform="capitalize" text-wrap-width="120" priority="100" />
 		</rule>
-		<!-- деревня -->
-		<rule e="node" k="place" v="village" zoom-min="12">
+
+		<!-- район или отдельная часть города, имеющая своё название (не административное) -->
+        <rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="12" >
+        	<rule e="node" k="*" v="*" zoom-min="12" zoom-max="12">
+			    <caption k="name" font-style="italic" font-family="sans_serif" font-size="10" fill="#EE666666" stroke="#EEFFFFFF" stroke-width="2" priority="103" text-wrap-width="200" display="always" />
+		    </rule>
+            <rule e="node" k="place" v="*" zoom-min="13" zoom-max="13">
+			    <caption k="name" font-style="bold_italic" font-family="serif" font-size="13" fill="#CC666666" stroke="#EEFFFFFF" stroke-width="2.5" priority="103" text-wrap-width="200" display="always" />
+		    </rule>
+            <rule e="node" k="*" v="*" zoom-min="14" zoom-max="14">
+			    <caption k="name" font-style="bold_italic" font-family="serif" font-size="15" fill="#CC666666" stroke="#FFFFFFFF" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
+		    </rule>
+		    <rule e="node" k="*" v="*" zoom-min="15" zoom-max="15">
+			    <caption k="name" font-style="bold_italic" font-family="serif" font-size="17" fill="#CC666666" stroke="#FFFFFFFF" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
+		    </rule>
+		</rule>
+
+        </rule>
+	
+        <!-- деревня -->
+		<rule cat="cities_towns" e="node" k="place" v="village" zoom-min="12">
             <rule e="node" k="*" v="*" zoom-min="12" zoom-max="12">
 				<caption k="name" font-style="normal" font-size="13" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="130" display="always" />
 			</rule>
@@ -2401,22 +2419,8 @@ Differences from Settler:
 				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" display="always" />
 			</rule>
 		</rule>
-		<!-- район или отдельная часть города, имеющая своё название (не административное) -->
-        <rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="12" zoom-max="12">
-			<caption k="name" font-style="italic" font-family="sans_serif" font-size="10" fill="#EE666666" stroke="#EEFFFFFF" stroke-width="2" priority="103" text-wrap-width="200" display="always" />
-		</rule>
-        <rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="13" zoom-max="13">
-			<caption k="name" font-style="bold_italic" font-family="serif" font-size="13" fill="#CC666666" stroke="#EEFFFFFF" stroke-width="2.5" priority="103" text-wrap-width="200" display="always" />
-		</rule>
-        <rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="14" zoom-max="14">
-			<caption k="name" font-style="bold_italic" font-family="serif" font-size="15" fill="#CC666666" stroke="#FFFFFFFF" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
-		</rule>
-		<rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="15" zoom-max="15">
-			<caption k="name" font-style="bold_italic" font-family="serif" font-size="17" fill="#CC666666" stroke="#FFFFFFFF" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
-		</rule>
-		</rule>
 		<!-- небольшой город -->
-		<rule e="node" k="place" v="town" zoom-min="6">
+		<rule cat="cities_towns" e="node" k="place" v="town" zoom-min="6">
 			<rule e="node" k="popcat" v="pc_20000|pc_30000|pc_50000|pc_100000|pc_200000|pc_500000|pc_1000000" zoom-max="6">
 				<caption k="name" font-style="normal" font-size="10" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
 			</rule>
@@ -2443,7 +2447,7 @@ Differences from Settler:
 			</rule>
 		</rule>
 		<!-- город -->
-		<rule e="node" k="place" v="city" zoom-min="5">
+		<rule cat="cities_towns" e="node" k="place" v="city" zoom-min="5">
 			<rule e="any" k="capital" v="~">
 				<rule e="node" k="*" v="*" zoom-max="8">
 					<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#D0FFFFFF" stroke-width="2" priority="105" display="always" />
@@ -2484,6 +2488,7 @@ Differences from Settler:
 				</rule>
 			</rule>
 		</rule>
+
 		<!-- -->
 		<rule e="node" k="place" v="state" zoom-max="4">
 			<caption k="name" font-style="bold" font-size="16" fill="#80000000" stroke="#80FFFFFF" stroke-width="2" priority="109" />
