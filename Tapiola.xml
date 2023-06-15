@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rendertheme xmlns="http://mapsforge.org/renderTheme" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
+<rendertheme xmlns="http://mapsforge.org/renderTheme"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
-Tapiola 1.1.3- 2023-06-14 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+	Tapiola 1.1.4- 2023-06-15 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
-Tapio is the god of forest in finnish mythology.
-Tapiola is his realm.
-Tapiola is Sibelius' Op. 112.
+	Tapio is the god of forest in finnish mythology.
+	Tapiola is his realm.
+	Tapiola is Sibelius' Op. 112.
 
-Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
--> Settler based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
+	Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
+		Settler based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
 -->
 	<stylemenu id="menu" defaultvalue="hiking" defaultlang="en">
 		<layer id="L_hikingtrails" enabled="false" visible="false">
@@ -52,11 +53,11 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 			<name lang="en" value="Cities, towns, villages" />
 			<cat id="cities_towns" />
 		</layer>
-		<layer id="L_villages_neighbourhoods" enabled="true" visible="false">
+		<layer id="L_neighbourhoods_suburbs" enabled="true" visible="false">
 			<name lang="ru" value="Neighbourhoods, suburbs, quarters" />
 			<name lang="de" value="Stadtteile" />
 			<name lang="en" value="Neighbourhoods, suburbs, quarters" />
-			<cat id="villages_neighbourhoods" />
+			<cat id="neighbourhoods_suburbs" />
 		</layer>
 		<layer id="L_protected_area" enabled="false" visible="false">
 			<name lang="ru" value="Национальные парки и охраняемые территории" />
@@ -184,12 +185,6 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 			<name lang="en" value="Power line" />
 			<cat id="power_line" />
 		</layer>
-		<!-- layer id="L_underground_footway" enabled="true" visible="false">
-			<name lang="ru" value="Подземные пешеходные переходы" />
-			<name lang="de" value="Unterirdische Fußgängerüberwege" />
-			<name lang="en" value="Underground pedestrian crossings" />
-			<cat id="underground_footway" />
-		</layer -->
 		<layer id="L_contourlines" enabled="true" visible="false">
 			<name lang="ru" value="Изолинии" />
 			<name lang="de" value="Höhenlinien" />
@@ -215,10 +210,9 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 			<overlay id="L_protected_area" />
 			<overlay id="L_boundaries_areas" />
 			<overlay id="L_cities_towns" />
-			<overlay id="L_villages_neighbourhoods" />
+			<overlay id="L_neighbourhoods_suburbs" />
 			<overlay id="L_publictransport" />
 			<overlay id="L_parking" />
-			<!-- overlay id="L_parking_prio" /-->
 			<overlay id="L_restaurants" />
 			<overlay id="L_shops" />
 			<overlay id="L_accommodation" />
@@ -236,7 +230,6 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 			<overlay id="L_barriers" />
 			<overlay id="L_mast_communication" />
 			<overlay id="L_power_line" />
-			<!-- overlay id="L_underground_footway" /-->
 			<overlay id="L_contourlines" />
 			<overlay id="L_building_type" />
 		</layer>
@@ -1124,15 +1117,15 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 	<!-- площадка для парковки -->
 	<rule e="any" k="amenity" v="parking" cat="parking" zoom-min="14">
 		<area fill="#F3F3F3" />
-		<!-- rule e="any" k="access" v="private|acc_no|permit|permissive" >
+		<!-- rule e="any" k="access" v="private|acc_no|permit|permissive">
 			<area src="file:patterns/access-private.svg" symbol-percent="30" />
-			<symbol src="file:symbols/parking_private.svg" symbol-percent="75"  display="always" />
+			<symbol src="file:symbols/parking_private.svg" symbol-percent="75" display="always" />
 		</rule -->
 		<rule e="any" k="access" v="destination">
 			<area src="file:patterns/access-destination.svg" symbol-percent="50" />
-			<symbol src="file:symbols/parking_private.svg" symbol-percent="75"  display="always" />
+			<symbol src="file:symbols/parking_private.svg" symbol-percent="75" display="always" />
 		</rule>
-		<rule e="any" k="access" v="~|yes|public" >
+		<rule e="any" k="access" v="~|yes|public">
 			<!--rule e="any" k="parking" v="*|~" -->
 				<symbol src="file:symbols/parking.svg" symbol-percent="75" display="always" />
 			<!-- /rule -->
@@ -1232,10 +1225,10 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 	<rule cat="landscapefeat" e="any" k="*" v="*">
 		<rule e="way" k="man_made" v="~">
 			<rule e="way" k="embankment" v="emb_yes" closed="no">
-				<rule e="way" k="highway" v="motorway" >
+				<rule e="way" k="highway" v="motorway">
 					<line stroke="#005a8c" stroke-width="2.8" stroke-dasharray="1,8" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="motorway_link|tertiary|tertiary_link|secondary_link|primary_link|trunk_link|secondary|primary|trunk" >
+				<rule e="way" k="highway" v="motorway_link|tertiary|tertiary_link|secondary_link|primary_link|trunk_link|secondary|primary|trunk">
 					<line stroke="#005a8c" stroke-width="2.4" stroke-dasharray="1,8" stroke-linecap="butt" />
 				</rule>
 				<line stroke="#005a8c" stroke-width="2.2" stroke-dasharray="1,8" stroke-linecap="butt" />
@@ -1328,7 +1321,7 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 		</rule>
 	</rule>
 	<rule e="way" k="area" v="yes|true">
-		<rule e="way" k="highway" v="*" >
+		<rule e="way" k="highway" v="*">
 			<rule e="way" k="highway" v="footway|path" zoom-min="13">
 				<area fill="#E8D1E2" stroke="#585858" stroke-width="0.1" />
 			</rule>
@@ -1427,18 +1420,18 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 	</rule>
 	<!-- hiking network high ZL: behind path -->
 	<rule e="way" k="hknetwork" v="*" cat="hikingtrails" zoom-min="14" zoom-max="15">
-		<rule e="way" k="hknetwork" v="iwn|nwn" >
+		<rule e="way" k="hknetwork" v="iwn|nwn">
 			<line stroke="#eefc3d03" stroke-width="3.0" />
 		</rule>
-		<rule e="way" k="hknetwork" v="lwn|rwn|own" >
+		<rule e="way" k="hknetwork" v="lwn|rwn|own">
 			<line stroke="#eefc3d03" stroke-width="3.2" stroke-dasharray="3,3" stroke-linecap="butt" scale="all"/>
 		</rule>
 	</rule>
-	<rule e="way" k="hknetwork" v="*" cat="hikingtrails" zoom-min="16" >
-		<rule e="way" k="hknetwork" v="iwn|nwn" >
+	<rule e="way" k="hknetwork" v="*" cat="hikingtrails" zoom-min="16">
+		<rule e="way" k="hknetwork" v="iwn|nwn">
 			<line stroke="#ccfc3d03" stroke-width="2.5" />
 		</rule>
-		<rule e="way" k="hknetwork" v="lwn|rwn|own" >
+		<rule e="way" k="hknetwork" v="lwn|rwn|own">
 			<line stroke="#ccfc3d03" stroke-width="2.7" stroke-dasharray="2,2" stroke-linecap="butt" scale="all"/>
 		</rule>
 	</rule>
@@ -1482,7 +1475,7 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 					<line stroke="#30000000" stroke-width="0.6" scale="all" stroke-dasharray="2.4,2.4" stroke-linecap="butt" />
 					<line stroke="#30FFFFFF" stroke-width="0.6" scale="all" stroke-dasharray="0,2.4,2.4,0" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="motorway" zoom-min="6" >
+				<rule e="way" k="highway" v="motorway" zoom-min="6">
 					<line stroke="#502f8bd6" stroke-width="2.2" stroke-linecap="butt" />
 					<line stroke="#707070" dy="1.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-1.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
@@ -1533,7 +1526,7 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 					<line stroke="#707070" dy="-0.5" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
 				<!-- подземные переходы и спуски в метро -->
-				<rule e="way" k="highway" v="steps|footway|path|bridleway" zoom-min="14" >
+				<rule e="way" k="highway" v="steps|footway|path|bridleway" zoom-min="14">
 					<line stroke="#50FFFFFF" stroke-width="0.4" stroke-linecap="butt" />
 					<line stroke="#A6707070" dy="0.2" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#A6707070" dy="-0.2" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
@@ -1613,12 +1606,12 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 					<line stroke="#ffffff" stroke-width="2.5" stroke-linecap="butt" />
 					<line stroke="#666666" stroke-width="2.1" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="motorway" zoom-min="6" >
+				<rule e="way" k="highway" v="motorway" zoom-min="6">
 					<line stroke="#353535" stroke-width="3.4" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="3.0" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="2.4" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="motorway_link" zoom-min="11" >
+				<rule e="way" k="highway" v="motorway_link" zoom-min="11">
 					<line stroke="#353535" stroke-width="2.8" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="2.4" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="2.0" stroke-linecap="butt" />
@@ -1721,10 +1714,10 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 					<rule e="way" k="highway" v="trunk" zoom-min="6">
 						<line stroke="#575757" stroke-width="2.2" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="highway" v="motorway_link" zoom-min="11" >
+					<rule e="way" k="highway" v="motorway_link" zoom-min="11">
 						<line stroke="#000000" stroke-width="2.0" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="highway" v="motorway" zoom-min="6" >
+					<rule e="way" k="highway" v="motorway" zoom-min="6">
 						<line stroke="#000000" stroke-width="2.4" stroke-linecap="butt" />
 					</rule>
 				</rule>
@@ -1754,7 +1747,7 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 					</rule>
 				</rule>
 				<!-- трекинг/хайкинг -->
-				<rule e="way" k="highway" v="path|footway" zoom-min="14" >
+				<rule e="way" k="highway" v="path|footway" zoom-min="14">
 					<!-- виа феррата рисуется отдельно ниже -->
 					<rule e="way" k="via_ferrata_flag|via_ferrata_scale|via_ferrata" v="~">
 						<!-- белый фон + серые черточки -->
@@ -1797,27 +1790,27 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 				</rule>
 				<!-- лесные дороги, неофициальные грунтовки, "козьи тропы" - NOTE - проверить -->
 				<rule e="way" k="highway" v="track|byway" zoom-min="12">
-					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="13" zoom-max="13" >
+					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="13" zoom-max="13">
 						<line stroke="#dd53534e" stroke-width="2" stroke-linecap="butt" />
 						<line stroke="#dde2dcc1" stroke-width="1.5" />
 					</rule>
-					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="14" >
+					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="14">
 						<line stroke="#53534e" stroke-width="1.5" stroke-dasharray="8,4" stroke-linecap="butt" />
 						<line stroke="#e2dcc1" stroke-width="1.1" />
 					</rule>
-					<rule e="way" k="tracktype" v="grade3" zoom-min="13" zoom-max="13" >
+					<rule e="way" k="tracktype" v="grade3" zoom-min="13" zoom-max="13">
 						<line stroke="#dd53534e" stroke-width="2" stroke-linecap="butt" />
 						<line stroke="#dde8e2c7" stroke-width="1.5" />
 					</rule>
-					<rule e="way" k="tracktype" v="grade3" zoom-min="14" zoom-max="15" >
+					<rule e="way" k="tracktype" v="grade3" zoom-min="14" zoom-max="15">
 						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
 						<line stroke="#e8e2c7" stroke-width="1.1" />
 					</rule>
-					<rule e="way" k="tracktype" v="grade3" zoom-min="16" >
+					<rule e="way" k="tracktype" v="grade3" zoom-min="16">
 						<line stroke="#53534e" stroke-width="1.5" stroke-dasharray="8,4" stroke-linecap="butt" />
 						<line stroke="#e8e2c7" stroke-width="1.1" />
 					</rule>
-					<rule e="way" k="tracktype" v="grade2" zoom-min="12" zoom-max="13" >
+					<rule e="way" k="tracktype" v="grade2" zoom-min="12" zoom-max="13">
 						<line stroke="#dd53534e" stroke-width="2" stroke-linecap="butt" />
 						<line stroke="#ddf4e3c7" stroke-width="1.5" />
 					</rule>
@@ -1833,7 +1826,7 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
 						<line stroke="#ffffff" stroke-width="1.1" />
 					</rule>
-					<rule e="way" k="tracktype" v="~|no|false" zoom-min="12" zoom-max="15" >
+					<rule e="way" k="tracktype" v="~|no|false" zoom-min="12" zoom-max="15">
 						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
 						<line stroke="#f5d7a4" stroke-width="1.1" />
 					</rule>
@@ -1950,7 +1943,7 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 						</rule>
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="tertiary_link" zoom-min="11" zoom-max="12" >
+				<rule e="way" k="highway" v="tertiary_link" zoom-min="11" zoom-max="12">
 					<line stroke="#ffffff" stroke-width="1.4" />
 				</rule>
 				<rule e="way" k="highway" v="tertiary_link" zoom-min="13">
@@ -1965,14 +1958,14 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 				<rule e="way" k="highway" v="trunk_link" zoom-min="11">
 					<line stroke="#26a965" stroke-width="1.4" />
 				</rule>
-				<rule e="way" k="highway" v="motorway_link" zoom-min="11" >
+				<rule e="way" k="highway" v="motorway_link" zoom-min="11">
 					<line stroke="#0083d7" stroke-width="1.4" />
 				</rule>
-				<rule e="way" k="highway" v="tertiary|raceway" zoom-min="11"zoom-max="12" >
+				<rule e="way" k="highway" v="tertiary|raceway" zoom-min="11"zoom-max="12">
 					<line stroke="#ffffff" stroke-width="1.4" />
 					<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
 				</rule>
-				<rule e="way" k="highway" v="tertiary|raceway" zoom-min="13" >
+				<rule e="way" k="highway" v="tertiary|raceway" zoom-min="13">
 					<line stroke="#ffff33" stroke-width="1.4" />
 					<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
 				</rule>
@@ -1997,7 +1990,7 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 						<pathText k="ref" repeat-start="50" repeat-gap="200" font-family="sans_serif" font-style="bold" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.0" />
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="motorway" zoom-min="6" >
+				<rule e="way" k="highway" v="motorway" zoom-min="6">
 					<line stroke="#0083d7" stroke-width="1.8" stroke-linecap="butt" />
 					<pathText k="ref" repeat-start="50" repeat-gap="400" font-family="sans_serif" font-style="bold" font-size="11" fill="#FFFFFF" stroke="#000000" stroke-width="2.0" />
 				</rule>
@@ -2372,46 +2365,40 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 			<caption k="name" font-style="italic" font-family="serif" font-size="15" fill="#90000000" stroke="#c0ffffff" stroke-width="3" priority="97" text-wrap-width="135" />
 		</rule>
 	</rule>
-	<!-- Населенные пункты -->
+
+	<!-- Towns, states, etc. - organisational areas -->
 	<rule e="node" k="place" v="*">
-       <rule cat="villages_neighbourhoods" e="node" k="place" v="farm|isolated_dwelling|hamlet|village|suburb|neighbourhood|quarter" >
-		<rule e="node" k="place" v="farm" zoom-min="14">
-			<caption k="name" dy="16" font-style="normal" font-size="10" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="99" />
+		<!-- Neighborhoods and Suburbs -->
+		<rule cat="neighbourhoods_suburbs" e="node" k="place" v="farm|isolated_dwelling|hamlet|village|suburb|neighbourhood|quarter">
+			<rule e="node" k="place" v="farm" zoom-min="14">
+				<caption k="name" dy="16" font-style="normal" font-size="10" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="99" />
+			</rule>
+			<rule e="node" k="place" v="isolated_dwelling" zoom-min="13" zoom-max="17">
+				<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="1.2" text-transform="capitalize" text-wrap-width="120" priority="99" />
+			</rule>
+			<rule e="node" k="place" v="hamlet" zoom-min="13" zoom-max="15">
+				<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="1.2" text-transform="capitalize" text-wrap-width="120" priority="100" />
+			</rule>
+			<rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="12">
+				<rule e="node" k="*" v="*" zoom-min="12" zoom-max="12">
+					<caption k="name" font-style="italic" font-family="sans_serif" font-size="10" fill="#EE666666" stroke="#EEFFFFFF" stroke-width="2" priority="103" text-wrap-width="200" display="always" />
+				</rule>
+				<rule e="node" k="place" v="*" zoom-min="13" zoom-max="13">
+					<caption k="name" font-style="bold_italic" font-family="serif" font-size="13" fill="#CC666666" stroke="#EEFFFFFF" stroke-width="2.5" priority="103" text-wrap-width="200" display="always" />
+				</rule>
+				<rule e="node" k="*" v="*" zoom-min="14" zoom-max="14">
+					<caption k="name" font-style="bold_italic" font-family="serif" font-size="15" fill="#CC666666" stroke="#FFFFFFFF" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
+				</rule>
+				<rule e="node" k="*" v="*" zoom-min="15" zoom-max="15">
+					<caption k="name" font-style="bold_italic" font-family="serif" font-size="17" fill="#CC666666" stroke="#FFFFFFFF" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
+				</rule>
+			</rule>
 		</rule>
-
-		<!-- хутор -->
-		<rule e="node" k="place" v="isolated_dwelling" zoom-min="13" zoom-max="17">
-			<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="1.2" text-transform="capitalize" text-wrap-width="120" priority="99" />
-		</rule>
-		<!-- маленькая деревня или хутор на несколько семей -->
-		<rule e="node" k="place" v="hamlet" zoom-min="13" zoom-max="15">
-			<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="1.2" text-transform="capitalize" text-wrap-width="120" priority="100" />
-		</rule>
-
-		<!-- район или отдельная часть города, имеющая своё название (не административное) -->
-        <rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="12" >
-        	<rule e="node" k="*" v="*" zoom-min="12" zoom-max="12">
-			    <caption k="name" font-style="italic" font-family="sans_serif" font-size="10" fill="#EE666666" stroke="#EEFFFFFF" stroke-width="2" priority="103" text-wrap-width="200" display="always" />
-		    </rule>
-            <rule e="node" k="place" v="*" zoom-min="13" zoom-max="13">
-			    <caption k="name" font-style="bold_italic" font-family="serif" font-size="13" fill="#CC666666" stroke="#EEFFFFFF" stroke-width="2.5" priority="103" text-wrap-width="200" display="always" />
-		    </rule>
-            <rule e="node" k="*" v="*" zoom-min="14" zoom-max="14">
-			    <caption k="name" font-style="bold_italic" font-family="serif" font-size="15" fill="#CC666666" stroke="#FFFFFFFF" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
-		    </rule>
-		    <rule e="node" k="*" v="*" zoom-min="15" zoom-max="15">
-			    <caption k="name" font-style="bold_italic" font-family="serif" font-size="17" fill="#CC666666" stroke="#FFFFFFFF" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
-		    </rule>
-		</rule>
-
-        </rule>
-	
-        <!-- деревня -->
+		<!-- Villages, Towns, Cities -->
 		<rule cat="cities_towns" e="node" k="place" v="village" zoom-min="12">
-            <rule e="node" k="*" v="*" zoom-min="12" zoom-max="12">
+			<rule e="node" k="*" v="*" zoom-min="12" zoom-max="12">
 				<caption k="name" font-style="normal" font-size="13" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="150" display="always" />
 			</rule>
-
 			<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
 				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="140" display="always" />
 			</rule>
@@ -2419,7 +2406,6 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" display="always" />
 			</rule>
 		</rule>
-		<!-- небольшой город -->
 		<rule cat="cities_towns" e="node" k="place" v="town" zoom-min="6">
 			<rule e="node" k="popcat" v="pc_20000|pc_30000|pc_50000|pc_100000|pc_200000|pc_500000|pc_1000000" zoom-max="6">
 				<caption k="name" font-style="normal" font-size="10" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
@@ -2446,7 +2432,6 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 				<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-wrap-width="250" display="always" />
 			</rule>
 		</rule>
-		<!-- город -->
 		<rule cat="cities_towns" e="node" k="place" v="city" zoom-min="5">
 			<rule e="any" k="capital" v="~">
 				<rule e="node" k="*" v="*" zoom-max="8">
@@ -2489,21 +2474,18 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 			</rule>
 		</rule>
 
-		<!-- -->
+		<!-- State etc. -->
 		<rule e="node" k="place" v="state" zoom-max="4">
 			<caption k="name" font-style="bold" font-size="16" fill="#80000000" stroke="#80FFFFFF" stroke-width="2" priority="109" />
 		</rule>
-		<!-- страна -->
 		<rule e="node" k="place" v="country" zoom-max="4">
 			<caption k="name" font-style="bold" font-size="20" fill="#80000000" stroke="#80FFFFFF" stroke-width="2" priority="109" />
 		</rule>
-		<!-- маленький остров -->
 		<rule e="node" k="place" v="islet" zoom-min="13">
 			<rule e="any" k="landuse" v="*">
 				<caption k="name" font-style="italic" font-size="22" fill="#000000" stroke="#ffffff" stroke-width="1.5" text-wrap-width="120" />
 			</rule>
 		</rule>
-		<!-- остров -->
 		<rule e="any" k="place" v="island">
 			<rule e="any" k="bBoxWeight" v="xxxlarge|xxlarge|xlarge|large" zoom-min="10">
 				<caption priority="95" k="name" font-style="italic" font-size="14" fill="#111111" stroke="#ffffff" stroke-width="1.5" text-wrap-width="120" />
@@ -2518,7 +2500,6 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 				<caption k="ele" priority="-5" dy="25" font-style="italic" font-size="12" fill="#111111" stroke="#ffffff" stroke-width="1.5" text-wrap-width="120" />
 			</rule>
 		</rule>
-		<!-- архипелаг -->
 		<rule e="any" k="place" v="archipelago" zoom-min="10">
 			<rule e="any" k="bBoxWeight" v="xxxlarge|xxlarge|xlarge|large" zoom-min="10">
 				<caption priority="96" k="name" font-style="italic" font-size="14" fill="#111111" stroke="#ffffff" stroke-width="2.0" text-wrap-width="120" />
@@ -2692,7 +2673,7 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 	</rule>
 	<rule e="node" k="natural" v="*">
 		<!-- вершина горы / вулкана -->
-		<rule e="node" k="natural" v="peak|volcano" cat="landscapefeat" >
+		<rule e="node" k="natural" v="peak|volcano" cat="landscapefeat">
 			<!-- 1 -->
 			<rule e="node" k="peak_dist" v="pd_1" zoom-min="11">
 				<rule e="node" k="*" v="*" zoom-min="11" zoom-max="14">
@@ -2950,7 +2931,7 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 		<rule e="any" k="highway" v="emergency_access_point">
 			<rule e="any" k="*" v="*" zoom-min="15" zoom-max="16">
 				<symbol id="id_emergency_access_point" src="file:symbols/emergency_access_point.svg" symbol-height="15" display="always" priority="102" />
-				<!--caption symbol-id="id_emergency_access_point" position="above" k="addr:housenumber"  font-style="bold" font-size="10" fill="#CA1212" stroke="#C0FFFFFF" stroke-width="2" /-->
+				<!--caption symbol-id="id_emergency_access_point" position="above" k="addr:housenumber" font-style="bold" font-size="10" fill="#CA1212" stroke="#C0FFFFFF" stroke-width="2" /-->
 			</rule>
 			<rule e="any" k="*" v="*" zoom-min="17">
 				<symbol id="id_emergency_access_point" src="file:symbols/emergency_access_point.svg" symbol-height="24" display="always" priority="102" />
@@ -3400,7 +3381,7 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 				<caption symbol-id="id_zoo" k="name" font-style="italic" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="1.5" text-wrap-width="120" />
 			</rule>
 		</rule>
-				<!-- точечные объекты - столы и т.п. -->
+		<!-- точечные объекты - столы и т.п. -->
 		<rule cat="benches" e="node" k="tourism" v="picnic_site" zoom-min="15">
 			<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="100" display="always" />
 			<rule e="any" k="*" v="*" zoom-min="15">
@@ -3499,10 +3480,10 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 	</rule>
 	<!-- велодорожки -->
 	<rule e="any" k="*" v="*" cat="cycling" zoom-min="10">
-		<rule e="way" k="network" v="icn|ncn|rcn|lcn|ocn" zoom-max="12" >
+		<rule e="way" k="network" v="icn|ncn|rcn|lcn|ocn" zoom-max="12">
 			<line dy="-0.9" stroke="#474aff" stroke-width="1.5" stroke-linecap="butt" />
 		</rule>
-		<rule e="way" k="network" v="icn|ncn|rcn|lcn|ocn" zoom-min="13" >
+		<rule e="way" k="network" v="icn|ncn|rcn|lcn|ocn" zoom-min="13">
 			<line dy="-0.9" stroke="#474aff" stroke-width="1.6" stroke-linecap="butt" />
 		</rule>
 		<rule e="any" k="network" v="icn|ncn|rcn|lcn|ocn" zoom-min="11">
@@ -3510,11 +3491,11 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 		</rule>
 	</rule>
 	<!-- hiking network low zl, on top of paths-->
-	<rule e="way" k="hknetwork" v="*" cat="hikingtrails" zoom-min="10" zoom-max="13" >
-		<rule e="way" k="hknetwork" v="iwn|nwn" >
+	<rule e="way" k="hknetwork" v="*" cat="hikingtrails" zoom-min="10" zoom-max="13">
+		<rule e="way" k="hknetwork" v="iwn|nwn">
 			<line stroke="#fc3d03" stroke-width="1.2" />
 		</rule>
-		<rule e="way" k="hknetwork" v="lwn|rwn|own" zoom-min="13" zoom-max="13" >
+		<rule e="way" k="hknetwork" v="lwn|rwn|own" zoom-min="13" zoom-max="13">
 			<line stroke="#fc3d03" stroke-width="1.2" stroke-dasharray="3,3" stroke-linecap="butt" scale="all" />
 		</rule>
 		<!-- Название маршрута -->
@@ -3524,18 +3505,18 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 		</rule>
 	</rule>
 	<!-- Captions for Hiking-Routes -->
-		<!-- OAM maps-->
-	<rule e="way" k="hknetwork" v="*" cat="hikingtrails" >
-		<rule e="way" k="hknetwork" v="iwn|nwn" zoom-min="11" zoom-max="14" >
-           <pathText repeat-gap="120" k="ref_hike" font-style="normal" font-size="9" fill="#f00d00" stroke="#FFFFFF" stroke-width="3" priority="200"/>
+	<!-- OAM maps-->
+	<rule e="way" k="hknetwork" v="*" cat="hikingtrails">
+		<rule e="way" k="hknetwork" v="iwn|nwn" zoom-min="11" zoom-max="14">
+			<pathText repeat-gap="120" k="ref_hike" font-style="normal" font-size="9" fill="#f00d00" stroke="#FFFFFF" stroke-width="3" priority="200"/>
 		</rule>
-		<rule e="way" k="hknetwork" v="rwn|lwn" >
+		<rule e="way" k="hknetwork" v="rwn|lwn">
 			<rule e="way" k="highway" v="footway|footpath|path|bridleway|cycleway|steps|track|byway|pedestrian|service|residential|living_street|construction|road|ford|unclassified|tertiary|secondary" zoom-min="14" zoom-max="14">
 				<pathText repeat-gap="120" k="ref_hike" font-style="normal" font-size="9" fill="#f00d00" stroke="#FFFFFF" stroke-width="3" priority="200"/>
 			</rule>
 		</rule>
-		<rule e="way" k="hknetwork|network" v="iwn|nwn|rwn|lwn" >
-		    <rule e="way" k="highway" v="footway|footpath|path|bridleway|cycleway|steps|track|byway|pedestrian|service|residential|living_street|construction|road|ford|unclassified|tertiary|secondary" zoom-min="15">
+		<rule e="way" k="hknetwork|network" v="iwn|nwn|rwn|lwn">
+			<rule e="way" k="highway" v="footway|footpath|path|bridleway|cycleway|steps|track|byway|pedestrian|service|residential|living_street|construction|road|ford|unclassified|tertiary|secondary" zoom-min="15">
 				<rule e="way" k="*" v="*" zoom-max="17">
 					<pathText repeat-gap="170" repeat-start="10" k="ref_hike" font-style="normal" font-size="10" fill="#f00d00" stroke="#FFFFFF" stroke-width="3" dy="1.7" priority="200"/>
 				</rule>
@@ -3545,13 +3526,13 @@ Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https
 			</rule>
 		</rule>
 	</rule>
-		<!-- NOTE должно показывать номер маршрута кажется (но я это не проверял, потому что не нашел таких мест -->
-	<rule cat="hikingtrails" e="node" k="hike_node" v="*" zoom-min="13" >
-		<rule cat="nocity" e="any" k="*" v="*" zoom-min="13" zoom-max="14" >
+	<!-- NOTE должно показывать номер маршрута кажется (но я это не проверял, потому что не нашел таких мест -->
+	<rule cat="hikingtrails" e="node" k="hike_node" v="*" zoom-min="13">
+		<rule cat="nocity" e="any" k="*" v="*" zoom-min="13" zoom-max="14">
 			<circle radius="6.4" scale-radius="false" fill="#ffffff" stroke="#008131" stroke-width="1.5" />
 			<caption k="addr:housenumber" display="always" priority="14" font-style="bold" font-size="9" fill="#008131" stroke="#FFFFFF" stroke-width="2" />
 		</rule>
-		<rule e="any" k="*" v="*" zoom-min="15" zoom-max="16" >
+		<rule e="any" k="*" v="*" zoom-min="15" zoom-max="16">
 			<circle radius="8.0" scale-radius="false" fill="#ffffff" stroke="#008131" stroke-width="2" />
 			<caption k="addr:housenumber" display="always" priority="14" font-style="bold" font-size="10" fill="#008131" stroke="#FFFFFF" stroke-width="2" />
 		</rule>
