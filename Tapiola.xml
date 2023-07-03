@@ -2,7 +2,7 @@
 <rendertheme xmlns="http://mapsforge.org/renderTheme"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
-	Tapiola 1.1.9 - 2023-07-02 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+	Tapiola 1.2.0 - 2023-07-03 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 	Tapio is the god of forest in finnish mythology.
 	Tapiola is his realm.
@@ -20,19 +20,20 @@
 		</layer>
 		<layer id="L_hikingnodes" enabled="false" visible="false">
 			<name lang="ru" value="Указатель номера маршрута" />
-			<name lang="de" value="Wanderwege Knotenpunkte" />
+			<name lang="de" value="Wanderwege: Knotenpunkte" />
 			<name lang="en" value="Hiking Nodes" />
 			<cat id="hikingnodes" />
 		</layer>
 		<layer id="L_cycling" enabled="false" visible="false">
 			<name lang="ru" value="Велосипед" />
+			<name lang="de" value="Radwege" />
 			<name lang="en" value="Cycling networks" />
 			<cat id="cycling" />
 		</layer>
 		<layer id="L_mtb_trails" enabled="false" visible="false">
 			<name lang="ru" value="Трассы для горного велосипеда" />
 			<name lang="en" value="MTB trails" />
-			<name lang="de" value="MTB trails" />
+			<name lang="de" value="MTB-Trails" />
 			<cat id="mtb_trails" />
 		</layer>
 		<layer id="L_sports" enabled="true" visible="false">
@@ -85,20 +86,20 @@
 		</layer>
 		<layer id="L_restaurants" enabled="true" visible="false">
 			<name lang="ru" value="Рестораны и кафе" />
-			<name lang="de" value="Restaurants + Cafés" />
-			<name lang="en" value="Restaurants + Cafés" />
+			<name lang="de" value="Restaurants und Cafés" />
+			<name lang="en" value="Restaurants and Cafés" />
 			<cat id="restaurants" />
 		</layer>
 		<layer id="L_shops" enabled="true" visible="false">
 			<name lang="ru" value="Магазины + услуги " />
-			<name lang="de" value="Geschäfte + Dienstleistungen" />
-			<name lang="en" value="Shops + services" />
+			<name lang="de" value="Geschäfte und Dienstleistungen" />
+			<name lang="en" value="Shops and services" />
 			<cat id="shops" />
 		</layer>
 		<layer id="L_accommodation" enabled="true" visible="false">
 			<name lang="ru" value="Отели и другое размещение" />
-			<name lang="de" value="Hotels + Unterkünfte" />
-			<name lang="en" value="Hotels + Accommodation" />
+			<name lang="de" value="Hotels und Unterkünfte" />
+			<name lang="en" value="Hotels and Accommodation" />
 			<cat id="accommodation" />
 		</layer>
 		<layer id="L_pharmacies" enabled="true" visible="false">
@@ -109,7 +110,7 @@
 		</layer>
 		<layer id="L_emergency" enabled="true" visible="false">
 			<name lang="ru" value="Службы спасения (полиция/пожарные/дефибриллятор и т.п.)" />
-			<name lang="de" value="Notfall (polizei, feuerwehr, ...)" />
+			<name lang="de" value="Notfall (Polizei, Feuerwehr, ...)" />
 			<name lang="en" value="Emergency (police, firemen, ...)" />
 			<cat id="emergency" />
 		</layer>
@@ -133,13 +134,13 @@
 		</layer>
 		<layer id="L_toilets" enabled="true" visible="false">
 			<name lang="ru" value="Туалеты" />
-			<name lang="de" value="Toilette" />
-			<name lang="en" value="Toilet" />
+			<name lang="de" value="Toiletten" />
+			<name lang="en" value="Toilets" />
 			<cat id="toilets" />
 		</layer>
 		<layer id="L_refuge" enabled="true" visible="false">
 			<name lang="ru" value="Укрытие (домики/навесы/беседки)" />
-			<name lang="de" value="Zuflucht" />
+			<name lang="de" value="Unterstände" />
 			<name lang="en" value="Refuge" />
 			<cat id="refuge" />
 		</layer>
@@ -1741,8 +1742,23 @@
 				<rule e="way" k="highway" v="path|footway" zoom-min="14">
 					<!-- виа феррата рисуется отдельно ниже -->
 					<rule e="way" k="via_ferrata_flag|via_ferrata_scale|via_ferrata" v="~">
-						<!-- белый фон + серые черточки -->
-						<rule e="way" k="sac_scale" v="~|hiking">
+						<!-- Paths with surface:asphalt/paved like paved roads -->
+						<rule e="way" k="sac_scale" v="~" >
+							<rule e="way" k="surface" v="*" >
+								<line stroke="#8f4e1d" stroke-width="0.8" stroke-linecap="butt" />
+								<line stroke="#ffffff" stroke-width="0.8" stroke-dasharray="0.8,0.8" stroke-linecap="butt" scale="all" />
+							</rule>
+							<!-- If asphalt, draw on top - not perfect -->
+							<rule e="way" k="surface" v="asphalt|paved|concrete" zoom-max="15" >
+								<line stroke="#000000" stroke-width="1.3" stroke-linecap="butt" />
+								<line stroke="#ffffff" stroke-width="1.1" stroke-linecap="butt" />
+							</rule>
+							<rule e="way" k="surface" v="asphalt|paved|concrete" zoom-min="16" >
+								<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
+								<line stroke="#ffffff" stroke-width="0.8" stroke-linecap="butt" />
+							</rule>
+						</rule>
+						<rule e="way" k="sac_scale" v="hiking" >
 							<line stroke="#8f4e1d" stroke-width="0.8" stroke-linecap="butt" />
 							<line stroke="#ffffff" stroke-width="0.8" stroke-dasharray="0.8,0.8" stroke-linecap="butt" scale="all" />
 						</rule>
