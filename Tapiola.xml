@@ -1811,20 +1811,20 @@
 				<rule e="way" k="highway" v="track|byway" zoom-min="12">
 					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="13" zoom-max="14">
 						<line stroke="#dd53534e" stroke-width="1.5" stroke-linecap="butt" />
-						<line stroke="#fff0ce" stroke-width="1.1" />
+						<line stroke="#fff7d5" stroke-width="1.1" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="15">
-						<line stroke="#53534e" stroke-width="1.2" stroke-linecap="butt" />
-						<line stroke="#fff0ce" stroke-width="0.9" />
+						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
+						<line stroke="#fff7d5" stroke-width="1.1" />
 						<line stroke="#8f4e1d" stroke-width="0.5" stroke-dasharray="1,1,1,5" stroke-linecap="butt" scale="all" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade2|grade3" zoom-min="13" zoom-max="14">
 						<line stroke="#dd53534e" stroke-width="1.5" stroke-linecap="butt" />
-						<line stroke="#fff0ce" stroke-width="1.1" />
+						<line stroke="#fff7d5" stroke-width="1.1" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade2|grade3" zoom-min="15">
-						<line stroke="#53534e" stroke-width="1.2" stroke-linecap="butt" />
-						<line stroke="#fff0ce" stroke-width="0.9" />
+						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
+						<line stroke="#fff7d5" stroke-width="1.1" />
 						<line stroke="#8f4e1d" stroke-width="0.5" stroke-dasharray="1,6" stroke-linecap="butt" scale="all" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade1" zoom-max="13">
@@ -1832,16 +1832,16 @@
 						<line stroke="#ffffff" stroke-width="1.1" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade1" zoom-min="14">
-						<line stroke="#53534e" stroke-width="1.2" stroke-linecap="butt" />
-						<line stroke="#ffffff" stroke-width="0.9" />
+						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
+						<line stroke="#ffffff" stroke-width="1.1" />
 					</rule>
 					<rule e="way" k="tracktype" v="~|no|false" zoom-min="12" zoom-max="14">
 						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
-						<line stroke="#fff0ce" stroke-width="1.1" />
+						<line stroke="#fff7d5" stroke-width="1.1" />
 					</rule>
 					<rule e="way" k="tracktype" v="~|no|false" zoom-min="15">
 						<line stroke="#53534e" stroke-width="1.5" />
-						<line stroke="#fff0ce" stroke-width="1.1" />
+						<line stroke="#fff7d5" stroke-width="1.1" />
 						<line stroke="#8f4e1d" stroke-width="0.6" stroke-dasharray="1,2,2,10" stroke-linecap="butt" scale="all" / >
 					</rule>
 					<rule e="way" cat="access" k="foot" v="ft_no">
