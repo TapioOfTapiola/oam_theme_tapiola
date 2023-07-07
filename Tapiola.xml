@@ -2,7 +2,7 @@
 <rendertheme xmlns="http://mapsforge.org/renderTheme"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
-	Tapiola 1.2.0 - 2023-07-03 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+	Tapiola 1.2.1 - 2023-07-07 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 	Tapio is the god of forest in finnish mythology.
 	Tapiola is his realm.
@@ -35,6 +35,10 @@
 			<name lang="en" value="MTB trails" />
 			<name lang="de" value="MTB-Trails" />
 			<cat id="mtb_trails" />
+		</layer>
+		<layer id="L_access" enabled="true" visible="false">
+			<name lang="en" value="Access restriction lines" />
+			<cat id="access" />
 		</layer>
 		<layer id="L_sports" enabled="true" visible="false">
 			<name lang="ru" value="Спорт" />
@@ -206,6 +210,7 @@
 			<overlay id="L_hikingnodes" />
 			<overlay id="L_cycling" />
 			<overlay id="L_mtb_trails" />
+			<overlay id="L_access" />
 			<overlay id="L_sports" />
 			<overlay id="L_winter_sports" />
 			<overlay id="L_protected_area" />
@@ -1745,16 +1750,21 @@
 						<!-- Paths with surface:asphalt/paved like paved roads -->
 						<rule e="way" k="sac_scale" v="~" >
 							<rule e="way" k="surface" v="*" >
-								<line stroke="#8f4e1d" stroke-width="0.8" stroke-linecap="butt" />
-								<line stroke="#ffffff" stroke-width="0.8" stroke-dasharray="0.8,0.8" stroke-linecap="butt" scale="all" />
+								<line stroke="#9f5e2d" stroke-width="0.7" stroke-linecap="butt" />
+								<line stroke="#ffffff" stroke-width="0.7" stroke-dasharray="1,1" stroke-linecap="butt" scale="all" />
 							</rule>
-							<!-- If asphalt, draw on top - not perfect -->
+							<rule e="way" k="surface" v="~" >
+								<line stroke="#9f5e2d" stroke-width="0.7" stroke-linecap="butt" />
+								<line stroke="#ffffff" stroke-width="0.7" stroke-dasharray="1,1" stroke-linecap="butt" scale="all" />
+							</rule>
+							<!-- If asphalt, draw on top - not perfect - todo -->
 							<rule e="way" k="surface" v="asphalt|paved|concrete" zoom-max="15" >
 								<line stroke="#000000" stroke-width="1.3" stroke-linecap="butt" />
 								<line stroke="#ffffff" stroke-width="1.1" stroke-linecap="butt" />
+								<line stroke="#0066ff" stroke-width="0.3" stroke-dasharray="0.8,1" stroke-linecap="butt" scale="all" />
 							</rule>
 							<rule e="way" k="surface" v="asphalt|paved|concrete" zoom-min="16" >
-								<line stroke="#000000" stroke-width="1" stroke-linecap="butt" />
+								<line stroke="#000000" stroke-width="1.1" stroke-linecap="butt" />
 								<line stroke="#ffffff" stroke-width="0.8" stroke-linecap="butt" />
 								<line stroke="#0066ff" stroke-width="0.4" stroke-dasharray="0.8,1" stroke-linecap="butt" scale="all" />
 							</rule>
@@ -1784,8 +1794,9 @@
 								<line stroke="#53534e" stroke-width="1.2" stroke-dasharray="4,4" stroke-linecap="butt" scale="stroke" />
 							</rule>
 						</rule>
-						<rule e="way" k="foot" v="ft_no">
-							<line stroke="#40FF00" stroke-width="1.2" stroke-dasharray="3,5" stroke-linecap="butt" scale="stroke" />
+						<!-- No pedestrians, restriction, green -->
+						<rule e="way" cat="access" k="foot" v="ft_no">
+							<line stroke="#228B22" stroke-width="1.7" stroke-dasharray="0.3,1.5" stroke-linecap="butt" scale="all" />
 						</rule>
 						<!-- название дорожек -->
 						<rule e="way" k="*" v="*" zoom-min="15" zoom-max="16">
@@ -1799,54 +1810,42 @@
 				<!-- лесные дороги, неофициальные грунтовки, "козьи тропы" - NOTE - проверить -->
 				<rule e="way" k="highway" v="track|byway" zoom-min="12">
 					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="13" zoom-max="14">
-						<line stroke="#dd53534e" stroke-width="2" stroke-linecap="butt" />
-						<line stroke="#dde9e3c8" stroke-width="1.5" />
+						<line stroke="#dd53534e" stroke-width="1.5" stroke-linecap="butt" />
+						<line stroke="#fff0ce" stroke-width="1.1" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="15">
-						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
+						<line stroke="#53534e" stroke-width="1.2" stroke-linecap="butt" />
+						<line stroke="#fff0ce" stroke-width="0.9" />
+						<line stroke="#8f4e1d" stroke-width="0.5" stroke-dasharray="1,1,1,5" stroke-linecap="butt" scale="all" />
+					</rule>
+					<rule e="way" k="tracktype" v="grade2|grade3" zoom-min="13" zoom-max="14">
+						<line stroke="#dd53534e" stroke-width="1.5" stroke-linecap="butt" />
 						<line stroke="#fff0ce" stroke-width="1.1" />
-						<line stroke="#888A2908" stroke-width="0.6" stroke-dasharray="0.4,1,0.4,6" stroke-linecap="round" scale="all" />
 					</rule>
-					<rule e="way" k="tracktype" v="grade3" zoom-min="13" zoom-max="13">
-						<line stroke="#dd53534e" stroke-width="2" stroke-linecap="butt" />
-						<line stroke="#ddefe9ce" stroke-width="1.5" />
-					</rule>
-					<rule e="way" k="tracktype" v="grade3" zoom-min="14" zoom-max="14">
-						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
-						<line stroke="#ffeace" stroke-width="1.1" />
-					</rule>
-					<rule e="way" k="tracktype" v="grade3" zoom-min="15">
-						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
-						<line stroke="#ffeace" stroke-width="1.1" />
-						<line stroke="#888A2908" stroke-width="0.6" stroke-dasharray="0.4,8" stroke-linecap="round" scale="all" />
-					</rule>
-					<rule e="way" k="tracktype" v="grade2" zoom-min="12" zoom-max="14">
-						<line stroke="#dd53534e" stroke-width="2" stroke-linecap="butt" />
-						<line stroke="#ddffeace" stroke-width="1.5" />
-					</rule>
-					<rule e="way" k="tracktype" v="grade2" zoom-min="15">
-						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
-						<line stroke="#ffeace" stroke-width="1.1" />
+					<rule e="way" k="tracktype" v="grade2|grade3" zoom-min="15">
+						<line stroke="#53534e" stroke-width="1.2" stroke-linecap="butt" />
+						<line stroke="#fff0ce" stroke-width="0.9" />
+						<line stroke="#8f4e1d" stroke-width="0.5" stroke-dasharray="1,6" stroke-linecap="butt" scale="all" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade1" zoom-max="13">
-						<line stroke="#53534e" stroke-width="2" stroke-linecap="butt" />
-						<line stroke="#ffffff" stroke-width="1.5" />
-					</rule>
-					<rule e="way" k="tracktype" v="grade1" zoom-min="14">
 						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
 						<line stroke="#ffffff" stroke-width="1.1" />
 					</rule>
+					<rule e="way" k="tracktype" v="grade1" zoom-min="14">
+						<line stroke="#53534e" stroke-width="1.2" stroke-linecap="butt" />
+						<line stroke="#ffffff" stroke-width="0.9" />
+					</rule>
 					<rule e="way" k="tracktype" v="~|no|false" zoom-min="12" zoom-max="14">
 						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
-						<line stroke="#ddffeace" stroke-width="1.1" />
+						<line stroke="#fff0ce" stroke-width="1.1" />
 					</rule>
 					<rule e="way" k="tracktype" v="~|no|false" zoom-min="15">
-						<line stroke="#53534e" stroke-width="1.5" stroke-dasharray="12,3" stroke-linecap="butt" />
-						<line stroke="#ffeace" stroke-width="1.1" />
-						<line stroke="#888A2908" stroke-width="0.6" stroke-dasharray="0.4,2.5,2,14" stroke-linecap="round" scale="all" />
+						<line stroke="#53534e" stroke-width="1.5" />
+						<line stroke="#fff0ce" stroke-width="1.1" />
+						<line stroke="#8f4e1d" stroke-width="0.6" stroke-dasharray="1,2,2,10" stroke-linecap="butt" scale="all" / >
 					</rule>
-					<rule e="way" k="foot" v="ft_no">
-						<line stroke="#FF4000" stroke-width="0.4" stroke-dasharray="3,5" stroke-linecap="butt" scale="stroke" />
+					<rule e="way" cat="access" k="foot" v="ft_no">
+						<line stroke="#228B22" stroke-width="0.4" stroke-dasharray="3,5" stroke-linecap="butt" scale="stroke" />
 					</rule>
 					<rule e="way" k="*" v="*" zoom-min="15">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="11" fill="#393935" stroke="#FFFFFF" stroke-width="3" />
@@ -1921,34 +1920,22 @@
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
 					</rule>
 				</rule>
-				<!-- -->
-				<rule e="way" k="access" v="private|acc_no|destination" zoom-min="11">
+				<!-- Markers on access restricted ways -->
+				<rule e="way" cat="access" k="access" v="private|acc_no|no|permit" zoom-min="11">
 					<rule e="way" k="highway" v="turning_circle|mini_roundabout|pedestrian|service|road|living_street|residential|unclassified|construction">
-						<line stroke="#DBDBDB" stroke-width="0.8" />
+						<line stroke="#ff0000" stroke-width="1.7" stroke-dasharray="0.3,1.7" stroke-linecap="butt" scale="all" />
 						<rule e="way" k="*" v="*" zoom-min="16">
 							<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
 						</rule>
 					</rule>
 					<rule e="way" k="highway" v="path|footway" zoom-min="14">
-						<line stroke="#9F9F9F" stroke-width="0.4" stroke-dasharray="8,6" stroke-linecap="butt" scale="stroke" />
+						<line stroke="#ff0000" stroke-width="1.5" stroke-dasharray="0.3,1.7" stroke-linecap="butt" scale="all" />
 						<rule e="way" k="*" v="*" zoom-min="16">
 							<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
 						</rule>
 					</rule>
-					<rule e="way" k="tracktype" v="grade1|grade2">
-						<line stroke="#DBDBDB" stroke-width="0.8" />
-						<rule e="way" k="*" v="*" zoom-min="16">
-							<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
-						</rule>
-					</rule>
-					<rule e="way" k="tracktype" v="grade3">
-						<line stroke="#9F9F9F" stroke-width="0.4" />
-						<rule e="way" k="*" v="*" zoom-min="16">
-							<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
-						</rule>
-					</rule>
-					<rule e="way" k="tracktype" v="grade4|grade5">
-						<line stroke="#9F9F9F" stroke-width="0.4" stroke-dasharray="14,6" stroke-linecap="butt" scale="stroke" />
+					<rule e="way" k="tracktype" v="grade1|grade2|grade3|grade4|grade5">
+						<line stroke="#ff0000" stroke-width="2.2" stroke-dasharray="0.3,1.7" stroke-linecap="butt" scale="all" />
 						<rule e="way" k="*" v="*" zoom-min="16">
 							<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
 						</rule>
@@ -2067,7 +2054,7 @@
 				<rule e="way" k="toll" v="yes|tl_yes" zoom-min="12">
 					<line stroke="#88DD0000" stroke-width="1.0" stroke-dasharray="1,12" stroke-linecap="round" />
 				</rule>
-				<rule e="way" k="access" v="permit" zoom-min="12">
+				<rule e="way" cat="access" k="access" v="permit" zoom-min="12">
 					<line stroke="#88DD0000" stroke-width="1.0" stroke-dasharray="1,12" stroke-linecap="round" />
 				</rule>
 				<rule e="way" k="oneway" v="yes|1" zoom-min="16">
@@ -2421,7 +2408,7 @@
 	<rule e="node" k="power" v="generator" zoom-min="13">
 		<rule e="node" k="generator:source" v="wind">
 			<symbol id="power_generator_wind" src="file:symbols/power_generator_wind.svg" symbol-percent="100" />
-			<rule e="node" k="*" v="*" zoom-min="15">
+			<rule e="node" k="*" v="*" zoom-min="17">
 				<caption symbol-id="power_generator_wind" k="name" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
 			</rule>
 		</rule>
