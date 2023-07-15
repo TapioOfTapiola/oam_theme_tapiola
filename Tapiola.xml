@@ -2,7 +2,7 @@
 <rendertheme xmlns="http://mapsforge.org/renderTheme"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
-	Tapiola 1.2.1 - 2023-07-07 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+	Tapiola 1.2.1 - 2023-07-15 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 	Tapio is the god of forest in finnish mythology.
 	Tapiola is his realm.
@@ -37,7 +37,7 @@
 			<cat id="mtb_trails" />
 		</layer>
 		<layer id="L_access" enabled="true" visible="false">
-			<name lang="en" value="Access restriction lines" />
+			<name lang="en" value="Access restriction indicators" />
 			<cat id="access" />
 		</layer>
 		<layer id="L_sports" enabled="true" visible="false">
@@ -1663,25 +1663,25 @@
 						<circle radius="1.2" scale-radius="true" fill="#575757" />
 					</rule>
 					<rule e="way" k="highway" v="construction" zoom-min="11">
-						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
+						<line stroke="#575757" stroke-width="1.2" stroke-linecap="butt" />
 					</rule>
 					<rule e="way" k="highway" v="service|road" zoom-min="11">
-						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
+						<line stroke="#575757" stroke-width="1.2" stroke-linecap="butt" />
 					</rule>
 					<rule e="way" k="highway" v="residential|unclassified" zoom-min="11">
-						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
+						<line stroke="#575757" stroke-width="1.2" stroke-linecap="butt" />
 					</rule>
 					<rule e="way" k="highway" v="living_street" zoom-min="11">
-						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
+						<line stroke="#575757" stroke-width="1.2" stroke-linecap="butt" />
 					</rule>
 					<rule e="way" k="access" v="private|destination" zoom-min="11">
 						<rule e="way" k="highway" v="pedestrian|service|road|living_street|residential|unclassified|construction">
-							<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
+							<line stroke="#575757" stroke-width="1.2" stroke-linecap="butt" />
 						</rule>
 					</rule>
 					<rule e="way" k="access" v="acc_no" zoom-min="11">
 						<rule e="way" k="highway" v="pedestrian|service|road|living_street|residential|unclassified|construction">
-							<line stroke="#C3C3C3" stroke-width="1.2" stroke-linecap="round" />
+							<line stroke="#C3C3C3" stroke-width="1.2" stroke-linecap="butt" />
 						</rule>
 					</rule>
 					<rule e="way" k="highway" v="tertiary|tertiary_link|raceway" zoom-min="11">
@@ -3518,10 +3518,10 @@
 	<!-- MTB -->
 	<rule cat="mtb_trails" e="any" k="*" v="*" zoom-min="13">
 		<rule e="any" k="mtbnetwork" v="imn|nmn|rmn|lmn|omn" zoom-max="17" >
-			<line dy="-1" stroke="#cc00cc" stroke-width="1" stroke-dasharray="4,3" stroke-linecap="butt" scale="all" />
+			<line dy="-1" stroke="#cc00cc" stroke-width="0.8" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
 		</rule>
 		<rule e="any" k="mtbnetwork" v="imn|nmn|rmn|lmn|omn" zoom-min="18" >
-			<line dy="-1" stroke="#cc00cc" stroke-width="0.6" stroke-dasharray="4,3" stroke-linecap="butt" scale="all" />
+			<line dy="-1" stroke="#cc00cc" stroke-width="0.4" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
 		</rule>
 		<!-- название -->
 		<rule e="any" k="mtbnetwork" v="imn|nmn|rmn|lmn|omn|umn" zoom-min="14">
@@ -3546,29 +3546,45 @@
 	</rule>
 	<!-- велодорожки -->
 	<rule e="any" k="*" v="*" cat="cycling" zoom-min="10">
-		<rule e="way" k="network" v="icn|ncn|rcn|lcn|ocn" zoom-max="12">
-			<line dy="-1" stroke="#474aff" stroke-width="1.4" stroke-linecap="round" />
+		<rule e="way" k="network" v="rcn|lcn|ocn" zoom-min="12">
+			<rule e="way" k="*" v="*" zoom-max="13">
+				<line dy="-1" stroke="#cc474aff" stroke-width="1.7" stroke-dasharray="3,1.5" stroke-linecap="butt" scale="all" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="14" zoom-max="15" >
+				<line dy="-1" stroke="#474aff" stroke-width="1.3" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="16" >
+				<line dy="-1" stroke="#474aff" stroke-width="0.8" stroke-linecap="butt" />
+			</rule>
+			<rule e="any" k="*" v="*" zoom-min="14">
+				<pathText dy="-3" priority="10" k="ref_cycle" font-style="bold" font-size="10" fill="#b266ff" stroke="#ffffff" stroke-width="2.5" repeat-start="10" repeat-gap="300" />
+			</rule>
 		</rule>
-		<rule e="way" k="network" v="icn|ncn|rcn|lcn|ocn" zoom-min="13">
-			<line dy="-1" stroke="#474aff" stroke-width="1.3" stroke-linecap="round" />
-		</rule>
-		<rule e="any" k="network" v="icn|ncn|rcn|lcn|ocn" zoom-min="11">
-			<pathText dy="-3" priority="10" k="ref_cycle" font-style="bold" font-size="10" fill="#b266ff" stroke="#ffffff" stroke-width="2.5" repeat-start="10" repeat-gap="300" />
+		<rule e="way" k="network" v="icn|ncn" >
+			<rule e="way" k="*" v="*" zoom-max="12">
+				<line dy="-1" stroke="#474aff" stroke-width="1.7" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="13" zoom-max="15" >
+				<line dy="-1" stroke="#474aff" stroke-width="1.3" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="16" >
+				<line dy="-1" stroke="#474aff" stroke-width="0.9" stroke-dasharray="3,1.5" stroke-linecap="butt" scale="all" />
+			</rule>
+			<rule e="any" k="*" v="*" zoom-min="11">
+				<pathText dy="-3" priority="10" k="ref_cycle" font-style="bold" font-size="10" fill="#b266ff" stroke="#ffffff" stroke-width="2.5" repeat-start="10" repeat-gap="300" />
+			</rule>
 		</rule>
 	</rule>
 	<!-- hiking network -->
-	<rule e="way" k="hknetwork" v="lwn|rwn|own" cat="hikingtrails" zoom-min="11" >
-		<rule e="way" k="*" v="*" zoom-max="12" >
-			<line dy="1" stroke="#fc3d03" stroke-width="1.6" stroke-dasharray="3,2" stroke-linecap="butt" scale="all" />
-		</rule>
-		<rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
-			<line dy="1" stroke="#fc3d03" stroke-width="1.6" stroke-dasharray="3,2" stroke-linecap="butt" scale="all" />
+	<rule e="way" k="hknetwork" v="lwn|rwn|own" cat="hikingtrails" zoom-min="12" >
+		<rule e="way" k="*" v="*" zoom-max="13">
+			<line dy="1" stroke="#ccfc3d03" stroke-width="1.7" stroke-dasharray="3,1.5" stroke-linecap="butt" scale="all" />
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="14" zoom-max="15" >
-			<line dy="1" stroke="#ccfc3d03" stroke-width="1.4" stroke-dasharray="3,2" stroke-linecap="butt" scale="all" />
+			<line dy="1" stroke="#b2fc3d03" stroke-width="1.3" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="16" >
-			<line dy="1" stroke="#ccfc3d03" stroke-width="1" stroke-dasharray="3,2" stroke-linecap="butt" scale="all" />
+			<line dy="1" stroke="#b2fc3d03" stroke-width="0.9" stroke-dasharray="3,2" stroke-linecap="butt" scale="all" />
 		</rule>
 		<rule e="any" k="hknetwork" v="lwn|rwn|own" zoom-min="15" >
 			<rule e="any" k="*" v="*" zoom-max="17">
@@ -3581,13 +3597,13 @@
 	</rule>
 	<rule e="way" cat="hikingtrails" k="hknetwork" v="iwn|nwn" zoom-min="10" >
 		<rule e="way" k="*" v="*" zoom-max="11" >
-			<line dy="1" stroke="#fc3d03" stroke-width="1.3" stroke-linecap="round" />
+			<line dy="1" stroke="#fc3d03" stroke-width="1.7" stroke-linecap="butt" />
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="12" zoom-max="14" >
-			<line dy="1" stroke="#fc3d03" stroke-width="1.4" stroke-linecap="round" />
+			<line dy="1" stroke="#fc3d03" stroke-width="1.4" stroke-linecap="butt" />
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="15" >
-			<line dy="1" stroke="#ccfc3d03" stroke-width="0.8" stroke-linecap="round" />
+			<line dy="1" stroke="#ccfc3d03" stroke-width="1" stroke-linecap="butt" />
 		</rule>
 		<rule e="any" k="hknetwork" v="iwn|nwn" zoom-min="11" >
 			<rule e="any" k="*" v="*" zoom-max="17">
