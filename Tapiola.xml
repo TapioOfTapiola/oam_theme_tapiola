@@ -1669,59 +1669,59 @@
 						<circle radius="1.2" scale-radius="true" fill="#575757" />
 					</rule>
 					<rule e="way" k="highway" v="construction" zoom-min="11">
-						<line stroke="#575757" stroke-width="1.2" stroke-linecap="butt" />
+						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="highway" v="service|road" zoom-min="11">
-						<line stroke="#575757" stroke-width="1.2" stroke-linecap="butt" />
+						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="highway" v="residential|unclassified" zoom-min="11">
-						<line stroke="#575757" stroke-width="1.2" stroke-linecap="butt" />
+						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="highway" v="living_street" zoom-min="11">
-						<line stroke="#575757" stroke-width="1.2" stroke-linecap="butt" />
+						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="access" v="private|destination" zoom-min="11">
 						<rule e="way" k="highway" v="pedestrian|service|road|living_street|residential|unclassified|construction">
-							<line stroke="#575757" stroke-width="1.2" stroke-linecap="butt" />
+							<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
 						</rule>
 					</rule>
 					<rule e="way" k="access" v="acc_no" zoom-min="11">
 						<rule e="way" k="highway" v="pedestrian|service|road|living_street|residential|unclassified|construction">
-							<line stroke="#C3C3C3" stroke-width="1.2" stroke-linecap="butt" />
+							<line stroke="#C3C3C3" stroke-width="1.2" stroke-linecap="round" />
 						</rule>
 					</rule>
 					<rule e="way" k="highway" v="tertiary|tertiary_link|raceway" zoom-min="11">
-						<line stroke="#575757" stroke-width="1.8" stroke-linecap="butt" />
+						<line stroke="#575757" stroke-width="1.8" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="highway" v="secondary|secondary_link" zoom-min="9">
-						<line stroke="#373737" stroke-width="2.0" stroke-linecap="butt" />
+						<line stroke="#373737" stroke-width="2.0" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="highway" v="primary" zoom-min="8" zoom-max="8" >
-						<line stroke="#000000" stroke-width="1.6" stroke-linecap="butt" />
+						<line stroke="#000000" stroke-width="1.6" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="highway" v="primary" zoom-min="9">
-						<line stroke="#000000" stroke-width="2.2" stroke-linecap="butt" />
+						<line stroke="#000000" stroke-width="2.2" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="highway" v="primary_link" zoom-min="8">
-						<line stroke="#000000" stroke-width="2.2" stroke-linecap="butt" />
+						<line stroke="#000000" stroke-width="2.2" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="highway" v="trunk_link" zoom-min="11">
-						<line stroke="#575757" stroke-width="2.0" stroke-linecap="butt" />
+						<line stroke="#575757" stroke-width="2.0" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="highway" v="trunk" zoom-min="6" zoom-max="8">
-						<line stroke="#575757" stroke-width="1.6" stroke-linecap="butt" />
+						<line stroke="#575757" stroke-width="1.6" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="highway" v="trunk" zoom-min="9">
-						<line stroke="#575757" stroke-width="2.2" stroke-linecap="butt" />
+						<line stroke="#575757" stroke-width="2.2" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="highway" v="motorway_link" zoom-min="11">
-						<line stroke="#000000" stroke-width="2.0" stroke-linecap="butt" />
+						<line stroke="#000000" stroke-width="2.0" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="highway" v="motorway" zoom-min="6" zoom-max="8" >
-						<line stroke="#000000" stroke-width="1.8" stroke-linecap="butt" />
+						<line stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="highway" v="motorway" zoom-min="9">
-						<line stroke="#000000" stroke-width="2.4" stroke-linecap="butt" />
+						<line stroke="#000000" stroke-width="2.4" stroke-linecap="round" />
 					</rule>
 				</rule>
 				<rule e="node" k="highway" v="turning_circle|passing_place|mini_roundabout" zoom-min="11">
@@ -1816,38 +1816,38 @@
 				<!-- лесные дороги, неофициальные грунтовки, "козьи тропы" - NOTE - проверить -->
 				<rule e="way" k="highway" v="track|byway" zoom-min="12">
 					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="13" zoom-max="14">
-						<line stroke="#dd53534e" stroke-width="1.5" stroke-linecap="butt" />
-						<line stroke="#ffffdd" stroke-width="1.1" />
+						<line stroke="#dd53534e" stroke-width="1.5" curve="cubic" stroke-linecap="butt" />
+						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="15">
-						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
-						<line stroke="#ffffdd" stroke-width="1.1" />
-						<line stroke="#8f4e1d" stroke-width="0.5" stroke-dasharray="1,1,1,5" stroke-linecap="butt" scale="all" />
+						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="butt" />
+						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" />
+						<line stroke="#8f4e1d" stroke-width="0.5" curve="cubic" stroke-dasharray="1,1,1,5" stroke-linecap="butt" scale="all" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade2|grade3" zoom-min="13" zoom-max="14">
-						<line stroke="#dd53534e" stroke-width="1.5" stroke-linecap="butt" />
-						<line stroke="#ffffdd" stroke-width="1.1" />
+						<line stroke="#dd53534e" stroke-width="1.5" curve="cubic" stroke-linecap="butt" />
+						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade2|grade3" zoom-min="15">
-						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
-						<line stroke="#ffffdd" stroke-width="1.1" />
-						<line stroke="#8f4e1d" stroke-width="0.5" stroke-dasharray="1,6" stroke-linecap="butt" scale="all" />
+						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="butt" />
+						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" />
+						<line stroke="#8f4e1d" stroke-width="0.5" curve="cubic" stroke-dasharray="1,6" stroke-linecap="butt" scale="all" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade1" zoom-max="13">
-						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
-						<line stroke="#ffffff" stroke-width="1.1" />
+						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="butt" />
+						<line stroke="#ffffff" stroke-width="1.1" curve="cubic" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade1" zoom-min="14">
-						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
-						<line stroke="#ffffff" stroke-width="1.1" />
+						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="butt" />
+						<line stroke="#ffffff" stroke-width="1.1" curve="cubic" />
 					</rule>
 					<rule e="way" k="tracktype" v="~|no|false" zoom-min="12" zoom-max="14">
-						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
-						<line stroke="#ffffdd" stroke-width="1.1" />
+						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="butt" />
+						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" />
 					</rule>
 					<rule e="way" k="tracktype" v="~|no|false" zoom-min="15">
-						<line stroke="#53534e" stroke-width="1.5" stroke-linecap="butt" />
-						<line stroke="#ffffdd" stroke-width="1.1" />
+						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="butt" />
+						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" />
 						<!--line stroke="#bfbf9d" stroke-width="0.5" stroke-dasharray="2.5,10" stroke-linecap="butt" scale="all" / -->
 					</rule>
 					<rule e="way" cat="access" k="foot" v="ft_no">
