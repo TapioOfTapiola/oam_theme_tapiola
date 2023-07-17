@@ -1756,32 +1756,32 @@
 						<!-- Paths with surface:asphalt/paved like paved roads -->
 						<rule e="way" k="sac_scale" v="~" >
 							<rule e="way" k="surface" v="*" >
-								<line stroke="#9f5e2d" stroke-width="0.7" stroke-linecap="butt" />
+								<line stroke="#9f5e2d" stroke-width="0.7" stroke-linecap="round" />
 								<line stroke="#ffffff" stroke-width="0.7" stroke-dasharray="1,1" stroke-linecap="butt" scale="all" />
 							</rule>
 							<rule e="way" k="surface" v="~" >
-								<line stroke="#9f5e2d" stroke-width="0.7" stroke-linecap="butt" />
+								<line stroke="#9f5e2d" stroke-width="0.7" stroke-linecap="round" />
 								<line stroke="#ffffff" stroke-width="0.7" stroke-dasharray="1,1" stroke-linecap="butt" scale="all" />
 							</rule>
 							<!-- If asphalt, draw on top - not perfect - todo -->
 							<rule e="way" k="surface" v="asphalt|paved|concrete" zoom-max="15" >
-								<line stroke="#000000" stroke-width="1.3" stroke-linecap="butt" />
-								<line stroke="#ffffff" stroke-width="1.1" stroke-linecap="butt" />
+								<line stroke="#000000" stroke-width="1.3" stroke-linecap="round" />
+								<line stroke="#ffffff" stroke-width="1.1" stroke-linecap="round" />
 								<line stroke="#0066ff" stroke-width="0.3" stroke-dasharray="0.8,1" stroke-linecap="butt" scale="all" />
 							</rule>
 							<rule e="way" k="surface" v="asphalt|paved|concrete" zoom-min="16" >
-								<line stroke="#000000" stroke-width="1.1" stroke-linecap="butt" />
-								<line stroke="#ffffff" stroke-width="0.8" stroke-linecap="butt" />
+								<line stroke="#000000" stroke-width="1.1" stroke-linecap="round" />
+								<line stroke="#ffffff" stroke-width="0.8" stroke-linecap="round" />
 								<line stroke="#0066ff" stroke-width="0.4" stroke-dasharray="0.8,1" stroke-linecap="butt" scale="all" />
 							</rule>
 						</rule>
 						<rule e="way" k="sac_scale" v="hiking" >
-							<line stroke="#8f4e1d" stroke-width="0.8" stroke-linecap="butt" />
+							<line stroke="#8f4e1d" stroke-width="0.8" stroke-linecap="round" />
 							<line stroke="#ffffff" stroke-width="0.8" stroke-dasharray="0.8,0.8" stroke-linecap="butt" scale="all" />
 						</rule>
 						<!-- прозрачный фон + серые черточки -->
 						<rule e="way" k="sac_scale" v="T1|T2|mountain_hiking">
-							<line stroke="#EEEEEE" stroke-width="1.2" stroke-linecap="butt" scale="stroke" />
+							<line stroke="#EEEEEE" stroke-width="1.2" stroke-linecap="round" scale="stroke" />
 							<line stroke="#606060" stroke-width="1.0" stroke-dasharray="4,4" stroke-linecap="butt" scale="stroke" />
 						</rule>
 						<!-- темно-серые -->
@@ -1790,13 +1790,13 @@
 						</rule>
 						<!-- черно-желтые -->
 						<rule e="way" k="sac_scale" v="T4|alpine_hiking">
-							<line stroke="#c0f002" stroke-width="1.2" stroke-linecap="butt" scale="stroke" />
+							<line stroke="#c0f002" stroke-width="1.2" stroke-linecap="round" scale="stroke" />
 							<line stroke="#606060" stroke-width="1.2" stroke-dasharray="4,4" stroke-linecap="butt" scale="stroke" />
 						</rule>
 						<!-- черно-красные -->
 						<rule e="way" k="sac_scale" v="T5|demanding_alpine_hiking|T6|difficult_alpine_hiking">
 							<rule e="way" k="via_ferrata_flag|via_ferrata_scale|via_ferrata" v="~">
-								<line stroke="#4Cff4C" stroke-width="1.2" stroke-linecap="butt" />
+								<line stroke="#4Cff4C" stroke-width="1.2" stroke-linecap="round" />
 								<line stroke="#53534e" stroke-width="1.2" stroke-dasharray="4,4" stroke-linecap="butt" scale="stroke" />
 							</rule>
 						</rule>
@@ -1816,42 +1816,42 @@
 				<!-- лесные дороги, неофициальные грунтовки, "козьи тропы" - NOTE - проверить -->
 				<rule e="way" k="highway" v="track|byway" zoom-min="12">
 					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="13" zoom-max="14">
-						<line stroke="#dd53534e" stroke-width="1.5" curve="cubic" stroke-linecap="butt" />
+						<line stroke="#dd53534e" stroke-width="1.5" curve="cubic" stroke-linecap="round" />
 						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="15">
-						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="butt" />
-						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" />
+						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="round" />
+						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" stroke-linecap="round" />
 						<line stroke="#8f4e1d" stroke-width="0.5" curve="cubic" stroke-dasharray="1,1,1,5" stroke-linecap="butt" scale="all" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade2|grade3" zoom-min="13" zoom-max="14">
-						<line stroke="#dd53534e" stroke-width="1.5" curve="cubic" stroke-linecap="butt" />
-						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" />
+						<line stroke="#dd53534e" stroke-width="1.5" curve="cubic" stroke-linecap="round" />
+						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade2|grade3" zoom-min="15">
 						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="butt" />
-						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" />
+						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" stroke-linecap="round" />
 						<line stroke="#8f4e1d" stroke-width="0.5" curve="cubic" stroke-dasharray="1,6" stroke-linecap="butt" scale="all" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade1" zoom-max="13">
-						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="butt" />
-						<line stroke="#ffffff" stroke-width="1.1" curve="cubic" />
+						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="round" />
+						<line stroke="#ffffff" stroke-width="1.1" curve="cubic" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade1" zoom-min="14">
-						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="butt" />
-						<line stroke="#ffffff" stroke-width="1.1" curve="cubic" />
+						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="round" />
+						<line stroke="#ffffff" stroke-width="1.1" curve="cubic" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="tracktype" v="~|no|false" zoom-min="12" zoom-max="14">
-						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="butt" />
-						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" />
+						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="round" />
+						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="tracktype" v="~|no|false" zoom-min="15">
-						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="butt" />
-						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" />
+						<line stroke="#53534e" stroke-width="1.5" curve="cubic" stroke-linecap="round" />
+						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" stroke-linecap="round" />
 						<!--line stroke="#bfbf9d" stroke-width="0.5" stroke-dasharray="2.5,10" stroke-linecap="butt" scale="all" / -->
 					</rule>
 					<rule e="way" cat="access" k="foot" v="ft_no">
-						<line stroke="#228B22" stroke-width="0.4" stroke-dasharray="3,5" stroke-linecap="butt" scale="stroke" />
+						<line stroke="#228B22" stroke-width="0.4" stroke-dasharray="3,5" stroke-linecap="round" scale="stroke" />
 					</rule>
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="15">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="11" fill="#393935" stroke="#FFFFFF" stroke-width="3" />
