@@ -1698,25 +1698,25 @@
 				<rule e="way" k="highway" v="track|byway" zoom-min="12">
 					<!-- Background -->
 					<rule e="way" k="tracktype" v="~|no|false|grade1|grade2|grade3|grade4|grade5" zoom-min="13">
-						<line stroke="#e053534e" stroke-width="1.5" curve="cubic" stroke-linecap="round" />
+						<line stroke="#e053534e" stroke-width="1.5" stroke-linecap="round" />
 					</rule>
 					<!-- Main color -->
 					<rule e="way" k="tracktype" v="~|no|false|grade2|grade3|grade4|grade5" zoom-min="13">
-						<line stroke="#ffffdd" stroke-width="1.1" curve="cubic" stroke-linecap="round" />
+						<line stroke="#ffffdd" stroke-width="1.1" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade1" zoom-min="13">
-						<line stroke="#ffffff" stroke-width="1.1" curve="cubic" stroke-linecap="round" />
+						<line stroke="#ffffff" stroke-width="1.1" stroke-linecap="round" />
 					</rule>
 					<!-- Code -->
 					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="15" >
-						<line stroke="#8f4e1d" stroke-width="0.5" curve="cubic" stroke-dasharray="1,1,1,5" stroke-linecap="butt" scale="all" />
+						<line stroke="#8f4e1d" stroke-width="0.5" stroke-dasharray="1,1,1,5" stroke-linecap="butt" scale="all" />
 					</rule>
 					<rule e="way" k="tracktype" v="grade2|grade3" zoom-min="15">
-						<line stroke="#8f4e1d" stroke-width="0.5" curve="cubic" stroke-dasharray="1,6" stroke-linecap="butt" scale="all" />
+						<line stroke="#8f4e1d" stroke-width="0.5" stroke-dasharray="1,6" stroke-linecap="butt" scale="all" />
 					</rule>
 					<!-- Access -->
 					<rule e="way" cat="access" k="foot" v="ft_no">
-						<line stroke="#228B22" stroke-width="0.4" curve="cubic" stroke-dasharray="3,5" stroke-linecap="butt" scale="stroke" />
+						<line stroke="#228B22" stroke-width="0.4" stroke-dasharray="3,5" stroke-linecap="butt" scale="stroke" />
 					</rule>
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="15">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="11" fill="#393935" stroke="#FFFFFF" stroke-width="3" />
