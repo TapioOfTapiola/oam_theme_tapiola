@@ -832,21 +832,21 @@
 			<rule e="way" k="waterway" v="*" zoom-min="8">
 				<rule e="way" k="waterway" v="drain|ditch">
 					<rule e="way" k="intermittent|seasonal" v="~">
-						<line stroke="#59A0D8" stroke-width="0.4" />
+						<line stroke="#59A0D8" curve="cubic" stroke-width="0.4" />
 					</rule>
 					<rule e="way" k="intermittent|seasonal" v="wwi_yes|seas_yes|yes" zoom-min="13">
-						<line stroke="#59A0D8" stroke-width="0.4" stroke-dasharray="3,6" />
+						<line stroke="#59A0D8" curve="cubic" stroke-width="0.4" stroke-dasharray="3,6" />
 					</rule>
 				</rule>
 				<rule e="way" k="waterway" v="stream" zoom-min="11">
 					<rule e="way" k="*" v="*" zoom-max="13">
 						<rule e="way" k="intermittent|seasonal" v="~">
-							<line stroke="#59A0D8" stroke-width="0.6" />
+							<line stroke="#59A0D8" stroke-width="0.6" curve="cubic" />
 						</rule>
 					</rule>
 					<rule e="way" k="*" v="*" zoom-min="14">
 						<rule e="way" k="intermittent|seasonal" v="~">
-							<line stroke="#59A0D8" stroke-width="0.4" />
+							<line stroke="#59A0D8" curve="cubic" stroke-width="0.4" />
 						</rule>
 						<rule e="way" k="intermittent|seasonal" v="wwi_yes|seas_yes|yes">
 							<line stroke="#59A0D8" stroke-width="0.3" stroke-dasharray="3,6" />
@@ -1046,16 +1046,20 @@
 	</rule>
 	
 	<rule e="any" k="amenity" v="parking" zoom-min="14">
-		<area fill="#F3F3F3" />
-		<rule e="any" cat="parking" k="access" v="destination">
+		<area fill="#F9F9F9" stroke="#888888" stroke-width="0.1" />
+		<rule e="any" cat="parking" k="access" v="destination|no|private" zoom-max="16" >
 			<area src="file:patterns/access-destination.svg" symbol-percent="50" />
+			<symbol src="file:symbols/parking_private.svg" symbol-percent="65" priority="200" />
+		</rule>
+		<rule e="any" cat="parking" k="access" v="destination|no|private" zoom-min="17" >
+			<area src="file:patterns/access-destination.svg" symbol-percent="70" />
 			<symbol src="file:symbols/parking_private.svg" symbol-percent="75" display="always" />
 		</rule>
 		<rule e="any" cat="parking" k="access" v="~|yes|public" zoom-max="16" >
-			<symbol src="file:symbols/parking.svg" symbol-percent="65" display="always" />
+			<symbol src="file:symbols/parking.svg" symbol-percent="65" priority="200" />
 		</rule>
 		<rule e="any" cat="parking" k="access" v="~|yes|public" zoom-min="17" >
-			<symbol src="file:symbols/parking.svg" symbol-percent="90" display="always" />
+			<symbol src="file:symbols/parking.svg" symbol-percent="75" display="always" />
 		</rule>
 	</rule>
 
