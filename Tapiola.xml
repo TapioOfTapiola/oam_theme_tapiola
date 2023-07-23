@@ -2,14 +2,15 @@
 <rendertheme xmlns="http://mapsforge.org/renderTheme"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
-	Tapiola 1.2.4 - 2023-07-17 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+	Tapiola 1.2.5 - 2023-07-23 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 	Tapio is the god of forest in finnish mythology.
 	Tapiola is his realm.
 	Tapiola is Sibelius' Op. 112.
+	Ruhrgebiet rocks. Bergkamen rocks. Oberaden rules.
 
 	Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
-		Settler based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
+	Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
 -->
 	<stylemenu id="menu" defaultvalue="hiking" defaultlang="en">
 		<layer id="L_hikingtrails" enabled="false" visible="false">
@@ -812,7 +813,7 @@
 
 	<rule e="way" k="tunnel|location" v="yes|underground|culvert" zoom-min="13">
 		<rule e="way" k="waterway" v="ditch|stream">
-			<line stroke="#90A2CBED" stroke-width="0.4" stroke-dasharray="20,2" stroke-linecap="butt" />
+			<line stroke="#90A2CBED" stroke-width="0.4" curve="cubic" stroke-dasharray="20,2" stroke-linecap="butt" />
 		</rule>
 		<rule e="way" k="waterway" v="drain">
 			<line stroke="#90A2CBED" stroke-width="0.5" stroke-dasharray="20,2" stroke-linecap="butt" />
@@ -884,7 +885,7 @@
 				</rule>
 				<rule e="way" k="waterway" v="river">
 					<rule e="way" k="intermittent|seasonal" v="~">
-						<line stroke="#A2CBED" stroke-width="1.4" />
+						<line stroke="#A2CBED" stroke-width="1.4" curve="cubic"/>
 					</rule>
 					<rule e="way" k="intermittent|seasonal" v="wwi_yes|seas_yes|yes">
 						<line stroke="#A2CBED" stroke-width="1.4" stroke-dasharray="30,4" stroke-linecap="butt" />
@@ -1795,22 +1796,27 @@
 				</rule>
 				<!-- Markers on access restricted ways -->
 				<rule e="way" cat="access" k="access" v="private|acc_no|no|permit" zoom-min="11">
-					<rule e="way" k="highway" v="turning_circle|mini_roundabout|pedestrian|service|road|living_street|residential|unclassified|construction">
-						<line stroke="#ff0000" stroke-width="1.7" stroke-dasharray="0.3,1.7" stroke-linecap="butt" scale="all" />
-						<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
-							<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
-						</rule>
-					</rule>
-					<rule e="way" k="highway" v="path|footway" zoom-min="14">
-						<line stroke="#ff0000" stroke-width="1.5" stroke-dasharray="0.3,1.7" stroke-linecap="butt" scale="all" />
-						<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
-							<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
-						</rule>
-					</rule>
-					<rule e="way" k="tracktype" v="grade1|grade2|grade3|grade4|grade5">
-						<line stroke="#ff0000" stroke-width="2.2" stroke-dasharray="0.3,1.7" stroke-linecap="butt" scale="all" />
-						<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
-							<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
+					<!-- No markers if at least one is "yes" (foot or bicycle) -->
+					<rule e="way" k="foot" v="~|no">
+						<rule e="way" k="bicycle" v="~|no">
+							<rule e="way" k="highway" v="turning_circle|mini_roundabout|pedestrian|service|road|living_street|residential|unclassified|construction">
+								<line stroke="#ff0000" stroke-width="1.7" stroke-dasharray="0.3,1.7" stroke-linecap="butt" scale="all" />
+								<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
+									<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
+								</rule>
+							</rule>
+							<rule e="way" k="highway" v="path|footway" zoom-min="14">
+								<line stroke="#ff0000" stroke-width="1.5" stroke-dasharray="0.3,1.7" stroke-linecap="butt" scale="all" />
+								<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
+									<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
+								</rule>
+							</rule>
+							<rule e="way" k="tracktype" v="grade1|grade2|grade3|grade4|grade5">
+								<line stroke="#ff0000" stroke-width="2.2" stroke-dasharray="0.3,1.7" stroke-linecap="butt" scale="all" />
+								<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
+									<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
+								</rule>
+							</rule>
 						</rule>
 					</rule>
 				</rule>
@@ -2680,11 +2686,11 @@
 				</rule>
 				<!-- Name/Elevation -->
 				<rule e="node" k="*" v="*" zoom-min="12" zoom-max="14">
-					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="12" fill="#303030" stroke="#ffffff" stroke-width="2.5" priority="415" text-transform="capitalize" text-wrap-width="120" />
+					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="12" fill="#303030" stroke="#ffffff" stroke-width="2.5" priority="415" text-transform="capitalize" text-wrap-width="120" priority="500" />
 					<caption symbol-id="id_peak" k="ele" dy="-3" position="below" font-family="sans_serif" font-size="11" fill="#303030" stroke="#ffffff" stroke-width="3" priority="414" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="15">
-					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="13" fill="#303030" stroke="#ffffff" stroke-width="2.5" priority="415" text-transform="capitalize" text-wrap-width="120" />
+					<caption symbol-id="id_peak" position="above" dy="3" k="name" font-family="sans_serif" font-style="bold_italic" font-size="13" fill="#303030" stroke="#ffffff" stroke-width="2.5" priority="415" text-transform="capitalize" text-wrap-width="120" priority="500" />
 					<caption symbol-id="id_peak" k="ele" dy="-3" position="below" font-family="sans_serif" font-size="11" fill="#303030" stroke="#ffffff" stroke-width="3" priority="414" />
 				</rule>
 			</rule>
@@ -3366,19 +3372,19 @@
 				<pathText repeat-gap="170" repeat-start="10" k="ref_hike" font-style="bold" font-size="10" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="1.7" priority="11" />
 			</rule>
 			<rule e="any" k="*" v="lwn|rwn|own" zoom-min="18">
-				<pathText repeat-gap="220" repeat-start="20" k="ref_hike" font-style="bold" font-size="12" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="2" priority="11" />
+				<pathText repeat-gap="220" repeat-start="80" k="ref_hike" font-style="bold" font-size="12" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="2" priority="11" />
 			</rule>
 		</rule>
 	</rule>
 	<rule e="way" cat="hikingtrails" k="hknetwork" v="iwn|nwn" zoom-min="10" >
 		<rule e="way" k="*" v="*" zoom-max="11" >
-			<line dy="1" stroke="#fc3d03" stroke-width="1.7" stroke-linecap="butt" />
+			<line dy="1" stroke="#fc3d03" curve="cubic" stroke-width="1.7" stroke-linecap="butt" />
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="12" zoom-max="14" >
-			<line dy="1" stroke="#fc3d03" stroke-width="1.4" stroke-linecap="butt" />
+			<line dy="1" stroke="#fc3d03" curve="cubic" stroke-width="1.4" stroke-linecap="butt" />
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="15" >
-			<line dy="1" stroke="#ccfc3d03" stroke-width="1" stroke-linecap="butt" />
+			<line dy="1" stroke="#ccfc3d03" curve="cubic" stroke-width="1" stroke-linecap="butt" />
 		</rule>
 		<rule e="any" k="hknetwork" v="iwn|nwn" zoom-min="11" >
 			<rule e="any" k="*" v="*" zoom-max="17">
