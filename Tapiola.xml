@@ -2556,7 +2556,7 @@
 	<rule cat="water" e="any" k="man_made" v="water_well" zoom-min="17">
 		<rule e="any" k="drinking_water" v="yes">
 			<symbol id="id_drinking_water_yes" src="file:symbols/water_well_drinking.svg" symbol-percent="60" />
-			<rule e="any" k="*" v="*" zoom-min="21">
+			<rule e="any" k="*" v="*" zoom-min="19">
 				<caption symbol-id="id_drinking_water_yes" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.0" />
 			</rule>
 		</rule>
@@ -2567,19 +2567,12 @@
 			</rule>
 		</rule>
 	</rule>
+	<!-- ToDo: check -->
 	<rule cat="water" e="any" k="amenity" v="watering_place" zoom-min="17">
-		<area fill="#ff60A4D9" stroke="#888888" stroke-width="0.1" />
-		<rule e="any" k="drinking_water" v="yes">
-			<symbol id="id_drinking_water_yes" src="file:symbols/water_well_drinking.svg" symbol-percent="75" />
-			<rule e="any" k="*" v="*" zoom-min="21">
-				<caption symbol-id="id_drinking_water_yes" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.0" />
-			</rule>
-		</rule>
-		<rule e="any" k="drinking_water" v="no|~">
-			<symbol id="id_drinking_water_no" src="file:symbols/water_well.svg" symbol-percent="75" />
-			<rule e="any" k="*" v="*" zoom-min="21">
-				<caption symbol-id="id_drinking_water_no" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.0" />
-			</rule>
+		<area fill="#ff80C4F9" stroke="#888888" stroke-width="0.1" />
+		<symbol src="file:symbols/fountain.svg" symbol-percent="70" />
+		<rule e="any" k="*" v="*" zoom-min="19">
+			<caption symbol-id="id_drinking_water_yes" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.2" />
 		</rule>
 	</rule>
 	
