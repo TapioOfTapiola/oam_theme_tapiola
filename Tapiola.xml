@@ -2567,11 +2567,13 @@
 		</rule>
 	</rule>
 	<!-- ToDo: check, symbol-id -->
-	<rule cat="water" e="any" k="amenity" v="watering_place" zoom-min="15">
+	<rule e="any" k="amenity" v="watering_place" zoom-min="15">
 		<area fill="#ff80C4F9" stroke="#888888" stroke-width="0.1" />
-		<symbol src="file:symbols/fountain.svg" symbol-percent="70" />
-		<rule e="any" k="*" v="*" zoom-min="19">
-			<caption symbol-id="id_drinking_water_yes" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.2" />
+		<rule cat="water" e="any" k="*" v="*" >
+			<symbol src="file:symbols/fountain.svg" symbol-percent="70" />
+			<rule e="any" k="*" v="*" zoom-min="19">
+				<caption symbol-id="id_drinking_water_yes" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.2" />
+			</rule>
 		</rule>
 	</rule>
 	
