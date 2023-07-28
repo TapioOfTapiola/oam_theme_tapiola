@@ -2,14 +2,16 @@
 <rendertheme xmlns="http://mapsforge.org/renderTheme"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
-	Tapiola 1.2.5 - 2023-07-23 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.2.5 - 2023-07-28 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
-	Tapio is the god of forest in finnish mythology.
-	Tapiola is his realm.
-	Tapiola is Sibelius' Op. 112.
+Tapio is the god of forest in finnish mythology.
+Tapiola is his realm.
+Tapiola is Sibelius' Op. 112.
 
-	Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
-	Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
+Michael Scheer - theme@tapiola.org
+
+Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
+Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
 -->
 	<stylemenu id="menu" defaultvalue="hiking" defaultlang="en">
 		<layer id="L_hikingtrails" enabled="false" visible="false">
@@ -1045,18 +1047,14 @@
 		</rule>
 	</rule>
 	
-	<rule e="any" k="amenity" v="parking" zoom-min="14">
+	<rule e="any" k="amenity" v="parking" zoom-min="11">
 		<area fill="#F9F9F9" stroke="#888888" stroke-width="0.1" />
-		<rule e="any" cat="parking" k="access" v="destination|no|private" zoom-max="16" >
-			<area src="file:patterns/access-destination.svg" symbol-percent="50" />
-			<symbol src="file:symbols/parking_private.svg" symbol-percent="65" priority="200" />
-		</rule>
-		<rule e="any" cat="parking" k="access" v="destination|no|private" zoom-min="17" >
-			<area src="file:patterns/access-destination.svg" symbol-percent="70" />
-			<symbol src="file:symbols/parking_private.svg" symbol-percent="75" display="always" />
+		<rule e="any" cat="parking" k="access" v="destination|no|private" zoom-min="16" >
+			<area src="file:patterns/access-destination.svg" symbol-percent="60" />
+			<symbol src="file:symbols/parking_private.svg" symbol-percent="65" display="always" />
 		</rule>
 		<rule e="any" cat="parking" k="access" v="~|yes|public" zoom-max="16" >
-			<symbol src="file:symbols/parking.svg" symbol-percent="65" priority="200" />
+			<symbol src="file:symbols/parking.svg" symbol-percent="65" display="always" />
 		</rule>
 		<rule e="any" cat="parking" k="access" v="~|yes|public" zoom-min="17" >
 			<symbol src="file:symbols/parking.svg" symbol-percent="75" display="always" />
