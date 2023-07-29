@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="800px"
+   height="800px"
+   viewBox="0 0 48 48"
+   fill="none"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="watering_place.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:lockguides="false"
+     showguides="true"
+     inkscape:zoom="1.43375"
+     inkscape:cx="38.360941"
+     inkscape:cy="338.62249"
+     inkscape:window-width="2560"
+     inkscape:window-height="1361"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2">
+    <sodipodi:guide
+       position="1.9530203,26.575959"
+       orientation="1,0"
+       id="guide2"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="2.793374,1.8936355"
+       orientation="0,-1"
+       id="guide3"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="31.070777,44.863331"
+       orientation="0,-1"
+       id="guide1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="23.998477,43.176632"
+       orientation="1,0"
+       id="guide4"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <rect
+     width="48"
+     height="48"
+     fill="#ffffff"
+     fill-opacity="0.01"
+     id="rect1"
+     style="opacity:0;stroke-width:1"
+     x="0"
+     y="0" />
+  <path
+     d="m 45.314135,24.053122 c 0,11.738791 -9.516161,21.254952 -21.254953,21.254952 -11.738792,0 -21.2549524,-9.516161 -21.2549524,-21.254952 z"
+     fill="#2f88ff"
+     stroke="#000000"
+     stroke-width="4"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path1"
+     sodipodi:nodetypes="cscc"
+     style="opacity:1;fill:#00ffff;stroke-width:1.98;stroke-dasharray:none"
+     inkscape:label="Becken" />
+  <path
+     d="m 28.853127,14.964162 c 0,2.680901 -2.173385,4.854288 -4.854287,4.854288 -2.680902,0 -4.854287,-2.173387 -4.854287,-4.854288 0,-2.680901 4.854287,-10.9221459 4.854287,-10.9221459 0,0 4.854287,8.2412449 4.854287,10.9221459 z"
+     fill="#2F88FF"
+     stroke="#000000"
+     stroke-width="4"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path2"
+     style="fill:#00ffff;stroke-width:1.98;stroke-dasharray:none;image-rendering:auto"
+     inkscape:label="Tropfen" />
+</svg>
