@@ -8,8 +8,6 @@ Tapio is the god of forest in finnish mythology.
 Tapiola is his realm.
 Tapiola is Sibelius' Op. 112.
 
-Michael Scheer - theme@tapiola.org
-
 Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
 -->
@@ -17,7 +15,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		<layer id="L_hikingtrails" enabled="false" visible="false">
 			<name lang="ru" value="Пешеходные маршруты" />
 			<name lang="de" value="Wanderwege" />
-			<name lang="en" value="Hiking networks" />
+			<name lang="en" value="Hiking network" />
 			<cat id="hikingtrails" />
 		</layer>
 		<layer id="L_hikingnodes" enabled="false" visible="false">
@@ -29,7 +27,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		<layer id="L_cycling" enabled="false" visible="false">
 			<name lang="ru" value="Велосипед" />
 			<name lang="de" value="Radwege" />
-			<name lang="en" value="Cycling networks" />
+			<name lang="en" value="Cycling network" />
 			<cat id="cycling" />
 		</layer>
 		<layer id="L_mtb_trails" enabled="false" visible="false">
@@ -37,6 +35,14 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<name lang="en" value="MTB trails" />
 			<name lang="de" value="MTB-Trails" />
 			<cat id="mtb_trails" />
+		</layer>
+		<layer id="L_highway" enabled="true" visible="false">
+			<name lang="en" value="Roads" />
+			<cat id="c_highway" />
+		</layer>
+		<layer id="L_railway" enabled="true" visible="false">
+			<name lang="en" value="Railways" />
+			<cat id="c_railway" />
 		</layer>
 		<layer id="L_access" enabled="true" visible="false">
 			<name lang="en" value="Access restriction indicators" />
@@ -217,6 +223,8 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<overlay id="L_hikingnodes" />
 			<overlay id="L_cycling" />
 			<overlay id="L_mtb_trails" />
+			<overlay id="L_highway" />
+			<overlay id="L_railway" />
 			<overlay id="L_access" />
 			<overlay id="L_sports" />
 			<overlay id="L_winter_sports" />
@@ -1150,10 +1158,10 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 	<rule cat="landscapefeat" e="any" k="*" v="*">
 		<rule e="way" k="man_made" v="~">
 			<rule e="way" k="embankment" v="emb_yes" closed="no">
-				<rule e="way" k="highway" v="motorway">
+				<rule e="way" cat="c_highway" k="highway" v="motorway">
 					<line stroke="#005a8c" stroke-width="2.8" stroke-dasharray="1,8" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="motorway_link|tertiary|tertiary_link|secondary_link|primary_link|trunk_link|secondary|primary|trunk">
+				<rule e="way" cat="c_highway" k="highway" v="motorway_link|tertiary|tertiary_link|secondary_link|primary_link|trunk_link|secondary|primary|trunk">
 					<line stroke="#005a8c" stroke-width="2.4" stroke-dasharray="1,8" stroke-linecap="butt" />
 				</rule>
 				<line stroke="#005a8c" stroke-width="2.2" stroke-dasharray="1,8" stroke-linecap="butt" />
@@ -1225,7 +1233,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 	</rule>
 
 	<rule e="way" k="tunnel" v="~|no" zoom-min="13">
-		<rule e="way" k="highway" v="pedestrian" closed="no">
+		<rule e="way" cat="c_highway" k="highway" v="pedestrian" closed="no">
 			<line stroke="#606060" stroke-width="1.3" />
 		</rule>
 		<rule e="way" k="area:highway" v="pedestrian">
@@ -1236,7 +1244,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 				<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#E5FFFFFF" stroke-width="2" text-wrap-width="120" />
 			</rule>
 		</rule>
-		<rule e="way" k="highway" v="pedestrian" closed="yes">
+		<rule e="way" cat="c_highway" k="highway" v="pedestrian" closed="yes">
 			<area fill="#FFFFFF" />
 			<area src="file:patterns/p_pedestrian.svg" symbol-height="8" />
 			<line stroke="#606060" stroke-width="0.2" />
@@ -1246,26 +1254,26 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 	<rule e="way" k="area" v="yes|true">
-		<rule e="way" k="highway" v="*">
-			<rule e="way" k="highway" v="footway|path" zoom-min="13">
+		<rule e="way" cat="c_highway" k="highway" v="*">
+			<rule e="way" cat="c_highway" k="highway" v="footway|path" zoom-min="13">
 				<area fill="#E8D1E2" stroke="#585858" stroke-width="0.1" />
 			</rule>
-			<rule e="way" k="highway" v="service" zoom-min="11">
+			<rule e="way" cat="c_highway" k="highway" v="service" zoom-min="11">
 				<area fill="#ffffff" stroke="#575757" stroke-width="0.1" />
 			</rule>
-			<rule e="way" k="highway" v="unclassified" zoom-min="11">
+			<rule e="way" cat="c_highway" k="highway" v="unclassified" zoom-min="11">
 				<area fill="#ffffff" stroke="#575757" stroke-width="0.1" />
 			</rule>
-			<rule e="way" k="highway" v="residential" zoom-min="11">
+			<rule e="way" cat="c_highway" k="highway" v="residential" zoom-min="11">
 				<area fill="#ffffff" stroke="#575757" stroke-width="0.1" />
 			</rule>
-			<rule e="way" k="highway" v="road" zoom-min="11">
+			<rule e="way" cat="c_highway" k="highway" v="road" zoom-min="11">
 				<area fill="#ffffff" />
 			</rule>
-			<rule e="way" k="highway" v="living_street" zoom-min="11">
+			<rule e="way" cat="c_highway" k="highway" v="living_street" zoom-min="11">
 				<area fill="#ffffff" stroke="#575757" stroke-width="0.1" />
 			</rule>
-			<rule e="way" k="highway" v="*" zoom-min="15">
+			<rule e="way" cat="c_highway" k="highway" v="*" zoom-min="15">
 				<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff" stroke-width="3" text-wrap-width="120" />
 			</rule>
 		</rule>
@@ -1333,7 +1341,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 	</rule>
 
 	<rule e="any" k="*" v="*" zoom-min="18">
-		<rule e="any" k="highway" v="~">
+		<rule e="any" cat="c_highway" k="highway" v="~">
 			<caption k="addr:housenumber" font-style="normal" font-size="10" fill="#424251" priority="10" />
 		</rule>
 	</rule>
@@ -1341,15 +1349,15 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 	<rule e="any" k="highway|railway" v="*">
 		<rule e="any" k="area" v="~|no|false">
 			<rule e="way" k="tunnel" v="yes">
-				<rule e="way" k="railway" v="abandoned" zoom-min="13">
+				<rule e="way" cat="c_railway" k="railway" v="abandoned" zoom-min="13">
 					<line stroke="#40FFFFFF" stroke-width="0.5" scale="all" stroke-dasharray="4.8,2.3,2.5,0" stroke-linecap="butt" />
 					<line stroke="#30808080" stroke-width="0.5" scale="all" stroke-dasharray="2.3,7.3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="railway" v="miniature" zoom-min="13">
+				<rule e="way" cat="c_railway" k="railway" v="miniature" zoom-min="13">
 					<line stroke="#28000000" stroke-width="0.14" scale="all" stroke-dasharray="2.4,1.2" stroke-linecap="butt" />
 					<line stroke="#80FFFFFF" stroke-width="0.14" scale="all" stroke-dasharray="0,2.4,1.2,0" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="railway" v="disused" zoom-min="13">
+				<rule e="way" cat="c_railway" k="railway" v="disused" zoom-min="13">
 					<line stroke="#40000000" dy="0.33" stroke-width="0.075" stroke-linecap="butt" />
 					<line stroke="#40000000" dy="-0.33" stroke-width="0.075" stroke-linecap="butt" />
 					<line stroke="#30000000" stroke-width="0.6" scale="all" stroke-dasharray="0.1,2.3" stroke-linecap="butt" />
@@ -1359,89 +1367,89 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					<line stroke="#408C4600" stroke-width="0.5" stroke-linecap="butt" />
 					<line stroke="#60ffffff" stroke-width="0.4" scale="all" stroke-dasharray="1.8,1.8" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="railway" v="subway" zoom-min="13">
+				<rule e="way" cat="c_railway" k="railway" v="subway" zoom-min="13">
 					<line stroke="#00BF8F93" stroke-width="0.5" stroke-dasharray="8,6" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="railway" v="narrow_gauge|preserved|funicular" zoom-min="10">
+				<rule e="way" cat="c_railway" k="railway" v="narrow_gauge|preserved|funicular" zoom-min="10">
 					<line stroke="#40000000" dy="0.28" stroke-width="0.075" stroke-linecap="butt" />
 					<line stroke="#40000000" dy="-0.28" stroke-width="0.075" stroke-linecap="butt" />
 					<line stroke="#30000000" stroke-width="0.6" scale="all" stroke-dasharray="1.2,2.4" stroke-linecap="butt" />
 					<line stroke="#30FFFFFF" stroke-width="0.6" scale="all" stroke-dasharray="0,1.2,2.4,0" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="railway" v="rail" zoom-min="10">
+				<rule e="way" cat="c_railway" k="railway" v="rail" zoom-min="10">
 					<line stroke="#40000000" dy="0.33" stroke-width="0.075" stroke-linecap="butt" />
 					<line stroke="#40000000" dy="-0.33" stroke-width="0.075" stroke-linecap="butt" />
 					<line stroke="#30000000" stroke-width="0.6" scale="all" stroke-dasharray="2.4,2.4" stroke-linecap="butt" />
 					<line stroke="#30FFFFFF" stroke-width="0.6" scale="all" stroke-dasharray="0,2.4,2.4,0" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="motorway" zoom-min="6">
+				<rule e="way" cat="c_highway" k="highway" v="motorway" zoom-min="6">
 					<line stroke="#502f8bd6" stroke-width="2.2" stroke-linecap="butt" />
 					<line stroke="#707070" dy="1.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-1.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="motorway_link" zoom-min="11" cat="c_roads">
+				<rule e="way" cat="c_highway" k="highway" v="motorway_link" zoom-min="11" cat="c_roads">
 					<line stroke="#502f8bd6" stroke-width="1.4" stroke-linecap="butt" />
 					<line stroke="#707070" dy="0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="trunk" zoom-min="6">
+				<rule e="way" cat="c_highway" k="highway" v="trunk" zoom-min="6">
 					<line stroke="#50FFFFFF" stroke-width="1.4" stroke-linecap="butt" />
 					<line stroke="#707070" dy="0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="trunk_link" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="trunk_link" zoom-min="11">
 					<line stroke="#50FFFFFF" stroke-width="1.4" stroke-linecap="butt" />
 					<line stroke="#707070" dy="0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="primary|primary_link" zoom-min="9">
+				<rule e="way" cat="c_highway" k="highway" v="primary|primary_link" zoom-min="9">
 					<line stroke="#50FFFFFF" stroke-width="1.4" stroke-linecap="butt" />
 					<line stroke="#707070" dy="0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="secondary|secondary_link" zoom-min="9">
+				<rule e="way" cat="c_highway" k="highway" v="secondary|secondary_link" zoom-min="9">
 					<line stroke="#50FFFFFF" stroke-width="1.4" stroke-linecap="butt" />
 					<line stroke="#707070" dy="0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="tertiary|tertiary_link" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="tertiary|tertiary_link" zoom-min="11">
 					<line stroke="#50FFFFFF" stroke-width="1.4" stroke-linecap="butt" />
 					<line stroke="#707070" dy="0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="residential|unclassified" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="residential|unclassified" zoom-min="11">
 					<line stroke="#50FFFFFF" stroke-width="1.0" stroke-linecap="butt" />
 					<line stroke="#707070" dy="0.5" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.5" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="living" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="living" zoom-min="11">
 					<line stroke="#50FFFFFF" stroke-width="1.0" stroke-linecap="butt" />
 					<line stroke="#707070" dy="0.5" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.5" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="service" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="service" zoom-min="11">
 					<line stroke="#50FFFFFF" stroke-width="1.0" stroke-linecap="butt" />
 					<line stroke="#707070" dy="0.5" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.5" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="steps|footway|path|bridleway" zoom-min="14">
+				<rule e="way" cat="c_highway" k="highway" v="steps|footway|path|bridleway" zoom-min="14">
 					<line stroke="#50FFFFFF" stroke-width="0.4" stroke-linecap="butt" />
 					<line stroke="#A6707070" dy="0.2" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#A6707070" dy="-0.2" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="track|byway" zoom-min="13">
+				<rule e="way" cat="c_highway" k="highway" v="track|byway" zoom-min="13">
 					<line stroke="#50FFFFFF" stroke-width="0.6" stroke-linecap="butt" />
 					<line stroke="#3f3f3f" dy="0.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#3f3f3f" dy="-0.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="cycling" zoom-min="14">
+				<rule e="way" cat="c_highway" k="highway" v="cycling" zoom-min="14">
 					<line stroke="#50FFFFFF" stroke-width="0.7" stroke-linecap="butt" />
 					<line stroke="#707070" dy="0.35" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.35" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
 			</rule>
 			<rule e="any" k="tunnel" v="~|no|false">
-				<rule e="way" k="railway" v="abandoned" zoom-min="13">
+				<rule e="way" cat="c_railway" k="railway" v="abandoned" zoom-min="13">
 					<rule e="way" k="bridge" v="yes|viaduct|movable">
 						<line stroke="#181818" stroke-width="1.05" stroke-linecap="butt" />
 						<line stroke="#f8f8f8" stroke-width="0.7" stroke-linecap="butt" />
@@ -1450,28 +1458,31 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					<line stroke="#40808080" stroke-width="0.5" scale="all" stroke-dasharray="2.3,2.5" stroke-linecap="butt" />
 				</rule>
 				<rule e="any" k="bridge" v="~|no|false">
-					<rule e="way" k="railway" v="miniature" zoom-min="13">
+					<rule e="way" cat="c_railway" k="railway" v="miniature" zoom-min="13">
 						<line stroke="#181818" stroke-width="0.14" />
 						<line stroke="#181818" stroke-width="0.6" scale="all" stroke-dasharray="0.1,1.7" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="railway" v="subway">
+					<rule e="way" cat="c_railway" k="railway" v="subway">
 						<line stroke="#B30000" stroke-width="0.6" stroke-linecap="butt" />
 						<line stroke="#FFBFBF" stroke-width="0.45" scale="all" stroke-dasharray="1.8,1.8" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="railway" v="disused" zoom-min="13">
+					<rule e="way" cat="c_railway" k="railway" v="disused" zoom-min="13">
 						<line stroke="#404040" stroke-width="0.75" stroke-linecap="butt" />
 						<line stroke="#e6e6e6" stroke-width="0.6" stroke-linecap="butt" />
 						<line stroke="#404040" stroke-width="0.6" scale="all" stroke-dasharray="0.1,2.3" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="railway" v="rail|narrow_gauge|preserved|funicular" zoom-max="13">
-						<line stroke="#666666" stroke-width="0.45" stroke-linecap="butt" />
+					<rule e="way" cat="c_railway" k="railway" v="rail|narrow_gauge|preserved|funicular" zoom-max="12">
+						<line stroke="#666666" stroke-width="1.2" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="railway" v="narrow_gauge|preserved|funicular" zoom-min="14">
+					<rule e="way" cat="c_railway" k="railway" v="rail|narrow_gauge|preserved|funicular" zoom-min="13" zoom-max="13">
+						<line stroke="#444444" stroke-width="0.6" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" cat="c_railway" k="railway" v="narrow_gauge|preserved|funicular" zoom-min="14">
 						<line stroke="#181818" stroke-width="0.65" stroke-linecap="butt" />
 						<line stroke="#e6e6e6" stroke-width="0.5" stroke-linecap="butt" />
 						<line stroke="#181818" stroke-width="0.5" scale="all" stroke-dasharray="1.2,2.4" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="railway" v="rail" zoom-min="14">
+					<rule e="way" cat="c_railway" k="railway" v="rail" zoom-min="14">
 						<line stroke="#404040" stroke-width="0.75" stroke-linecap="butt" />
 						<line stroke="#e6e6e6" stroke-width="0.6" stroke-linecap="butt" />
 						<line stroke="#404040" stroke-width="0.6" scale="all" stroke-dasharray="2.4,2.4" stroke-linecap="butt" />
@@ -1479,168 +1490,168 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 				</rule>
 			</rule>
 			<rule e="way" k="bridge" v="yes|movable|true">
-				<rule e="way" k="highway" v="steps|footway|path" zoom-min="14">
+				<rule e="way" cat="c_highway" k="highway" v="steps|footway|path" zoom-min="14">
 					<line stroke="#666666" stroke-width="1.0" stroke-linecap="butt" />
 					<line stroke="#EEEEEE" stroke-width="0.6" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="pedestrian" zoom-min="14">
+				<rule e="way" cat="c_highway" k="highway" v="pedestrian" zoom-min="14">
 					<line stroke="#222222" stroke-width="1.8" stroke-linecap="butt" />
 					<line stroke="#EEEEEE" stroke-width="1.5" stroke-linecap="butt" />
 					<line stroke="#606060" stroke-width="1.3" />
 				</rule>
-				<rule e="way" k="highway" v="via_ferrata" zoom-min="15">
+				<rule e="way" cat="c_highway" k="highway" v="via_ferrata" zoom-min="15">
 					<line stroke="#111111" stroke-width="1.0" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="0.7" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="construction" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="construction" zoom-min="11">
 					<line stroke="#353535" stroke-width="2.9" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="2.5" stroke-linecap="butt" />
 					<line stroke="#666666" stroke-width="2.1" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="motorway" zoom-min="6">
+				<rule e="way" cat="c_highway" k="highway" v="motorway" zoom-min="6">
 					<line stroke="#353535" stroke-width="3.4" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="3.0" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="2.4" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="motorway_link" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="motorway_link" zoom-min="11">
 					<line stroke="#353535" stroke-width="2.8" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="2.4" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="2.0" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="trunk" zoom-min="6">
+				<rule e="way" cat="c_highway" k="highway" v="trunk" zoom-min="6">
 					<line stroke="#353535" stroke-width="3.0" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="2.6" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="2.2" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="trunk_link" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="trunk_link" zoom-min="11">
 					<line stroke="#353535" stroke-width="2.8" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="2.4" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="2.0" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="primary|primary_link" zoom-min="9">
+				<rule e="way" cat="c_highway" k="highway" v="primary|primary_link" zoom-min="9">
 					<line stroke="#353535" stroke-width="2.8" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="2.4" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="2.0" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="secondary|secondary_link" zoom-min="9">
+				<rule e="way" cat="c_highway" k="highway" v="secondary|secondary_link" zoom-min="9">
 					<line stroke="#353535" stroke-width="2.8" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="2.4" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="2.0" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="tertiary|tertiary_link" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="tertiary|tertiary_link" zoom-min="11">
 					<line stroke="#353535" stroke-width="2.6" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="2.2" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="1.8" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="residential|unclassified" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="residential|unclassified" zoom-min="11">
 					<line stroke="#353535" stroke-width="1.8" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="1.4" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="1.2" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="living_street" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="living_street" zoom-min="11">
 					<line stroke="#353535" stroke-width="1.8" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="1.4" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="1.2" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="service" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="service" zoom-min="11">
 					<line stroke="#303030" stroke-width="1.8" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="1.4" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="1.2" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" k="highway" v="track|byway" zoom-min="13">
+				<rule e="way" cat="c_highway" k="highway" v="track|byway" zoom-min="13">
 					<line stroke="#53534e" stroke-width="1.7" stroke-linecap="butt" />
 					<line stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="butt" />
 				</rule>
 			</rule>
 			<rule e="way" k="bridge" v="boardwalk">
-				<rule e="way" k="highway" v="steps|footway|path" zoom-min="14">
+				<rule e="way" cat="c_highway" k="highway" v="steps|footway|path" zoom-min="14">
 					<line stroke="#8f540d" stroke-width="1.00" stroke-linecap="butt" />
 					<line stroke="#EEEEEE" stroke-width="0.6" stroke-linecap="butt" />
 				</rule>
 			</rule>
 			<rule e="any" k="tunnel" v="~|no|false">
 				<rule e="any" k="bridge" v="~|no|false">
-					<rule e="node" k="highway" v="turning_circle|passing_place|mini_roundabout" zoom-min="11">
+					<rule e="node" cat="c_highway" k="highway" v="turning_circle|passing_place|mini_roundabout" zoom-min="11">
 						<circle radius="1.2" scale-radius="true" fill="#575757" />
 					</rule>
-					<rule e="way" k="highway" v="construction" zoom-min="11">
+					<rule e="way" cat="c_highway" k="highway" v="construction" zoom-min="11">
 						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="service|road" zoom-min="11">
+					<rule e="way" cat="c_highway" k="highway" v="service|road" zoom-min="11">
 						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="residential|unclassified" zoom-min="11">
+					<rule e="way" cat="c_highway" k="highway" v="residential|unclassified" zoom-min="11">
 						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="living_street" zoom-min="11">
+					<rule e="way" cat="c_highway" k="highway" v="living_street" zoom-min="11">
 						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="access" v="private|destination" zoom-min="11">
-						<rule e="way" k="highway" v="pedestrian|service|road|living_street|residential|unclassified|construction">
+						<rule e="way" cat="c_highway" k="highway" v="pedestrian|service|road|living_street|residential|unclassified|construction">
 							<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
 						</rule>
 					</rule>
 					<rule e="way" k="access" v="acc_no" zoom-min="11">
-						<rule e="way" k="highway" v="pedestrian|service|road|living_street|residential|unclassified|construction">
+						<rule e="way" cat="c_highway" k="highway" v="pedestrian|service|road|living_street|residential|unclassified|construction">
 							<line stroke="#C3C3C3" stroke-width="1.2" stroke-linecap="round" />
 						</rule>
 					</rule>
-					<rule e="way" k="highway" v="tertiary|tertiary_link|raceway" zoom-min="11">
+					<rule e="way" cat="c_highway" k="highway" v="tertiary|tertiary_link|raceway" zoom-min="11">
 						<line stroke="#575757" stroke-width="1.8" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="secondary|secondary_link" zoom-min="9">
+					<rule e="way" cat="c_highway" k="highway" v="secondary|secondary_link" zoom-min="9">
 						<line stroke="#373737" stroke-width="2.0" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="primary" zoom-min="8" zoom-max="8" >
+					<rule e="way" cat="c_highway" k="highway" v="primary" zoom-min="8" zoom-max="8" >
 						<line stroke="#000000" stroke-width="1.6" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="primary" zoom-min="9">
+					<rule e="way" cat="c_highway" k="highway" v="primary" zoom-min="9">
 						<line stroke="#000000" stroke-width="2.2" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="primary_link" zoom-min="8">
+					<rule e="way" cat="c_highway" k="highway" v="primary_link" zoom-min="8">
 						<line stroke="#000000" stroke-width="2.2" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="trunk_link" zoom-min="11">
+					<rule e="way" cat="c_highway" k="highway" v="trunk_link" zoom-min="11">
 						<line stroke="#575757" stroke-width="2.0" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="trunk" zoom-min="6" zoom-max="8">
+					<rule e="way" cat="c_highway" k="highway" v="trunk" zoom-min="6" zoom-max="8">
 						<line stroke="#575757" stroke-width="1.6" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="trunk" zoom-min="9">
+					<rule e="way" cat="c_highway" k="highway" v="trunk" zoom-min="9">
 						<line stroke="#575757" stroke-width="2.2" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="motorway_link" zoom-min="11">
+					<rule e="way" cat="c_highway" k="highway" v="motorway_link" zoom-min="11">
 						<line stroke="#000000" stroke-width="2.0" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="motorway" zoom-min="6" zoom-max="8" >
+					<rule e="way" cat="c_highway" k="highway" v="motorway" zoom-min="6" zoom-max="8" >
 						<line stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="motorway" zoom-min="9">
+					<rule e="way" cat="c_highway" k="highway" v="motorway" zoom-min="9">
 						<line stroke="#000000" stroke-width="2.4" stroke-linecap="round" />
 					</rule>
 				</rule>
-				<rule e="node" k="highway" v="turning_circle|passing_place|mini_roundabout" zoom-min="11">
+				<rule e="node" cat="c_highway" k="highway" v="turning_circle|passing_place|mini_roundabout" zoom-min="11">
 					<circle radius="1.0" scale-radius="true" fill="#ffffff" />
 				</rule>
-				<rule e="way" k="highway" v="construction" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="construction" zoom-min="11">
 					<line stroke="#d0d0d0" stroke-width="0.2" stroke-linecap="butt" stroke-dasharray="12,12" />
 				</rule>
-				<rule e="way" k="highway" v="steps" zoom-min="13">
+				<rule e="way" cat="c_highway" k="highway" v="steps" zoom-min="13">
 					<line stroke="#53534e" stroke-width="0.6" stroke-dasharray="1.5,2.5" stroke-linecap="butt" scale="stroke" />
 					<rule e="way" k="*" v="*" zoom-min="16">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="2.0" />
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="cycleway" zoom-min="14">
+				<rule e="way" cat="c_highway" k="highway" v="cycleway" zoom-min="14">
 					<line stroke="#7bcaff" stroke-width="0.6" stroke-linecap="butt" scale="stroke" />
 					<line stroke="#11635d" stroke-width="0.6" stroke-dasharray="0.8,0.8" stroke-linecap="butt" scale="all" />
-					<rule e="way" k="highway" v="cycleway" zoom-min="14">
+					<rule e="way" cat="c_highway" k="highway" v="cycleway" zoom-min="14">
 						<rule cat="cycling" cat="road_captions" e="way" k="*" v="*" zoom-min="15">
 							<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="2.0" />
 						</rule>
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="path|footway" zoom-min="14">
+				<rule e="way" cat="c_highway" k="highway" v="path|footway" zoom-min="14">
 					<rule e="way" k="via_ferrata_flag|via_ferrata_scale|via_ferrata" v="~">
 						<!-- Paths with surface:asphalt/paved like paved roads -->
 						<rule e="way" k="sac_scale" v="~" >
@@ -1697,7 +1708,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 						</rule>
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="track|byway" zoom-min="12">
+				<rule e="way" cat="c_highway" k="highway" v="track|byway" zoom-min="12">
 					<!-- Background -->
 					<rule e="way" k="tracktype" v="~|no|false|grade1|grade2|grade3|grade4|grade5" zoom-min="13">
 						<line stroke="#e053534e" stroke-width="1.5" stroke-linecap="round" />
@@ -1740,7 +1751,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					</rule>
 				</rule>
 				<!-- via ferrata LoMaps -->
-				<rule e="way" k="highway" v="via_ferrata" zoom-min="14">
+				<rule e="way" cat="c_highway" k="highway" v="via_ferrata" zoom-min="14">
 					<line stroke="#fff71c" stroke-width="0.4" stroke-linecap="butt" scale="stroke" />
 					<line stroke="#AA1718" stroke-width="0.4" stroke-dasharray="15,6" stroke-linecap="butt" scale="stroke" />
 					<lineSymbol src="file:symbols/via_ferrata.svg" priority="20" position="center" symbol-percent="80" repeat="true" repeat-start="30" repeat-gap="200" />
@@ -1754,38 +1765,38 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 						<pathText k="name" dy="-1.1" priority="30" font-family="sans_serif" font-style="normal" font-size="13" fill="#000000" stroke="#FFFFFF" stroke-width="2.8" repeat-start="100" repeat-gap="300" />
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="bridleway" zoom-min="13">
+				<rule e="way" cat="c_highway" k="highway" v="bridleway" zoom-min="13">
 					<line stroke="#53534e" stroke-width="0.7" stroke-dasharray="2,6" stroke-linecap="butt" />
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="15">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="2.0" />
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="pedestrian" zoom-min="13" closed="no">
+				<rule e="way" cat="c_highway" k="highway" v="pedestrian" zoom-min="13" closed="no">
 					<line stroke="#FFFFFF" stroke-width="0.9" />
 					<line src="file:patterns/p_pedestrian.svg" symbol-height="8" stroke-width="0.9" />
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="2.0" />
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="service|road" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="service|road" zoom-min="11">
 					<line stroke="#ffffff" stroke-width="0.9" />
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="living_street" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="living_street" zoom-min="11">
 					<line stroke="#ffffff" stroke-width="0.9" />
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="residential|unclassified" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="residential|unclassified" zoom-min="11">
 					<line stroke="#ffffff" stroke-width="0.9" />
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="construction" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="construction" zoom-min="11">
 					<line stroke="#d0d0d0" stroke-width="0.9" />
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="15">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
@@ -1796,13 +1807,13 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					<!-- No markers if at least one is "yes" (foot or bicycle) -->
 					<rule e="way" k="foot" v="~|no">
 						<rule e="way" k="bicycle" v="~|no">
-							<rule e="way" k="highway" v="turning_circle|mini_roundabout|pedestrian|service|road|living_street|residential|unclassified|construction">
+							<rule e="way" cat="c_highway" k="highway" v="turning_circle|mini_roundabout|pedestrian|service|road|living_street|residential|unclassified|construction">
 								<line stroke="#ff0000" stroke-width="1.7" stroke-dasharray="0.3,1.7" stroke-linecap="butt" scale="all" />
 								<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
 									<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
 								</rule>
 							</rule>
-							<rule e="way" k="highway" v="path|footway" zoom-min="14">
+							<rule e="way" cat="c_highway" k="highway" v="path|footway" zoom-min="14">
 								<line stroke="#ff0000" stroke-width="1.5" stroke-dasharray="0.3,1.7" stroke-linecap="butt" scale="all" />
 								<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
 									<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
@@ -1817,31 +1828,31 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 						</rule>
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="tertiary_link" zoom-min="11" zoom-max="12">
+				<rule e="way" cat="c_highway" k="highway" v="tertiary_link" zoom-min="11" zoom-max="12">
 					<line stroke="#ffffff" stroke-width="1.4" />
 				</rule>
-				<rule e="way" k="highway" v="tertiary_link" zoom-min="13">
+				<rule e="way" cat="c_highway" k="highway" v="tertiary_link" zoom-min="13">
 					<line stroke="#ffff33" stroke-width="1.4" />
 				</rule>
-				<rule e="way" k="highway" v="secondary_link" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="secondary_link" zoom-min="11">
 					<line stroke="#f7c245" stroke-width="1.4" />
 				</rule>
-				<rule e="way" k="highway" v="primary_link" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="primary_link" zoom-min="11">
 					<line stroke="#e09a0d" stroke-width="1.4" />
 				</rule>
-				<rule e="way" k="highway" v="trunk_link" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="trunk_link" zoom-min="11">
 					<line stroke="#26a965" stroke-width="1.4" />
 				</rule>
-				<rule e="way" k="highway" v="motorway_link" zoom-min="11">
+				<rule e="way" cat="c_highway" k="highway" v="motorway_link" zoom-min="11">
 					<line stroke="#0083d7" stroke-width="1.4" />
 				</rule>
-				<rule e="way" k="highway" v="tertiary|raceway" zoom-min="11"zoom-max="12">
+				<rule e="way" cat="c_highway" k="highway" v="tertiary|raceway" zoom-min="11"zoom-max="12">
 					<line stroke="#ffffff" stroke-width="1.4" />
 				</rule>
-				<rule e="way" k="highway" v="tertiary|raceway" zoom-min="12" zoom-max="13" >
+				<rule e="way" cat="c_highway" k="highway" v="tertiary|raceway" zoom-min="12" zoom-max="13" >
 					<line stroke="#ffff99" stroke-width="1.4" />
 				</rule>
-				<rule e="way" k="highway" v="tertiary|raceway" zoom-min="13">
+				<rule e="way" cat="c_highway" k="highway" v="tertiary|raceway" zoom-min="13">
 					<line stroke="#ffff33" stroke-width="1.4" />
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="14" zoom-max="15">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#000000" stroke="#ffffff" stroke-width="2.0" />
@@ -1850,7 +1861,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 						<pathText k="name" font-family="sans_serif" font-style="bold" font-size="11" fill="#000000" stroke="#ffffff" stroke-width="2.0" />
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="secondary" zoom-min="9">
+				<rule e="way" cat="c_highway" k="highway" v="secondary" zoom-min="9">
 					<line stroke="#f7c245" stroke-width="1.6" />
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-max="13">
 						<pathText k="ref" font-family="sans_serif" font-style="bold" font-size="9" fill="#c78205" stroke="#ffffff" stroke-width="2.7" />
@@ -1867,7 +1878,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 						<pathText k="ref" font-family="sans_serif" font-style="bold" font-size="13" fill="#c79205" stroke="#ffe666" stroke-width="1.9" />
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="primary" zoom-min="8">
+				<rule e="way" cat="c_highway" k="highway" v="primary" zoom-min="8">
 					<rule e="way" k="*" v="*" zoom-max="8">
 						<line stroke="#f79616" stroke-width="1" />
 					</rule>
@@ -1889,7 +1900,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 						<pathText k="ref" font-family="sans_serif" font-style="bold" font-size="13" fill="#a73600" stroke="#ffa626" stroke-width="1.9" />
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="trunk" zoom-min="6">
+				<rule e="way" cat="c_highway" k="highway" v="trunk" zoom-min="6">
 					<rule e="way" k="*" v="*" zoom-max="8">
 						<line stroke="#26a965" stroke-width="1" />
 					</rule>
@@ -1903,7 +1914,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 						<pathText k="ref" font-family="sans_serif" font-style="bold" font-size="11" repeat-start="50" repeat-gap="400" fill="#ffffff" stroke="#008338" stroke-width="2.7" />
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="motorway" zoom-min="6">
+				<rule e="way" cat="c_highway" k="highway" v="motorway" zoom-min="6">
 					<rule e="way" k="*" v="*" zoom-max="8">
 						<line stroke="#0083d7" stroke-width="1.2" stroke-linecap="butt" />
 					</rule>
@@ -1955,20 +1966,20 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<line stroke="#8C6900" stroke-width="0.5" stroke-linecap="butt" />
 			<line stroke="#FFFF73" stroke-width="0.4" scale="all" stroke-dasharray="1.8,1.8" stroke-linecap="butt" />
 		</rule>
-		<rule e="way" k="railway" v="subway">
+		<rule e="way" cat="c_railway" k="railway" v="subway">
 			<line stroke="#181818" stroke-width="1.5" stroke-linecap="butt" />
 			<line stroke="#ffffff" stroke-width="1.05" stroke-linecap="butt" />
 			<line stroke="#B30000" stroke-width="0.6" stroke-linecap="butt" />
 			<line stroke="#FFBFBF" stroke-width="0.45" scale="all" stroke-dasharray="1.8,1.8" stroke-linecap="butt" />
 		</rule>
-		<rule e="way" k="railway" v="narrow_gauge|preserved|funicular">
+		<rule e="way" cat="c_railway" k="railway" v="narrow_gauge|preserved|funicular">
 			<line stroke="#181818" stroke-width="1.6" stroke-linecap="butt" />
 			<line stroke="#ffffff" stroke-width="1.15" stroke-linecap="butt" />
 			<line stroke="#404040" stroke-width="0.65" stroke-linecap="butt" />
 			<line stroke="#e6e6e6" stroke-width="0.5" stroke-linecap="butt" />
 			<line stroke="#404040" stroke-width="0.5" scale="all" stroke-dasharray="1.2,2.4" stroke-linecap="butt" />
 		</rule>
-		<rule e="way" k="railway" v="rail|disused">
+		<rule e="way" cat="c_railway" k="railway" v="rail|disused">
 			<line stroke="#181818" stroke-width="1.7" stroke-linecap="butt" />
 			<line stroke="#ffffff" stroke-width="1.25" stroke-linecap="butt" />
 			<line stroke="#404040" stroke-width="0.75" stroke-linecap="butt" />
@@ -1977,7 +1988,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 
-	<rule e="any" k="railway" v="crossing" zoom-min="14">
+	<rule e="any" cat="c_railway" k="railway" v="crossing" zoom-min="14">
 		<rule e="any" k="*" v="*" zoom-max="16">
 			<symbol src="file:symbols/railway-crossing.svg" symbol-height="15" />
 		</rule>
@@ -1986,7 +1997,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 
-	<rule e="any" k="railway" v="level_crossing" zoom-min="14">
+	<rule e="any" cat="c_railway" k="railway" v="level_crossing" zoom-min="14">
 		<rule e="any" k="*" v="*" zoom-max="16">
 			<symbol src="file:symbols/railway-crossing.svg" symbol-height="20" />
 		</rule>
@@ -1995,31 +2006,31 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 
-	<rule e="node" k="railway" v="*" zoom-min="12" cat="pub_transp">
-		<rule e="node" k="railway" v="subway_entrance" zoom-min="14">
-			<rule e="node" k="railway" v="subway_entrance" zoom-min="14" zoom-max="14">
+	<rule e="node" cat="c_railway" k="railway" v="*" zoom-min="12" cat="pub_transp">
+		<rule e="node" cat="c_railway" k="railway" v="subway_entrance" zoom-min="14">
+			<rule e="node" cat="c_railway" k="railway" v="subway_entrance" zoom-min="14" zoom-max="14">
 				<symbol id="id_station_metro" src="file:symbols/metro_logo.svg" symbol-percent="55" priority="50" />
 			</rule>
-			<rule e="node" k="railway" v="subway_entrance" zoom-min="15">
+			<rule e="node" cat="c_railway" k="railway" v="subway_entrance" zoom-min="15">
 				<symbol id="id_station_metro" src="file:symbols/metro_logo.svg" symbol-percent="70" display="always" priority="50" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="15">
 				<caption symbol-id="id_station_metro" k="name" dy="-4" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
 			</rule>
 		</rule>
-		<rule e="node" k="railway" v="station" zoom-min="13">
+		<rule e="node" cat="c_railway" k="railway" v="station" zoom-min="13">
 			<symbol id="id_station" src="file:symbols/railway_station.svg" symbol-percent="80" priority="-10" />
 			<rule e="node" k="*" v="*" zoom-min="15">
 				<caption symbol-id="id_station" k="name" dy="-4" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
 			</rule>
 		</rule>
-		<rule e="node" k="railway" v="tram_stop" zoom-min="14">
+		<rule e="node" cat="c_railway" k="railway" v="tram_stop" zoom-min="14">
 			<symbol id="id_tram_stop" src="file:symbols/railway_tram_stop.svg" symbol-percent="50" />
 			<rule e="node" k="*" v="*" zoom-min="15">
 				<caption symbol-id="id_tram_stop" k="name" dy="13" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
 			</rule>
 		</rule>
-		<rule e="node" k="railway" v="halt" zoom-min="13">
+		<rule e="node" cat="c_railway" k="railway" v="halt" zoom-min="13">
 			<symbol id="id_halt" src="file:symbols/railway_station.svg" symbol-percent="80" priority="-10" />
 			<rule e="node" k="*" v="*" zoom-min="15">
 				<caption symbol-id="id_halt" k="name" dy="-4" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
@@ -2565,10 +2576,10 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 	<!-- ToDo: check, symbol-id -->
-	<rule e="any" k="amenity" v="watering_place" zoom-min="15">
+	<rule e="any" k="amenity" v="watering_place" zoom-min="17">
 		<area fill="#ff80C4F9" stroke="#888888" stroke-width="0.1" />
 		<rule cat="water" e="any" k="*" v="*" >
-			<symbol src="file:symbols/fountain.svg" symbol-percent="70" />
+			<symbol src="file:symbols/watering_place.svg" symbol-percent="75" />
 			<rule e="any" k="*" v="*" zoom-min="19">
 				<caption symbol-id="id_drinking_water_yes" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.2" />
 			</rule>
@@ -2826,7 +2837,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<symbol id="s_embassy" priority="81" src="file:symbols/s_embassy.svg" symbol-height="17" />
 			<caption k="name" symbol-id="s_embassy" font-style="bold" font-family="sans_serif" font-size="12" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
 		</rule>
-		<rule e="any" k="highway" v="emergency_access_point">
+		<rule e="any" cat="c_highway" k="highway" v="emergency_access_point">
 			<rule e="any" k="*" v="*" zoom-min="15" zoom-max="16">
 				<symbol id="id_emergency_access_point" src="file:symbols/emergency_access_point.svg" symbol-height="15" display="always" priority="102" />
 			</rule>
@@ -3250,9 +3261,9 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 
-	<rule e="node" k="highway" v="bus_stop" zoom-min="14" cat="pub_transp">
+	<rule e="node" cat="c_highway" k="highway" v="bus_stop" zoom-min="14" cat="pub_transp">
 		<symbol id="id_bus_stop" src="file:symbols/bus_stop.svg" symbol-percent="70" />
-		<rule e="node" k="highway" v="*" zoom-min="17">
+		<rule e="node" cat="c_highway" k="highway" v="*" zoom-min="17">
 			<caption symbol-id="id_bus_stop" k="name" dy="-4" font-style="bold" font-family="sans_serif" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="1.5" text-wrap-width="120" />
 		</rule>
 	</rule>
