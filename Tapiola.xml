@@ -208,16 +208,30 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<name lang="en" value="⚡ Electricity" />
 			<cat id="electricity" />
 		</layer>
-		<layer id="L_building_type" enabled="true" visible="false">
+		<!-- layer id="L_building_type" enabled="true" visible="false">
 			<name lang="ru" value="🈴 Выделять разные типы зданий цветом (школы, больницы и т.п.)" />
 			<name lang="de" value="🈴 Farbige Gebäudetypen (Schulen, KKH etc.)" />
 			<name lang="en" value="🈴 Colored building types (schools etc.)" />
 			<cat id="building_type" />
+		</layer -->
+		<layer id="basic" visible="true">
+			<name lang="en" value="Basic features" />
+			<overlay id="L_hiking_trails" />
+			<overlay id="L_cycling" />
+			<overlay id="L_mtb_trails" />
+			<overlay id="L_winter_sports" />
+			<overlay id="L_highway" />
+			<overlay id="L_railway" />
+			<overlay id="L_cities_towns" />
+			<overlay id="L_neighbourhoods_suburbs" />
+			<overlay id="L_road_captions" />
+			<overlay id="L_parking" />
+			<overlay id="L_landscapefeat" />
+			<overlay id="L_contourlines" />
+			<overlay id="L_protected_area" />
 		</layer>
 		<layer id="hiking" visible="true">
-			<name lang="ru" value="Hiking and trekking" />
-			<name lang="de" value="Hiking and trekking" />
-			<name lang="en" value="Hiking and trekking" />
+			<name lang="en" value="All features" />
 			<overlay id="L_hiking_trails" />
 			<overlay id="L_hiking_nodes" />
 			<overlay id="L_cycling" />
@@ -239,7 +253,6 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<overlay id="L_pharmacies" />
 			<overlay id="L_emergency" />
 			<overlay id="L_architecture" />
-			<overlay id="L_building_type" />
 			<overlay id="L_hunting_stand" />
 			<overlay id="L_playground" />
 			<overlay id="L_toilets" />
@@ -1312,7 +1325,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 
 	<rule e="any" k="building" v="*" zoom-min="14">
 		<area fill="#ffbbbb" stroke="#444444" stroke-width="0.1" />
-		<rule cat="building_type" e="way" k="building" v="*">
+		<rule e="way" k="building" v="*">
 			<rule e="way" k="building" v="hospital">
 				<area fill="#5cb885" stroke="#d4d4d4" stroke-width="0.1" />
 			</rule>
