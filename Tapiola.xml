@@ -13,57 +13,57 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 -->
 	<stylemenu id="menu" defaultvalue="hiking" defaultlang="en">
 		<layer id="L_hiking_trails" enabled="false" visible="false">
-			<name lang="ru" value="Пешеходные маршруты" />
-			<name lang="de" value="Wanderwege" />
+			<name lang="ru" value="🥾 Пешеходные маршруты" />
+			<name lang="de" value="🥾 Wanderwege" />
 			<name lang="en" value="🥾 Hiking network" />
 			<cat id="hiking_trails" />
 		</layer>
 		<layer id="L_hiking_nodes" enabled="false" visible="false">
-			<name lang="ru" value="Указатель номера маршрута" />
-			<name lang="de" value="Wanderwege: Knotenpunkte" />
+			<name lang="ru" value="◾ Указатель номера маршрута" />
+			<name lang="de" value="◾ Wanderwege: Knotenpunkte" />
 			<name lang="en" value="◾ Hiking Nodes" />
 			<cat id="hiking_nodes" />
 		</layer>
 		<layer id="L_cycling" enabled="false" visible="false">
-			<name lang="ru" value="Велосипед" />
-			<name lang="de" value="Radwege" />
+			<name lang="ru" value="🚴 Велосипед" />
+			<name lang="de" value="🚴 Radwege" />
 			<name lang="en" value="🚴 Cycling network" />
 			<cat id="cycling" />
 		</layer>
 		<layer id="L_mtb_trails" enabled="false" visible="false">
-			<name lang="ru" value="Трассы для горного велосипеда" />
+			<name lang="ru" value="🚴‍♀️ Трассы для горного велосипеда" />
 			<name lang="en" value="🚴‍♀️ MTB trails" />
-			<name lang="de" value="MTB-Trails" />
+			<name lang="de" value="🚴‍♀️ MTB-Trails" />
 			<cat id="mtb_trails" />
 		</layer>
 		<layer id="L_highway" enabled="true" visible="false">
 			<name lang="en" value="🛣️ Roads" />
-			<name lang="de" value="Straßennetz" />
+			<name lang="de" value="🛣️ Straßennetz" />
 			<cat id="c_highway" />
 		</layer>
 		<layer id="L_railway" enabled="true" visible="false">
 			<name lang="en" value="🛤️ Railways" />
-			<name lang="de" value="Schienennetz" />
+			<name lang="de" value="🛤️ Schienennetz" />
 			<cat id="c_railway" />
 		</layer>
 		<layer id="L_cities_towns" enabled="true" visible="false">
-			<name lang="de" value="Städtenamen" />
+			<name lang="de" value="🔤 Städtenamen" />
 			<name lang="en" value="🔤 City/Town/Village" />
 			<cat id="cities_towns" />
 		</layer>
 		<layer id="L_neighbourhoods_suburbs" enabled="true" visible="false">
-			<name lang="de" value="Stadtteilnamen" />
+			<name lang="de" value="🔤 Stadtteilnamen" />
 			<name lang="en" value="🔤 NbHood/Suburb/Quarter" />
 			<cat id="neighbourhoods_suburbs" />
 		</layer>
 		<layer id="L_road_captions" enabled="true" visible="false">
 			<name lang="en" value="🔤 Road names" />
-			<name lang="de" value="Straßennamen" />
+			<name lang="de" value="🔤 Straßennamen" />
 			<cat id="road_captions" />
 		</layer>
 		<layer id="L_barriers" enabled="true" visible="false">
-			<name lang="ru" value="Шлагбаумы и ворота" />
-			<name lang="de" value="Schranken und Tore" />
+			<name lang="ru" value="⛔ Шлагбаумы и ворота" />
+			<name lang="de" value="⛔ Schranken und Tore" />
 			<name lang="en" value="⛔ Barriers and gates" />
 			<cat id="barriers" />
 		</layer>
@@ -72,145 +72,145 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<cat id="access" />
 		</layer>
 		<layer id="L_sports" enabled="true" visible="false">
-			<name lang="ru" value="Спорт" />
-			<name lang="de" value="Sport" />
+			<name lang="ru" value="⚽ Спорт" />
+			<name lang="de" value="⚽ Sport" />
 			<name lang="en" value="⚽ Sports" />
 			<cat id="sports" />
 		</layer>
 		<layer id="L_winter_sports" enabled="false" visible="false">
-			<name lang="ru" value="Зимний спорт (лыжи/санки)" />
-			<name lang="de" value="Wintersport" />
+			<name lang="ru" value="⛷️ Зимний спорт (лыжи/санки)" />
+			<name lang="de" value="⛷️ Wintersport" />
 			<name lang="en" value="⛷️ Winter sports" />
 			<cat id="winter_sports" />
 		</layer>
 		<layer id="L_protected_area" enabled="false" visible="false">
-			<name lang="ru" value="Национальные парки и охраняемые территории" />
-			<name lang="de" value="Geschützte Gebiete" />
+			<name lang="ru" value="🔘 Национальные парки и охраняемые территории" />
+			<name lang="de" value="🔘 Geschützte Gebiete" />
 			<name lang="en" value="🔘 Protected areas" />
 			<cat id="protected_area" />
 		</layer>
 		<layer id="L_boundaries_areas" enabled="true" visible="false">
-			<name lang="ru" value="Административные границы" />
-			<name lang="de" value="Verwaltungsgrenzen" />
+			<name lang="ru" value="🔘 Административные границы" />
+			<name lang="de" value="🔘 Verwaltungsgrenzen" />
 			<name lang="en" value="🔘 Administrative boundaries" />
 			<cat id="boundaries_areas" />
 		</layer>
 		<layer id="L_parking" enabled="true" visible="false">
-			<name lang="ru" value="Парковки" />
-			<name lang="de" value="Parkplätze" />
+			<name lang="ru" value="🅿️ Парковки" />
+			<name lang="de" value="🅿️ Parkplätze" />
 			<name lang="en" value="🅿️ Parking" />
 			<cat id="parking" />
 		</layer>
 		<layer id="L_publictransport" enabled="true" visible="false">
-			<name lang="ru" value="Общественный транспорт" />
-			<name lang="de" value="Öffentlicher Verkehr" />
+			<name lang="ru" value="Ⓜ️ Общественный транспорт" />
+			<name lang="de" value="Ⓜ️ Öffentlicher Verkehr" />
 			<name lang="en" value="Ⓜ️ Public transport" />
 			<cat id="pub_transp" />
 		</layer>
 		<layer id="L_restaurants" enabled="true" visible="false">
-			<name lang="ru" value="Рестораны и кафе" />
-			<name lang="de" value="Restaurants und Cafés" />
+			<name lang="ru" value="🍴 Рестораны и кафе" />
+			<name lang="de" value="🍴 Restaurants und Cafés" />
 			<name lang="en" value="🍴 Restaurants and Cafés" />
 			<cat id="restaurants" />
 		</layer>
 		<layer id="L_shops" enabled="true" visible="false">
-			<name lang="ru" value="Магазины + услуги " />
-			<name lang="de" value="Geschäfte und Dienstleistungen" />
+			<name lang="ru" value="🛒 Магазины + услуги " />
+			<name lang="de" value="🛒 Geschäfte und Dienstleistungen" />
 			<name lang="en" value="🛒 Shops and services" />
 			<cat id="shops" />
 		</layer>
 		<layer id="L_accommodation" enabled="true" visible="false">
-			<name lang="ru" value="Отели и другое размещение" />
-			<name lang="de" value="Hotels und Unterkünfte" />
-			<name lang="en" value="🏨 Hotels and Accommodation" />
+			<name lang="ru" value="🛒 Отели и другое размещение" />
+			<name lang="de" value="🛒 Hotels und Unterkünfte" />
+			<name lang="en" value="🛒 Hotels and Accommodation" />
 			<cat id="accommodation" />
 		</layer>
 		<layer id="L_pharmacies" enabled="true" visible="false">
-			<name lang="ru" value="Аптеки и больницы" />
-			<name lang="de" value="Apotheken und Krankenhäuser" />
+			<name lang="ru" value="⚕️ Аптеки и больницы" />
+			<name lang="de" value="⚕️ Apotheken und Krankenhäuser" />
 			<name lang="en" value="⚕️ Pharmacies and hospitals" />
 			<cat id="pharmacies" />
 		</layer>
 		<layer id="L_emergency" enabled="true" visible="false">
-			<name lang="ru" value="Службы спасения (полиция/пожарные/дефибриллятор и т.п.)" />
-			<name lang="de" value="Notfall (Polizei, Feuerwehr, ...)" />
+			<name lang="ru" value="🆘 Службы спасения (полиция/пожарные/дефибриллятор и т.п.)" />
+			<name lang="de" value="🆘 Notfall (Polizei, Feuerwehr, ...)" />
 			<name lang="en" value="🆘 Emergency (police, firemen, ...)" />
 			<cat id="emergency" />
 		</layer>
 		<layer id="L_architecture" enabled="true" visible="false">
-			<name lang="ru" value="Монументы, памятники, памятные доски" />
-			<name lang="de" value="Architektur, Monumente, Museen" />
+			<name lang="ru" value="🏛️ Монументы, памятники, памятные доски" />
+			<name lang="de" value="🏛️ Architektur, Monumente, Museen" />
 			<name lang="en" value="🏛️ Architecture, monuments, museums" />
 			<cat id="architecture" />
 		</layer>
 		<layer id="L_playground" enabled="true" visible="false">
-			<name lang="ru" value="Детские игровые площадки" />
-			<name lang="de" value="Spielplatz" />
+			<name lang="ru" value="🧸 Детские игровые площадки" />
+			<name lang="de" value="🧸 Spielplatz" />
 			<name lang="en" value="🧸 Playground" />
 			<cat id="playground" />
 		</layer>
 		<layer id="L_benches" enabled="true" visible="false">
-			<name lang="ru" value="Лавки, столы" />
-			<name lang="de" value="Bänke und Tische" />
+			<name lang="ru" value="🪑 Лавки, столы" />
+			<name lang="de" value="🪑 Bänke und Tische" />
 			<name lang="en" value="🪑 Benches and tables" />
 			<cat id="benches" />
 		</layer>
 		<layer id="L_toilets" enabled="true" visible="false">
-			<name lang="ru" value="Туалеты" />
-			<name lang="de" value="Toiletten" />
+			<name lang="ru" value="🚾 Туалеты" />
+			<name lang="de" value="🚾 Toiletten" />
 			<name lang="en" value="🚾 Toilets" />
 			<cat id="toilets" />
 		</layer>
 		<layer id="L_refuge" enabled="true" visible="false">
-			<name lang="ru" value="Укрытие (домики/навесы/беседки)" />
-			<name lang="de" value="Unterstände" />
+			<name lang="ru" value="🏚️ Укрытие (домики/навесы/беседки)" />
+			<name lang="de" value="🏚️ Unterstände" />
 			<name lang="en" value="🏚️ Refuge" />
 			<cat id="refuge" />
 		</layer>
 		<layer id="L_water" enabled="true" visible="false">
-			<name lang="ru" value="Родники, питьевая вода, колодцы" />
-			<name lang="de" value="Quellen, Wasserstellen" />
+			<name lang="ru" value="💧 Родники, питьевая вода, колодцы" />
+			<name lang="de" value="💧 Quellen, Wasserstellen" />
 			<name lang="en" value="💧 Spring, water" />
 			<cat id="water" />
 		</layer>
 		<layer id="L_forest" enabled="true" visible="false">
-			<name lang="ru" value="Лес" />
-			<name lang="de" value="Wald" />
+			<name lang="ru" value="🌲 Лес" />
+			<name lang="de" value="🌲 Wald" />
 			<name lang="en" value="🌲 Forest" />
 			<cat id="forest" />
 		</layer>
 		<layer id="L_landscapefeat" enabled="true" visible="false">
-			<name lang="ru" value="Особенности ландшафта (овраги, обрывы, воронки, хребты, " />
-			<name lang="de" value="Gipfel, Landschaftsmerkmale" />
+			<name lang="ru" value="🏞️ Особенности ландшафта (овраги, обрывы, воронки, хребты, " />
+			<name lang="de" value="🏞️ Gipfel, Landschaftsmerkmale" />
 			<name lang="en" value="🏞️ Peaks, landscape features" />
 			<cat id="landscapefeat" />
 		</layer>
 		<layer id="L_contourlines" enabled="true" visible="false">
-			<name lang="ru" value="Изолинии" />
-			<name lang="de" value="Höhenlinien" />
+			<name lang="ru" value="📈 Изолинии" />
+			<name lang="de" value="📈 Höhenlinien" />
 			<name lang="en" value="📈 Contour lines" />
 			<cat id="contourlines" />
 		</layer>
 		<layer id="L_hunting_stand" enabled="true" visible="false">
-			<name lang="ru" value="Hunting stands" />
-			<name lang="de" value="Hochsitze" />
+			<name lang="ru" value="🏹 Hunting stands" />
+			<name lang="de" value="🏹 Hochsitze" />
 			<name lang="en" value="🏹 Hunting stands" />
 			<cat id="hunting_stand" />
 		</layer>
 		<layer id="L_mast_communication" enabled="true" visible="false">
-			<name lang="ru" value="Мачта сотовой связи" />
-			<name lang="de" value="Mobilfunkmast" />
+			<name lang="ru" value="📶 Мачта сотовой связи" />
+			<name lang="de" value="📶 Mobilfunkmast" />
 			<name lang="en" value="📶 Cellular tower" />
 			<cat id="mast_communication" />
 		</layer>
 		<layer id="L_electricity" enabled="true" visible="false">
-			<name lang="de" value="Elektrizität" />
+			<name lang="de" value="⚡ Elektrizität" />
 			<name lang="en" value="⚡ Electricity" />
 			<cat id="electricity" />
 		</layer>
 		<layer id="L_building_type" enabled="true" visible="false">
-			<name lang="ru" value="Выделять разные типы зданий цветом (школы, больницы и т.п.)" />
-			<name lang="de" value="Farbige Gebäudetypen (Schulen, KKH etc.)" />
+			<name lang="ru" value="🈴 Выделять разные типы зданий цветом (школы, больницы и т.п.)" />
+			<name lang="de" value="🈴 Farbige Gebäudetypen (Schulen, KKH etc.)" />
 			<name lang="en" value="🈴 Colored building types (schools etc.)" />
 			<cat id="building_type" />
 		</layer>
