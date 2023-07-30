@@ -2,7 +2,7 @@
 <rendertheme xmlns="http://mapsforge.org/renderTheme"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
-Tapiola 1.2.5 - 2023-07-28 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.2.6 - 2023-07-30 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapio is the god of forest in finnish mythology.
 Tapiola is his realm.
@@ -197,11 +197,10 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<name lang="en" value="Cellular tower" />
 			<cat id="mast_communication" />
 		</layer>
-		<layer id="L_power_line" enabled="true" visible="false">
-			<name lang="ru" value="Линии электропередач" />
-			<name lang="de" value="Energieleitung" />
-			<name lang="en" value="Power line" />
-			<cat id="power_line" />
+		<layer id="L_electricity" enabled="true" visible="false">
+			<name lang="de" value="Elektrizität" />
+			<name lang="en" value="Electricity" />
+			<cat id="electricity" />
 		</layer>
 		<layer id="L_contourlines" enabled="true" visible="false">
 			<name lang="ru" value="Изолинии" />
@@ -251,7 +250,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<overlay id="L_landscapefeat" />
 			<overlay id="L_barriers" />
 			<overlay id="L_mast_communication" />
-			<overlay id="L_power_line" />
+			<overlay id="L_electricity" />
 			<overlay id="L_contourlines" />
 			<overlay id="L_building_type" />
 		</layer>
@@ -1471,8 +1470,9 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 						<line stroke="#e6e6e6" stroke-width="0.6" stroke-linecap="butt" />
 						<line stroke="#404040" stroke-width="0.6" scale="all" stroke-dasharray="0.1,2.3" stroke-linecap="butt" />
 					</rule>
+					<!-- Railways in low ZL -->
 					<rule e="way" cat="c_railway" k="railway" v="rail|narrow_gauge|preserved|funicular" zoom-max="12">
-						<line stroke="#666666" stroke-width="1.2" stroke-linecap="butt" />
+						<line stroke="#555555" stroke-width="1.2" stroke-linecap="butt" />
 					</rule>
 					<rule e="way" cat="c_railway" k="railway" v="rail|narrow_gauge|preserved|funicular" zoom-min="13" zoom-max="13">
 						<line stroke="#444444" stroke-width="0.6" stroke-linecap="butt" />
@@ -2264,19 +2264,19 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		<rule e="way" k="power" v="generator">
 			<area fill="#DBDCDC" />
 		</rule>
-		<rule e="way" k="power" v="line" zoom-min="12" cat="power_line">
+		<rule e="way" k="power" v="line" zoom-min="12" cat="electricity">
 			<line stroke="#727272" stroke-width="0.2" stroke-linecap="butt" />
 			<line stroke="#727272" stroke-width="1.3" stroke-dasharray="0,20,0.6,50" stroke-linecap="butt" />
 			<line stroke="#727272" stroke-width="0.6" stroke-dasharray="0.3,40,0.3,30" />
 		</rule>
-		<rule e="way" k="power" v="minor_line" zoom-min="13" cat="power_line">
+		<rule e="way" k="power" v="minor_line" zoom-min="13" cat="electricity">
 			<line stroke="#727272" stroke-width="0.2" stroke-linecap="butt" />
 			<line stroke="#727272" stroke-width="0.6" stroke-dasharray="0.3,40,0.3,30" />
 		</rule>
 	</rule>
-	<rule e="node" k="power" v="generator" zoom-min="13">
+	<rule e="node" cat="electricity" k="power" v="generator" zoom-min="10">
 		<rule e="node" k="generator:source" v="wind">
-			<symbol id="power_generator_wind" src="file:symbols/power_generator_wind.svg" symbol-percent="100" />
+			<symbol id="power_generator_wind" src="file:symbols/power_generator_wind.svg" symbol-percent="150" />
 			<rule e="node" k="*" v="*" zoom-min="17">
 				<caption symbol-id="power_generator_wind" k="name" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
 			</rule>
