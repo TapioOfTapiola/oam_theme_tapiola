@@ -41,6 +41,20 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		    <cat id="hunting_stand"/>
 			<cat id="building_type"/>
 		</layer>
+		<layer id="base_nopoi">
+		    <cat id="c_highway"/>
+		    <cat id="c_railway"/>
+		    <cat id="cities_towns"/>
+		    <cat id="neighbourhoods_suburbs"/>
+		    <cat id="road_captions"/>
+		    <cat id="access"/>
+		    <cat id="boundaries_areas"/>
+		    <cat id="water"/>
+		    <cat id="landscapefeat"/>
+		    <cat id="forest"/>
+		    <cat id="contourlines"/>
+			<cat id="building_type"/>
+		</layer>
 		<layer id="L_hiking_trails" enabled="true" visible="false">
 			<name lang="ru" value="🥾 Пешеходные маршруты" />
 			<name lang="de" value="🥾 Wanderwege" />
@@ -251,10 +265,22 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		<layer id="basic" visible="true" parent="base">
 			<name lang="en" value="Basic features" />
 			<overlay id="L_hiking_trails" />
+			<overlay id="L_hiking_nodes" />
 			<overlay id="L_cycling" />
 			<overlay id="L_mtb_trails" />
 			<overlay id="L_winter_sports" />
 			<overlay id="L_parking" />
+			<overlay id="L_landscapefeat" />
+			<overlay id="L_contourlines" />
+			<overlay id="L_protected_area" />
+		</layer>
+		<layer id="basic_nopoi" visible="false" parent="base_nopoi">
+			<name lang="en" value="Basic features, without POI" />
+			<overlay id="L_hiking_trails" />
+			<overlay id="L_hiking_nodes" />
+			<overlay id="L_cycling" />
+			<overlay id="L_mtb_trails" />
+			<overlay id="L_winter_sports" />
 			<overlay id="L_landscapefeat" />
 			<overlay id="L_contourlines" />
 			<overlay id="L_protected_area" />
