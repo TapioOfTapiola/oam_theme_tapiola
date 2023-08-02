@@ -29,6 +29,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		    <cat id="pharmacies"/>
 		    <cat id="emergency"/>
 		    <cat id="architecture"/>
+			<cat id="attractions"/>
 		    <cat id="playground"/>
 		    <cat id="benches"/>
 		    <cat id="toilets"/>
@@ -40,7 +41,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		    <cat id="hunting_stand"/>
 			<cat id="building_type"/>
 		</layer>
-		<layer id="L_hiking_trails" enabled="false" visible="false">
+		<layer id="L_hiking_trails" enabled="true" visible="false">
 			<name lang="ru" value="🥾 Пешеходные маршруты" />
 			<name lang="de" value="🥾 Wanderwege" />
 			<name lang="en" value="🥾 Hiking network" />
@@ -165,6 +166,11 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<name lang="en" value="🆘 Emergency (police, firemen, ...)" />
 			<cat id="emergency" />
 		</layer>
+		<layer id="L_attractions" enabled="true" visible="false">
+			<name lang="de" value="🎡 Attraktionen" />
+			<name lang="en" value="🎡 Attractions" />
+			<cat id="attractions" />
+		</layer>
 		<layer id="L_architecture" enabled="true" visible="false">
 			<name lang="ru" value="🏛️ Монументы, памятники, памятные доски" />
 			<name lang="de" value="🏛️ Architektur, Monumente, Museen" />
@@ -276,6 +282,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<overlay id="L_pharmacies" />
 			<overlay id="L_emergency" />
 			<overlay id="L_architecture" />
+			<overlay id="L_attractions" />
 			<overlay id="L_building_type" />
 			<overlay id="L_playground" />
 			<overlay id="L_toilets" />
@@ -1349,7 +1356,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 
 	<rule e="any" k="building" v="*" zoom-min="14">
 		<area fill="#ffbbbb" stroke="#444444" stroke-width="0.1" />
-		<rule e="way" k="building" v="*">
+		<rule cat="building_type" e="way" k="building" v="*">
 			<rule e="way" k="building" v="hospital">
 				<area fill="#5cb885" stroke="#d4d4d4" stroke-width="0.1" />
 			</rule>
@@ -2320,7 +2327,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 	
-	<rule e="any" k="place" v="locality" zoom-min="12">
+	<rule cat="neighbourhoods_suburbs" e="any" k="place" v="locality" zoom-min="12">
 		<rule e="any" k="mountain_pass|natural|tourism" v="~" zoom-max="16">
 			<caption k="name" font-style="italic" font-family="serif" font-size="12" fill="#90000000" stroke="#c0ffffff" stroke-width="3" priority="97" text-wrap-width="135" />
 		</rule>
@@ -3263,7 +3270,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 				</rule>
 			</rule>
 		</rule>
-		<rule e="any" k="tourism" v="attraction" zoom-min="13">
+		<rule e="any" cat="attractions" k="tourism" v="attraction" zoom-min="13">
 			<rule e="any" k="historic|amenity|natural|leisure|boundary|man_made" v="~">
 				<rule e="any" k="*" v="*" zoom-min="14" zoom-max="16">
 					<symbol id="id_attraction" src="file:symbols/attraction.svg" symbol-percent="80" priority="120" />
@@ -3275,7 +3282,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 				</rule>
 			</rule>
 		</rule>
-		<rule e="way" k="tourism" v="zoo" zoom-min="14">
+		<rule e="way" cat="attractions" k="tourism" v="zoo" zoom-min="14">
 			<area fill="#20aaeb8a" stroke="#6fc18e" stroke-width="0.35" />
 			<symbol id="id_zoo" src="file:symbols/zoo.svg" symbol-percent="100" />
 			<rule e="way" k="tourism" v="zoo" zoom-min="14">
