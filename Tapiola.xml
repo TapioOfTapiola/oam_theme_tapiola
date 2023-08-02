@@ -11,7 +11,35 @@ Tapiola is Sibelius' Op. 112.
 Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
 -->
-	<stylemenu id="menu" defaultvalue="hiking" defaultlang="en">
+	<stylemenu id="menu" defaultvalue="basic" defaultlang="en">
+		<layer id="base">
+		    <cat id="c_highway"/>
+		    <cat id="c_railway"/>
+		    <cat id="cities_towns"/>
+		    <cat id="neighbourhoods_suburbs"/>
+		    <cat id="road_captions"/>
+			<cat id="barriers"/>
+		    <cat id="access"/>
+		    <cat id="sports"/>
+		    <cat id="boundaries_areas"/>
+		    <cat id="pub_transp"/>
+		    <cat id="restaurants"/>
+		    <cat id="shops"/>
+		    <cat id="accommodation"/>
+		    <cat id="pharmacies"/>
+		    <cat id="emergency"/>
+		    <cat id="architecture"/>
+		    <cat id="playground"/>
+		    <cat id="benches"/>
+		    <cat id="toilets"/>
+		    <cat id="refuge"/>
+		    <cat id="water"/>
+		    <cat id="landscapefeat"/>
+		    <cat id="forest"/>
+		    <cat id="contourlines"/>
+		    <cat id="hunting_stand"/>
+			<cat id="building_type"/>
+		</layer>
 		<layer id="L_hiking_trails" enabled="false" visible="false">
 			<name lang="ru" value="🥾 Пешеходные маршруты" />
 			<name lang="de" value="🥾 Wanderwege" />
@@ -145,8 +173,8 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</layer>
 		<layer id="L_playground" enabled="true" visible="false">
 			<name lang="ru" value="🧸 Детские игровые площадки" />
-			<name lang="de" value="🧸 Spielplatz" />
-			<name lang="en" value="🧸 Playground" />
+			<name lang="de" value="🧸 Spielplätze" />
+			<name lang="en" value="🧸 Playgrounds" />
 			<cat id="playground" />
 		</layer>
 		<layer id="L_benches" enabled="true" visible="false">
@@ -208,23 +236,18 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<name lang="en" value="⚡ Electricity" />
 			<cat id="electricity" />
 		</layer>
-		<!-- layer id="L_building_type" enabled="true" visible="false">
+		<layer id="L_building_type" enabled="true" visible="false">
 			<name lang="ru" value="🈴 Выделять разные типы зданий цветом (школы, больницы и т.п.)" />
-			<name lang="de" value="🈴 Farbige Gebäudetypen (Schulen, KKH etc.)" />
-			<name lang="en" value="🈴 Colored building types (schools etc.)" />
+			<name lang="de" value="🈴 Farbige Schulen, KKH, etc." />
+			<name lang="en" value="🈴 Colored schools, hospitals, etc." />
 			<cat id="building_type" />
-		</layer -->
-		<layer id="basic" visible="true">
+		</layer>
+		<layer id="basic" visible="true" parent="base">
 			<name lang="en" value="Basic features" />
 			<overlay id="L_hiking_trails" />
 			<overlay id="L_cycling" />
 			<overlay id="L_mtb_trails" />
 			<overlay id="L_winter_sports" />
-			<overlay id="L_highway" />
-			<overlay id="L_railway" />
-			<overlay id="L_cities_towns" />
-			<overlay id="L_neighbourhoods_suburbs" />
-			<overlay id="L_road_captions" />
 			<overlay id="L_parking" />
 			<overlay id="L_landscapefeat" />
 			<overlay id="L_contourlines" />
@@ -253,11 +276,12 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<overlay id="L_pharmacies" />
 			<overlay id="L_emergency" />
 			<overlay id="L_architecture" />
-			<overlay id="L_hunting_stand" />
+			<overlay id="L_building_type" />
 			<overlay id="L_playground" />
 			<overlay id="L_toilets" />
 			<overlay id="L_benches" />
 			<overlay id="L_refuge" />
+			<overlay id="L_hunting_stand" />
 			<overlay id="L_water" />
 			<overlay id="L_landscapefeat" />
 			<overlay id="L_contourlines" />
