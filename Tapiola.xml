@@ -2,14 +2,18 @@
 <rendertheme xmlns="http://mapsforge.org/renderTheme"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
+
 Tapiola 1.2.7 - 2023-08-17 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapio is the god of forest in finnish mythology.
 Tapiola is his realm.
 Tapiola is Sibelius' Op. 112.
 
+URL: https://github.com/tortuosit/oam_theme_tapiola
+
 Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
+
 -->
 	<stylemenu id="menu" defaultvalue="basic" defaultlang="en">
 		<layer id="base">
@@ -317,8 +321,8 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<overlay id="L_hunting_stand" />
 			<overlay id="L_water" />
 			<overlay id="L_landscapefeat" />
-			<overlay id="L_contourlines" />
 			<overlay id="L_forest" />
+			<overlay id="L_contourlines" />
 			<overlay id="L_protected_area" />
 			<overlay id="L_boundaries_areas" />
 			<overlay id="L_mast_communication" />
