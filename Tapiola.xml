@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
 
-Tapiola 1.2.7 - 2023-08-17 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.2.8 - 2023-08-26 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapio is the god of forest in finnish mythology.
 Tapiola is his realm.
@@ -16,50 +16,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 
 -->
 	<stylemenu id="menu" defaultvalue="basic" defaultlang="en">
-		<layer id="base">
-		    <cat id="c_highway"/>
-		    <cat id="c_railway"/>
-		    <cat id="cities_towns"/>
-		    <cat id="neighbourhoods_suburbs"/>
-		    <cat id="road_captions"/>
-			<cat id="barriers"/>
-		    <cat id="access"/>
-		    <cat id="sports"/>
-		    <cat id="boundaries_areas"/>
-		    <cat id="pub_transp"/>
-		    <cat id="restaurants"/>
-		    <cat id="shops"/>
-		    <cat id="accommodation"/>
-		    <cat id="pharmacies"/>
-		    <cat id="emergency"/>
-		    <cat id="architecture"/>
-			<cat id="attractions"/>
-		    <cat id="playground"/>
-		    <cat id="benches"/>
-		    <cat id="toilets"/>
-		    <cat id="refuge"/>
-		    <cat id="water"/>
-		    <cat id="landscapefeat"/>
-		    <cat id="forest"/>
-		    <cat id="contourlines"/>
-		    <cat id="hunting_stand"/>
-			<cat id="building_type"/>
-		</layer>
-		<layer id="base_nopoi">
-		    <cat id="c_highway"/>
-		    <cat id="c_railway"/>
-		    <cat id="cities_towns"/>
-		    <cat id="neighbourhoods_suburbs"/>
-		    <cat id="road_captions"/>
-		    <cat id="access"/>
-		    <cat id="boundaries_areas"/>
-		    <cat id="water"/>
-		    <cat id="landscapefeat"/>
-		    <cat id="forest"/>
-		    <cat id="contourlines"/>
-			<cat id="building_type"/>
-		</layer>
-		<layer id="L_hiking_trails" enabled="true" visible="false">
+		<layer id="L_hiking_trails" visible="false">
 			<name lang="ru" value="🥾 Пешеходные маршруты" />
 			<name lang="de" value="🥾 Wanderwege" />
 			<name lang="en" value="🥾 Hiking network" />
@@ -83,12 +40,12 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<name lang="de" value="🚴‍♀️ MTB-Trails" />
 			<cat id="mtb_trails" />
 		</layer>
-		<layer id="L_highway" enabled="true" visible="false">
-			<name lang="en" value="🛣️ Roads" />
+		<layer id="L_highway" visible="false">
+			<name lang="en" value="🛣️ Road network" />
 			<name lang="de" value="🛣️ Straßennetz" />
 			<cat id="c_highway" />
 		</layer>
-		<layer id="L_railway" enabled="true" visible="false">
+		<layer id="L_railway" visible="false">
 			<name lang="en" value="🛤️ Railways" />
 			<name lang="de" value="🛤️ Schienennetz" />
 			<cat id="c_railway" />
@@ -107,6 +64,11 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<name lang="en" value="🔤 Road names" />
 			<name lang="de" value="🔤 Straßennamen" />
 			<cat id="road_captions" />
+		</layer>
+		<layer id="L_house_nr" enabled="false" visible="false">
+			<name lang="en" value="🔢 Draw house numbers earlier" />
+			<name lang="de" value="🔢 Hausnummern früher anzeigen" />
+			<cat id="house_nr" />
 		</layer>
 		<layer id="L_barriers" enabled="true" visible="false">
 			<name lang="ru" value="⛔ Шлагбаумы и ворота" />
@@ -266,6 +228,46 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<name lang="en" value="🈴 Colored schools, hospitals, etc." />
 			<cat id="building_type" />
 		</layer>
+		<layer id="base">
+		    <cat id="c_highway"/>
+		    <cat id="c_railway"/>
+		    <cat id="cities_towns"/>
+		    <cat id="neighbourhoods_suburbs"/>
+		    <cat id="road_captions"/>
+			<cat id="barriers"/>
+		    <cat id="access"/>
+		    <cat id="sports"/>
+		    <cat id="boundaries_areas"/>
+		    <cat id="pub_transp"/>
+		    <cat id="restaurants"/>
+		    <cat id="shops"/>
+		    <cat id="accommodation"/>
+		    <cat id="pharmacies"/>
+		    <cat id="emergency"/>
+		    <cat id="architecture"/>
+			<cat id="attractions"/>
+		    <cat id="playground"/>
+		    <cat id="benches"/>
+		    <cat id="toilets"/>
+		    <cat id="refuge"/>
+		    <cat id="water"/>
+		    <cat id="forest"/>
+		    <cat id="contourlines"/>
+		    <cat id="hunting_stand"/>
+			<cat id="building_type"/>
+		</layer>
+		<layer id="base_nopoi">
+		    <cat id="c_highway" />
+		    <cat id="c_railway"/>
+		    <cat id="cities_towns"/>
+		    <cat id="neighbourhoods_suburbs"/>
+		    <cat id="road_captions"/>
+		    <cat id="access"/>
+		    <cat id="boundaries_areas"/>
+		    <cat id="forest"/>
+		    <cat id="contourlines"/>
+			<cat id="building_type"/>
+		</layer>
 		<layer id="basic" visible="true" parent="base">
 			<name lang="en" value="Basic features" />
 			<overlay id="L_hiking_trails" />
@@ -273,19 +275,19 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<overlay id="L_cycling" />
 			<overlay id="L_mtb_trails" />
 			<overlay id="L_winter_sports" />
+			<overlay id="L_publictransport" />
 			<overlay id="L_parking" />
 			<overlay id="L_landscapefeat" />
 			<overlay id="L_contourlines" />
 			<overlay id="L_protected_area" />
 		</layer>
-		<layer id="basic_nopoi" visible="false" parent="base_nopoi">
-			<name lang="en" value="Basic features, without POI" />
+		<layer id="basic_nopoi" visible="true" parent="base_nopoi">
+			<name lang="en" value="Without POI" />
 			<overlay id="L_hiking_trails" />
 			<overlay id="L_hiking_nodes" />
 			<overlay id="L_cycling" />
 			<overlay id="L_mtb_trails" />
 			<overlay id="L_winter_sports" />
-			<overlay id="L_landscapefeat" />
 			<overlay id="L_contourlines" />
 			<overlay id="L_protected_area" />
 		</layer>
@@ -301,6 +303,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<overlay id="L_cities_towns" />
 			<overlay id="L_neighbourhoods_suburbs" />
 			<overlay id="L_road_captions" />
+			<overlay id="L_house_nr" />
 			<overlay id="L_barriers" />
 			<overlay id="L_access" />
 			<overlay id="L_publictransport" />
@@ -1306,7 +1309,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 	</rule>
 
 	<rule e="way" k="tunnel" v="~|no" zoom-min="13">
-		<rule e="way" cat="c_highway" k="highway" v="pedestrian" closed="no">
+		<rule e="way" k="highway" v="pedestrian" closed="no">
 			<line stroke="#606060" stroke-width="1.3" />
 		</rule>
 		<rule e="way" k="area:highway" v="pedestrian">
@@ -1317,7 +1320,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 				<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#E5FFFFFF" stroke-width="2" text-wrap-width="120" />
 			</rule>
 		</rule>
-		<rule e="way" cat="c_highway" k="highway" v="pedestrian" closed="yes">
+		<rule e="way" k="highway" v="pedestrian" closed="yes">
 			<area fill="#FFFFFF" />
 			<area src="file:patterns/p_pedestrian.svg" symbol-height="8" />
 			<line stroke="#606060" stroke-width="0.2" />
@@ -1327,26 +1330,26 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 	<rule e="way" k="area" v="yes|true">
-		<rule e="way" cat="c_highway" k="highway" v="*">
-			<rule e="way" cat="c_highway" k="highway" v="footway|path" zoom-min="13">
+		<rule e="way" k="highway" v="*">
+			<rule e="way" k="highway" v="footway|path" zoom-min="13">
 				<area fill="#E8D1E2" stroke="#585858" stroke-width="0.1" />
 			</rule>
-			<rule e="way" cat="c_highway" k="highway" v="service" zoom-min="11">
+			<rule e="way" k="highway" v="service" zoom-min="11">
 				<area fill="#ffffff" stroke="#575757" stroke-width="0.1" />
 			</rule>
-			<rule e="way" cat="c_highway" k="highway" v="unclassified" zoom-min="11">
+			<rule e="way" k="highway" v="unclassified" zoom-min="11">
 				<area fill="#ffffff" stroke="#575757" stroke-width="0.1" />
 			</rule>
-			<rule e="way" cat="c_highway" k="highway" v="residential" zoom-min="11">
+			<rule e="way" k="highway" v="residential" zoom-min="11">
 				<area fill="#ffffff" stroke="#575757" stroke-width="0.1" />
 			</rule>
-			<rule e="way" cat="c_highway" k="highway" v="road" zoom-min="11">
+			<rule e="way" k="highway" v="road" zoom-min="11">
 				<area fill="#ffffff" />
 			</rule>
-			<rule e="way" cat="c_highway" k="highway" v="living_street" zoom-min="11">
+			<rule e="way" k="highway" v="living_street" zoom-min="11">
 				<area fill="#ffffff" stroke="#575757" stroke-width="0.1" />
 			</rule>
-			<rule e="way" cat="c_highway" k="highway" v="*" zoom-min="15">
+			<rule e="way" k="highway" v="*" zoom-min="15">
 				<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff" stroke-width="3" text-wrap-width="120" />
 			</rule>
 		</rule>
@@ -1424,9 +1427,14 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 
+	<rule e="any" cat="house_nr" k="*" v="*" zoom-min="16" zoom-max="17" >
+		<rule e="any" k="highway" v="~">
+			<caption k="addr:housenumber" font-style="normal" font-size="6" fill="#000000" priority="10" />
+		</rule>
+	</rule>
 	<rule e="any" k="*" v="*" zoom-min="18">
-		<rule e="any" cat="c_highway" k="highway" v="~">
-			<caption k="addr:housenumber" font-style="normal" font-size="10" fill="#424251" priority="10" />
+		<rule e="any" k="highway" v="~">
+			<caption k="addr:housenumber" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff" stroke-width="1.4" display="always" />
 		</rule>
 	</rule>
 
@@ -1501,32 +1509,32 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					<line stroke="#707070" dy="0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="residential|unclassified" zoom-min="11">
+				<rule e="way" k="highway" v="residential|unclassified" zoom-min="11">
 					<line stroke="#50FFFFFF" stroke-width="1.0" stroke-linecap="butt" />
 					<line stroke="#707070" dy="0.5" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.5" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="living" zoom-min="11">
+				<rule e="way" k="highway" v="living" zoom-min="11">
 					<line stroke="#50FFFFFF" stroke-width="1.0" stroke-linecap="butt" />
 					<line stroke="#707070" dy="0.5" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.5" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="service" zoom-min="11">
+				<rule e="way" k="highway" v="service" zoom-min="11">
 					<line stroke="#50FFFFFF" stroke-width="1.0" stroke-linecap="butt" />
 					<line stroke="#707070" dy="0.5" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.5" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="steps|footway|path|bridleway" zoom-min="14">
+				<rule e="way" k="highway" v="steps|footway|path|bridleway" zoom-min="14">
 					<line stroke="#50FFFFFF" stroke-width="0.4" stroke-linecap="butt" />
 					<line stroke="#A6707070" dy="0.2" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#A6707070" dy="-0.2" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="track|byway" zoom-min="13">
+				<rule e="way" k="highway" v="track|byway" zoom-min="13">
 					<line stroke="#50FFFFFF" stroke-width="0.6" stroke-linecap="butt" />
 					<line stroke="#3f3f3f" dy="0.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#3f3f3f" dy="-0.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="cycling" zoom-min="14">
+				<rule e="way" k="highway" v="cycling" zoom-min="14">
 					<line stroke="#50FFFFFF" stroke-width="0.7" stroke-linecap="butt" />
 					<line stroke="#707070" dy="0.35" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					<line stroke="#707070" dy="-0.35" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
@@ -1575,16 +1583,16 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 				</rule>
 			</rule>
 			<rule e="way" k="bridge" v="yes|movable|true">
-				<rule e="way" cat="c_highway" k="highway" v="steps|footway|path" zoom-min="14">
+				<rule e="way" k="highway" v="steps|footway|path" zoom-min="14">
 					<line stroke="#666666" stroke-width="1.0" stroke-linecap="butt" />
 					<line stroke="#EEEEEE" stroke-width="0.6" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="pedestrian" zoom-min="14">
+				<rule e="way" k="highway" v="pedestrian" zoom-min="14">
 					<line stroke="#222222" stroke-width="1.8" stroke-linecap="butt" />
 					<line stroke="#EEEEEE" stroke-width="1.5" stroke-linecap="butt" />
 					<line stroke="#606060" stroke-width="1.3" />
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="via_ferrata" zoom-min="15">
+				<rule e="way" k="highway" v="via_ferrata" zoom-min="15">
 					<line stroke="#111111" stroke-width="1.0" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="0.7" stroke-linecap="butt" />
 				</rule>
@@ -1628,28 +1636,28 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					<line stroke="#ffffff" stroke-width="2.2" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="1.8" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="residential|unclassified" zoom-min="11">
+				<rule e="way" k="highway" v="residential|unclassified" zoom-min="11">
 					<line stroke="#353535" stroke-width="1.8" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="1.4" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="1.2" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="living_street" zoom-min="11">
+				<rule e="way" k="highway" v="living_street" zoom-min="11">
 					<line stroke="#353535" stroke-width="1.8" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="1.4" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="1.2" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="service" zoom-min="11">
+				<rule e="way" k="highway" v="service" zoom-min="11">
 					<line stroke="#303030" stroke-width="1.8" stroke-linecap="butt" />
 					<line stroke="#ffffff" stroke-width="1.4" stroke-linecap="butt" />
 					<line stroke="#575757" stroke-width="1.2" stroke-linecap="butt" />
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="track|byway" zoom-min="13">
+				<rule e="way" k="highway" v="track|byway" zoom-min="13">
 					<line stroke="#53534e" stroke-width="1.7" stroke-linecap="butt" />
 					<line stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="butt" />
 				</rule>
 			</rule>
 			<rule e="way" k="bridge" v="boardwalk">
-				<rule e="way" cat="c_highway" k="highway" v="steps|footway|path" zoom-min="14">
+				<rule e="way" k="highway" v="steps|footway|path" zoom-min="14">
 					<line stroke="#8f540d" stroke-width="1.00" stroke-linecap="butt" />
 					<line stroke="#EEEEEE" stroke-width="0.6" stroke-linecap="butt" />
 				</rule>
@@ -1662,22 +1670,22 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					<rule e="way" cat="c_highway" k="highway" v="construction" zoom-min="11">
 						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
 					</rule>
-					<rule e="way" cat="c_highway" k="highway" v="service|road" zoom-min="11">
+					<rule e="way" k="highway" v="service|road" zoom-min="11">
 						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
 					</rule>
-					<rule e="way" cat="c_highway" k="highway" v="residential|unclassified" zoom-min="11">
+					<rule e="way" k="highway" v="residential|unclassified" zoom-min="11">
 						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
 					</rule>
-					<rule e="way" cat="c_highway" k="highway" v="living_street" zoom-min="11">
+					<rule e="way" k="highway" v="living_street" zoom-min="11">
 						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
 					</rule>
 					<rule e="way" k="access" v="private|destination" zoom-min="11">
-						<rule e="way" cat="c_highway" k="highway" v="pedestrian|service|road|living_street|residential|unclassified|construction">
+						<rule e="way" k="highway" v="pedestrian|service|road|living_street|residential|unclassified|construction">
 							<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
 						</rule>
 					</rule>
 					<rule e="way" k="access" v="acc_no" zoom-min="11">
-						<rule e="way" cat="c_highway" k="highway" v="pedestrian|service|road|living_street|residential|unclassified|construction">
+						<rule e="way" k="highway" v="pedestrian|service|road|living_street|residential|unclassified|construction">
 							<line stroke="#C3C3C3" stroke-width="1.2" stroke-linecap="round" />
 						</rule>
 					</rule>
@@ -1721,22 +1729,22 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 				<rule e="way" cat="c_highway" k="highway" v="construction" zoom-min="11">
 					<line stroke="#d0d0d0" stroke-width="0.2" stroke-linecap="butt" stroke-dasharray="12,12" />
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="steps" zoom-min="13">
+				<rule e="way" k="highway" v="steps" zoom-min="13">
 					<line stroke="#53534e" stroke-width="0.6" stroke-dasharray="1.5,2.5" stroke-linecap="butt" scale="stroke" />
 					<rule e="way" k="*" v="*" zoom-min="16">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="2.0" />
 					</rule>
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="cycleway" zoom-min="14">
+				<rule e="way" k="highway" v="cycleway" zoom-min="14">
 					<line stroke="#7bcaff" stroke-width="0.6" stroke-linecap="butt" scale="stroke" />
 					<line stroke="#11635d" stroke-width="0.6" stroke-dasharray="0.8,0.8" stroke-linecap="butt" scale="all" />
-					<rule e="way" cat="c_highway" k="highway" v="cycleway" zoom-min="14">
+					<rule e="way" k="highway" v="cycleway" zoom-min="14">
 						<rule cat="cycling" cat="road_captions" e="way" k="*" v="*" zoom-min="15">
 							<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="2.0" />
 						</rule>
 					</rule>
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="path|footway" zoom-min="14">
+				<rule e="way" k="highway" v="path|footway" zoom-min="14">
 					<rule e="way" k="via_ferrata_flag|via_ferrata_scale|via_ferrata" v="~">
 						<!-- Paths with surface:asphalt/paved like paved roads -->
 						<rule e="way" k="sac_scale" v="~" >
@@ -1793,7 +1801,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 						</rule>
 					</rule>
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="track|byway" zoom-min="12">
+				<rule e="way" k="highway" v="track|byway" zoom-min="12">
 					<!-- Background -->
 					<rule e="way" k="tracktype" v="~|no|false|grade1|grade2|grade3|grade4|grade5" zoom-min="13">
 						<line stroke="#e053534e" stroke-width="1.5" stroke-linecap="round" />
@@ -1836,7 +1844,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					</rule>
 				</rule>
 				<!-- via ferrata LoMaps -->
-				<rule e="way" cat="c_highway" k="highway" v="via_ferrata" zoom-min="14">
+				<rule e="way" k="highway" v="via_ferrata" zoom-min="14">
 					<line stroke="#fff71c" stroke-width="0.4" stroke-linecap="butt" scale="stroke" />
 					<line stroke="#AA1718" stroke-width="0.4" stroke-dasharray="15,6" stroke-linecap="butt" scale="stroke" />
 					<lineSymbol src="file:symbols/via_ferrata.svg" priority="20" position="center" symbol-percent="80" repeat="true" repeat-start="30" repeat-gap="200" />
@@ -1850,32 +1858,32 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 						<pathText k="name" dy="-1.1" priority="30" font-family="sans_serif" font-style="normal" font-size="13" fill="#000000" stroke="#FFFFFF" stroke-width="2.8" repeat-start="100" repeat-gap="300" />
 					</rule>
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="bridleway" zoom-min="13">
+				<rule e="way" k="highway" v="bridleway" zoom-min="13">
 					<line stroke="#53534e" stroke-width="0.7" stroke-dasharray="2,6" stroke-linecap="butt" />
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="15">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="2.0" />
 					</rule>
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="pedestrian" zoom-min="13" closed="no">
+				<rule e="way" k="highway" v="pedestrian" zoom-min="13" closed="no">
 					<line stroke="#FFFFFF" stroke-width="0.9" />
 					<line src="file:patterns/p_pedestrian.svg" symbol-height="8" stroke-width="0.9" />
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="2.0" />
 					</rule>
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="service|road" zoom-min="11">
+				<rule e="way" k="highway" v="service|road" zoom-min="11">
 					<line stroke="#ffffff" stroke-width="0.9" />
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
 					</rule>
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="living_street" zoom-min="11">
+				<rule e="way" k="highway" v="living_street" zoom-min="11">
 					<line stroke="#ffffff" stroke-width="0.9" />
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
 					</rule>
 				</rule>
-				<rule e="way" cat="c_highway" k="highway" v="residential|unclassified" zoom-min="11">
+				<rule e="way" k="highway" v="residential|unclassified" zoom-min="11">
 					<line stroke="#ffffff" stroke-width="0.9" />
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
@@ -1892,13 +1900,13 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					<!-- No markers if at least one is "yes" (foot or bicycle) -->
 					<rule e="way" k="foot" v="~|no">
 						<rule e="way" k="bicycle" v="~|no">
-							<rule e="way" cat="c_highway" k="highway" v="turning_circle|mini_roundabout|pedestrian|service|road|living_street|residential|unclassified|construction">
+							<rule e="way" k="highway" v="turning_circle|mini_roundabout|pedestrian|service|road|living_street|residential|unclassified|construction">
 								<line stroke="#ff0000" stroke-width="1.7" stroke-dasharray="0.3,1.7" stroke-linecap="butt" scale="all" />
 								<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
 									<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
 								</rule>
 							</rule>
-							<rule e="way" cat="c_highway" k="highway" v="path|footway" zoom-min="14">
+							<rule e="way" k="highway" v="path|footway" zoom-min="14">
 								<line stroke="#ff0000" stroke-width="1.5" stroke-dasharray="0.3,1.7" stroke-linecap="butt" scale="all" />
 								<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
 									<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
@@ -2015,10 +2023,8 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 				</rule>
 				<!-- Access restriction markers -->
 				<rule e="way" cat="access" k="access" v="acc_no|no" zoom-min="10">
-					<rule e="way" cat="c_highway" k="highway" v="*" >
-						<rule e="way" k="highway" v="*">
-							<line stroke="#ff0000" stroke-width="3.0" stroke-dasharray="0.3,1.7" stroke-linecap="butt" scale="all" />
-						</rule>
+					<rule e="way" cat="c_highway" k="highway" v="*">
+						<line stroke="#ff0000" stroke-width="3.0" stroke-dasharray="0.3,1.7" stroke-linecap="butt" scale="all" />
 					</rule>
 				</rule>
 				<!-- Access restriction markers on constructions -->
@@ -2087,6 +2093,310 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 
+	<!-- MTB Routes without mtb:scale values - Lomaps -->
+	<rule cat="mtb_trails" e="way" k="route" v="mtb" zoom-min="13">
+		<rule e="way" k="mtb:scale" v="~">
+			<rule e="way" k="*" v="*" zoom-min="13" zoom-max="14">
+				<line dy="0.5" stroke="#70E588ED" stroke-width="1.2" stroke-dasharray="14,7" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+				<line dy="0.8" stroke="#70E588ED" stroke-width="1" stroke-dasharray="14,7" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+				<line dy="1.0" stroke="#70E588ED" stroke-width="1" stroke-dasharray="15,7" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+				<line dy="1.2" stroke="#70E588ED" stroke-width="1" stroke-dasharray="15,7" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+				<line dy="1.6" stroke="#70E588ED" stroke-width="0.8" stroke-dasharray="12,6" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="19">
+				<line dy="2.1" stroke="#70E588ED" stroke-width="0.7" stroke-dasharray="12,6" stroke-linecap="butt" />
+			</rule>
+			<pathText k="ref" font-style="bold" font-size="11" dy="1.4" fill="#B11BB9" stroke="#ffffff" stroke-width="2" />
+		</rule>
+	</rule>
+	<!-- MTB -->
+	<rule cat="mtb_trails" e="any" k="*" v="*" zoom-min="13">
+		<rule e="any" k="mtbnetwork" v="imn|nmn|rmn|lmn|omn" zoom-max="17" >
+			<line dy="-1" stroke="#cc00cc" stroke-width="0.8" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
+		</rule>
+		<rule e="any" k="mtbnetwork" v="imn|nmn|rmn|lmn|omn" zoom-min="18" >
+			<line dy="-1" stroke="#cc00cc" stroke-width="0.4" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
+		</rule>
+		<rule e="any" k="mtbnetwork" v="imn|nmn|rmn|lmn|omn|umn" zoom-min="14">
+			<lineSymbol src="file:symbols/bicycle.svg" position="above" symbol-percent="120" dy="-0.7" repeat="true" repeat-start="10" repeat-gap="250" />
+			<pathText priority="10" k="ref_mtb" font-style="bold" font-size="10" fill="#cc00cc" stroke="#ffffff" stroke-width="1.5" dy="0" repeat-start="50" repeat-gap="300" />
+		</rule>
+		<rule e="any" k="mtb_scale|mtb_scale_uphill" v="mtbs_0|mtbs_1|mtbs_2|mtbs_3|mtbs_4|mtbs_5|mtbs_6|mtbu_0|mtbu_1|mtbu_2|mtbu_3|mtbu_4|mtbu_5">
+			<lineSymbol src="file:symbols/bicycle.svg" position="above" symbol-percent="120" dy="-1" repeat="true" repeat-start="10" repeat-gap="250" />
+			<line dy="-1" stroke="#cc00cc" stroke-width="1.15" stroke-dasharray="4,3" stroke-linecap="butt" scale="all" />
+		</rule>
+		<rule e="any" k="mtb:scale" v="0|1|2|3|4|5|6">
+			<lineSymbol src="file:symbols/bicycle.svg" position="above" symbol-percent="120" dy="-1" repeat="true" repeat-start="10" repeat-gap="250" />
+			<line dy="-0.9" stroke="#cc00cc" stroke-width="1.3" stroke-dasharray="15,6" stroke-linecap="butt" scale="stroke" />
+		</rule>
+	</rule>
+	<rule cat="mtb_trail" e="any" k="mtb_scale_imba" v="mtba_0|mtba_1|mtba_2|mtba_3|mtba_4" zoom-min="12">
+		<lineSymbol src="file:symbols/bicycle.svg" position="above" symbol-percent="120" dy="-1" repeat="true" repeat-start="10" repeat-gap="250" />
+		<line dy="-1" stroke="#cc00cc" stroke-width="1.5" stroke-dasharray="18,5" stroke-linecap="butt" scale="stroke" />
+	</rule>
+	<!-- Cycling network -->
+	<rule e="any" k="*" v="*" cat="cycling" zoom-min="10">
+		<rule e="way" k="network" v="rcn|lcn|ocn" zoom-min="12">
+			<rule e="way" k="*" v="*" zoom-max="13">
+				<line dy="-1" stroke="#cc474aff" stroke-width="1.7" stroke-dasharray="3,1.5" stroke-linecap="butt" scale="all" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="14" zoom-max="15" >
+				<line dy="-1" stroke="#474aff" stroke-width="1.3" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="16" >
+				<line dy="-1" stroke="#474aff" stroke-width="0.8" stroke-linecap="butt" />
+			</rule>
+			<rule e="any" k="*" v="*" zoom-min="14">
+				<pathText dy="-3" priority="10" k="ref_cycle" font-style="bold" font-size="10" fill="#b266ff" stroke="#ffffff" stroke-width="2.5" repeat-start="10" repeat-gap="300" />
+			</rule>
+		</rule>
+		<rule e="way" k="network" v="icn|ncn" >
+			<rule e="way" k="*" v="*" zoom-max="12">
+				<line dy="-1" stroke="#474aff" stroke-width="1.7" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="13" zoom-max="15" >
+				<line dy="-1" stroke="#474aff" stroke-width="1.3" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="16" >
+				<line dy="-1" stroke="#474aff" stroke-width="0.9" stroke-dasharray="3,1.5" stroke-linecap="butt" scale="all" />
+			</rule>
+			<rule e="any" k="*" v="*" zoom-min="11">
+				<pathText dy="-3" priority="10" k="ref_cycle" font-style="bold" font-size="10" fill="#b266ff" stroke="#ffffff" stroke-width="2.5" repeat-start="10" repeat-gap="300" />
+			</rule>
+		</rule>
+	</rule>
+	<!-- Hiking network -->
+	<rule e="way" k="hknetwork" v="lwn|rwn|own" cat="hiking_trails" zoom-min="12" >
+		<rule e="way" k="*" v="*" zoom-max="13">
+			<line dy="1" stroke="#ccfc3d03" stroke-width="1.7" stroke-dasharray="3,1.5" stroke-linecap="butt" scale="all" />
+		</rule>
+		<rule e="way" k="*" v="*" zoom-min="14" zoom-max="15" >
+			<line dy="1" stroke="#b2fc3d03" stroke-width="1.3" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
+		</rule>
+		<rule e="way" k="*" v="*" zoom-min="16" >
+			<line dy="1" stroke="#b2fc3d03" stroke-width="0.9" stroke-dasharray="3,2" stroke-linecap="butt" scale="all" />
+		</rule>
+		<rule e="any" k="hknetwork" v="lwn|rwn|own" zoom-min="15" >
+			<rule e="any" k="*" v="*" zoom-max="17">
+				<pathText repeat-gap="170" repeat-start="10" k="ref_hike" font-style="bold" font-size="10" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="1.7" priority="11" />
+			</rule>
+			<rule e="any" k="*" v="lwn|rwn|own" zoom-min="18">
+				<pathText repeat-gap="220" repeat-start="80" k="ref_hike" font-style="bold" font-size="12" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="2" priority="11" />
+			</rule>
+		</rule>
+	</rule>
+	<rule e="way" cat="hiking_trails" k="hknetwork" v="iwn|nwn" zoom-min="10" >
+		<rule e="way" k="*" v="*" zoom-max="11" >
+			<line dy="1" stroke="#fc3d03" curve="cubic" stroke-width="1.7" stroke-linecap="butt" />
+		</rule>
+		<rule e="way" k="*" v="*" zoom-min="12" zoom-max="14" >
+			<line dy="1" stroke="#fc3d03" curve="cubic" stroke-width="1.4" stroke-linecap="butt" />
+		</rule>
+		<rule e="way" k="*" v="*" zoom-min="15" >
+			<line dy="1" stroke="#ccfc3d03" curve="cubic" stroke-width="1" stroke-linecap="butt" />
+		</rule>
+		<rule e="any" k="hknetwork" v="iwn|nwn" zoom-min="11" >
+			<rule e="any" k="*" v="*" zoom-max="17">
+				<pathText repeat-gap="170" repeat-start="10" k="ref_hike" font-style="bold" font-size="10" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="1.7" priority="200" />
+			</rule>
+			<rule e="any" k="*" v="*" zoom-min="18">
+				<pathText repeat-gap="220" repeat-start="20" k="ref_hike" font-style="bold" font-size="12" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="2" priority="200" />
+			</rule>
+		</rule>
+	</rule>
+	<rule cat="hiking_trails" e="node" k="hike_node" v="*" zoom-min="13">
+		<rule cat="nocity" e="any" k="*" v="*" zoom-min="13" zoom-max="14">
+			<circle radius="6.4" scale-radius="false" fill="#ffffff" stroke="#008131" stroke-width="1.5" />
+			<caption k="addr:housenumber" display="always" priority="14" font-style="bold" font-size="9" fill="#008131" stroke="#FFFFFF" stroke-width="2" />
+		</rule>
+		<rule e="any" k="*" v="*" zoom-min="15" zoom-max="16">
+			<circle radius="8.0" scale-radius="false" fill="#ffffff" stroke="#008131" stroke-width="2" />
+			<caption k="addr:housenumber" display="always" priority="14" font-style="bold" font-size="10" fill="#008131" stroke="#FFFFFF" stroke-width="2" />
+		</rule>
+		<rule e="any" k="*" v="*" zoom-min="17">
+			<circle radius="10.4" scale-radius="false" fill="#ffffff" stroke="#008131" stroke-width="2" />
+			<caption k="addr:housenumber" display="always" priority="14" font-style="bold" font-size="14" fill="#008131" stroke="#FFFFFF" stroke-width="2" />
+		</rule>
+	</rule>
+	<rule cat="winter_sports" e="way" k="piste:type" v="*" zoom-min="10">
+		<!-- piste areas -->
+		<rule e="way" k="piste:type" v="downhill" closed="yes">
+			<rule e="way" k="piste:difficulty" v="novice">
+				<area fill="#8C40ff40" />
+			</rule>
+			<rule e="way" k="piste:difficulty" v="easy">
+				<area fill="#8C7173FF" />
+			</rule>
+			<rule e="way" k="piste:difficulty" v="intermediate">
+				<area fill="#8CFF4A4A" />
+			</rule>
+			<rule e="way" k="piste:difficulty" v="advanced">
+				<area fill="#8C000000" />
+			</rule>
+			<rule e="way" k="piste:difficulty" v="expert">
+				<area fill="#8Cf6800a" />
+			</rule>
+			<rule e="way" k="piste:difficulty" v="freeride">
+				<area fill="#8Cf6dd0a" />
+			</rule>
+			<rule e="way" k="piste:difficulty" v="~">
+				<area fill="#8C505050" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="16">
+				<pathText k="name" font-style="bold" font-size="6" dy="5" fill="#004D66" stroke="#ffffff" stroke-width="2.0" />
+			</rule>
+		</rule>
+		<!-- piste ways -->
+		<rule e="way" k="piste:type" v="downhill" closed="no">
+			<rule e="way" k="piste:difficulty" v="novice">
+				<line stroke="#8C40ff40" stroke-width="2" />
+			</rule>
+			<rule e="way" k="piste:difficulty" v="easy">
+				<line stroke="#8C7173FF" stroke-width="2" />
+			</rule>
+			<rule e="way" k="piste:difficulty" v="intermediate">
+				<line stroke="#8CFF4A4A" stroke-width="2" />
+			</rule>
+			<rule e="way" k="piste:difficulty" v="advanced">
+				<line stroke="#8C000000" stroke-width="2" />
+			</rule>
+			<rule e="way" k="piste:difficulty" v="expert">
+				<line stroke="#8Cf6800a" stroke-width="2" />
+			</rule>
+			<rule e="way" k="piste:difficulty" v="freeride">
+				<line stroke="#8Cf6dd0a" stroke-width="2" />
+			</rule>
+			<rule e="way" k="piste:difficulty" v="~">
+				<line stroke="#8C505050" stroke-width="2" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="16">
+				<pathText k="name" font-style="bold" font-size="6" dy="5" fill="#004D66" stroke="#ffffff" stroke-width="2.0" />
+			</rule>
+		</rule>
+		<rule e="way" k="piste:type" v="sled">
+			<line stroke="#cdabde" stroke-width="2.5" />
+		</rule>
+		<rule e="way" k="piste:type" v="nordic">
+			<rule e="way" k="*" v="*" zoom-min="13" zoom-max="15">
+				<rule e="way" k="piste:difficulty" v="novice|easy|intermediate">
+					<rule e="way" k="*" v="classic">
+						<line stroke="#006BD6" stroke-width="0.7" />
+					</rule>
+					<rule e="way" k="*" v="classic+skating|classic;skating|skating">
+						<line stroke="#FFFFFF" stroke-width="1.9" />
+						<line stroke="#006BD6" stroke-width="1.3" />
+					</rule>
+					<rule e="way" k="*" v="backcountry">
+						<line stroke="#90FFFFFF" stroke-width="1" />
+						<line stroke="#006BD6" stroke-width="0.7" stroke-dasharray="9,5" stroke-linecap="butt" />
+					</rule>
+					<!-- Fallback for openandromaps without tags -->
+					<rule e="way" k="piste:grooming" v="~">
+						<line stroke="#006BD6" stroke-width="0.7" />
+					</rule>
+				</rule>
+				<rule e="way" k="piste:difficulty" v="advanced|expert">
+					<rule e="way" k="*" v="classic">
+						<line stroke="#9311F0" stroke-width="0.7" />
+					</rule>
+					<rule e="way" k="*" v="classic+skating|classic;skating|skating">
+						<line stroke="#FFFFFF" stroke-width="1.9" />
+						<line stroke="#9311F0" stroke-width="1.3" />
+					</rule>
+					<rule e="way" k="*" v="backcountry">
+						<line stroke="#90FFFFFF" stroke-width="1" />
+						<line stroke="#9311F0" stroke-width="0.7" stroke-dasharray="9,5" stroke-linecap="butt" />
+					</rule>
+					<!-- Fallback for openandromaps without tags -->
+					<rule e="way" k="piste:grooming" v="~">
+						<line stroke="#9311F0" stroke-width="0.7" />
+					</rule>
+				</rule>
+				<rule e="way" k="piste:difficulty" v="~">
+					<rule e="way" k="*" v="classic">
+						<line stroke="#006BD6" stroke-width="0.7" />
+					</rule>
+					<rule e="way" k="*" v="classic+skating|classic;skating|skating">
+						<line stroke="#FFFFFF" stroke-width="1.9" />
+						<line stroke="#006BD6" stroke-width="1.3" />
+					</rule>
+					<rule e="way" k="*" v="backcountry">
+						<line stroke="#90FFFFFF" stroke-width="1" />
+						<line stroke="#006BD6" stroke-width="0.7" stroke-dasharray="9,5" stroke-linecap="butt" />
+					</rule>
+				</rule>
+				<!-- Fallback for old version of LoMaps -->
+				<rule e="way" k="piste:difficulty|piste:grooming" v="~">
+					<line stroke="#006BD6" stroke-width="1.1" />
+				</rule>
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="16">
+				<rule e="way" k="piste:difficulty" v="novice|easy|intermediate">
+					<rule e="way" k="*" v="classic">
+						<line stroke="#750059B3" stroke-width="0.8" />
+					</rule>
+					<rule e="way" k="*" v="classic+skating|classic;skating|skating">
+						<line stroke="#750059B3" stroke-width="1.2" />
+					</rule>
+					<rule e="way" k="*" v="backcountry">
+						<line stroke="#750059B3" stroke-width="0.8" stroke-dasharray="9,5" stroke-linecap="butt" />
+					</rule>
+					<!-- Fallback for openandromaps without tags -->
+					<rule e="way" k="piste:grooming" v="~">
+						<line stroke="#750059B3" stroke-width="0.7" />
+					</rule>
+				</rule>
+				<rule e="way" k="piste:difficulty" v="advanced|expert">
+					<rule e="way" k="*" v="classic">
+						<line stroke="#75810EDA" stroke-width="0.8" />
+					</rule>
+					<rule e="way" k="*" v="classic+skating|classic;skating|skating">
+						<line stroke="#75810EDA" stroke-width="1.2" />
+					</rule>
+					<rule e="way" k="*" v="backcountry">
+						<line stroke="#75810EDA" stroke-width="0.8" stroke-dasharray="9,5" stroke-linecap="butt" />
+					</rule>
+					<!-- Fallback for openandromaps without tags -->
+					<rule e="way" k="piste:grooming" v="~">
+						<line stroke="#75810EDA" stroke-width="0.7" />
+					</rule>
+				</rule>
+				<rule e="way" k="piste:difficulty" v="~">
+					<rule e="way" k="*" v="classic+skating|classic;skating|skating|classic">
+						<line stroke="#750059B3" stroke-width="1.1" />
+					</rule>
+					<rule e="way" k="*" v="backcountry">
+						<line stroke="#750059B3" stroke-width="0.8" stroke-dasharray="9,5" stroke-linecap="butt" />
+					</rule>
+				</rule>
+				<!-- Fallback for old version of LoMaps  -->
+				<rule e="way" k="piste:difficulty" v="~">
+					<line stroke="#750059B3" stroke-width="1.1" />
+				</rule>
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="15">
+				<pathText k="name" font-style="bold_italic" font-size="9" dy="4" fill="#333333" stroke="#ffffff" stroke-width="2.0" />
+			</rule>
+		</rule>
+		<rule e="way" k="piste:type" v="skitour">
+			<rule e="way" k="*" v="*" zoom-max="15">
+				<line stroke="#FF1BAFFF" stroke-width="1" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="16">
+				<line stroke="#8000A4F7" stroke-width="0.9" />
+				<pathText k="name" font-style="bold_italic" font-size="9" dy="12" fill="#00A4F7" stroke="#ffffff" stroke-width="2" />
+			</rule>
+		</rule>
+	</rule>
+	
 	<rule e="any" cat="c_railway" k="railway" v="crossing" zoom-min="14">
 		<rule e="any" k="*" v="*" zoom-max="16">
 			<symbol src="file:symbols/railway-crossing.svg" symbol-height="15" />
@@ -2136,7 +2446,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			</rule>
 		</rule>
 	</rule>
-	
+
 	<rule cat="shops" e="any" k="*" v="*" zoom-min="9">
 		<rule e="any" k="shop" v="supermarket" zoom-min="15">
 			<symbol id="s_supermarket" priority="69" src="file:symbols/s_supermarket.svg" symbol-height="15" />
@@ -2674,13 +2984,21 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			</rule>
 		</rule>
 	</rule>
-	<!-- ToDo: check, symbol-id -->
+
+	<rule e="node" k="man_made" v="survey_point" zoom-min="16">
+		<symbol id="s_survey_point" priority="101" display="always" src="file:/symbols/s_survey_point.svg" symbol-height="16" />
+		<caption k="ele" priority="105" symbol-id="s_survey_point" position="below" font-style="bold" font-size="11" fill="#000000" stroke="#E5FFFFFF" stroke-width="2.8" text-wrap-width="120" />
+		<rule e="any" k="*" v="*">
+			<caption k="name" priority="100" symbol-id="s_survey_point" position="above" font-style="bold" font-size="11" fill="#000000" stroke="#E5FFFFFF" stroke-width="2.8" text-wrap-width="120" />
+		</rule>
+	</rule>
+
 	<rule e="any" k="amenity" v="watering_place" zoom-min="17">
 		<area fill="#ff80C4F9" stroke="#888888" stroke-width="0.1" />
 		<rule cat="water" e="any" k="*" v="*" >
 			<symbol src="file:symbols/watering_place.svg" symbol-percent="75" />
 			<rule e="any" k="*" v="*" zoom-min="19">
-				<caption symbol-id="id_drinking_water_yes" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.2" />
+				<caption k="name" font-style="normal" position="below" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.2" />
 			</rule>
 		</rule>
 	</rule>
@@ -2890,7 +3208,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			</rule>
 		</rule>
 	</rule>
-
+	
 	<rule cat="pharmacies" e="any" k="*" v="*" zoom-min="9">
 		<rule e="any" k="amenity" v="pharmacy" zoom-min="14">
 			<symbol id="s_pharmacy" src="file:symbols/pharmacy.svg" symbol-percent="60" />
@@ -2936,7 +3254,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<symbol id="s_embassy" priority="81" src="file:symbols/s_embassy.svg" symbol-height="17" />
 			<caption k="name" symbol-id="s_embassy" font-style="bold" font-family="sans_serif" font-size="12" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
 		</rule>
-		<rule e="any" cat="c_highway" k="highway" v="emergency_access_point">
+		<rule e="any" k="highway" v="emergency_access_point">
 			<rule e="any" k="*" v="*" zoom-min="15" zoom-max="16">
 				<symbol id="id_emergency_access_point" src="file:symbols/emergency_access_point.svg" symbol-height="15" display="always" priority="102" />
 			</rule>
@@ -3107,13 +3425,13 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		<rule cat="hunting_stand" e="any" k="amenity" v="hunting_stand" zoom-min="15">
 			<symbol src="file:symbols/hunting_stand.svg" symbol-percent="75" />
 		</rule>
-		<rule e="node" k="amenity" v="theatre" zoom-min="14">
+		<rule e="node" k="amenity" v="theatre" zoom-min="16">
 			<symbol id="id_theatre" src="file:symbols/theatre.svg" symbol-percent="70" />
 			<rule e="node" k="amenity" v="*" zoom-min="17">
 				<caption symbol-id="id_theatre" k="name" font-style="bold" font-family="sans_serif" font-size="12" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
 			</rule>
 		</rule>
-		<rule e="any" k="amenity" v="fountain" zoom-min="15">
+		<rule e="any" k="amenity" v="fountain" zoom-min="16">
 			<rule e="any" k="amenity" v="fountain" zoom-min="15" zoom-max="17">
 				<symbol src="file:symbols/fountain.svg" symbol-percent="70" />
 			</rule>
@@ -3318,8 +3636,8 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					<caption symbol-id="id_hotel" k="name" font-style="bold" font-family="sans_serif" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="1.5" text-wrap-width="120" />
 				</rule>
 			</rule>
-			<rule e="node" k="tourism" v="viewpoint">
-				<symbol id="id_viewpoint" src="file:symbols/viewpoint.svg" symbol-percent="100" display="always" />
+			<rule e="node" cat="attractions" k="tourism" v="viewpoint">
+				<symbol id="id_viewpoint" src="file:symbols/viewpoint.svg" symbol-percent="90" display="always" />
 				<rule e="any" k="*" v="*" zoom-min="15">
 					<caption symbol-id="id_viewpoint" k="name" priority="1" font-family="sans_serif" font-style="normal" font-size="11" fill="#313140" stroke="#E5FFFFFF" stroke-width="2" text-wrap-width="120" />
 				</rule>
@@ -3360,9 +3678,9 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 
-	<rule e="node" cat="c_highway" k="highway" v="bus_stop" zoom-min="14" cat="pub_transp">
+	<rule e="node" k="highway" v="bus_stop" zoom-min="14" cat="pub_transp">
 		<symbol id="id_bus_stop" src="file:symbols/bus_stop.svg" symbol-percent="70" />
-		<rule e="node" cat="c_highway" k="highway" v="*" zoom-min="17">
+		<rule e="node" k="highway" v="*" zoom-min="17">
 			<caption symbol-id="id_bus_stop" k="name" dy="-4" font-style="bold" font-family="sans_serif" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="1.5" text-wrap-width="120" />
 		</rule>
 	</rule>
@@ -3392,310 +3710,6 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		<symbol src="file:symbols/bunker.svg" symbol-percent="70" />
 	</rule>
 	
-	<!-- MTB Routes without mtb:scale values - Lomaps -->
-	<rule cat="mtb_trails" e="way" k="route" v="mtb" zoom-min="13">
-		<rule e="way" k="mtb:scale" v="~">
-			<rule e="way" k="*" v="*" zoom-min="13" zoom-max="14">
-				<line dy="0.5" stroke="#70E588ED" stroke-width="1.2" stroke-dasharray="14,7" stroke-linecap="butt" />
-			</rule>
-			<rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
-				<line dy="0.8" stroke="#70E588ED" stroke-width="1" stroke-dasharray="14,7" stroke-linecap="butt" />
-			</rule>
-			<rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
-				<line dy="1.0" stroke="#70E588ED" stroke-width="1" stroke-dasharray="15,7" stroke-linecap="butt" />
-			</rule>
-			<rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
-				<line dy="1.2" stroke="#70E588ED" stroke-width="1" stroke-dasharray="15,7" stroke-linecap="butt" />
-			</rule>
-			<rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
-				<line dy="1.6" stroke="#70E588ED" stroke-width="0.8" stroke-dasharray="12,6" stroke-linecap="butt" />
-			</rule>
-			<rule e="way" k="*" v="*" zoom-min="19">
-				<line dy="2.1" stroke="#70E588ED" stroke-width="0.7" stroke-dasharray="12,6" stroke-linecap="butt" />
-			</rule>
-			<pathText k="ref" font-style="bold" font-size="11" dy="1.4" fill="#B11BB9" stroke="#ffffff" stroke-width="2" />
-		</rule>
-	</rule>
-	<!-- MTB -->
-	<rule cat="mtb_trails" e="any" k="*" v="*" zoom-min="13">
-		<rule e="any" k="mtbnetwork" v="imn|nmn|rmn|lmn|omn" zoom-max="17" >
-			<line dy="-1" stroke="#cc00cc" stroke-width="0.8" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
-		</rule>
-		<rule e="any" k="mtbnetwork" v="imn|nmn|rmn|lmn|omn" zoom-min="18" >
-			<line dy="-1" stroke="#cc00cc" stroke-width="0.4" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
-		</rule>
-		<rule e="any" k="mtbnetwork" v="imn|nmn|rmn|lmn|omn|umn" zoom-min="14">
-			<lineSymbol src="file:symbols/bicycle.svg" position="above" symbol-percent="120" dy="-0.7" repeat="true" repeat-start="10" repeat-gap="250" />
-			<pathText priority="10" k="ref_mtb" font-style="bold" font-size="10" fill="#cc00cc" stroke="#ffffff" stroke-width="1.5" dy="0" repeat-start="50" repeat-gap="300" />
-		</rule>
-		<rule e="any" k="mtb_scale|mtb_scale_uphill" v="mtbs_0|mtbs_1|mtbs_2|mtbs_3|mtbs_4|mtbs_5|mtbs_6|mtbu_0|mtbu_1|mtbu_2|mtbu_3|mtbu_4|mtbu_5">
-			<lineSymbol src="file:symbols/bicycle.svg" position="above" symbol-percent="120" dy="-1" repeat="true" repeat-start="10" repeat-gap="250" />
-			<line dy="-1" stroke="#cc00cc" stroke-width="1.15" stroke-dasharray="4,3" stroke-linecap="butt" scale="all" />
-		</rule>
-		<rule e="any" k="mtb:scale" v="0|1|2|3|4|5|6">
-			<lineSymbol src="file:symbols/bicycle.svg" position="above" symbol-percent="120" dy="-1" repeat="true" repeat-start="10" repeat-gap="250" />
-			<line dy="-0.9" stroke="#cc00cc" stroke-width="1.3" stroke-dasharray="15,6" stroke-linecap="butt" scale="stroke" />
-		</rule>
-	</rule>
-	<rule cat="mtb_trail" e="any" k="mtb_scale_imba" v="mtba_0|mtba_1|mtba_2|mtba_3|mtba_4" zoom-min="12">
-		<lineSymbol src="file:symbols/bicycle.svg" position="above" symbol-percent="120" dy="-1" repeat="true" repeat-start="10" repeat-gap="250" />
-		<line dy="-1" stroke="#cc00cc" stroke-width="1.5" stroke-dasharray="18,5" stroke-linecap="butt" scale="stroke" />
-	</rule>
-	<!-- Cycling network -->
-	<rule e="any" k="*" v="*" cat="cycling" zoom-min="10">
-		<rule e="way" k="network" v="rcn|lcn|ocn" zoom-min="12">
-			<rule e="way" k="*" v="*" zoom-max="13">
-				<line dy="-1" stroke="#cc474aff" stroke-width="1.7" stroke-dasharray="3,1.5" stroke-linecap="butt" scale="all" />
-			</rule>
-			<rule e="way" k="*" v="*" zoom-min="14" zoom-max="15" >
-				<line dy="-1" stroke="#474aff" stroke-width="1.3" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
-			</rule>
-			<rule e="way" k="*" v="*" zoom-min="16" >
-				<line dy="-1" stroke="#474aff" stroke-width="0.8" stroke-linecap="butt" />
-			</rule>
-			<rule e="any" k="*" v="*" zoom-min="14">
-				<pathText dy="-3" priority="10" k="ref_cycle" font-style="bold" font-size="10" fill="#b266ff" stroke="#ffffff" stroke-width="2.5" repeat-start="10" repeat-gap="300" />
-			</rule>
-		</rule>
-		<rule e="way" k="network" v="icn|ncn" >
-			<rule e="way" k="*" v="*" zoom-max="12">
-				<line dy="-1" stroke="#474aff" stroke-width="1.7" stroke-linecap="butt" />
-			</rule>
-			<rule e="way" k="*" v="*" zoom-min="13" zoom-max="15" >
-				<line dy="-1" stroke="#474aff" stroke-width="1.3" stroke-linecap="butt" />
-			</rule>
-			<rule e="way" k="*" v="*" zoom-min="16" >
-				<line dy="-1" stroke="#474aff" stroke-width="0.9" stroke-dasharray="3,1.5" stroke-linecap="butt" scale="all" />
-			</rule>
-			<rule e="any" k="*" v="*" zoom-min="11">
-				<pathText dy="-3" priority="10" k="ref_cycle" font-style="bold" font-size="10" fill="#b266ff" stroke="#ffffff" stroke-width="2.5" repeat-start="10" repeat-gap="300" />
-			</rule>
-		</rule>
-	</rule>
-	<!-- Hiking network -->
-	<rule e="way" k="hknetwork" v="lwn|rwn|own" cat="hiking_trails" zoom-min="12" >
-		<rule e="way" k="*" v="*" zoom-max="13">
-			<line dy="1" stroke="#ccfc3d03" stroke-width="1.7" stroke-dasharray="3,1.5" stroke-linecap="butt" scale="all" />
-		</rule>
-		<rule e="way" k="*" v="*" zoom-min="14" zoom-max="15" >
-			<line dy="1" stroke="#b2fc3d03" stroke-width="1.3" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
-		</rule>
-		<rule e="way" k="*" v="*" zoom-min="16" >
-			<line dy="1" stroke="#b2fc3d03" stroke-width="0.9" stroke-dasharray="3,2" stroke-linecap="butt" scale="all" />
-		</rule>
-		<rule e="any" k="hknetwork" v="lwn|rwn|own" zoom-min="15" >
-			<rule e="any" k="*" v="*" zoom-max="17">
-				<pathText repeat-gap="170" repeat-start="10" k="ref_hike" font-style="bold" font-size="10" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="1.7" priority="11" />
-			</rule>
-			<rule e="any" k="*" v="lwn|rwn|own" zoom-min="18">
-				<pathText repeat-gap="220" repeat-start="80" k="ref_hike" font-style="bold" font-size="12" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="2" priority="11" />
-			</rule>
-		</rule>
-	</rule>
-	<rule e="way" cat="hiking_trails" k="hknetwork" v="iwn|nwn" zoom-min="10" >
-		<rule e="way" k="*" v="*" zoom-max="11" >
-			<line dy="1" stroke="#fc3d03" curve="cubic" stroke-width="1.7" stroke-linecap="butt" />
-		</rule>
-		<rule e="way" k="*" v="*" zoom-min="12" zoom-max="14" >
-			<line dy="1" stroke="#fc3d03" curve="cubic" stroke-width="1.4" stroke-linecap="butt" />
-		</rule>
-		<rule e="way" k="*" v="*" zoom-min="15" >
-			<line dy="1" stroke="#ccfc3d03" curve="cubic" stroke-width="1" stroke-linecap="butt" />
-		</rule>
-		<rule e="any" k="hknetwork" v="iwn|nwn" zoom-min="11" >
-			<rule e="any" k="*" v="*" zoom-max="17">
-				<pathText repeat-gap="170" repeat-start="10" k="ref_hike" font-style="bold" font-size="10" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="1.7" priority="200" />
-			</rule>
-			<rule e="any" k="*" v="*" zoom-min="18">
-				<pathText repeat-gap="220" repeat-start="20" k="ref_hike" font-style="bold" font-size="12" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="2" priority="200" />
-			</rule>
-		</rule>
-	</rule>
-	<rule cat="hiking_trails" e="node" k="hike_node" v="*" zoom-min="13">
-		<rule cat="nocity" e="any" k="*" v="*" zoom-min="13" zoom-max="14">
-			<circle radius="6.4" scale-radius="false" fill="#ffffff" stroke="#008131" stroke-width="1.5" />
-			<caption k="addr:housenumber" display="always" priority="14" font-style="bold" font-size="9" fill="#008131" stroke="#FFFFFF" stroke-width="2" />
-		</rule>
-		<rule e="any" k="*" v="*" zoom-min="15" zoom-max="16">
-			<circle radius="8.0" scale-radius="false" fill="#ffffff" stroke="#008131" stroke-width="2" />
-			<caption k="addr:housenumber" display="always" priority="14" font-style="bold" font-size="10" fill="#008131" stroke="#FFFFFF" stroke-width="2" />
-		</rule>
-		<rule e="any" k="*" v="*" zoom-min="17">
-			<circle radius="10.4" scale-radius="false" fill="#ffffff" stroke="#008131" stroke-width="2" />
-			<caption k="addr:housenumber" display="always" priority="14" font-style="bold" font-size="14" fill="#008131" stroke="#FFFFFF" stroke-width="2" />
-		</rule>
-	</rule>
-	<rule cat="winter_sports" e="way" k="piste:type" v="*" zoom-min="10">
-		<!-- piste areas -->
-		<rule e="way" k="piste:type" v="downhill" closed="yes">
-			<rule e="way" k="piste:difficulty" v="novice">
-				<area fill="#8C40ff40" />
-			</rule>
-			<rule e="way" k="piste:difficulty" v="easy">
-				<area fill="#8C7173FF" />
-			</rule>
-			<rule e="way" k="piste:difficulty" v="intermediate">
-				<area fill="#8CFF4A4A" />
-			</rule>
-			<rule e="way" k="piste:difficulty" v="advanced">
-				<area fill="#8C000000" />
-			</rule>
-			<rule e="way" k="piste:difficulty" v="expert">
-				<area fill="#8Cf6800a" />
-			</rule>
-			<rule e="way" k="piste:difficulty" v="freeride">
-				<area fill="#8Cf6dd0a" />
-			</rule>
-			<rule e="way" k="piste:difficulty" v="~">
-				<area fill="#8C505050" />
-			</rule>
-			<rule e="way" k="*" v="*" zoom-min="16">
-				<pathText k="name" font-style="bold" font-size="6" dy="5" fill="#004D66" stroke="#ffffff" stroke-width="2.0" />
-			</rule>
-		</rule>
-		<!-- piste ways -->
-		<rule e="way" k="piste:type" v="downhill" closed="no">
-			<rule e="way" k="piste:difficulty" v="novice">
-				<line stroke="#8C40ff40" stroke-width="2" />
-			</rule>
-			<rule e="way" k="piste:difficulty" v="easy">
-				<line stroke="#8C7173FF" stroke-width="2" />
-			</rule>
-			<rule e="way" k="piste:difficulty" v="intermediate">
-				<line stroke="#8CFF4A4A" stroke-width="2" />
-			</rule>
-			<rule e="way" k="piste:difficulty" v="advanced">
-				<line stroke="#8C000000" stroke-width="2" />
-			</rule>
-			<rule e="way" k="piste:difficulty" v="expert">
-				<line stroke="#8Cf6800a" stroke-width="2" />
-			</rule>
-			<rule e="way" k="piste:difficulty" v="freeride">
-				<line stroke="#8Cf6dd0a" stroke-width="2" />
-			</rule>
-			<rule e="way" k="piste:difficulty" v="~">
-				<line stroke="#8C505050" stroke-width="2" />
-			</rule>
-			<rule e="way" k="*" v="*" zoom-min="16">
-				<pathText k="name" font-style="bold" font-size="6" dy="5" fill="#004D66" stroke="#ffffff" stroke-width="2.0" />
-			</rule>
-		</rule>
-		<rule e="way" k="piste:type" v="sled">
-			<line stroke="#cdabde" stroke-width="2.5" />
-		</rule>
-		<rule e="way" k="piste:type" v="nordic">
-			<rule e="way" k="*" v="*" zoom-min="13" zoom-max="15">
-				<rule e="way" k="piste:difficulty" v="novice|easy|intermediate">
-					<rule e="way" k="*" v="classic">
-						<line stroke="#006BD6" stroke-width="0.7" />
-					</rule>
-					<rule e="way" k="*" v="classic+skating|classic;skating|skating">
-						<line stroke="#FFFFFF" stroke-width="1.9" />
-						<line stroke="#006BD6" stroke-width="1.3" />
-					</rule>
-					<rule e="way" k="*" v="backcountry">
-						<line stroke="#90FFFFFF" stroke-width="1" />
-						<line stroke="#006BD6" stroke-width="0.7" stroke-dasharray="9,5" stroke-linecap="butt" />
-					</rule>
-					<!-- Fallback for openandromaps without tags -->
-					<rule e="way" k="piste:grooming" v="~">
-						<line stroke="#006BD6" stroke-width="0.7" />
-					</rule>
-				</rule>
-				<rule e="way" k="piste:difficulty" v="advanced|expert">
-					<rule e="way" k="*" v="classic">
-						<line stroke="#9311F0" stroke-width="0.7" />
-					</rule>
-					<rule e="way" k="*" v="classic+skating|classic;skating|skating">
-						<line stroke="#FFFFFF" stroke-width="1.9" />
-						<line stroke="#9311F0" stroke-width="1.3" />
-					</rule>
-					<rule e="way" k="*" v="backcountry">
-						<line stroke="#90FFFFFF" stroke-width="1" />
-						<line stroke="#9311F0" stroke-width="0.7" stroke-dasharray="9,5" stroke-linecap="butt" />
-					</rule>
-					<!-- Fallback for openandromaps without tags -->
-					<rule e="way" k="piste:grooming" v="~">
-						<line stroke="#9311F0" stroke-width="0.7" />
-					</rule>
-				</rule>
-				<rule e="way" k="piste:difficulty" v="~">
-					<rule e="way" k="*" v="classic">
-						<line stroke="#006BD6" stroke-width="0.7" />
-					</rule>
-					<rule e="way" k="*" v="classic+skating|classic;skating|skating">
-						<line stroke="#FFFFFF" stroke-width="1.9" />
-						<line stroke="#006BD6" stroke-width="1.3" />
-					</rule>
-					<rule e="way" k="*" v="backcountry">
-						<line stroke="#90FFFFFF" stroke-width="1" />
-						<line stroke="#006BD6" stroke-width="0.7" stroke-dasharray="9,5" stroke-linecap="butt" />
-					</rule>
-				</rule>
-				<!-- Fallback for old version of LoMaps -->
-				<rule e="way" k="piste:difficulty|piste:grooming" v="~">
-					<line stroke="#006BD6" stroke-width="1.1" />
-				</rule>
-			</rule>
-			<rule e="way" k="*" v="*" zoom-min="16">
-				<rule e="way" k="piste:difficulty" v="novice|easy|intermediate">
-					<rule e="way" k="*" v="classic">
-						<line stroke="#750059B3" stroke-width="0.8" />
-					</rule>
-					<rule e="way" k="*" v="classic+skating|classic;skating|skating">
-						<line stroke="#750059B3" stroke-width="1.2" />
-					</rule>
-					<rule e="way" k="*" v="backcountry">
-						<line stroke="#750059B3" stroke-width="0.8" stroke-dasharray="9,5" stroke-linecap="butt" />
-					</rule>
-					<!-- Fallback for openandromaps without tags -->
-					<rule e="way" k="piste:grooming" v="~">
-						<line stroke="#750059B3" stroke-width="0.7" />
-					</rule>
-				</rule>
-				<rule e="way" k="piste:difficulty" v="advanced|expert">
-					<rule e="way" k="*" v="classic">
-						<line stroke="#75810EDA" stroke-width="0.8" />
-					</rule>
-					<rule e="way" k="*" v="classic+skating|classic;skating|skating">
-						<line stroke="#75810EDA" stroke-width="1.2" />
-					</rule>
-					<rule e="way" k="*" v="backcountry">
-						<line stroke="#75810EDA" stroke-width="0.8" stroke-dasharray="9,5" stroke-linecap="butt" />
-					</rule>
-					<!-- Fallback for openandromaps without tags -->
-					<rule e="way" k="piste:grooming" v="~">
-						<line stroke="#75810EDA" stroke-width="0.7" />
-					</rule>
-				</rule>
-				<rule e="way" k="piste:difficulty" v="~">
-					<rule e="way" k="*" v="classic+skating|classic;skating|skating|classic">
-						<line stroke="#750059B3" stroke-width="1.1" />
-					</rule>
-					<rule e="way" k="*" v="backcountry">
-						<line stroke="#750059B3" stroke-width="0.8" stroke-dasharray="9,5" stroke-linecap="butt" />
-					</rule>
-				</rule>
-				<!-- Fallback for old version of LoMaps  -->
-				<rule e="way" k="piste:difficulty" v="~">
-					<line stroke="#750059B3" stroke-width="1.1" />
-				</rule>
-			</rule>
-			<rule e="way" k="*" v="*" zoom-min="15">
-				<pathText k="name" font-style="bold_italic" font-size="9" dy="4" fill="#333333" stroke="#ffffff" stroke-width="2.0" />
-			</rule>
-		</rule>
-		<rule e="way" k="piste:type" v="skitour">
-			<rule e="way" k="*" v="*" zoom-max="15">
-				<line stroke="#FF1BAFFF" stroke-width="1" />
-			</rule>
-			<rule e="way" k="*" v="*" zoom-min="16">
-				<line stroke="#8000A4F7" stroke-width="0.9" />
-				<pathText k="name" font-style="bold_italic" font-size="9" dy="12" fill="#00A4F7" stroke="#ffffff" stroke-width="2" />
-			</rule>
-		</rule>
-	</rule>
-
 	<rule e="node" k="bridge" v="yes" zoom-min="13">
 		<caption k="name" font-style="bold" font-size="11" fill="#000000" stroke="#FFFFFF" stroke-width="2" text-wrap-width="120" />
 	</rule>
@@ -3875,832 +3889,834 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 	</rule>
 
 	<!-- OSMC HIKING hiking nodes OAM -->
-	<rule e="node" k="osmc" v="osmc_yes" zoom-min="12" zoom-max="14" cat="hiking_nodes">
-		<rule e="any" k="osmc_background" v="~|no|false">
-			<symbol display="always" src="file:osmc/bg_white.svg" symbol-height="6" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_black|wmbg_black_circle|wmbg_black_frame|wmbg_black_round">
-			<symbol display="always" src="file:osmc/bg_black.svg" symbol-height="6" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_blue|wmbg_blue_circle|wmbg_blue_frame|wmbg_blue_round">
-			<symbol display="always" src="file:osmc/bg_blue.svg" symbol-height="6" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_brown|wmbg_brown_circle|wmbg_brown_frame|wmbg_brown_round">
-			<symbol display="always" src="file:osmc/bg_brown.svg" symbol-height="6" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_green|wmbg_green_circle|wmbg_green_frame|wmbg_green_round">
-			<symbol display="always" src="file:osmc/bg_green.svg" symbol-height="6" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_orange|wmbg_orange_circle|wmbg_orange_frame|wmbg_orange_round">
-			<symbol display="always" src="file:osmc/bg_orange.svg" symbol-height="6" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_purple|wmbg_purple_circle|wmbg_purple_frame|wmbg_purple_round">
-			<symbol display="always" src="file:osmc/bg_purple.svg" symbol-height="6" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_red|wmbg_red_circle|wmbg_red_frame|wmbg_red_round">
-			<symbol display="always" src="file:osmc/bg_red.svg" symbol-height="6" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_white|wmbg_white_circle|wmbg_white_frame|wmbg_white_round">
-			<symbol display="always" src="file:osmc/bg_white.svg" symbol-height="6" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_yellow|wmbg_yellow_circle|wmbg_yellow_frame|wmbg_yellow_round">
-			<symbol display="always" src="file:osmc/bg_yellow.svg" symbol-height="6" />
-		</rule>
-	</rule>
-	<rule e="node" k="osmc" v="osmc_yes" zoom-min="15" zoom-max="19" cat="hiking_nodes">
-		<rule e="any" k="osmc_background" v="~|no|false">
-			<symbol src="file:osmc/bg_white.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_black">
-			<symbol src="file:osmc/bg_black.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_black_circle">
-			<symbol src="file:osmc/bg_black_circle.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_black_frame">
-			<symbol src="file:osmc/bg_black_frame.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_black_round">
-			<symbol src="file:osmc/bg_black_round.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_blue">
-			<symbol src="file:osmc/bg_blue.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_blue_circle">
-			<symbol src="file:osmc/bg_blue_circle.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_blue_frame">
-			<symbol src="file:osmc/bg_blue_frame.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_blue_round">
-			<symbol src="file:osmc/bg_blue_round.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_brown">
-			<symbol src="file:osmc/bg_brown.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_brown_circle">
-			<symbol src="file:osmc/bg_brown_circle.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_brown_frame">
-			<symbol src="file:osmc/bg_brown_frame.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_brown_round">
-			<symbol src="file:osmc/bg_brown_round.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_green">
-			<symbol src="file:osmc/bg_green.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_green_circle">
-			<symbol src="file:osmc/bg_green_circle.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_green_frame">
-			<symbol src="file:osmc/bg_green_frame.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_green_round">
-			<symbol src="file:osmc/bg_green_round.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_orange">
-			<symbol src="file:osmc/bg_orange.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_orange_circle">
-			<symbol src="file:osmc/bg_orange_circle.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_orange_frame">
-			<symbol src="file:osmc/bg_orange_frame.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_orange_round">
-			<symbol src="file:osmc/bg_orange_round.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_purple">
-			<symbol src="file:osmc/bg_purple.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_purple_circle">
-			<symbol src="file:osmc/bg_purple_circle.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_purple_frame">
-			<symbol src="file:osmc/bg_purple_frame.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_purple_round">
-			<symbol src="file:osmc/bg_purple_round.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_red">
-			<symbol src="file:osmc/bg_red.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_red_circle">
-			<symbol src="file:osmc/bg_red_circle.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_red_frame">
-			<symbol src="file:osmc/bg_red_frame.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_red_round">
-			<symbol src="file:osmc/bg_red_round.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_white">
-			<symbol src="file:osmc/bg_white.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_white_circle">
-			<symbol src="file:osmc/bg_white_circle.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_white_frame">
-			<symbol src="file:osmc/bg_white_frame.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_white_round">
-			<symbol src="file:osmc/bg_white_round.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_yellow">
-			<symbol src="file:osmc/bg_yellow.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_yellow_circle">
-			<symbol src="file:osmc/bg_yellow_circle.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_yellow_frame">
-			<symbol src="file:osmc/bg_yellow_frame.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_yellow_round">
-			<symbol src="file:osmc/bg_yellow_round.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_gray">
-			<symbol src="file:osmc/bg_gray.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_gray_circle">
-			<symbol src="file:osmc/bg_gray_circle.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_gray_frame">
-			<symbol src="file:osmc/bg_gray_frame.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_background" v="wmbg_gray_round">
-			<symbol src="file:osmc/bg_gray_round.svg" display="always" priority="102" symbol-height="14" />
-		</rule>
-		<!-- End of OSMC hiking nodes background OAM -->
-		<!-- OSMC hiking nodes foreground OAM -->
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_arch">
-			<symbol src="file:osmc/fg_blue_arch.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_backslash">
-			<symbol src="file:osmc/fg_blue_backslash.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_bar">
-			<symbol src="file:osmc/fg_blue_bar.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_bowl">
-			<symbol src="file:osmc/fg_blue_bowl.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_circle">
-			<symbol src="file:osmc/fg_blue_circle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_corner">
-			<symbol src="file:osmc/fg_blue_corner.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_cross">
-			<symbol src="file:osmc/fg_blue_cross.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_diamond">
-			<symbol src="file:osmc/fg_blue_diamond.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_dot">
-			<symbol src="file:osmc/fg_blue_dot.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_fork">
-			<symbol src="file:osmc/fg_blue_fork.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_hiker">
-			<symbol src="file:osmc/fg_blue_hiker.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_l">
-			<symbol src="file:osmc/fg_blue_L.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_lower">
-			<symbol src="file:osmc/fg_blue_lower.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_pointer">
-			<symbol src="file:osmc/fg_blue_pointer.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_rectangle">
-			<symbol src="file:osmc/fg_blue_rectangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_right">
-			<symbol src="file:osmc/fg_blue_right.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_slash">
-			<symbol src="file:osmc/fg_blue_slash.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_stripe">
-			<symbol src="file:osmc/fg_blue_stripe.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_triangle">
-			<symbol src="file:osmc/fg_blue_triangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_triangle_line">
-			<symbol src="file:osmc/fg_blue_triangle_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_triangle_turned">
-			<symbol src="file:osmc/fg_blue_triangle_turned.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_turned_t">
-			<symbol src="file:osmc/fg_blue_turned_T.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_blue_x">
-			<symbol src="file:osmc/fg_blue_x.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_arch">
-			<symbol src="file:osmc/fg_red_arch.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_backslash">
-			<symbol src="file:osmc/fg_red_backslash.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_bar">
-			<symbol src="file:osmc/fg_red_bar.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_circle">
-			<symbol src="file:osmc/fg_red_circle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_corner">
-			<symbol src="file:osmc/fg_red_corner.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_crest">
-			<symbol src="file:osmc/fg_red_crest.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_cross">
-			<symbol src="file:osmc/fg_red_cross.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_diamond">
-			<symbol src="file:osmc/fg_red_diamond.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_diamond_line">
-			<symbol src="file:osmc/fg_red_diamond_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_dot">
-			<symbol src="file:osmc/fg_red_dot.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_drop">
-			<symbol src="file:osmc/fg_red_drop.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_drop_line">
-			<symbol src="file:osmc/fg_red_drop_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_fork">
-			<symbol src="file:osmc/fg_red_fork.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_hiker">
-			<symbol src="file:osmc/fg_red_hiker.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_l">
-			<symbol src="file:osmc/fg_red_L.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_lower">
-			<symbol src="file:osmc/fg_red_lower.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_pointer">
-			<symbol src="file:osmc/fg_red_pointer.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_rectangle">
-			<symbol src="file:osmc/fg_red_rectangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_right">
-			<symbol src="file:osmc/fg_red_right.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_shell">
-			<symbol src="file:osmc/fg_red_shell.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_slash">
-			<symbol src="file:osmc/fg_red_slash.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_stripe">
-			<symbol src="file:osmc/fg_red_stripe.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_triangle">
-			<symbol src="file:osmc/fg_red_triangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_triangle_line">
-			<symbol src="file:osmc/fg_red_triangle_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_triangle_turned">
-			<symbol src="file:osmc/fg_red_triangle_turned.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_turned_t">
-			<symbol src="file:osmc/fg_red_turned_T.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_wheel">
-			<symbol src="file:osmc/fg_red_wheel.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_red_x">
-			<symbol src="file:osmc/fg_red_x.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_arch">
-			<symbol src="file:osmc/fg_yellow_arch.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_backslash">
-			<symbol src="file:osmc/fg_yellow_backslash.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_bar">
-			<symbol src="file:osmc/fg_yellow_bar.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_bowl">
-			<symbol src="file:osmc/fg_yellow_bowl.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_circle">
-			<symbol src="file:osmc/fg_yellow_circle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_corner">
-			<symbol src="file:osmc/fg_yellow_corner.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_cross">
-			<symbol src="file:osmc/fg_yellow_cross.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_diamond">
-			<symbol src="file:osmc/fg_yellow_diamond.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_diamond_line">
-			<symbol src="file:osmc/fg_yellow_diamond_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_dot">
-			<symbol src="file:osmc/fg_yellow_dot.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_fork">
-			<symbol src="file:osmc/fg_yellow_fork.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_hexagon">
-			<symbol src="file:osmc/fg_yellow_hexagon.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_hiker">
-			<symbol src="file:osmc/fg_yellow_hiker.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_l">
-			<symbol src="file:osmc/fg_yellow_L.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_lower">
-			<symbol src="file:osmc/fg_yellow_lower.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_pointer">
-			<symbol src="file:osmc/fg_yellow_pointer.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_rectangle">
-			<symbol src="file:osmc/fg_yellow_rectangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_rectangle_line">
-			<symbol src="file:osmc/fg_yellow_rectangle_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_right">
-			<symbol src="file:osmc/fg_yellow_right.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_shell">
-			<symbol src="file:osmc/fg_yellow_shell.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_slash">
-			<symbol src="file:osmc/fg_yellow_slash.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_stripe">
-			<symbol src="file:osmc/fg_yellow_stripe.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_triangle">
-			<symbol src="file:osmc/fg_yellow_triangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_triangle_line">
-			<symbol src="file:osmc/fg_yellow_triangle_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_triangle_turned">
-			<symbol src="file:osmc/fg_yellow_triangle_turned.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_turned_t">
-			<symbol src="file:osmc/fg_yellow_turned_T.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_yellow_x">
-			<symbol src="file:osmc/fg_yellow_x.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_arch">
-			<symbol src="file:osmc/fg_black_arch.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_backslash">
-			<symbol src="file:osmc/fg_black_backslash.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_bar">
-			<symbol src="file:osmc/fg_black_bar.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_circle">
-			<symbol src="file:osmc/fg_black_circle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_corner">
-			<symbol src="file:osmc/fg_black_corner.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_crest">
-			<symbol src="file:osmc/fg_black_crest.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_cross">
-			<symbol src="file:osmc/fg_black_cross.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_diamond">
-			<symbol src="file:osmc/fg_black_diamond.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_diamond_line">
-			<symbol src="file:osmc/fg_black_diamond_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_dot">
-			<symbol src="file:osmc/fg_black_dot.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_fork">
-			<symbol src="file:osmc/fg_black_fork.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_hiker">
-			<symbol src="file:osmc/fg_black_hiker.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_horse">
-			<symbol src="file:osmc/fg_black_horse.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_lower">
-			<symbol src="file:osmc/fg_black_lower.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_pointer">
-			<symbol src="file:osmc/fg_black_pointer.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_rectangle">
-			<symbol src="file:osmc/fg_black_rectangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_rectangle_line">
-			<symbol src="file:osmc/fg_black_rectangle_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_red_diamond">
-			<symbol src="file:osmc/fg_black_red_diamond.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_right">
-			<symbol src="file:osmc/fg_black_right.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_stripe">
-			<symbol src="file:osmc/fg_black_stripe.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_triangle">
-			<symbol src="file:osmc/fg_black_triangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_triangle_line">
-			<symbol src="file:osmc/fg_black_triangle_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_turned_t">
-			<symbol src="file:osmc/fg_black_turned_T.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_black_x">
-			<symbol src="file:osmc/fg_black_x.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_arch">
-			<symbol src="file:osmc/fg_green_arch.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_backslash">
-			<symbol src="file:osmc/fg_green_backslash.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_bar">
-			<symbol src="file:osmc/fg_green_bar.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_bowl">
-			<symbol src="file:osmc/fg_green_bowl.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_circle">
-			<symbol src="file:osmc/fg_green_circle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_corner">
-			<symbol src="file:osmc/fg_green_corner.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_cross">
-			<symbol src="file:osmc/fg_green_cross.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_diamond">
-			<symbol src="file:osmc/fg_green_diamond.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_diamond_line">
-			<symbol src="file:osmc/fg_green_diamond_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_dot">
-			<symbol src="file:osmc/fg_green_dot.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_drop_line">
-			<symbol src="file:osmc/fg_green_drop_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_fork">
-			<symbol src="file:osmc/fg_green_fork.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_hiker">
-			<symbol src="file:osmc/fg_green_hiker.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_horse">
-			<symbol src="file:osmc/fg_green_horse.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_l">
-			<symbol src="file:osmc/fg_green_L.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_lower">
-			<symbol src="file:osmc/fg_green_lower.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_pointer">
-			<symbol src="file:osmc/fg_green_pointer.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_rectangle">
-			<symbol src="file:osmc/fg_green_rectangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_right">
-			<symbol src="file:osmc/fg_green_right.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_slash">
-			<symbol src="file:osmc/fg_green_slash.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_stripe">
-			<symbol src="file:osmc/fg_green_stripe.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_triangle">
-			<symbol src="file:osmc/fg_green_triangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_triangle_line">
-			<symbol src="file:osmc/fg_green_triangle_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_triangle_turned">
-			<symbol src="file:osmc/fg_green_triangle_turned.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_turned_t">
-			<symbol src="file:osmc/fg_green_turned_T.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_wheel">
-			<symbol src="file:osmc/fg_green_wheel.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_green_x">
-			<symbol src="file:osmc/fg_green_x.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_arch">
-			<symbol src="file:osmc/fg_white_arch.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_backslash">
-			<symbol src="file:osmc/fg_white_backslash.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_bar">
-			<symbol src="file:osmc/fg_white_bar.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_circle">
-			<symbol src="file:osmc/fg_white_circle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_corner">
-			<symbol src="file:osmc/fg_white_corner.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_cross">
-			<symbol src="file:osmc/fg_white_cross.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_diamond">
-			<symbol src="file:osmc/fg_white_diamond.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_diamond_line">
-			<symbol src="file:osmc/fg_white_diamond_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_dot">
-			<symbol src="file:osmc/fg_white_dot.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_hiker">
-			<symbol src="file:osmc/fg_white_hiker.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_lower">
-			<symbol src="file:osmc/fg_white_lower.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_pointer">
-			<symbol src="file:osmc/fg_white_pointer.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_rectangle">
-			<symbol src="file:osmc/fg_white_rectangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_rectangle_line">
-			<symbol src="file:osmc/fg_white_rectangle_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_red_diamond">
-			<symbol src="file:osmc/fg_white_red_diamond.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_right">
-			<symbol src="file:osmc/fg_white_right.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_slash">
-			<symbol src="file:osmc/fg_white_slash.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_stripe">
-			<symbol src="file:osmc/fg_white_stripe.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_triangle">
-			<symbol src="file:osmc/fg_white_triangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_triangle_line">
-			<symbol src="file:osmc/fg_white_triangle_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_triangle_turned">
-			<symbol src="file:osmc/fg_white_triangle_turned.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_turned_t">
-			<symbol src="file:osmc/fg_white_turned_T.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_white_x">
-			<symbol src="file:osmc/fg_white_x.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_brown_bar">
-			<symbol src="file:osmc/fg_brown_bar.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_brown_diamond">
-			<symbol src="file:osmc/fg_brown_diamond.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_brown_dot">
-			<symbol src="file:osmc/fg_brown_dot.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_brown_hiker">
-			<symbol src="file:osmc/fg_brown_hiker.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_brown_lower">
-			<symbol src="file:osmc/fg_brown_lower.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_brown_pointer">
-			<symbol src="file:osmc/fg_brown_pointer.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_brown_rectangle">
-			<symbol src="file:osmc/fg_brown_rectangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_brown_stripe">
-			<symbol src="file:osmc/fg_brown_stripe.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_brown_x">
-			<symbol src="file:osmc/fg_brown_x.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_gray_bar">
-			<symbol src="file:osmc/fg_gray_bar.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_gray_pointer">
-			<symbol src="file:osmc/fg_gray_pointer.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_gray_triangle">
-			<symbol src="file:osmc/fg_gray_triangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_orange_bar">
-			<symbol src="file:osmc/fg_orange_bar.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_orange_circle">
-			<symbol src="file:osmc/fg_orange_circle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_orange_cross">
-			<symbol src="file:osmc/fg_orange_cross.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_orange_diamond">
-			<symbol src="file:osmc/fg_orange_diamond.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_orange_diamond_line">
-			<symbol src="file:osmc/fg_orange_diamond_line.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_orange_dot">
-			<symbol src="file:osmc/fg_orange_dot.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_orange_hexagon">
-			<symbol src="file:osmc/fg_orange_hexagon.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_orange_hiker">
-			<symbol src="file:osmc/fg_orange_hiker.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_orange_lower">
-			<symbol src="file:osmc/fg_orange_lower.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_orange_pointer">
-			<symbol src="file:osmc/fg_orange_pointer.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_orange_rectangle">
-			<symbol src="file:osmc/fg_orange_rectangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_orange_right">
-			<symbol src="file:osmc/fg_orange_right.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_orange_stripe">
-			<symbol src="file:osmc/fg_orange_stripe.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_orange_triangle">
-			<symbol src="file:osmc/fg_orange_triangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_purple_bar">
-			<symbol src="file:osmc/fg_purple_bar.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_purple_circle">
-			<symbol src="file:osmc/fg_purple_circle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_purple_diamond">
-			<symbol src="file:osmc/fg_purple_diamond.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_purple_dot">
-			<symbol src="file:osmc/fg_purple_dot.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_purple_lower">
-			<symbol src="file:osmc/fg_purple_lower.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_purple_pointer">
-			<symbol src="file:osmc/fg_purple_pointer.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_purple_rectangle">
-			<symbol src="file:osmc/fg_purple_rectangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_purple_stripe">
-			<symbol src="file:osmc/fg_purple_stripe.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_purple_triangle">
-			<symbol src="file:osmc/fg_purple_triangle.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_ammonit">
-			<symbol src="file:osmc/fg_ammonit.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_bridleway">
-			<symbol src="file:osmc/fg_bridleway.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_heart">
-			<symbol src="file:osmc/fg_heart.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_hiker">
-			<symbol src="file:osmc/fg_hiker.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_mine">
-			<symbol src="file:osmc/fg_mine.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_shell">
-			<symbol src="file:osmc/fg_shell.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_shell_modern">
-			<symbol src="file:osmc/fg_shell_modern.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_tower">
-			<symbol src="file:osmc/fg_tower.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<rule e="any" k="osmc_foreground" v="wmfg_wolfshook">
-			<symbol src="file:osmc/fg_wolfshook.svg" display="always" priority="103" symbol-height="14" />
-		</rule>
-		<!-- End of OSMC hiking nodes foreground OAM -->
-		<!-- OSMC Hiking hiking nodes text OAM -->
-		<rule e="any" k="osmc_textcolor" v="~|wmtc_black">
-			<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
-				<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#000000" stroke="#E5FFFFFF" stroke-width="1.0" />
+	<rule e="node" cat="hiking_trails" k="osmc" v="osmc_yes" >
+		<rule e="node" cat="hiking_nodes" k="*" v="*" zoom-min="12" zoom-max="14" >
+			<rule e="any" k="osmc_background" v="~|no|false">
+				<symbol display="always" src="file:osmc/bg_white.svg" symbol-height="6" />
 			</rule>
-			<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
-				<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#000000" stroke="#E5FFFFFF" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_black|wmbg_black_circle|wmbg_black_frame|wmbg_black_round">
+				<symbol display="always" src="file:osmc/bg_black.svg" symbol-height="6" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_blue|wmbg_blue_circle|wmbg_blue_frame|wmbg_blue_round">
+				<symbol display="always" src="file:osmc/bg_blue.svg" symbol-height="6" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_brown|wmbg_brown_circle|wmbg_brown_frame|wmbg_brown_round">
+				<symbol display="always" src="file:osmc/bg_brown.svg" symbol-height="6" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_green|wmbg_green_circle|wmbg_green_frame|wmbg_green_round">
+				<symbol display="always" src="file:osmc/bg_green.svg" symbol-height="6" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_orange|wmbg_orange_circle|wmbg_orange_frame|wmbg_orange_round">
+				<symbol display="always" src="file:osmc/bg_orange.svg" symbol-height="6" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_purple|wmbg_purple_circle|wmbg_purple_frame|wmbg_purple_round">
+				<symbol display="always" src="file:osmc/bg_purple.svg" symbol-height="6" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_red|wmbg_red_circle|wmbg_red_frame|wmbg_red_round">
+				<symbol display="always" src="file:osmc/bg_red.svg" symbol-height="6" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_white|wmbg_white_circle|wmbg_white_frame|wmbg_white_round">
+				<symbol display="always" src="file:osmc/bg_white.svg" symbol-height="6" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_yellow|wmbg_yellow_circle|wmbg_yellow_frame|wmbg_yellow_round">
+				<symbol display="always" src="file:osmc/bg_yellow.svg" symbol-height="6" />
 			</rule>
 		</rule>
-		<rule e="any" k="osmc_textcolor" v="wmtc_red">
-			<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
-				<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#FF3333" stroke="#E5FFFFFF" stroke-width="1.0" />
+		<rule e="node" k="*" v="*" zoom-min="15" zoom-max="19" cat="hiking_nodes">
+			<rule e="any" k="osmc_background" v="~|no|false">
+				<symbol src="file:osmc/bg_white.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-			<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
-				<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#FF3333" stroke="#E5FFFFFF" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_black">
+				<symbol src="file:osmc/bg_black.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-		</rule>
-		<rule e="any" k="osmc_textcolor" v="wmtc_green">
-			<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
-				<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#267F00" stroke="#E5FFFFFF" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_black_circle">
+				<symbol src="file:osmc/bg_black_circle.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-			<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
-				<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#267F00" stroke="#E5FFFFFF" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_black_frame">
+				<symbol src="file:osmc/bg_black_frame.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-		</rule>
-		<rule e="any" k="osmc_textcolor" v="wmtc_blue">
-			<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
-				<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#0242C1" stroke="#E5FFFFFF" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_black_round">
+				<symbol src="file:osmc/bg_black_round.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-			<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
-				<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#0242C1" stroke="#E5FFFFFF" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_blue">
+				<symbol src="file:osmc/bg_blue.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-		</rule>
-		<rule e="any" k="osmc_textcolor" v="wmtc_brown">
-			<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
-				<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#BC6823" stroke="#E5FFFFFF" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_blue_circle">
+				<symbol src="file:osmc/bg_blue_circle.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-			<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
-				<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#BC6823" stroke="#E5FFFFFF" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_blue_frame">
+				<symbol src="file:osmc/bg_blue_frame.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-		</rule>
-		<rule e="any" k="osmc_textcolor" v="wmtc_orange">
-			<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
-				<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#EB8D00" stroke="#E5FFFFFF" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_blue_round">
+				<symbol src="file:osmc/bg_blue_round.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-			<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
-				<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#EB8D00" stroke="#E5FFFFFF" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_brown">
+				<symbol src="file:osmc/bg_brown.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-		</rule>
-		<rule e="any" k="osmc_textcolor" v="wmtc_purple">
-			<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
-				<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#C17FFF" stroke="#E5FFFFFF" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_brown_circle">
+				<symbol src="file:osmc/bg_brown_circle.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-			<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
-				<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#C17FFF" stroke="#E5FFFFFF" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_brown_frame">
+				<symbol src="file:osmc/bg_brown_frame.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-		</rule>
-		<rule e="any" k="osmc_textcolor" v="wmtc_white">
-			<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
-				<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#FFFFFF" stroke="#E5000000" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_brown_round">
+				<symbol src="file:osmc/bg_brown_round.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-			<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
-				<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#FFFFFF" stroke="#E5000000" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_green">
+				<symbol src="file:osmc/bg_green.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-		</rule>
-		<rule e="any" k="osmc_textcolor" v="wmtc_yellow">
-			<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
-				<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#F2DB0A" stroke="#E5000000" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_green_circle">
+				<symbol src="file:osmc/bg_green_circle.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-			<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
-				<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#F2DB0A" stroke="#E5000000" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_green_frame">
+				<symbol src="file:osmc/bg_green_frame.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-		</rule>
-		<rule e="any" k="osmc_textcolor" v="wmtc_gray">
-			<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
-				<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#CCCCCC" stroke="#E5000000" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_green_round">
+				<symbol src="file:osmc/bg_green_round.svg" display="always" priority="102" symbol-height="14" />
 			</rule>
-			<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
-				<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#CCCCCC" stroke="#E5000000" stroke-width="1.0" />
+			<rule e="any" k="osmc_background" v="wmbg_orange">
+				<symbol src="file:osmc/bg_orange.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_orange_circle">
+				<symbol src="file:osmc/bg_orange_circle.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_orange_frame">
+				<symbol src="file:osmc/bg_orange_frame.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_orange_round">
+				<symbol src="file:osmc/bg_orange_round.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_purple">
+				<symbol src="file:osmc/bg_purple.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_purple_circle">
+				<symbol src="file:osmc/bg_purple_circle.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_purple_frame">
+				<symbol src="file:osmc/bg_purple_frame.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_purple_round">
+				<symbol src="file:osmc/bg_purple_round.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_red">
+				<symbol src="file:osmc/bg_red.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_red_circle">
+				<symbol src="file:osmc/bg_red_circle.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_red_frame">
+				<symbol src="file:osmc/bg_red_frame.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_red_round">
+				<symbol src="file:osmc/bg_red_round.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_white">
+				<symbol src="file:osmc/bg_white.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_white_circle">
+				<symbol src="file:osmc/bg_white_circle.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_white_frame">
+				<symbol src="file:osmc/bg_white_frame.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_white_round">
+				<symbol src="file:osmc/bg_white_round.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_yellow">
+				<symbol src="file:osmc/bg_yellow.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_yellow_circle">
+				<symbol src="file:osmc/bg_yellow_circle.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_yellow_frame">
+				<symbol src="file:osmc/bg_yellow_frame.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_yellow_round">
+				<symbol src="file:osmc/bg_yellow_round.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_gray">
+				<symbol src="file:osmc/bg_gray.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_gray_circle">
+				<symbol src="file:osmc/bg_gray_circle.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_gray_frame">
+				<symbol src="file:osmc/bg_gray_frame.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_background" v="wmbg_gray_round">
+				<symbol src="file:osmc/bg_gray_round.svg" display="always" priority="102" symbol-height="14" />
+			</rule>
+			<!-- End of OSMC hiking nodes background OAM -->
+			<!-- OSMC hiking nodes foreground OAM -->
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_arch">
+				<symbol src="file:osmc/fg_blue_arch.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_backslash">
+				<symbol src="file:osmc/fg_blue_backslash.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_bar">
+				<symbol src="file:osmc/fg_blue_bar.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_bowl">
+				<symbol src="file:osmc/fg_blue_bowl.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_circle">
+				<symbol src="file:osmc/fg_blue_circle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_corner">
+				<symbol src="file:osmc/fg_blue_corner.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_cross">
+				<symbol src="file:osmc/fg_blue_cross.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_diamond">
+				<symbol src="file:osmc/fg_blue_diamond.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_dot">
+				<symbol src="file:osmc/fg_blue_dot.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_fork">
+				<symbol src="file:osmc/fg_blue_fork.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_hiker">
+				<symbol src="file:osmc/fg_blue_hiker.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_l">
+				<symbol src="file:osmc/fg_blue_L.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_lower">
+				<symbol src="file:osmc/fg_blue_lower.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_pointer">
+				<symbol src="file:osmc/fg_blue_pointer.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_rectangle">
+				<symbol src="file:osmc/fg_blue_rectangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_right">
+				<symbol src="file:osmc/fg_blue_right.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_slash">
+				<symbol src="file:osmc/fg_blue_slash.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_stripe">
+				<symbol src="file:osmc/fg_blue_stripe.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_triangle">
+				<symbol src="file:osmc/fg_blue_triangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_triangle_line">
+				<symbol src="file:osmc/fg_blue_triangle_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_triangle_turned">
+				<symbol src="file:osmc/fg_blue_triangle_turned.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_turned_t">
+				<symbol src="file:osmc/fg_blue_turned_T.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_blue_x">
+				<symbol src="file:osmc/fg_blue_x.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_arch">
+				<symbol src="file:osmc/fg_red_arch.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_backslash">
+				<symbol src="file:osmc/fg_red_backslash.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_bar">
+				<symbol src="file:osmc/fg_red_bar.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_circle">
+				<symbol src="file:osmc/fg_red_circle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_corner">
+				<symbol src="file:osmc/fg_red_corner.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_crest">
+				<symbol src="file:osmc/fg_red_crest.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_cross">
+				<symbol src="file:osmc/fg_red_cross.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_diamond">
+				<symbol src="file:osmc/fg_red_diamond.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_diamond_line">
+				<symbol src="file:osmc/fg_red_diamond_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_dot">
+				<symbol src="file:osmc/fg_red_dot.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_drop">
+				<symbol src="file:osmc/fg_red_drop.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_drop_line">
+				<symbol src="file:osmc/fg_red_drop_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_fork">
+				<symbol src="file:osmc/fg_red_fork.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_hiker">
+				<symbol src="file:osmc/fg_red_hiker.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_l">
+				<symbol src="file:osmc/fg_red_L.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_lower">
+				<symbol src="file:osmc/fg_red_lower.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_pointer">
+				<symbol src="file:osmc/fg_red_pointer.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_rectangle">
+				<symbol src="file:osmc/fg_red_rectangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_right">
+				<symbol src="file:osmc/fg_red_right.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_shell">
+				<symbol src="file:osmc/fg_red_shell.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_slash">
+				<symbol src="file:osmc/fg_red_slash.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_stripe">
+				<symbol src="file:osmc/fg_red_stripe.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_triangle">
+				<symbol src="file:osmc/fg_red_triangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_triangle_line">
+				<symbol src="file:osmc/fg_red_triangle_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_triangle_turned">
+				<symbol src="file:osmc/fg_red_triangle_turned.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_turned_t">
+				<symbol src="file:osmc/fg_red_turned_T.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_wheel">
+				<symbol src="file:osmc/fg_red_wheel.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_red_x">
+				<symbol src="file:osmc/fg_red_x.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_arch">
+				<symbol src="file:osmc/fg_yellow_arch.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_backslash">
+				<symbol src="file:osmc/fg_yellow_backslash.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_bar">
+				<symbol src="file:osmc/fg_yellow_bar.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_bowl">
+				<symbol src="file:osmc/fg_yellow_bowl.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_circle">
+				<symbol src="file:osmc/fg_yellow_circle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_corner">
+				<symbol src="file:osmc/fg_yellow_corner.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_cross">
+				<symbol src="file:osmc/fg_yellow_cross.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_diamond">
+				<symbol src="file:osmc/fg_yellow_diamond.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_diamond_line">
+				<symbol src="file:osmc/fg_yellow_diamond_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_dot">
+				<symbol src="file:osmc/fg_yellow_dot.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_fork">
+				<symbol src="file:osmc/fg_yellow_fork.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_hexagon">
+				<symbol src="file:osmc/fg_yellow_hexagon.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_hiker">
+				<symbol src="file:osmc/fg_yellow_hiker.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_l">
+				<symbol src="file:osmc/fg_yellow_L.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_lower">
+				<symbol src="file:osmc/fg_yellow_lower.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_pointer">
+				<symbol src="file:osmc/fg_yellow_pointer.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_rectangle">
+				<symbol src="file:osmc/fg_yellow_rectangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_rectangle_line">
+				<symbol src="file:osmc/fg_yellow_rectangle_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_right">
+				<symbol src="file:osmc/fg_yellow_right.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_shell">
+				<symbol src="file:osmc/fg_yellow_shell.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_slash">
+				<symbol src="file:osmc/fg_yellow_slash.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_stripe">
+				<symbol src="file:osmc/fg_yellow_stripe.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_triangle">
+				<symbol src="file:osmc/fg_yellow_triangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_triangle_line">
+				<symbol src="file:osmc/fg_yellow_triangle_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_triangle_turned">
+				<symbol src="file:osmc/fg_yellow_triangle_turned.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_turned_t">
+				<symbol src="file:osmc/fg_yellow_turned_T.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_yellow_x">
+				<symbol src="file:osmc/fg_yellow_x.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_arch">
+				<symbol src="file:osmc/fg_black_arch.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_backslash">
+				<symbol src="file:osmc/fg_black_backslash.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_bar">
+				<symbol src="file:osmc/fg_black_bar.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_circle">
+				<symbol src="file:osmc/fg_black_circle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_corner">
+				<symbol src="file:osmc/fg_black_corner.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_crest">
+				<symbol src="file:osmc/fg_black_crest.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_cross">
+				<symbol src="file:osmc/fg_black_cross.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_diamond">
+				<symbol src="file:osmc/fg_black_diamond.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_diamond_line">
+				<symbol src="file:osmc/fg_black_diamond_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_dot">
+				<symbol src="file:osmc/fg_black_dot.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_fork">
+				<symbol src="file:osmc/fg_black_fork.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_hiker">
+				<symbol src="file:osmc/fg_black_hiker.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_horse">
+				<symbol src="file:osmc/fg_black_horse.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_lower">
+				<symbol src="file:osmc/fg_black_lower.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_pointer">
+				<symbol src="file:osmc/fg_black_pointer.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_rectangle">
+				<symbol src="file:osmc/fg_black_rectangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_rectangle_line">
+				<symbol src="file:osmc/fg_black_rectangle_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_red_diamond">
+				<symbol src="file:osmc/fg_black_red_diamond.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_right">
+				<symbol src="file:osmc/fg_black_right.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_stripe">
+				<symbol src="file:osmc/fg_black_stripe.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_triangle">
+				<symbol src="file:osmc/fg_black_triangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_triangle_line">
+				<symbol src="file:osmc/fg_black_triangle_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_turned_t">
+				<symbol src="file:osmc/fg_black_turned_T.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_black_x">
+				<symbol src="file:osmc/fg_black_x.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_arch">
+				<symbol src="file:osmc/fg_green_arch.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_backslash">
+				<symbol src="file:osmc/fg_green_backslash.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_bar">
+				<symbol src="file:osmc/fg_green_bar.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_bowl">
+				<symbol src="file:osmc/fg_green_bowl.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_circle">
+				<symbol src="file:osmc/fg_green_circle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_corner">
+				<symbol src="file:osmc/fg_green_corner.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_cross">
+				<symbol src="file:osmc/fg_green_cross.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_diamond">
+				<symbol src="file:osmc/fg_green_diamond.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_diamond_line">
+				<symbol src="file:osmc/fg_green_diamond_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_dot">
+				<symbol src="file:osmc/fg_green_dot.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_drop_line">
+				<symbol src="file:osmc/fg_green_drop_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_fork">
+				<symbol src="file:osmc/fg_green_fork.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_hiker">
+				<symbol src="file:osmc/fg_green_hiker.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_horse">
+				<symbol src="file:osmc/fg_green_horse.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_l">
+				<symbol src="file:osmc/fg_green_L.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_lower">
+				<symbol src="file:osmc/fg_green_lower.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_pointer">
+				<symbol src="file:osmc/fg_green_pointer.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_rectangle">
+				<symbol src="file:osmc/fg_green_rectangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_right">
+				<symbol src="file:osmc/fg_green_right.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_slash">
+				<symbol src="file:osmc/fg_green_slash.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_stripe">
+				<symbol src="file:osmc/fg_green_stripe.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_triangle">
+				<symbol src="file:osmc/fg_green_triangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_triangle_line">
+				<symbol src="file:osmc/fg_green_triangle_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_triangle_turned">
+				<symbol src="file:osmc/fg_green_triangle_turned.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_turned_t">
+				<symbol src="file:osmc/fg_green_turned_T.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_wheel">
+				<symbol src="file:osmc/fg_green_wheel.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_green_x">
+				<symbol src="file:osmc/fg_green_x.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_arch">
+				<symbol src="file:osmc/fg_white_arch.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_backslash">
+				<symbol src="file:osmc/fg_white_backslash.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_bar">
+				<symbol src="file:osmc/fg_white_bar.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_circle">
+				<symbol src="file:osmc/fg_white_circle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_corner">
+				<symbol src="file:osmc/fg_white_corner.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_cross">
+				<symbol src="file:osmc/fg_white_cross.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_diamond">
+				<symbol src="file:osmc/fg_white_diamond.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_diamond_line">
+				<symbol src="file:osmc/fg_white_diamond_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_dot">
+				<symbol src="file:osmc/fg_white_dot.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_hiker">
+				<symbol src="file:osmc/fg_white_hiker.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_lower">
+				<symbol src="file:osmc/fg_white_lower.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_pointer">
+				<symbol src="file:osmc/fg_white_pointer.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_rectangle">
+				<symbol src="file:osmc/fg_white_rectangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_rectangle_line">
+				<symbol src="file:osmc/fg_white_rectangle_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_red_diamond">
+				<symbol src="file:osmc/fg_white_red_diamond.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_right">
+				<symbol src="file:osmc/fg_white_right.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_slash">
+				<symbol src="file:osmc/fg_white_slash.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_stripe">
+				<symbol src="file:osmc/fg_white_stripe.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_triangle">
+				<symbol src="file:osmc/fg_white_triangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_triangle_line">
+				<symbol src="file:osmc/fg_white_triangle_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_triangle_turned">
+				<symbol src="file:osmc/fg_white_triangle_turned.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_turned_t">
+				<symbol src="file:osmc/fg_white_turned_T.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_white_x">
+				<symbol src="file:osmc/fg_white_x.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_brown_bar">
+				<symbol src="file:osmc/fg_brown_bar.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_brown_diamond">
+				<symbol src="file:osmc/fg_brown_diamond.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_brown_dot">
+				<symbol src="file:osmc/fg_brown_dot.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_brown_hiker">
+				<symbol src="file:osmc/fg_brown_hiker.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_brown_lower">
+				<symbol src="file:osmc/fg_brown_lower.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_brown_pointer">
+				<symbol src="file:osmc/fg_brown_pointer.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_brown_rectangle">
+				<symbol src="file:osmc/fg_brown_rectangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_brown_stripe">
+				<symbol src="file:osmc/fg_brown_stripe.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_brown_x">
+				<symbol src="file:osmc/fg_brown_x.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_gray_bar">
+				<symbol src="file:osmc/fg_gray_bar.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_gray_pointer">
+				<symbol src="file:osmc/fg_gray_pointer.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_gray_triangle">
+				<symbol src="file:osmc/fg_gray_triangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_orange_bar">
+				<symbol src="file:osmc/fg_orange_bar.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_orange_circle">
+				<symbol src="file:osmc/fg_orange_circle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_orange_cross">
+				<symbol src="file:osmc/fg_orange_cross.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_orange_diamond">
+				<symbol src="file:osmc/fg_orange_diamond.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_orange_diamond_line">
+				<symbol src="file:osmc/fg_orange_diamond_line.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_orange_dot">
+				<symbol src="file:osmc/fg_orange_dot.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_orange_hexagon">
+				<symbol src="file:osmc/fg_orange_hexagon.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_orange_hiker">
+				<symbol src="file:osmc/fg_orange_hiker.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_orange_lower">
+				<symbol src="file:osmc/fg_orange_lower.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_orange_pointer">
+				<symbol src="file:osmc/fg_orange_pointer.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_orange_rectangle">
+				<symbol src="file:osmc/fg_orange_rectangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_orange_right">
+				<symbol src="file:osmc/fg_orange_right.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_orange_stripe">
+				<symbol src="file:osmc/fg_orange_stripe.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_orange_triangle">
+				<symbol src="file:osmc/fg_orange_triangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_purple_bar">
+				<symbol src="file:osmc/fg_purple_bar.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_purple_circle">
+				<symbol src="file:osmc/fg_purple_circle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_purple_diamond">
+				<symbol src="file:osmc/fg_purple_diamond.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_purple_dot">
+				<symbol src="file:osmc/fg_purple_dot.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_purple_lower">
+				<symbol src="file:osmc/fg_purple_lower.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_purple_pointer">
+				<symbol src="file:osmc/fg_purple_pointer.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_purple_rectangle">
+				<symbol src="file:osmc/fg_purple_rectangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_purple_stripe">
+				<symbol src="file:osmc/fg_purple_stripe.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_purple_triangle">
+				<symbol src="file:osmc/fg_purple_triangle.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_ammonit">
+				<symbol src="file:osmc/fg_ammonit.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_bridleway">
+				<symbol src="file:osmc/fg_bridleway.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_heart">
+				<symbol src="file:osmc/fg_heart.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_hiker">
+				<symbol src="file:osmc/fg_hiker.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_mine">
+				<symbol src="file:osmc/fg_mine.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_shell">
+				<symbol src="file:osmc/fg_shell.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_shell_modern">
+				<symbol src="file:osmc/fg_shell_modern.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_tower">
+				<symbol src="file:osmc/fg_tower.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<rule e="any" k="osmc_foreground" v="wmfg_wolfshook">
+				<symbol src="file:osmc/fg_wolfshook.svg" display="always" priority="103" symbol-height="14" />
+			</rule>
+			<!-- End of OSMC hiking nodes foreground OAM -->
+			<!-- OSMC Hiking hiking nodes text OAM -->
+			<rule e="any" k="osmc_textcolor" v="~|wmtc_black">
+				<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
+					<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#000000" stroke="#E5FFFFFF" stroke-width="1.0" />
+				</rule>
+				<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
+					<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#000000" stroke="#E5FFFFFF" stroke-width="1.0" />
+				</rule>
+			</rule>
+			<rule e="any" k="osmc_textcolor" v="wmtc_red">
+				<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
+					<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#FF3333" stroke="#E5FFFFFF" stroke-width="1.0" />
+				</rule>
+				<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
+					<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#FF3333" stroke="#E5FFFFFF" stroke-width="1.0" />
+				</rule>
+			</rule>
+			<rule e="any" k="osmc_textcolor" v="wmtc_green">
+				<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
+					<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#267F00" stroke="#E5FFFFFF" stroke-width="1.0" />
+				</rule>
+				<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
+					<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#267F00" stroke="#E5FFFFFF" stroke-width="1.0" />
+				</rule>
+			</rule>
+			<rule e="any" k="osmc_textcolor" v="wmtc_blue">
+				<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
+					<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#0242C1" stroke="#E5FFFFFF" stroke-width="1.0" />
+				</rule>
+				<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
+					<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#0242C1" stroke="#E5FFFFFF" stroke-width="1.0" />
+				</rule>
+			</rule>
+			<rule e="any" k="osmc_textcolor" v="wmtc_brown">
+				<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
+					<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#BC6823" stroke="#E5FFFFFF" stroke-width="1.0" />
+				</rule>
+				<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
+					<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#BC6823" stroke="#E5FFFFFF" stroke-width="1.0" />
+				</rule>
+			</rule>
+			<rule e="any" k="osmc_textcolor" v="wmtc_orange">
+				<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
+					<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#EB8D00" stroke="#E5FFFFFF" stroke-width="1.0" />
+				</rule>
+				<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
+					<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#EB8D00" stroke="#E5FFFFFF" stroke-width="1.0" />
+				</rule>
+			</rule>
+			<rule e="any" k="osmc_textcolor" v="wmtc_purple">
+				<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
+					<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#C17FFF" stroke="#E5FFFFFF" stroke-width="1.0" />
+				</rule>
+				<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
+					<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#C17FFF" stroke="#E5FFFFFF" stroke-width="1.0" />
+				</rule>
+			</rule>
+			<rule e="any" k="osmc_textcolor" v="wmtc_white">
+				<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
+					<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#FFFFFF" stroke="#E5000000" stroke-width="1.0" />
+				</rule>
+				<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
+					<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#FFFFFF" stroke="#E5000000" stroke-width="1.0" />
+				</rule>
+			</rule>
+			<rule e="any" k="osmc_textcolor" v="wmtc_yellow">
+				<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
+					<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#F2DB0A" stroke="#E5000000" stroke-width="1.0" />
+				</rule>
+				<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
+					<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#F2DB0A" stroke="#E5000000" stroke-width="1.0" />
+				</rule>
+			</rule>
+			<rule e="any" k="osmc_textcolor" v="wmtc_gray">
+				<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
+					<caption k="name" priority="104" display="always" font-size="8" position="center" font-style="bold" fill="#CCCCCC" stroke="#E5000000" stroke-width="1.0" />
+				</rule>
+				<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4|wmtl_5">
+					<caption k="name" priority="104" display="always" font-size="7" position="center" font-style="bold" fill="#CCCCCC" stroke="#E5000000" stroke-width="1.0" />
+				</rule>
 			</rule>
 		</rule>
 	</rule>
