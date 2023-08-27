@@ -2205,10 +2205,10 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 		<rule e="any" k="hknetwork" v="iwn|nwn" zoom-min="11" >
 			<rule e="any" k="*" v="*" zoom-max="17">
-				<pathText repeat-gap="170" repeat-start="10" k="ref_hike" font-style="bold" font-size="10" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="1.7" priority="200" />
+				<pathText repeat-gap="170" repeat-start="10" k="ref_hike" font-style="bold" font-size="10" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="1.7" priority="12" />
 			</rule>
 			<rule e="any" k="*" v="*" zoom-min="18">
-				<pathText repeat-gap="220" repeat-start="20" k="ref_hike" font-style="bold" font-size="12" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="2" priority="200" />
+				<pathText repeat-gap="220" repeat-start="20" k="ref_hike" font-style="bold" font-size="12" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="2" priority="12" />
 			</rule>
 		</rule>
 	</rule>
