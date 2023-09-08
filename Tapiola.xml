@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
 
-Tapiola 1.2.9 - 2023-09-03 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.2.9 - 2023-09-04 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapio is the god of forest in finnish mythology.
 Tapiola is his realm.
@@ -1422,12 +1422,22 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		<rule e="any" k="*" v="*" zoom-min="17">
 			<area fill="#ffbbbb" stroke="#444444" stroke-width="0.1" />
 		</rule>
-		<rule cat="building_type" e="way" k="building" v="*">
-			<rule e="way" k="building" v="hospital">
-				<area fill="#5cb885" stroke="#d4d4d4" stroke-width="0.1" />
+		<rule cat="building_type" e="way" k="*" v="*">
+			<rule e="way" k="*" v="*" zoom-max="16" >
+				<rule e="way" k="*" v="hospital">
+					<area fill="#98c8bd" stroke="#444444" stroke-width="0.1" />
+				</rule>
+				<rule e="way" k="*" v="university|school|college|kindergarten|gymnasium">
+					<area fill="#adcbdd" stroke="#444444" stroke-width="0.1" />
+				</rule>
 			</rule>
-			<rule e="way" k="building" v="university|school|college|kindergarten|gymnasium">
-				<area fill="#78a3c4" stroke="#d4d4d4" stroke-width="0.1" />
+			<rule e="way" k="*" v="*" zoom-min="17" >
+				<rule e="way" k="*" v="hospital">
+					<area fill="#5cb885" stroke="#d4d4d4" stroke-width="0.1" />
+				</rule>
+				<rule e="way" k="*" v="university|school|college|kindergarten|gymnasium">
+					<area fill="#78a3c4" stroke="#d4d4d4" stroke-width="0.1" />
+				</rule>
 			</rule>
 		</rule>
 		<rule e="way" k="building" v="*" zoom-min="14" zoom-max="15">
@@ -1812,9 +1822,9 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 							</rule>
 						</rule>
 						<!-- No pedestrians, restriction, green -->
-						<rule e="way" cat="barriers_access" k="foot" v="ft_no">
+						<rule e="way" cat="barriers_access" k="foot" v="ft_no" zoom-min="14" >
 							<rule e="way" cat="access" k="*" v="*">
-								<line stroke="#228B22" stroke-width="1.7" stroke-dasharray="0.3,1.5" stroke-linecap="butt" scale="all" />
+								<line stroke="#ff0000" stroke-width="2.0" stroke-dasharray="0.3,1.5" stroke-linecap="butt" scale="all" />
 							</rule>
 						</rule>
 						<rule e="way" cat="road_captions" k="*" v="*" zoom-min="15" zoom-max="16">
@@ -1847,7 +1857,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					<!-- Access restrictions -->
 					<rule e="way" cat="barriers_access" k="foot" v="ft_no">
 						<rule e="way" cat="access" k="*" v="*">
-							<line stroke="#228B22" stroke-width="0.4" stroke-dasharray="3,5" stroke-linecap="butt" scale="stroke" />
+							<line stroke="#ff0000" stroke-width="0.4" stroke-dasharray="3,5" stroke-linecap="butt" scale="stroke" />
 						</rule>
 					</rule>
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="15">
@@ -1922,7 +1932,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					</rule>
 				</rule>
 				<!-- Markers on access restricted ways -->
-				<rule e="way" cat="barriers_access" k="access" v="private|acc_no|no|permit" zoom-min="11">
+				<rule e="way" cat="barriers_access" k="access" v="private|acc_no|no|permit" zoom-min="14">
 					<rule e="way" cat="access" k="*" v="*">
 						<!-- No markers if at least one is "yes" (foot or bicycle) -->
 						<rule e="way" k="foot" v="~|no">
@@ -2050,7 +2060,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					</rule>
 				</rule>
 				<!-- Access restriction markers -->
-				<rule e="way" cat="barriers_access" k="*" v="*" zoom-min="10">
+				<rule e="way" cat="barriers_access" k="*" v="*" zoom-min="14">
 					<rule e="way" cat="access" k="access" v="acc_no|no" >
 						<rule e="way" cat="c_highway" k="highway" v="*">
 							<line stroke="#ff0000" stroke-width="3.0" stroke-dasharray="0.3,1.7" stroke-linecap="butt" scale="all" />
