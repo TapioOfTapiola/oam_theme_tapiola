@@ -9,7 +9,7 @@ Tapio is the god of forest in finnish mythology.
 Tapiola is his realm.
 Tapiola is Sibelius' Op. 112.
 
-URL: https://github.com/tortuosit/oam_theme_tapiola
+URL: https://github.com/TapioOfTapiola/oam_theme_tapiola
 
 Based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
@@ -97,6 +97,11 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<name lang="de" value="🔘 Geschützte Gebiete" />
 			<name lang="en" value="🔘 Protected areas" />
 			<cat id="protected_area" />
+		</layer>
+		<layer id="L_mil_area" enabled="false" visible="false">
+			<name lang="de" value="⚔️ Militärisches Gebiet" />
+			<name lang="en" value="⚔️ Military area" />
+			<cat id="mil_area" />
 		</layer>
 		<layer id="L_boundaries_areas" enabled="true" visible="false">
 			<name lang="ru" value="🔘 Административные границы" />
@@ -264,6 +269,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		    <cat id="water"/>
 		    <cat id="hunting_stand"/>
 		    <cat id="misc"/>
+		    <cat id="mil_area"/>
 			<cat id="building_type"/>
 		</layer>
 		<layer id="parent_nopoi">
@@ -273,6 +279,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<cat id="barriers"/>
 		    <cat id="access"/>
 			<cat id="building_type"/>
+			<cat id="mil_area"/>
 		</layer>
 		<layer id="parent_all">
 		    <cat id="barriers_access"/>
@@ -280,7 +287,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 
 		<!-- The actual theme options -->
 		<layer id="basic" visible="true" parent="parent_base" >
-			<name lang="en" value="Basic features" />
+			<name lang="en" value="Basic features, with POI" />
 			<overlay id="L_hiking_trails" />
 			<overlay id="L_hiking_nodes" />
 			<overlay id="L_cycling" />
@@ -298,7 +305,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<overlay id="L_boundaries_areas" />
 		</layer>
 		<layer id="basic_nopoi" visible="true" parent="parent_nopoi" >
-			<name lang="en" value="Basic, without POI" />
+			<name lang="en" value="Basic features, without POI" />
 			<overlay id="L_hiking_trails" />
 			<overlay id="L_hiking_nodes" />
 			<overlay id="L_cycling" />
@@ -349,6 +356,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<overlay id="L_forest" />
 			<overlay id="L_contourlines" />
 			<overlay id="L_protected_area" />
+			<overlay id="L_mil_area" />
 			<overlay id="L_boundaries_areas" />
 			<overlay id="L_mast_communication" />
 			<overlay id="L_electricity" />
@@ -2071,8 +2079,11 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 						<line stroke="#88DD0000" stroke-width="1.0" stroke-dasharray="1,12" stroke-linecap="round" />
 					</rule>
 				</rule>
-				<rule e="way" k="oneway" v="yes|1" zoom-min="16">
-					<lineSymbol src="file:symbols/oneway_arrow.svg" symbol-percent="35" align-center="true" repeat="true" repeat-gap="100" repeat-start="2" />
+				<rule e="way" cat="c_highway" k="oneway" v="yes|1" zoom-min="16" zoom-max="17" >
+					<lineSymbol src="file:symbols/oneway_arrow.svg" symbol-percent="40" align-center="true" repeat="true" repeat-gap="100" repeat-start="2" />
+				</rule>
+				<rule e="way" cat="c_highway" k="oneway" v="yes|1" zoom-min="18">
+					<lineSymbol src="file:symbols/oneway_arrow.svg" symbol-percent="55" align-center="true" repeat="true" repeat-gap="100" repeat-start="2" />
 				</rule>
 				<rule e="way" k="railway|highway" v="tram|light_rail|bus_guideway">
 					<line stroke="#8C6900" stroke-width="0.5" stroke-linecap="butt" />
@@ -2687,15 +2698,15 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 	
-	<rule e="way" k="military" v="*" zoom-min="15">
-		<rule e="way" k="military" v="airfield|naval_base">
-			<area fill="#F0DCD8" />
+	<rule e="way" k="military" v="*" zoom-min="12">
+		<rule e="way" cat="mil_area" k="military" v="airfield|naval_base">
+			<area fill="#60808000" />
 		</rule>
 		<rule e="way" cat="architecture_religion" k="military" v="bunker|bunker_disused">
 			<symbol src="file:symbols/bunker.svg" symbol-percent="55" />
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="14">
-			<caption k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#E57A7A" stroke="#ffffff" stroke-width="2.0" />
+			<caption k="name" font-style="bold" font-family="sans_serif" font-size="10" fill="#808000" stroke="#ffffff" stroke-width="2" />
 		</rule>
 	</rule>
 	<rule e="way" k="historic" v="*" zoom-min="10">
