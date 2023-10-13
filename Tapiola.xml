@@ -1213,7 +1213,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		<area src="file:patterns/military_area.svg" symbol-width="16" />
 		<line stroke="#90808000" stroke-width="0.8" stroke-linecap="butt" />
 		<rule e="way" k="*" v="*" zoom-min="13">
-			<caption k="name" font-style="bold_italic" font-family="sans_serif" font-size="10" fill="#808000" stroke="#FFFFFF" stroke-width="2.0" text-wrap-width="120" />
+			<caption k="name" font-style="bold_italic" font-family="sans_serif" font-size="10" fill="#808000" stroke="#FFFFFF" stroke-width="2.0" text-wrap-width="300" />
 		</rule>
 	</rule>
 
@@ -2695,7 +2695,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 	
-	<rule e="way" k="landuse|military" v="*" zoom-min="10">
+	<rule e="way" k="landuse|military" v="*" zoom-min="8">
 		<rule e="way" cat="mil_area" k="*" v="military" closed="yes" >
 			<area fill="#60808000" />
 		</rule>
