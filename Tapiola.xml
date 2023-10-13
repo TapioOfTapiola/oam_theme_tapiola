@@ -269,7 +269,6 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		    <cat id="water"/>
 		    <cat id="hunting_stand"/>
 		    <cat id="misc"/>
-		    <cat id="mil_area"/>
 			<cat id="building_type"/>
 		</layer>
 		<layer id="parent_nopoi">
@@ -279,7 +278,6 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<cat id="barriers"/>
 		    <cat id="access"/>
 			<cat id="building_type"/>
-			<cat id="mil_area"/>
 		</layer>
 		<layer id="parent_all">
 		    <cat id="barriers_access"/>
@@ -1212,11 +1210,10 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 	</rule>
 
 	<rule e="way" k="landuse" v="military" zoom-min="8" closed="yes">
-		<area fill="#15faa08e" />
 		<area src="file:patterns/military_area.svg" symbol-width="16" />
-		<line stroke="#50ff2626" stroke-width="0.4" stroke-linecap="butt" />
-		<rule e="way" k="*" v="*" zoom-min="15">
-			<caption k="name" font-style="bold_italic" font-family="sans_serif" font-size="12" fill="#a85813" stroke="#FFFFFF" stroke-width="4.0" text-wrap-width="120" />
+		<line stroke="#90808000" stroke-width="0.8" stroke-linecap="butt" />
+		<rule e="way" k="*" v="*" zoom-min="12">
+			<caption k="name" font-style="bold_italic" font-family="sans_serif" font-size="12" fill="#808000" stroke="#FFFFFF" stroke-width="4.0" text-wrap-width="120" />
 		</rule>
 	</rule>
 
@@ -2699,16 +2696,14 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 	</rule>
 	
 	<rule e="way" k="military" v="*" zoom-min="12">
-		<rule e="way" cat="mil_area" k="military" v="airfield|naval_base">
+		<rule e="way" cat="mil_area" k="military" v="airfield|naval_base" >
 			<area fill="#60808000" />
 		</rule>
 		<rule e="way" cat="architecture_religion" k="military" v="bunker|bunker_disused">
 			<symbol src="file:symbols/bunker.svg" symbol-percent="55" />
 		</rule>
-		<rule e="way" k="*" v="*" zoom-min="14">
-			<caption k="name" font-style="bold" font-family="sans_serif" font-size="10" fill="#808000" stroke="#ffffff" stroke-width="2" />
-		</rule>
 	</rule>
+	
 	<rule e="way" k="historic" v="*" zoom-min="10">
 		<rule e="way" k="historic" v="wayside_shrine">
 			<area fill="#DBDBDB" stroke="#818181" stroke-width="0.1" />
