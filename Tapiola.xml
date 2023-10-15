@@ -80,6 +80,10 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<name lang="en" value="⛔ Access restriction indicators" />
 			<cat id="access" />
 		</layer>
+		<layer id="L_unpaved" enabled="false" visible="false">
+			<name lang="en" value="♒ Unpaved road indicators" />
+			<cat id="unpaved" />
+		</layer>
 		<layer id="L_sports" enabled="true" visible="false">
 			<name lang="ru" value="⚽ Спорт" />
 			<name lang="de" value="⚽ Sport" />
@@ -332,6 +336,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<overlay id="L_house_nr" />
 			<overlay id="L_barriers" />
 			<overlay id="L_access" />
+			<overlay id="L_unpaved" />
 			<overlay id="L_publictransport" />
 			<overlay id="L_parking" />
 			<overlay id="L_sports" />
@@ -1787,12 +1792,12 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 							<rule e="way" k="surface" v="asphalt|paved|concrete" zoom-max="16" >
 								<line stroke="#000000" stroke-width="1.3" stroke-linecap="round" />
 								<line stroke="#ffffff" stroke-width="1.1" stroke-linecap="round" />
-								<line stroke="#4672C4" stroke-width="0.6" stroke-dasharray="1.5,2" stroke-linecap="butt" scale="all" />
+								<!--line stroke="#4672C4" stroke-width="0.6" stroke-dasharray="1.5,2" stroke-linecap="butt" scale="all" /-->
 							</rule>
 							<rule e="way" k="surface" v="asphalt|paved|concrete" zoom-min="17" >
 								<line stroke="#000000" stroke-width="1.1" stroke-linecap="round" />
 								<line stroke="#ffffff" stroke-width="0.8" stroke-linecap="round" />
-								<line stroke="#4672C4" stroke-width="0.4" stroke-dasharray="2,3" stroke-linecap="butt" scale="all" />
+								<!--line stroke="#4672C4" stroke-width="0.4" stroke-dasharray="2,3" stroke-linecap="butt" scale="all" /-->
 							</rule>
 						</rule>
 						<rule e="way" k="sac_scale" v="hiking" >
@@ -1816,7 +1821,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 								<line stroke="#53534e" stroke-width="1.2" stroke-dasharray="4,4" stroke-linecap="butt" scale="stroke" />
 							</rule>
 						</rule>
-						<!-- No pedestrians, restriction, green -->
+						<!-- No pedestrians, restriction -->
 						<rule e="way" cat="barriers_access" k="foot" v="ft_no" zoom-min="14" >
 							<rule e="way" cat="access" k="*" v="*">
 								<line stroke="#ff0000" stroke-width="2.0" stroke-dasharray="0.3,1.5" stroke-linecap="butt" scale="all" />
@@ -2024,6 +2029,17 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="18" >
 						<pathText k="name" font-family="sans_serif" font-style="bold" font-size="13" fill="#000000" stroke="#ffffff" repeat-start="10" repeat-gap="200" stroke-width="2.0" />
 						<pathText k="ref" font-family="sans_serif" font-style="bold" font-size="13" fill="#a73600" stroke="#ffa626" stroke-width="1.9" />
+					</rule>
+				</rule>
+				<!-- Markers unpaved - asphalt|paved|concrete / pedestrian living_street residential service / track|byway|road|path|unclassified -->
+				<rule e="way" cat="c_highway" k="highway" v="primary|secondary|tertiary|living_street|residential|service|track|byway|road|unclassified" zoom-min="12">
+					<rule e="way" cat="unpaved" k="surface" v="unpaved|compacted|gravel|fine_gravel" >
+						<rule e="way" k="*" v="*" zoom-max="16" >
+							<line stroke="#746266" stroke-width="0.7" stroke-dasharray="1,2" stroke-linecap="round" scale="all" />
+						</rule>
+						<rule e="way" k="*" v="*" zoom-min="17" >
+							<line stroke="#746266" stroke-width="0.6" stroke-dasharray="1,3" stroke-linecap="round" scale="all" />
+						</rule>
 					</rule>
 				</rule>
 				<rule e="way" cat="c_highway" k="highway" v="trunk" zoom-min="6">
