@@ -84,6 +84,10 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<name lang="en" value="♒ Unpaved road indicators" />
 			<cat id="unpaved" />
 		</layer>
+		<layer id="L_grades" enabled="false" visible="false">
+			<name lang="en" value="3️⃣ Track grade codes" />
+			<cat id="grades" />
+		</layer>
 		<layer id="L_sports" enabled="true" visible="false">
 			<name lang="ru" value="⚽ Спорт" />
 			<name lang="de" value="⚽ Sport" />
@@ -254,6 +258,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		    <cat id="cities_towns"/>
 		    <cat id="neighbourhoods_suburbs"/>
 		    <cat id="road_captions"/>
+			<cat id="grades"/>
 			<cat id="barriers"/>
 		    <cat id="access"/>
 		    <cat id="sports"/>
@@ -279,6 +284,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		    <cat id="cities_towns"/>
 		    <cat id="neighbourhoods_suburbs"/>
 		    <cat id="road_captions"/>
+			<cat id="grades"/>
 			<cat id="barriers"/>
 		    <cat id="access"/>
 			<cat id="building_type"/>
@@ -336,6 +342,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<overlay id="L_house_nr" />
 			<overlay id="L_barriers" />
 			<overlay id="L_access" />
+			<overlay id="L_grades" />
 			<overlay id="L_unpaved" />
 			<overlay id="L_publictransport" />
 			<overlay id="L_parking" />
@@ -1847,12 +1854,17 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					<rule e="way" k="tracktype" v="grade1" zoom-min="13">
 						<line stroke="#ffffff" stroke-width="1.1" stroke-linecap="round" />
 					</rule>
-					<!-- Code -->
-					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="15" >
-						<line stroke="#8f4e1d" stroke-width="0.5" stroke-dasharray="1,1,1,5" stroke-linecap="butt" scale="all" />
-					</rule>
-					<rule e="way" k="tracktype" v="grade2|grade3" zoom-min="15">
-						<line stroke="#8f4e1d" stroke-width="0.5" stroke-dasharray="1,6" stroke-linecap="butt" scale="all" />
+					<!-- Grade encoding -->
+					<rule e="way" cat="grades" k="tracktype" v="*" zoom-min="15" >
+						<rule e="way" k="*" v="grade5" >
+							<line stroke="#8f4e1d" stroke-width="0.5" stroke-dasharray="1,0.6,1,0.6,1,6" stroke-linecap="butt" scale="all" />
+						</rule>
+						<rule e="way" k="*" v="grade4" >
+							<line stroke="#8f4e1d" stroke-width="0.5" stroke-dasharray="1,0.6,1,6" stroke-linecap="butt" scale="all" />
+						</rule>
+						<rule e="way" k="*" v="grade2|grade3" >
+							<line stroke="#8f4e1d" stroke-width="0.5" stroke-dasharray="1,6" stroke-linecap="butt" scale="all" />
+						</rule>
 					</rule>
 					<!-- Access restrictions -->
 					<rule e="way" cat="barriers_access" k="foot" v="ft_no">
