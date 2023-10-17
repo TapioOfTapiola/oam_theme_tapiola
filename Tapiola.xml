@@ -2034,11 +2034,15 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 				<!-- Markers unpaved - asphalt|paved|concrete / pedestrian living_street residential service / track|byway|road|path|unclassified -->
 				<rule e="way" cat="c_highway" k="highway" v="primary|secondary|tertiary|living_street|residential|service|track|byway|road|unclassified" zoom-min="12">
 					<rule e="way" cat="unpaved" k="surface" v="unpaved|compacted|gravel|fine_gravel" >
-						<rule e="way" k="*" v="*" zoom-max="16" >
-							<line stroke="#687600bc" stroke-width="2.4" stroke-dasharray="0.8,2" stroke-linecap="butt" scale="all" />
+						<rule e="way" k="*" v="*" zoom-max="13" >
+							<line stroke="#7e7600bc" stroke-width="3" stroke-dasharray="4,4" stroke-linecap="butt" scale="all" />
+						</rule>
+						<rule e="way" k="*" v="*" zoom-min="14" zoom-max="16" >
+							<line stroke="#687600bc" stroke-width="2.5" stroke-dasharray="3,3" stroke-linecap="butt" scale="all" />
 						</rule>
 						<rule e="way" k="*" v="*" zoom-min="17" >
-							<line stroke="#687600bc" stroke-width="2.4" stroke-dasharray="0.7,3" stroke-linecap="butt" scale="all" />
+							<!-- lineSymbol src="file:patterns/down-chevron.svg" symbol-percent="100" align-center="true" repeat="true" repeat-gap="0.01" repeat-start="0" /-->
+							<line stroke="#587600bc" stroke-width="2.2" stroke-dasharray="2,2" stroke-linecap="butt" scale="all" />
 						</rule>
 					</rule>
 				</rule>
