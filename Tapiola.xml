@@ -1842,10 +1842,10 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 						</rule>
 					</rule>
 				</rule>
-				<rule e="way" k="highway" v="track|byway" zoom-min="12">
+				<rule e="way" k="highway" v="track" zoom-min="12">
 					<!-- Background -->
-					<rule e="way" k="tracktype" v="~|no|false|grade2|grade3|grade4|grade5" zoom-min="13">
-						<line stroke="#e053534e" stroke-width="1.4" stroke-linecap="round" />
+					<rule e="way" k="tracktype" v="~|no|false|grade1|grade2|grade3|grade4|grade5" zoom-min="13">
+						<line stroke="#c053534e" stroke-width="1.4" stroke-dasharray="1,0.3" scale="all" stroke-linecap="butt" />
 					</rule>
 					<!-- Main color -->
 					<rule e="way" k="tracktype" v="~|no|false|grade2|grade3|grade4|grade5" zoom-min="13">
@@ -1853,7 +1853,6 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					</rule>
 					<!-- Grade1 -->
 					<rule e="way" k="tracktype" v="grade1" zoom-min="13">
-						<line stroke="#e053534e" stroke-width="1.4" stroke-linecap="round" />
 						<line stroke="#ffffff" stroke-width="1.0" stroke-linecap="round" />
 					</rule>
 					<!-- Grade encoding -->
