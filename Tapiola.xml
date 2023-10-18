@@ -167,7 +167,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		<layer id="L_architecture" enabled="true" visible="false">
 			<name lang="ru" value="🏛️ Монументы, памятники, памятные доски" />
 			<name lang="de" value="🏛️ Architektur, Religion, Museen" />
-			<name lang="en" value="🏛️ Architecture, religous, museums" />
+			<name lang="en" value="🏛️ Architecture, religious, museums" />
 			<cat id="architecture_religion" />
 		</layer>
 		<layer id="L_playground" enabled="true" visible="false">
