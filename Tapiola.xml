@@ -203,7 +203,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		<layer id="L_forest" enabled="true" visible="false">
 			<name lang="ru" value="🌲 Лес" />
 			<name lang="de" value="🌲 Wald, Wiesen, Getreide" />
-			<name lang="en" value="🌲 Forest, gras, crops" />
+			<name lang="en" value="🌲 Forest, grass, crops" />
 			<cat id="forest" />
 		</layer>
 		<layer id="L_landscapefeat" enabled="true" visible="false">
