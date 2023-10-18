@@ -142,9 +142,9 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<cat id="shops" />
 		</layer>
 		<layer id="L_accommodation" enabled="true" visible="false">
-			<name lang="ru" value="🛒 Отели и другое размещение" />
-			<name lang="de" value="🛒 Hotels und Unterkünfte" />
-			<name lang="en" value="🛒 Hotels and Accommodation" />
+			<name lang="ru" value="🏨 Отели и другое размещение" />
+			<name lang="de" value="🏨 Hotels und Unterkünfte" />
+			<name lang="en" value="🏨 Hotels and Accommodation" />
 			<cat id="accommodation" />
 		</layer>
 		<layer id="L_pharmacies" enabled="true" visible="false">
