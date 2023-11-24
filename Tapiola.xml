@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
 
-Tapiola 1.3.2 - 2023-10-17 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.3.3 - 2023-11-22 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapio is the god of forest in finnish mythology.
 Tapiola is his realm.
@@ -122,6 +122,11 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<name lang="de" value="🅿️ Parkplätze" />
 			<name lang="en" value="🅿️ Parking" />
 			<cat id="parking" />
+		</layer>
+		<layer id="L_parking_lz" enabled="false" visible="false">
+			<name lang="en" value="🅿️ Display parking earlier" />
+			<name lang="de" value="🅿️ Parkplätze früher anzeigen" />
+			<cat id="parking_lz" />
 		</layer>
 		<layer id="L_publictransport" enabled="true" visible="false">
 			<name lang="ru" value="Ⓜ️ Общественный транспорт" />
@@ -346,6 +351,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<overlay id="L_unpaved" />
 			<overlay id="L_publictransport" />
 			<overlay id="L_parking" />
+			<overlay id="L_parking_lz" />
 			<overlay id="L_sports" />
 			<overlay id="L_restaurants" />
 			<overlay id="L_shops" />
@@ -407,7 +413,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		<!-- area src="file:patterns/wood_mixed.svg" symbol-width="30" /-->
 	</rule>
 	
-		<rule e="way" k="natural|landuse" v="forest|wood" zoom-min="8">
+	<rule e="way" k="natural|landuse" v="forest|wood" zoom-min="8">
 		<area fill="#FFb7db88" />
 	</rule>
 
@@ -1173,15 +1179,26 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 	
 	<rule e="any" k="amenity" v="parking" zoom-min="11">
 		<area fill="#F9F9F9" stroke="#888888" stroke-width="0.1" />
-		<rule e="any" cat="parking" k="access" v="destination|no|private" zoom-min="16" >
-			<area src="file:patterns/access-destination.svg" symbol-percent="60" />
-			<symbol src="file:symbols/parking_private.svg" symbol-percent="65" display="always" />
+		<rule e="any" cat="parking" k="access" v="destination|no|private" >
+			<rule e="any" cat="parking_lz" k="*" v="*" zoom-max="16" >
+				<area src="file:patterns/access-destination.svg" symbol-percent="60" />
+				<symbol src="file:symbols/parking_private.svg" symbol-percent="65" display="always" />
+			</rule>
+			<rule e="any" k="*" v="*" zoom-min="17" >
+				<area src="file:patterns/access-destination.svg" symbol-percent="60" />
+				<symbol src="file:symbols/parking_private.svg" symbol-percent="65" display="always" />
+			</rule>
 		</rule>
-		<rule e="any" cat="parking" k="access" v="~|yes|public" zoom-max="16" >
-			<symbol src="file:symbols/parking.svg" symbol-percent="65" display="always" />
-		</rule>
-		<rule e="any" cat="parking" k="access" v="~|yes|public" zoom-min="17" >
-			<symbol src="file:symbols/parking.svg" symbol-percent="75" display="always" />
+		<rule e="any" cat="parking" k="access" v="~|yes|public">
+			<rule e="any" cat="parking_lz" k="*" v="*" zoom-max="15" >
+				<symbol src="file:symbols/parking.svg" symbol-percent="65" display="always" />
+			</rule>
+			<rule e="any" k="*" v="*" zoom-min="16" zoom-max="16" >
+				<symbol src="file:symbols/parking.svg" symbol-percent="65" display="always" />
+			</rule>
+			<rule e="any" k="*" v="*" zoom-min="17" >
+				<symbol src="file:symbols/parking.svg" symbol-percent="75" display="always" />
+			</rule>
 		</rule>
 	</rule>
 
@@ -1844,7 +1861,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 				</rule>
 				<rule e="way" k="highway" v="track" zoom-min="12">
 					<!-- Background -->
-					<rule e="way" k="tracktype" v="~|no|false|grade1|grade2|grade3|grade4|grade5" zoom-min="13">
+					<rule e="way" k="tracktype" v="~|no|false|grade2|grade3|grade4|grade5" zoom-min="13">
 						<rule e="way" k="*" v="*" zoom-max="15">
 							<line stroke="#a053534e" stroke-width="1.4" stroke-linecap="butt" />
 						</rule>
@@ -1852,16 +1869,19 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 							<line stroke="#c053534e" stroke-width="1.4" stroke-dasharray="1,0.3" scale="all" stroke-linecap="butt" />
 						</rule>
 					</rule>
+					<rule e="way" k="tracktype" v="grade1" zoom-min="13">
+						<line stroke="#d053534e" stroke-width="1.4" stroke-linecap="butt" />
+					</rule>
 					<!-- Main color -->
-					<rule e="way" k="tracktype" v="~|no|false|grade2|grade3|grade4|grade5" zoom-min="13">
+					<rule e="way" k="tracktype" v="~|no|false|grade1|grade2|grade3|grade4|grade5" zoom-min="13">
 						<line stroke="#ffffdd" stroke-width="1.0" stroke-linecap="round" />
 					</rule>
-					<!-- Grade1 -->
+					<!-- Grade1
 					<rule e="way" k="tracktype" v="grade1" zoom-min="13">
 						<line stroke="#ffffff" stroke-width="1.0" stroke-linecap="round" />
-					</rule>
+					</rule -->
 					<!-- Grade encoding -->
-					<rule e="way" cat="grades" k="highway" v="track" zoom-min="15" >
+					<rule e="way" cat="grades" k="highway" v="track" zoom-min="14" >
 						<rule e="way" k="tracktype" v="grade5" >
 							<line stroke="#8f4e1d" stroke-width="0.5" stroke-dasharray="1,0.6,1,0.6,1,6" stroke-linecap="butt" scale="all" />
 						</rule>
@@ -1871,9 +1891,9 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 						<rule e="way" k="tracktype" v="grade2" >
 							<line stroke="#8f4e1d" stroke-width="0.5" stroke-dasharray="1,9" stroke-linecap="butt" scale="all" />
 						</rule>
-						<rule e="way" k="tracktype" v="~" >
+						<!-- rule e="way" k="tracktype" v="~" >
 							<line stroke="#8f4e1d" stroke-width="0.5" stroke-dasharray="1.3,0.8,0.7,15" stroke-linecap="butt" scale="all" />
-						</rule>
+						</rule -->
 					</rule>
 					<!-- Access restrictions -->
 					<rule e="way" cat="barriers_access" k="foot" v="ft_no">
@@ -2089,6 +2109,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 						<line stroke="#0083d7" stroke-width="1.8" stroke-linecap="butt" />
 					</rule>
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-max="13">
+						<!--caption k="ref" dy="0" font-style="bold" font-size="13" fill="#FFFFFF" scale-font-size="12,1.1" bg-rect-fill="#0100C8" bg-rect-stroke="#FFFFFFFF" bg-rect-over="5" bg-rect-stroke-width="2" bg-rect-rounded="3" /-->
 						<pathText k="ref" repeat-start="20" repeat-gap="300" font-family="sans_serif" font-style="bold" font-size="10" fill="#FFFFFF" stroke="#005Db2" stroke-width="2.7" />
 					</rule>
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="14">
@@ -2227,7 +2248,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 	<rule e="any" k="*" v="*" cat="cycling" zoom-min="10">
 		<rule e="way" k="network" v="rcn|lcn|ocn" zoom-min="12">
 			<rule e="way" k="*" v="*" zoom-max="13">
-				<line dy="-1" stroke="#cc474aff" stroke-width="1.7" stroke-dasharray="3,1.5" stroke-linecap="butt" scale="all" />
+				<line dy="-1" stroke="#cc474aff" stroke-width="1.8" stroke-dasharray="3,1.5" stroke-linecap="butt" scale="all" />
 			</rule>
 			<rule e="way" k="*" v="*" zoom-min="14" zoom-max="15" >
 				<line dy="-1" stroke="#474aff" stroke-width="1.3" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
@@ -2276,12 +2297,12 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		<rule e="way" k="*" v="*" zoom-min="16" >
 			<line dy="1" stroke="#b2fc3d03" stroke-width="0.9" stroke-dasharray="3,2" stroke-linecap="butt" scale="all" />
 		</rule>
-		<rule e="any" k="hknetwork" v="lwn|rwn|own" zoom-min="15" >
+		<rule e="any" k="hknetwork" v="lwn|rwn|own" zoom-min="14" >
 			<rule e="any" k="*" v="*" zoom-max="17">
-				<pathText repeat-gap="170" repeat-start="10" k="ref_hike" font-style="bold" font-size="10" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="1.7" priority="11" />
+				<pathText repeat-gap="170" repeat-start="10" k="ref_hike" font-style="normal" font-size="10" fill="#fc3d03" stroke="#ffeeee" stroke-width="2.4" dy="1.7" priority="11" />
 			</rule>
 			<rule e="any" k="*" v="lwn|rwn|own" zoom-min="18">
-				<pathText repeat-gap="220" repeat-start="80" k="ref_hike" font-style="bold" font-size="12" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="2" priority="11" />
+				<pathText repeat-gap="220" repeat-start="80" k="ref_hike" font-style="normal" font-size="12" fill="#fc3d03" stroke="#ffeeee" stroke-width="2.4" dy="2" priority="11" />
 			</rule>
 		</rule>
 	</rule>
@@ -2290,6 +2311,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<line dy="1" stroke="#fc3d03" curve="cubic" stroke-width="1.7" stroke-linecap="butt" />
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="12" zoom-max="14" >
+			<line dy="1.8" stroke="#ffffff" curve="cubic" stroke-width="2.2" stroke-linecap="butt" />
 			<line dy="1" stroke="#fc3d03" curve="cubic" stroke-width="1.4" stroke-linecap="butt" />
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="15" >
@@ -2300,7 +2322,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 				<pathText repeat-gap="170" repeat-start="10" k="ref_hike" font-style="bold" font-size="10" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="1.7" priority="12" />
 			</rule>
 			<rule e="any" k="*" v="*" zoom-min="18">
-				<pathText repeat-gap="220" repeat-start="20" k="ref_hike" font-style="bold" font-size="12" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="2" priority="12" />
+				<pathText repeat-gap="220" repeat-start="20" k="ref_hike" font-style="bold" font-size="13" fill="#fc3d03" stroke="#FFFFFF" stroke-width="2.4" dy="2" priority="12" />
 			</rule>
 		</rule>
 	</rule>
@@ -2317,6 +2339,9 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<circle radius="10.4" scale-radius="false" fill="#ffffff" stroke="#008131" stroke-width="2" />
 			<caption k="addr:housenumber" display="always" priority="14" font-style="bold" font-size="14" fill="#008131" stroke="#FFFFFF" stroke-width="2" />
 		</rule>
+	</rule>
+	<rule e="way" k="dog|dogs" v="no" zoom-min="10">
+		<line dy="1" stroke="#ffff00" stroke-width="4" stroke-linecap="butt" />
 	</rule>
 	<rule cat="winter_sports" e="way" k="piste:type" v="*" zoom-min="10">
 		<!-- piste areas -->
@@ -3626,7 +3651,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			</rule>
 		</rule>
 		<rule e="any" k="historic" v="archaeological_site" zoom-min="15">
-			<area fill="#DBDBDB" stroke="#C3C3C3" stroke-width="0.1" />
+			<area fill="#40DBDBDB" stroke="#50C3C3C3" stroke-width="0.1" />
 			<rule e="way" k="building" v="~" zoom-min="12">
 				<line stroke="#70606060" stroke-width="0.2" stroke-dasharray="4,4" stroke-linecap="butt" />
 			</rule>
