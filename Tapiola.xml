@@ -1973,7 +1973,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					</rule>
 				</rule>
 				<!-- Mark cobblestone, OAM-->
-				<rule e="way" k="highway" v="*" zoom-min="15">
+				<rule e="way" k="highway" v="*" zoom-min="16">
 					<rule e="way" k="surface" v="rough_paved" zoom-min="15">
 						<line stroke="#bbbbbb" stroke-width="0.7" stroke-dasharray="0,1.05" stroke-linecap="round" scale="all" />
 					</rule>
