@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
 
-Tapiola 1.3.3 - 2023-11-22 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.3.3 - 2023-11-24 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapio is the god of forest in finnish mythology.
 Tapiola is his realm.
@@ -1970,6 +1970,12 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					<line stroke="#d0d0d0" stroke-width="0.9" />
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="15">
 						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
+					</rule>
+				</rule>
+				<!-- Mark cobblestone, OAM-->
+				<rule e="way" k="highway" v="*" zoom-min="15">
+					<rule e="way" k="surface" v="rough_paved" zoom-min="15">
+						<line stroke="#bbbbbb" stroke-width="0.7" stroke-dasharray="0,1.05" stroke-linecap="round" scale="all" />
 					</rule>
 				</rule>
 				<!-- Markers on access restricted ways -->
