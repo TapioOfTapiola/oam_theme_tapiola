@@ -1902,7 +1902,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 					<line stroke="#7bcaff" stroke-width="0.6" stroke-linecap="butt" scale="stroke" />
 					<line stroke="#11635d" stroke-width="0.6" stroke-dasharray="0.8,0.8" stroke-linecap="butt" scale="all" />
 					<rule e="way" k="highway" v="cycleway" zoom-min="14">
-						<rule cat="cycling" cat="road_captions" e="way" k="*" v="*" zoom-min="15">
+						<rule cat="road_captions" e="way" k="*" v="*" zoom-min="15">
 							<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="2.0" />
 						</rule>
 					</rule>
