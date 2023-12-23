@@ -23,9 +23,9 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<cat id="hiking_trails" />
 		</layer>
 		<layer id="L_hiking_nodes" enabled="false" visible="false">
-			<name lang="ru" value="◾ Указатель номера маршрута" />
-			<name lang="de" value="◾ Wanderwege: Knotenpunkte" />
-			<name lang="en" value="◾ Hiking Nodes" />
+			<name lang="ru" value="┗ ◾ Указатель номера маршрута" />
+			<name lang="de" value="┗ ◾ Wanderwege: Knotenpunkte" />
+			<name lang="en" value="┗ ◾ Hiking Nodes" />
 			<cat id="hiking_nodes" />
 		</layer>
 		<layer id="L_cycling" enabled="false" visible="false">
@@ -61,8 +61,8 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<cat id="neighbourhoods_suburbs" />
 		</layer>
 		<layer id="L_road_captions" enabled="true" visible="false">
-			<name lang="en" value="🔤 Road names" />
-			<name lang="de" value="🔤 Straßennamen" />
+			<name lang="en" value="┗ 🔤 Road names" />
+			<name lang="de" value="┗ 🔤 Straßennamen" />
 			<cat id="road_captions" />
 		</layer>
 		<layer id="L_house_nr" enabled="false" visible="false">
@@ -124,8 +124,8 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<cat id="parking" />
 		</layer>
 		<layer id="L_parking_lz" enabled="false" visible="false">
-			<name lang="en" value="🅿️ Display parking earlier" />
-			<name lang="de" value="🅿️ Parkplätze früher anzeigen" />
+			<name lang="en" value="┗ 🅿️ Display parking earlier" />
+			<name lang="de" value="┗ 🅿️ Parkplätze früher anzeigen" />
 			<cat id="parking_lz" />
 		</layer>
 		<layer id="L_publictransport" enabled="true" visible="false">
@@ -340,10 +340,10 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<overlay id="L_mtb_trails" />
 			<overlay id="L_winter_sports" />
 			<overlay id="L_highway" />
+			<overlay id="L_road_captions" />
 			<overlay id="L_railway" />
 			<overlay id="L_cities_towns" />
 			<overlay id="L_neighbourhoods_suburbs" />
-			<overlay id="L_road_captions" />
 			<overlay id="L_house_nr" />
 			<overlay id="L_barriers" />
 			<overlay id="L_access" />
