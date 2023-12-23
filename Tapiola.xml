@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
 
-Tapiola 1.3.7 - 2023-12-15 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.3.8 - 2023-12-23 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapio is the god of forest in finnish mythology.
 Tapiola is his realm.
@@ -515,8 +515,8 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		<rule e="way" k="landuse" v="industrial">
 			<rule e="way" k="power" v="~">
 				<area fill="#cccccc" stroke="#e4e4e4" stroke-width="0.2" />
-				<rule e="way" k="*" v="*" zoom-min="16" zoom-max="19">
-					<caption k="name" font-family="sans_serif" font-style="italic" font-size="12" fill="#5A5A5A" stroke="#FFFFFF" stroke-width="2.8" text-wrap-width="120" />
+				<rule e="way" k="*" v="*" zoom-min="15" zoom-max="18">
+					<caption k="name" font-family="sans_serif" font-style="bold_italic" font-size="14" fill="#5A5A5A" stroke="#FFFFFF" stroke-width="2.8" text-wrap-width="170" />
 				</rule>
 			</rule>
 		</rule>
@@ -903,22 +903,22 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 	<rule cat="landscapefeat" e="way" k="*" v="ridge|arete" zoom-min="8">
 		<rule e="way" k="*" v="*" zoom-max="15">
 			<line stroke="#BFbc4b00" scale="all" stroke-width="0.4" stroke-dasharray="2,3" stroke-linecap="round" />
-			<pathText k="name" dy="-3" font-style="italic" font-size="12" fill="#BFa75c2c" stroke="#80bbbbbb" stroke-width="0.8" priority="-20" repeat-start="50" repeat-gap="300" />
+			<pathText k="name" dy="3" font-style="italic" font-size="13" fill="#BFa75c2c" stroke="#80bbbbbb" stroke-width="0.8" priority="-20" repeat-start="50" repeat-gap="300" />
 			<lineSymbol src="file:symbols/s_ridge2.svg" symbol-height="14" align-center="true" repeat="true" repeat-gap="105" repeat-start="10" priority="-20" />
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
 			<line stroke="#BFbc4b00" scale="all" stroke-width="0.32" stroke-dasharray="3,4.4" stroke-linecap="round" />
-			<pathText k="name" dy="-2" font-style="italic" font-size="12" fill="#BFa75c2c" stroke="#80bbbbbb" stroke-width="0.8" priority="-20" repeat-start="50" repeat-gap="300" />
+			<pathText k="name" dy="2" font-style="italic" font-size="13" fill="#BFa75c2c" stroke="#80bbbbbb" stroke-width="0.8" priority="-20" repeat-start="50" repeat-gap="300" />
 			<lineSymbol src="file:symbols/s_ridge2.svg" symbol-height="20" align-center="true" repeat="true" repeat-gap="190" repeat-start="10" priority="-20" />
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
 			<line stroke="#BFbc4b00" scale="all" stroke-width="0.26" stroke-dasharray="4,4.8" stroke-linecap="round" />
-			<pathText k="name" dy="-1.6" font-style="italic" font-size="12" fill="#BFa75c2c" stroke="#80bbbbbb" stroke-width="0.8" priority="-20" repeat-start="50" repeat-gap="300" />
+			<pathText k="name" dy="1.6" font-style="italic" font-size="13" fill="#BFa75c2c" stroke="#80bbbbbb" stroke-width="0.8" priority="-20" repeat-start="50" repeat-gap="300" />
 			<lineSymbol src="file:symbols/s_ridge2.svg" symbol-height="24" align-center="true" repeat="true" repeat-gap="275" repeat-start="10" priority="-20" />
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="18">
 			<line stroke="#BFbc4b00" scale="all" stroke-width="0.20" stroke-dasharray="4.2,5.0" stroke-linecap="round" />
-			<pathText k="name" dy="-1.2" font-style="italic" font-size="12" fill="#BFa75c2c" stroke="#80bbbbbb" stroke-width="0.8" priority="-20" repeat-start="50" repeat-gap="300" />
+			<pathText k="name" dy="1.2" font-style="italic" font-size="13" fill="#BFa75c2c" stroke="#80bbbbbb" stroke-width="0.8" priority="-20" repeat-start="50" repeat-gap="300" />
 			<lineSymbol src="file:symbols/s_ridge2.svg" symbol-height="28" align-center="true" repeat="true" repeat-gap="295" repeat-start="10" priority="-20" />
 		</rule>
 	</rule>
@@ -1095,6 +1095,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 
+	<!-- Water related -->
 	<rule e="node" k="landuse|natural" v="reservoir|basin|water" zoom-min="12">
 		<rule e="any" k="bBoxWeight" v="xxxlarge|xxlarge">
 			<caption k="name" font-style="bold_italic" font-size="13" fill="#035FBC" stroke="#ffffff" stroke-width="2.2" priority="395" text-wrap-width="150" />
@@ -1118,7 +1119,6 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<caption k="name" font-style="bold_italic" font-size="11" fill="#035FBC" stroke="#ffffff" stroke-width="2.2" priority="395" text-wrap-width="120" />
 		</rule>
 	</rule>
-	
 	<rule e="any" k="waterway|natural" v="waterfall" zoom-min="13">
 		<rule e="any" k="*" v="*" zoom-min="13" zoom-max="17">
 			<symbol id="s_waterfall" src="file:symbols/waterfall.svg" symbol-percent="100" display="always" />
@@ -1129,22 +1129,18 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<caption k="name" position="above" priority="80" symbol-id="s_waterfall" font-style="bold_italic" font-size="14" fill="#035FBC" stroke="#FFFFFF" stroke-width="1.8" text-wrap-width="120" />
 		</rule>
 	</rule>
-	
 	<rule e="any" k="waterway|natural" v="rapids" zoom-min="15">
 		<symbol id="s_rapids" priority="63" src="file:symbols/s_rapids.svg" symbol-height="16" />
 		<caption k="name" symbol-id="s_rapids" font-style="bold" font-size="12" fill="#666666" stroke="#E5FFFFFF" stroke-width="2" />
 	</rule>
-	
 	<rule e="any" k="natural" v="geyser" zoom-min="14">
 		<symbol id="s_geyser" priority="63" src="file:symbols/s_geyser.svg" symbol-height="16" />
 		<caption k="name" symbol-id="s_geyser" font-style="bold" font-size="12" fill="#666666" stroke="#E5FFFFFF" stroke-width="2" />
 	</rule>
-	
 	<rule e="any" k="natural" v="hot_spring" zoom-min="14">
 		<symbol id="s_hot_spring" priority="63" src="file:symbols/s_hot_spring.svg" symbol-height="16" />
 		<caption k="name" symbol-id="s_hot_spring" font-style="bold" font-size="12" fill="#666666" stroke="#E5FFFFFF" stroke-width="2" />
 	</rule>
-	
 	<rule cat="water" e="node" k="amenity|natural" v="spring" zoom-min="16">
 		<rule e="node" k="drinking_water|amenity" v="yes|drinking_water">
 			<symbol display="always" priority="505" id="spring" src="file:/symbols/s_spring_d.svg" symbol-height="13" />
@@ -1159,7 +1155,6 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<caption symbol-id="spring" k="name" font-style="bold_italic" font-size="11" fill="#115DFF" stroke="#E5FFFFFF" stroke-width="2" priority="395" text-wrap-width="110" />
 		</rule>
 	</rule>
-	
 	<rule cat="water" e="any" k="amenity|waterway" v="drinking_water|water_point" zoom-min="16">
 		<rule e="any" k="drinking_water" v="yes|~">
 			<rule e="any" k="natural" v="~">
@@ -1176,6 +1171,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 	
+	<!-- Parking -->
 	<rule e="any" k="amenity" v="parking" zoom-min="11">
 		<area fill="#F9F9F9" stroke="#888888" stroke-width="0.1" />
 		<rule e="any" cat="parking" k="access" v="destination|no|private" >
@@ -1201,6 +1197,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 
+	<!-- Boundaries -->
 	<rule e="way" k="admin_level" v="*" cat="boundaries_areas">
 		<rule e="way" k="admin_level" v="2" zoom-max="12">
 			<line stroke="#60995499" stroke-width="6" stroke-linecap="butt" />
@@ -1237,6 +1234,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 
+	<!-- Area overlays -->
 	<rule e="way" k="landuse" v="military" zoom-min="8" closed="yes">
 		<area src="file:patterns/military_area.svg" symbol-width="16" />
 		<line stroke="#90808000" stroke-width="0.8" stroke-linecap="butt" />
@@ -1244,7 +1242,38 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<caption k="name" font-style="bold_italic" font-family="sans_serif" font-size="10" fill="#808000" stroke="#FFFFFF" stroke-width="2.0" text-wrap-width="300" />
 		</rule>
 	</rule>
-
+	<rule e="way" cat="protected_area" k="leisure|boundary" v="nature_reserve|protected_area|national_park" zoom-min="8" closed="yes">
+		<rule e="any" k="*" v="*" zoom-max="13">
+			<area fill="#707A9E52" />
+		</rule>
+		<rule e="any" k="*" v="*" zoom-min="14">
+			<area fill="#307A9E52" />
+		</rule>
+		<rule e="way" k="protect_class" v="1|2|3|4|~|pr_1|pr_2|pr_3|pr_4" zoom-min="14">
+			<line stroke="#6bb96c" stroke-width="0.8" stroke-linecap="butt" />
+		</rule>
+	</rule>
+	<rule e="node" cat="protected_area" k="boundary|leisure" v="protected_area|national_park|nature_reserve" >
+		<rule e="any" k="bBoxWeight" v="xxxlarge|xxlarge|xlarge" zoom-max="8">
+			<caption k="name" dy="15" priority="100" font-style="bold_italic" font-size="12" fill="#006600" stroke="#FFFFFF" stroke-width="2" text-wrap-width="150" />
+		</rule>
+		<rule e="any" k="bBoxWeight" v="xxxlarge|xxlarge|xlarge" zoom-min="9" zoom-max="11">
+			<caption k="name" dy="15" priority="100" font-style="bold_italic" font-size="13" fill="#006600" stroke="#FFFFFF" stroke-width="2" text-wrap-width="150" />
+		</rule>
+		<rule e="any" k="bBoxWeight" v="xxxlarge|xxlarge|xlarge" zoom-min="12">
+			<caption k="name" dy="15" priority="100" font-style="bold_italic" font-size="14" fill="#006600" stroke="#FFFFFF" stroke-width="2" text-wrap-width="130" />
+		</rule>
+		<rule e="any" k="bBoxWeight" v="large" zoom-min="9">
+			<caption k="name" dy="15" priority="99" font-style="bold_italic" font-size="13" fill="#006600" stroke="#FFFFFF" stroke-width="2" text-wrap-width="130" />
+		</rule>
+		<rule e="any" k="bBoxWeight" v="mid|~" zoom-min="12">
+			<caption k="name" dy="15" priority="99" font-style="bold_italic" font-size="12" fill="#006600" stroke="#FFFFFF" stroke-width="2" text-wrap-width="120" />
+		</rule>
+		<rule e="any" k="bBoxWeight" v="small|xsmall|tiny" zoom-min="13">
+			<caption k="name" dy="15" priority="99" font-style="bold_italic" font-size="11" fill="#006600" stroke="#FFFFFF" stroke-width="2" text-wrap-width="120" />
+		</rule>
+	</rule>
+	
 	<rule e="way" k="aeroway" v="*" zoom-min="8">
 		<rule e="way" k="aeroway" v="aerodrome" closed="yes" zoom-min="11">
 			<area fill="#DADECF" />
@@ -1426,7 +1455,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 
-	<hillshading zoom-min="9" zoom-max="17" />
+	<!-- hillshading zoom-min="9" zoom-max="17" /-->
 
 	<rule e="way" k="highway|railway|public_transport" v="platform">
 		<rule e="way" k="location" v="~|underground">
@@ -1442,10 +1471,8 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 
+	<!-- Building coloring -->
 	<rule e="any" k="building" v="*" zoom-min="14">
-		<!--rule e="any" k="*" v="*" zoom-max="14">
-			<area fill="#dddddd" stroke="#666666" stroke-width="0.05" />
-		</rule-->
 		<rule e="any" k="*" v="*" zoom-max="15" >
 			<area fill="#f2c8c8" stroke="#595959" stroke-width="0.06" />
 		</rule>
@@ -1455,6 +1482,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		<rule e="any" k="*" v="*" zoom-min="17">
 			<area fill="#ffbbbb" stroke="#444444" stroke-width="0.1" />
 		</rule>
+		<!-- Special colored buildings -->
 		<rule cat="building_type" e="way" k="*" v="*">
 			<rule e="way" k="*" v="hospital">
 				<area fill="#5cb885" stroke="#d4d4d4" stroke-width="0.1" />
@@ -1470,23 +1498,23 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<area src="file:patterns/building.svg" symbol-height="7" />
 		</rule>
 	</rule>
-
 	<rule e="way" k="building" v="construction" zoom-min="15">
 		<area fill="#c7c7c7" stroke="#b0b0b0" stroke-width="0.2" />
 		<line stroke="#C0F8F8F8" stroke-width="0.3" stroke-dasharray="2,2" />
 	</rule>
-
+	<!-- Building captions -->
 	<rule e="way" k="building" v="*" zoom-min="18">
 		<rule e="any" k="amenity|aerialway" v="~">
 			<caption k="name" position="below" dy="8" font-style="bold" font-family="sans_serif" font-size="12" fill="#333333" stroke="#ffffff" stroke-width="1.8" text-wrap-width="120" />
 		</rule>
 	</rule>
-
+	<!-- House numbers earlier ZL -->
 	<rule e="any" cat="house_nr" k="*" v="*" zoom-min="16" zoom-max="17" >
 		<rule e="any" k="highway" v="~">
 			<caption k="addr:housenumber" font-style="normal" font-size="6" fill="#000000" priority="10" />
 		</rule>
 	</rule>
+	<!-- House numbers -->
 	<rule e="any" k="*" v="*" zoom-min="18">
 		<rule e="any" k="highway" v="~">
 			<caption k="addr:housenumber" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff" stroke-width="1.4" display="always" />
@@ -1778,6 +1806,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 							</rule>
 							<rule e="way" k="*" v="*" zoom-min="16" >
 								<pathText k="sac_scale" priority="5" font-family="sans_serif" font-style="normal" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.8" repeat-start="50" repeat-gap="250" />
+								<pathText k="name" priority="5" font-family="sans_serif" font-style="normal" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="2.8" repeat-start="0" repeat-gap="250" />
 							</rule>
 						</rule>
 						<!-- No pedestrians, restriction -->
@@ -2231,7 +2260,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</rule>
 	</rule>
 
-	<!-- MTB Routes without mtb:scale values - Lomaps -->
+	<!-- MTB network without mtb:scale values - Lomaps -->
 	<rule cat="mtb_trails" e="way" k="route" v="mtb" zoom-min="13">
 		<rule e="way" k="mtb:scale" v="~">
 			<rule e="way" k="*" v="*" zoom-min="13" zoom-max="14">
@@ -2255,7 +2284,8 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<pathText k="ref" font-style="bold" font-size="11" dy="1.4" fill="#B11BB9" stroke="#ffffff" stroke-width="2" />
 		</rule>
 	</rule>
-	<!-- MTB -->
+
+	<!-- MTB network -->
 	<rule cat="mtb_trails" e="any" k="*" v="*" zoom-min="13">
 		<rule e="any" k="mtbnetwork" v="mtb|imn|nmn|rmn|lmn|omn" zoom-max="17" >
 			<line dy="-1" stroke="#cc00cc" stroke-width="0.8" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
@@ -2280,6 +2310,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		<lineSymbol src="file:symbols/bicycle.svg" position="above" symbol-percent="120" dy="-1" repeat="true" repeat-start="10" repeat-gap="250" />
 		<line dy="-1" stroke="#cc00cc" stroke-width="1" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
 	</rule>
+
 	<!-- Cycling network -->
 	<rule e="any" k="*" v="*" cat="cycling" zoom-min="10">
 		<rule e="way" k="network" v="rcn|lcn|ocn" zoom-min="12">
@@ -2293,7 +2324,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 				<line dy="-1" stroke="#474aff" stroke-width="0.8" stroke-linecap="butt" />
 			</rule>
 			<rule e="any" k="*" v="*" zoom-min="14">
-				<pathText dy="-3" priority="10" k="ref_cycle" font-style="bold" font-size="10" fill="#b266ff" stroke="#ffffff" stroke-width="2.5" repeat-start="10" repeat-gap="300" />
+				<pathText dy="-2" priority="10" k="ref_cycle" font-style="bold" font-size="10" fill="#b266ff" stroke="#ffffff" stroke-width="2.5" repeat-start="10" repeat-gap="300" />
 			</rule>
 		</rule>
 		<rule e="way" k="network" v="icn|ncn" >
@@ -2304,13 +2335,15 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 				<line dy="-1" stroke="#474aff" stroke-width="1.3" stroke-linecap="butt" />
 			</rule>
 			<rule e="way" k="*" v="*" zoom-min="16" >
-				<line dy="-1" stroke="#474aff" stroke-width="0.9" stroke-dasharray="3,1.5" stroke-linecap="butt" scale="all" />
+				<line dy="-1" stroke="#474aff" stroke-width="0.9" stroke-linecap="butt" />
 			</rule>
 			<rule e="any" k="*" v="*" zoom-min="11">
-				<pathText dy="-3" priority="10" k="ref_cycle" font-style="bold" font-size="10" fill="#b266ff" stroke="#ffffff" stroke-width="2.5" repeat-start="10" repeat-gap="300" />
+				<pathText dy="-2" priority="10" k="ref_cycle" font-style="bold" font-size="10" fill="#ffffff" stroke="#474aff" stroke-width="2.5" repeat-start="10" repeat-gap="300" />
 			</rule>
 		</rule>
 	</rule>
+
+	<!-- Hiking network -->
 	<rule e="way" k="hknetwork" v="lwn|rwn|own" cat="hiking_trails" zoom-min="12" >
 		<rule e="way" k="*" v="*" zoom-max="13">
 			<line dy="1" stroke="#ccfc3d03" stroke-width="1.7" stroke-dasharray="3,1.5" stroke-linecap="butt" scale="all" />
@@ -2367,9 +2400,8 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<caption k="addr:housenumber" display="always" priority="14" font-style="bold" font-size="14" fill="#008131" stroke="#FFFFFF" stroke-width="2" />
 		</rule>
 	</rule>
-	<rule e="way" k="dog|dogs" v="no" zoom-min="10">
-		<line dy="1" stroke="#ffff00" stroke-width="4" stroke-linecap="butt" />
-	</rule>
+
+	<!-- Piste network -->
 	<rule cat="winter_sports" e="way" k="piste:type" v="*" zoom-min="10">
 		<!-- piste areas -->
 		<rule e="way" k="piste:type" v="downhill" closed="yes">
@@ -2540,7 +2572,10 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			</rule>
 		</rule>
 	</rule>
-	
+
+<!-- POI section -->
+
+	<!-- Railway -->
 	<rule e="any" cat="c_railway" k="railway" v="crossing" zoom-min="14">
 		<rule e="any" k="*" v="*" zoom-max="16">
 			<symbol src="file:symbols/railway-crossing.svg" symbol-height="15" />
@@ -2549,7 +2584,6 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<symbol src="file:symbols/railway-crossing.svg" symbol-height="24" />
 		</rule>
 	</rule>
-
 	<rule e="any" cat="c_railway" k="railway" v="level_crossing" zoom-min="14">
 		<rule e="any" k="*" v="*" zoom-max="16">
 			<symbol src="file:symbols/railway-crossing.svg" symbol-height="20" />
@@ -2558,7 +2592,6 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<symbol src="file:symbols/railway-crossing.svg" symbol-height="32" />
 		</rule>
 	</rule>
-
 	<rule e="node" cat="c_railway" k="railway" v="*" zoom-min="12" cat="pub_transp">
 		<rule e="node" cat="c_railway" k="railway" v="subway_entrance" zoom-min="14">
 			<rule e="node" cat="c_railway" k="railway" v="subway_entrance" zoom-min="14" zoom-max="14">
@@ -2995,39 +3028,6 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<rule e="any" k="*" v="*" zoom-min="16">
 				<caption k="ele" priority="-5" dy="25" font-style="italic" font-size="14" fill="#111111" stroke="#ffffff" stroke-width="2.0" text-wrap-width="120" />
 			</rule>
-		</rule>
-	</rule>
-	
-	<!-- Protected area overlays on top -->
-	<rule e="way" k="leisure|boundary" v="nature_reserve|protected_area|national_park" zoom-min="8" cat="protected_area" closed="yes">
-		<rule e="any" k="*" v="*" zoom-max="13">
-			<area fill="#707A9E52" />
-		</rule>
-		<rule e="any" k="*" v="*" zoom-min="14">
-			<area fill="#307A9E52" />
-		</rule>
-		<rule e="way" k="protect_class" v="1|2|3|4|~|pr_1|pr_2|pr_3|pr_4" zoom-min="14">
-			<line stroke="#6bb96c" stroke-width="0.8" stroke-linecap="butt" />
-		</rule>
-	</rule>
-	<rule e="node" k="boundary|leisure" v="protected_area|national_park|nature_reserve" cat="protected_area">
-		<rule e="any" k="bBoxWeight" v="xxxlarge|xxlarge|xlarge" zoom-max="8">
-			<caption k="name" dy="15" priority="100" font-style="bold_italic" font-size="12" fill="#006600" stroke="#FFFFFF" stroke-width="2" text-wrap-width="150" />
-		</rule>
-		<rule e="any" k="bBoxWeight" v="xxxlarge|xxlarge|xlarge" zoom-min="9" zoom-max="11">
-			<caption k="name" dy="15" priority="100" font-style="bold_italic" font-size="13" fill="#006600" stroke="#FFFFFF" stroke-width="2" text-wrap-width="150" />
-		</rule>
-		<rule e="any" k="bBoxWeight" v="xxxlarge|xxlarge|xlarge" zoom-min="12">
-			<caption k="name" dy="15" priority="100" font-style="bold_italic" font-size="14" fill="#006600" stroke="#FFFFFF" stroke-width="2" text-wrap-width="130" />
-		</rule>
-		<rule e="any" k="bBoxWeight" v="large" zoom-min="9">
-			<caption k="name" dy="15" priority="99" font-style="bold_italic" font-size="13" fill="#006600" stroke="#FFFFFF" stroke-width="2" text-wrap-width="130" />
-		</rule>
-		<rule e="any" k="bBoxWeight" v="mid|~" zoom-min="12">
-			<caption k="name" dy="15" priority="99" font-style="bold_italic" font-size="12" fill="#006600" stroke="#FFFFFF" stroke-width="2" text-wrap-width="120" />
-		</rule>
-		<rule e="any" k="bBoxWeight" v="small|xsmall|tiny" zoom-min="13">
-			<caption k="name" dy="15" priority="99" font-style="bold_italic" font-size="11" fill="#006600" stroke="#FFFFFF" stroke-width="2" text-wrap-width="120" />
 		</rule>
 	</rule>
 	
