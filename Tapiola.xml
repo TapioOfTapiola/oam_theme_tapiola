@@ -253,10 +253,10 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</layer>
 		
 		<!-- Combined settings follow -->
-		<layer id="L_barriers_access" enabled="true" visible="false">
+		<!-- layer id="L_barriers_access" enabled="true" visible="false">
 			<name lang="en" value="⛔ Barriers and access" />
 			<cat id="barriers_access" />
-		</layer>
+		</layer -->
 		
 		<!-- Parent settings: those are checked and cannot be set by user -->
 		<layer id="parent_base">
@@ -290,8 +290,8 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		    <cat id="cities_towns_sub"/>
 		    <cat id="road_captions"/>
 			<cat id="grades"/>
-			<cat id="barriers"/>
-		    <cat id="access"/>
+			<!-- cat id="barriers"/>
+		    <cat id="access"/-->
 			<cat id="building_type"/>
 		</layer>
 		<layer id="parent_all">
@@ -326,7 +326,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<overlay id="L_winter_sports" />
 			<overlay id="L_highway" />
 			<overlay id="L_railway" />
-			<overlay id="L_barriers_access" />
+			<overlay id="L_access" />
 			<overlay id="L_forest" />
 			<overlay id="L_contourlines" />
 			<overlay id="L_protected_area" />
@@ -1852,11 +1852,8 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 							<line stroke="#C3C3C3" stroke-width="1.2" stroke-linecap="round" />
 						</rule>
 					</rule>
-					<rule e="way" cat="c_highway" k="highway" v="tertiary|tertiary_link|raceway" zoom-min="11" zoom-max="12" >
-						<line stroke="#303030" stroke-width="1.8" stroke-linecap="round" />
-					</rule>
-					<rule e="way" cat="c_highway" k="highway" v="tertiary|tertiary_link|raceway" zoom-min="13" >
-						<line stroke="#202020" stroke-width="1.6" stroke-linecap="round" />
+					<rule e="way" cat="c_highway" k="highway" v="tertiary|tertiary_link|raceway" zoom-min="11" >
+						<line stroke="#202020" stroke-width="1.8" stroke-linecap="round" />
 					</rule>
 					<rule e="way" cat="c_highway" k="highway" v="secondary|secondary_link" zoom-min="12">
 						<line stroke="#101010" stroke-width="1.8" stroke-linecap="round" />
@@ -1868,7 +1865,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 						<line stroke="#000000" stroke-width="2.2" stroke-linecap="round" />
 					</rule>
 					<rule e="way" cat="c_highway" k="highway" v="primary|primary_link" zoom-min="12" >
-						<line stroke="#000000" stroke-width="2.2" stroke-linecap="round" />
+						<line stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
 					</rule>
 					<rule e="way" cat="c_highway" k="highway" v="trunk_link" zoom-min="11">
 						<line stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
@@ -2910,6 +2907,9 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 				<rule e="node" k="*" v="*" zoom-min="15" zoom-max="15">
 					<caption k="name" font-style="bold_italic" font-family="serif" font-size="16" fill="#CC444444" stroke="#FFFFFFFF" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
 				</rule>
+				<rule e="node" k="*" v="*" zoom-min="16" zoom-max="16">
+					<caption k="name" font-style="bold_italic" font-family="serif" font-size="28" fill="#88444444" stroke="#CCffffff" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
+				</rule>
 			</rule>
 		</rule>
 		<!-- Villages, Towns, Cities -->
@@ -3173,7 +3173,7 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 			<line stroke="#CBE0B3" stroke-width="0.6" stroke-linecap="round" />
 		</rule>
 	</rule>
-	<rule cat="barriers_access" e="node" k="barrier" v="*" zoom-min="16">
+	<rule e="node" k="barrier" v="*" zoom-min="16">
 		<rule cat="barriers" e="node" k="barrier" v="gate">
 			<symbol src="file:symbols/s_gate.svg" symbol-height="18" />
 		</rule>
