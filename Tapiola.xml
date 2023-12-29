@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
 
-Tapiola 1.3.8 - 2023-12-23 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.3.9 - 2023-12-29 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapio is the god of forest in finnish mythology.
 Tapiola is his realm.
@@ -78,14 +78,17 @@ Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github
 		</layer>
 		<layer id="L_access" enabled="true" visible="false">
 			<name lang="en" value="⛔ Access restriction indicators" />
+			<name lang="de" value="⛔ Symbole für Zugangsbeschränkungen" />
 			<cat id="access" />
 		</layer>
 		<layer id="L_unpaved" enabled="false" visible="false">
 			<name lang="en" value="♒ Unpaved road indicators" />
+			<name lang="de" value="♒ Symbole für unbefestigte Straßen" />
 			<cat id="unpaved" />
 		</layer>
 		<layer id="L_grades" enabled="false" visible="false">
 			<name lang="en" value="3️⃣ Track grade codes" />
+			<name lang="de" value="3️⃣ Oberflächengüte und Tragfähigkeit"/>
 			<cat id="grades" />
 		</layer>
 		<layer id="L_sports" enabled="true" visible="false">
