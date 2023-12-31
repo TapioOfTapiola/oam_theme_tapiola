@@ -1,0 +1,13 @@
+<locusActions>
+	<download>
+		<source>
+			<![CDATA[ https://github.com/TapioOfTapiola/oam_theme_tapiola/releases/latest/download/Tapiola.zip ]]>
+		</source>
+		<dest>
+			<![CDATA[ /mapsVector/_themes/Tapiola.zip ]]>
+		</dest>
+		<!--  
+		    <after>extract|deleteSource</after>
+		-->
+	</download>
+</locusActions>
