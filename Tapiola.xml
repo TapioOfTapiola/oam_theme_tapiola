@@ -140,10 +140,10 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<name lang="en" value="🅿️ Parking" />
 			<cat id="parking" />
 		</layer>
-		<layer id="L_parking_lz" enabled="false" visible="false">
+		<layer id="L_parking_lowzoom" enabled="false" visible="false">
 			<name lang="en" value="┗ 🅿️ Display parking earlier" />
 			<name lang="de" value="┗ 🅿️ Parkplätze früher anzeigen" />
-			<cat id="parking_lz" />
+			<cat id="parking_lowzoom" />
 		</layer>
 		<layer id="L_publictransport" enabled="true" visible="false">
 			<name lang="ru" value="Ⓜ️ Общественный транспорт" />
@@ -367,7 +367,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<overlay id="L_unpaved" />
 			<overlay id="L_publictransport" />
 			<overlay id="L_parking" />
-			<overlay id="L_parking_lz" />
+			<overlay id="L_parking_lowzoom" />
 			<overlay id="L_sports" />
 			<overlay id="L_restaurants" />
 			<overlay id="L_shops" />
@@ -847,9 +847,11 @@ Contact: Michael Scheer <theme@tapiola.org>
 				<line stroke="#73dcff" stroke-width="0.3" />
 				<area fill="#50ff7396" />
 			</rule>
-			<rule e="way" k="natural" v="tree_row">
-				<line stroke="#CBE0B3" stroke-width="0.7" stroke-linecap="round" />
-			</rule>
+		<rule e="way" k="natural" v="tree_row" zoom-min="15">
+			<line stroke="#60ffffff" stroke-width="1.5" scale="all" stroke-dasharray="0.05,2.95" stroke-linecap="round" />
+			<line stroke="#CC99bb77" stroke-width="0.6" scale="all" stroke-dasharray="0.05,1.45" stroke-linecap="round" />
+			<line stroke="#CC99bb77" stroke-width="1.2" scale="all" stroke-dasharray="0.05,2.95" stroke-linecap="round" />
+		 </rule>
 		</rule>
 		<rule e="node" k="natural" v="sinkhole" cat="landscapefeat" zoom-min="14">
 			<rule e="any" k="*" v="*" zoom-max="15">
@@ -1195,7 +1197,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 	<rule e="any" k="amenity" v="parking" zoom-min="11">
 		<area fill="#F9F9F9" stroke="#888888" stroke-width="0.1" />
 		<rule e="any" cat="parking" k="access" v="destination|no|private" >
-			<rule e="any" cat="parking_lz" k="*" v="*" zoom-max="16" >
+			<rule e="any" cat="parking_lowzoom" k="*" v="*" zoom-max="16" >
 				<area src="file:patterns/access-destination.svg" symbol-percent="60" />
 				<symbol src="file:symbols/parking_private.svg" symbol-percent="65" display="always" />
 			</rule>
@@ -1205,7 +1207,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 			</rule>
 		</rule>
 		<rule e="any" cat="parking" k="access" v="~|yes|public">
-			<rule e="any" cat="parking_lz" k="*" v="*" zoom-max="15" >
+			<rule e="any" cat="parking_lowzoom" k="*" v="*" zoom-max="15" >
 				<symbol src="file:symbols/parking.svg" symbol-percent="65" display="always" />
 			</rule>
 			<rule e="any" k="*" v="*" zoom-min="16" zoom-max="16" >
@@ -3184,9 +3186,11 @@ Contact: Michael Scheer <theme@tapiola.org>
 		<rule e="way" k="barrier" v="wall">
 			<line stroke="#C3C3C3" stroke-width="0.5" stroke-linecap="butt" />
 		</rule>
-		<rule e="way" k="barrier" v="hedge">
-			<line stroke="#CBE0B3" stroke-width="0.6" stroke-linecap="round" />
-		</rule>
+		<rule e="way" k="barrier" v="hedge" zoom-min="15">
+			<line stroke="#60ffffff" stroke-width="0.3" stroke-linecap="butt"/>
+			<line stroke="#CC99bb77" stroke-width="0.15" stroke-linecap="butt"/>
+			<line stroke="#CC99bb77" stroke-width="0.3" scale="all" stroke-dasharray="0.1,0.5" stroke-linecap="round" />
+		 </rule>
 	</rule>
 	<rule e="node" k="barrier" v="*" zoom-min="16">
 		<rule cat="barriers" e="node" k="barrier" v="gate">
