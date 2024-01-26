@@ -296,7 +296,6 @@ Contact: Michael Scheer <theme@tapiola.org>
 		    <cat id="water"/>
 		    <cat id="hunting_stand"/>
 		    <cat id="misc"/>
-			<cat id="building_type"/>
 		</layer>
 		<layer id="parent_nopoi">
 		    <cat id="cities_towns"/>
@@ -1491,13 +1490,13 @@ Contact: Michael Scheer <theme@tapiola.org>
 	<rule e="any" cat="buildings" k="*" v="*" >
 		<rule e="any" k="building" v="*" zoom-min="14">
 			<rule e="any" k="*" v="*" zoom-max="15" >
-				<area fill="#f2c8c8" stroke="#595959" stroke-width="0.06" />
+				<area fill="#f2c8c8" stroke="#444444" stroke-width="0.12" />
 			</rule>
 			<rule e="any" k="*" v="*" zoom-min="16" zoom-max="16" >
 				<area fill="#eec4c4" stroke="#444444" stroke-width="0.1" />
 			</rule>
 			<rule e="any" k="*" v="*" zoom-min="17">
-				<area fill="#ffbbbb" stroke="#444444" stroke-width="0.1" />
+				<area fill="#ffbbbb" stroke="#333333" stroke-width="0.1" />
 			</rule>
 			<!-- Special colored buildings -->
 			<rule cat="building_type" e="way" k="*" v="*">
@@ -3121,10 +3120,16 @@ Contact: Michael Scheer <theme@tapiola.org>
 	<rule e="way" k="man_made" v="pipeline">
 		<rule e="way" k="tunnel" v="~|no">
 			<rule e="way" k="location" v="~|overground">
-				<line stroke="#CCCCCC" stroke-width="0.6" stroke-linecap="butt" />
-				<line stroke="#9CA6BA" stroke-width="0.6" scale="all" stroke-dasharray="1.8,0.6" stroke-linecap="butt" />
-				<line stroke="#FFFFFF" stroke-width="0.1" stroke-linecap="butt" />
-				<pathText k="name" font-style="normal" font-size="9" fill="#9CA6BA" stroke="#FFFFFF" stroke-width="1" />
+				<line stroke="#5E8BAD" stroke-width="0.8" stroke-linecap="butt" />
+				<line stroke="#b5d6f1" stroke-width="0.6" scale="all" stroke-dasharray="2,0.4" stroke-linecap="butt" />
+				<line stroke="#ffffff" stroke-width="0.2" stroke-linecap="butt" />
+				<pathText k="name" font-style="bold" font-size="10" fill="#8C96AA" stroke="#FFFFFF" stroke-width="1.8" repeat="true" repeat-gap="300" repeat-start="30" />
+			</rule>
+			<rule e="way" k="location" v="underground">
+				<line stroke="#BB5E8BAD" stroke-width="0.8" stroke-linecap="butt" />
+				<line stroke="#BBb5d6f1" stroke-width="0.6" scale="all" stroke-dasharray="2,0.4" stroke-linecap="butt" />
+				<line stroke="#BBffffff" stroke-width="0.2" stroke-linecap="butt" />
+				<pathText k="name" font-style="bold" font-size="10" fill="#BB8C96AA" stroke="#BBFFFFFF" stroke-width="1.8" repeat="true" repeat-gap="300" repeat-start="30" />
 			</rule>
 		</rule>
 	</rule>
@@ -3133,7 +3138,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 		<symbol src="file:symbols/cross.svg" symbol-percent="70" />
 	</rule>
 	
-	<rule e="node" k="man_made" v="cairn" zoom-min="14" cat="landscapefeat">
+	<rule e="node" cat="landscapefeat" k="man_made" v="cairn" zoom-min="14" >
 		<rule e="any" k="mountain_pass" v="~">
 			<rule e="node" k="*" v="*" zoom-min="13" zoom-max="15">
 				<symbol src="file:symbols/s_cairn.svg" symbol-percent="100" />
@@ -3621,7 +3626,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<symbol src="file:symbols/toilets.svg" symbol-percent="75" display="always" />
 		</rule>
 		<rule cat="benches" e="any" k="amenity" v="bench" zoom-min="15">
-			<symbol src="file:symbols/bench.svg" symbol-percent="80" display="always" />
+			<symbol src="file:symbols/bench.svg" symbol-percent="120" display="always" />
 		</rule>
 		<rule cat="refuge" e="any" k="amenity" v="shelter" zoom-min="14">
 			<symbol id="id_shelter" src="file:symbols/shelter.svg" symbol-percent="100" display="always" />
