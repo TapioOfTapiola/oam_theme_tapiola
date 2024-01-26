@@ -79,7 +79,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<name lang="en" value="┗ 🈴 Colored schools, hospitals..." />
 			<cat id="building_type" />
 		</layer>
-		<layer id="L_house_nr" enabled="false" visible="false">
+		<layer id="L_house_nr" enabled="true" visible="false">
 			<name lang="en" value="┗ 🔢 House numbers earlier" />
 			<name lang="de" value="┗ 🔢 Hausnummern eher.." />
 			<cat id="house_nr" />
@@ -100,7 +100,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<name lang="de" value="┗ ♒ Symbole für unbefestigte Straßen" />
 			<cat id="unpaved" />
 		</layer>
-		<layer id="L_grades" enabled="false" visible="false">
+		<layer id="L_grades" enabled="true" visible="false">
 			<name lang="en" value="┗ 3️⃣ Track grade codes" />
 			<name lang="de" value="┗ 3️⃣ Oberflächengüte und Tragfähigkeit"/>
 			<cat id="grades" />
