@@ -43,12 +43,12 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<name lang="de" value="🚴‍♀️ MTB-Trails" />
 			<cat id="mtb_trails" />
 		</layer>
-		<layer id="L_highway" visible="false">
+		<layer id="L_highway" enabled="true" visible="false">
 			<name lang="en" value="🛣️ Road network" />
 			<name lang="de" value="🛣️ Straßennetz" />
 			<cat id="c_highway" />
 		</layer>
-		<layer id="L_railway" visible="false">
+		<layer id="L_railway" enabled="true" visible="false">
 			<name lang="en" value="🛤️ Railways" />
 			<name lang="de" value="🛤️ Schienennetz" />
 			<cat id="c_railway" />
@@ -183,7 +183,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 		</layer>
 		<layer id="L_attractions" enabled="true" visible="false">
 			<name lang="de" value="🎡 Tourismus/Attraktionen" />
-			<name lang="en" value="🎡 Tourist/Attractions" />
+			<name lang="en" value="?? Tourist/Attractions" />
 			<cat id="attractions" />
 		</layer>
 		<layer id="L_architecture" enabled="true" visible="false">
