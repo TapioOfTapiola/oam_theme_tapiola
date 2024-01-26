@@ -79,10 +79,15 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<name lang="en" value="┗ 🈴 Colored schools, hospitals..." />
 			<cat id="building_type" />
 		</layer>
-		<layer id="L_house_nr" enabled="true" visible="false">
-			<name lang="en" value="┗ 🔢 House numbers earlier" />
-			<name lang="de" value="┗ 🔢 Hausnummern eher.." />
-			<cat id="house_nr" />
+		<layer id="L_house_numbers" enabled="true" visible="false">
+			<name lang="en" value="┗ 🔢 House numbers" />
+			<name lang="de" value="┗ 🔢 Hausnummern" />
+			<cat id="house_numbers" />
+		</layer>
+		<layer id="L_house_nr_early" enabled="false" visible="false">
+			<name lang="en" value="  ┗ 🔢 House numbers earlier" />
+			<name lang="de" value="  ┗ 🔢 Hausnummern eher" />
+			<cat id="house_nr_early" />
 		</layer>
 		<layer id="L_barriers" enabled="true" visible="false">
 			<name lang="ru" value="⛔ Шлагбаумы и ворота" />
@@ -275,6 +280,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 		    <cat id="cities_towns_sub"/>
 		    <cat id="road_captions"/>
 			<cat id="buildings"/>
+			<cat id="house_numbers"/>
 			<cat id="building_type"/>
 			<cat id="grades"/>
 			<cat id="barriers"/>
@@ -302,6 +308,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 		    <cat id="cities_towns_sub"/>
 		    <cat id="road_captions"/>
 			<cat id="grades"/>
+			<cat id="house_numbers"/>
 			<!-- cat id="barriers"/>
 		    <cat id="access"/-->
 			<cat id="buildings"/>
@@ -311,7 +318,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 		    <cat id="barriers_access"/>
 		</layer>
 
-		<!-- The actual theme options -->
+		<!-- The visible theme options -->
 		<layer id="basic" visible="true" parent="parent_base" >
 			<name lang="en" value="Basic features, with POI" />
 			<overlay id="L_hiking_trails" />
@@ -360,7 +367,8 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<overlay id="L_access" />
 			<overlay id="L_buildings" />
 			<overlay id="L_building_type" />
-			<overlay id="L_house_nr" />
+			<overlay id="L_house_numbers" />
+			<overlay id="L_house_nr_early" />
 			<overlay id="L_cities_towns" />
 			<overlay id="L_cities_towns_sub" />
 			<overlay id="L_publictransport" />
@@ -1525,15 +1533,17 @@ Contact: Michael Scheer <theme@tapiola.org>
 			</rule>
 		</rule>
 		<!-- House numbers earlier ZL -->
-		<rule e="any" cat="house_nr" k="*" v="*" zoom-min="16" zoom-max="17" >
-			<rule e="any" k="highway" v="~">
-				<caption k="addr:housenumber" font-style="normal" font-size="6" fill="#000000" priority="10" />
+		<rule e="any" cat="house_numbers" k="highway" v="~">
+			<rule e="any" cat="house_nr_early" k="*" v="*" zoom-min="16" zoom-max="17" >
+				<rule e="any" k="highway" v="~">
+					<caption k="addr:housenumber" font-style="normal" font-size="6" fill="#000000" priority="10" />
+				</rule>
 			</rule>
-		</rule>
-		<!-- House numbers -->
-		<rule e="any" k="*" v="*" zoom-min="18">
-			<rule e="any" k="highway" v="~">
-				<caption k="addr:housenumber" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff" stroke-width="1.4" display="always" />
+			<!-- House numbers -->
+			<rule e="any" k="*" v="*" zoom-min="18">
+				<rule e="any" k="highway" v="~">
+					<caption k="addr:housenumber" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff" stroke-width="1.4" display="always" />
+				</rule>
 			</rule>
 		</rule>
 	</rule>
