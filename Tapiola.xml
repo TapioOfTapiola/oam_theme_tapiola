@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
 
-Tapiola 1.4.0 - 2024-01-24 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.4.0 - 2024-01-27 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapiola is based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
@@ -18,7 +18,7 @@ Discuss: https://forum.locusmap.eu/index.php?topic=8518.0
 Contact: Michael Scheer <theme@tapiola.org>
 
 -->
-	<stylemenu id="menu" defaultvalue="basic" defaultlang="en">
+	<stylemenu id="menu" defaultvalue="basicfeats" defaultlang="en">
 		<layer id="L_hiking_trails" visible="false">
 			<name lang="ru" value="🥾 Пешеходные маршруты" />
 			<name lang="de" value="🥾 Wanderwege" />
@@ -188,7 +188,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 		</layer>
 		<layer id="L_attractions" enabled="true" visible="false">
 			<name lang="de" value="🎡 Tourismus/Attraktionen" />
-			<name lang="en" value="?? Tourist/Attractions" />
+			<name lang="en" value="🎡 Tourist/Attractions" />
 			<cat id="attractions" />
 		</layer>
 		<layer id="L_architecture" enabled="true" visible="false">
@@ -275,7 +275,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 		</layer -->
 		
 		<!-- Parent settings: those are checked and cannot be set by user -->
-		<layer id="parent_base">
+		<layer id="basicfeats_parent">
 		    <cat id="cities_towns"/>
 		    <cat id="cities_towns_sub"/>
 		    <cat id="road_captions"/>
@@ -303,7 +303,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 		    <cat id="hunting_stand"/>
 		    <cat id="misc"/>
 		</layer>
-		<layer id="parent_nopoi">
+		<layer id="basicfeatsnopoi_parent">
 		    <cat id="cities_towns"/>
 		    <cat id="cities_towns_sub"/>
 		    <cat id="road_captions"/>
@@ -314,12 +314,12 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<cat id="buildings"/>
 			<cat id="building_type"/>
 		</layer>
-		<layer id="parent_all">
+		<layer id="allfeats_parent">
 		    <cat id="barriers_access"/>
 		</layer>
 
-		<!-- The visible theme options -->
-		<layer id="basic" visible="true" parent="parent_base" >
+		<!-- The visible theme options, in order of visibility -->
+		<layer id="basicfeats" visible="true" parent="basicfeats_parent" >
 			<name lang="en" value="Basic features, with POI" />
 			<overlay id="L_hiking_trails" />
 			<overlay id="L_hiking_nodes" />
@@ -337,7 +337,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<overlay id="L_protected_area" />
 			<overlay id="L_boundaries_areas" />
 		</layer>
-		<layer id="basic_nopoi" visible="true" parent="parent_nopoi" >
+		<layer id="basicfeats_nopoi" visible="true" parent="basicfeatsnopoi_parent" >
 			<name lang="en" value="Basic features, without POI" />
 			<overlay id="L_hiking_trails" />
 			<overlay id="L_hiking_nodes" />
@@ -352,7 +352,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<overlay id="L_protected_area" />
 			<overlay id="L_boundaries_areas" />
 		</layer>
-		<layer id="hiking" visible="true" parent="parent_all" >
+		<layer id="allfeats" visible="true" parent="allfeats_parent" >
 			<name lang="en" value="All features" />
 			<overlay id="L_hiking_trails" />
 			<overlay id="L_hiking_nodes" />
@@ -437,7 +437,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 	<rule e="way" k="natural|landuse" v="forest|wood" zoom-min="8">
 		<area fill="#FFbde18e" />
 	</rule>
-
+	
 	<rule e="way" cat="forest" k="natural|landuse" v="forest|wood" zoom-min="9">
 		<rule e="way" k="*" v="*" zoom-min="14" zoom-max="16">
 			<line stroke="#4000661A" stroke-width="0.18" stroke-dasharray="0.3, 2" />
@@ -1859,7 +1859,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 				</rule>
 				<rule e="any" cat="c_highway" k="bridge" v="~|no|false">
 					<rule e="node" k="highway" v="turning_circle|passing_place|mini_roundabout" zoom-min="11">
-						<circle radius="1.2" scale-radius="true" fill="#575757" />
+						<circle radius="0.85" scale-radius="true" fill="#575757" />
 					</rule>
 					<rule e="way" k="highway" v="construction" zoom-min="11">
 						<line stroke="#575757" stroke-width="1.2" stroke-linecap="round" />
@@ -1918,7 +1918,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 					</rule>
 				</rule>
 				<rule e="node" cat="c_highway" k="highway" v="turning_circle|passing_place|mini_roundabout" zoom-min="11">
-					<circle radius="1.0" scale-radius="true" fill="#ffffff" />
+					<circle radius="0.68" scale-radius="true" fill="#ffffff" />
 				</rule>
 				<rule e="way" cat="c_highway" k="highway" v="construction" zoom-min="11">
 					<line stroke="#d0d0d0" stroke-width="0.2" stroke-linecap="butt" stroke-dasharray="12,12" />
@@ -3135,15 +3135,15 @@ Contact: Michael Scheer <theme@tapiola.org>
 				<line stroke="#ffffff" stroke-width="0.2" stroke-linecap="butt" />
 				<pathText k="name" font-style="bold" font-size="10" fill="#8C96AA" stroke="#FFFFFF" stroke-width="1.8" repeat="true" repeat-gap="300" repeat-start="30" />
 			</rule>
-			<rule e="way" k="location" v="underground">
-				<line stroke="#BB5E8BAD" stroke-width="0.8" stroke-linecap="butt" />
-				<line stroke="#BBb5d6f1" stroke-width="0.6" scale="all" stroke-dasharray="2,0.4" stroke-linecap="butt" />
-				<line stroke="#BBffffff" stroke-width="0.2" stroke-linecap="butt" />
-				<pathText k="name" font-style="bold" font-size="10" fill="#BB8C96AA" stroke="#BBFFFFFF" stroke-width="1.8" repeat="true" repeat-gap="300" repeat-start="30" />
+			<rule e="way" k="location" v="yes|underground">
+				<line stroke="#5E8BAD" stroke-width="0.8" stroke-linecap="butt" />
+				<line stroke="#b5d6f1" stroke-width="0.6" scale="all" stroke-dasharray="2,0.4" stroke-linecap="butt" />
+				<line stroke="#99ffffff" stroke-width="0.2" stroke-linecap="butt" />
+				<pathText k="name" font-style="normal" font-size="10" fill="#8C96AA" stroke="#FFFFFF" stroke-width="1.8" repeat="true" repeat-gap="300" repeat-start="30" />
 			</rule>
 		</rule>
 	</rule>
-	
+
 	<rule e="node" cat="attractions" k="man_made" v="cross" zoom-min="12">
 		<symbol src="file:symbols/cross.svg" symbol-percent="70" />
 	</rule>
@@ -3401,7 +3401,6 @@ Contact: Michael Scheer <theme@tapiola.org>
 			</rule>
 		</rule>
 	</rule>
-	
 	<rule cat="pharmacies" e="any" k="*" v="*" zoom-min="9">
 		<rule e="any" k="amenity" v="pharmacy" zoom-min="14">
 			<symbol id="s_pharmacy" src="file:symbols/pharmacy.svg" symbol-percent="60" />
