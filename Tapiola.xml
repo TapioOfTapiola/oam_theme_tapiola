@@ -272,6 +272,11 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<name lang="en" value="⚡ Electricity" />
 			<cat id="electricity" />
 		</layer>
+		<layer id="L_white_overlay" enabled="false" visible="false">
+			<name lang="de" value="⬜ Gamma" />
+			<name lang="en" value="⬜ Map gamma" />
+			<cat id="white_overlay" />
+		</layer>
 		
 		<!-- Combined settings follow -->
 		<!-- layer id="L_barriers_access" enabled="true" visible="false">
@@ -404,6 +409,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<overlay id="L_boundaries_areas" />
 			<overlay id="L_mast_communication" />
 			<overlay id="L_electricity" />
+			<overlay id="L_white_overlay" />
 		</layer>
 	</stylemenu>
 
@@ -4132,6 +4138,10 @@ Contact: Michael Scheer <theme@tapiola.org>
 		<rule e="any" cat="surface_text" k="*" v="*">
 			<pathText priority="50" dy="1" k="surface" font-style="bold" font-size="10" fill="#000000" stroke="#E5FFFFFF" stroke-width="2" repeat-start="10" repeat-gap="20" />
 		</rule>
+	</rule>
+
+	<rule e="way" cat="white_overlay" k="natural|landuse" v="*" >
+		<area fill="#80ffffff" />
 	</rule>
 
 	<!-- OSMC HIKING hiking nodes OAM -->
