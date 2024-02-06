@@ -277,12 +277,11 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<name lang="en" value="⬜ Map gamma" />
 			<cat id="white_overlay" />
 		</layer>
-		
 		<!-- Combined settings follow -->
-		<!-- layer id="L_barriers_access" enabled="true" visible="false">
+		<layer id="L_barriers_access" enabled="true" visible="false">
 			<name lang="en" value="⛔ Barriers and access" />
 			<cat id="barriers_access" />
-		</layer -->
+		</layer>
 		
 		<!-- Parent settings: those are checked and cannot be set by user -->
 		<layer id="basicfeats_parent">
@@ -291,10 +290,10 @@ Contact: Michael Scheer <theme@tapiola.org>
 		    <cat id="road_captions"/>
 			<cat id="buildings"/>
 			<cat id="house_numbers"/>
+			<cat id="barriers"/>
+			<cat id="access"/>
 			<cat id="building_type"/>
 			<cat id="grades"/>
-			<cat id="barriers"/>
-		    <cat id="access"/>
 		    <cat id="sports"/>
 		    <cat id="boundaries_areas"/>
 		    <cat id="pub_transp"/>
@@ -319,8 +318,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 		    <cat id="road_captions"/>
 			<cat id="grades"/>
 			<cat id="house_numbers"/>
-			<!-- cat id="barriers"/>
-		    <cat id="access"/-->
+			<cat id="barriers_access"/>
 			<cat id="buildings"/>
 			<cat id="building_type"/>
 		</layer>
@@ -332,39 +330,6 @@ Contact: Michael Scheer <theme@tapiola.org>
 		</layer>
 
 		<!-- The visible theme options, in order of visibility -->
-		<layer id="basicfeats" visible="true" parent="basicfeats_parent" >
-			<name lang="en" value="Basic features, with POI" />
-			<overlay id="L_hiking_trails" />
-			<overlay id="L_hiking_nodes" />
-			<overlay id="L_cycling" />
-			<overlay id="L_mtb_trails" />
-			<overlay id="L_winter_sports" />
-			<overlay id="L_highway" />
-			<overlay id="L_railway" />
-			<overlay id="L_barriers_access" />
-			<overlay id="L_publictransport" />
-			<overlay id="L_parking" />
-			<overlay id="L_landscapefeat" />
-			<overlay id="L_forest" />
-			<overlay id="L_contourlines" />
-			<overlay id="L_protected_area" />
-			<overlay id="L_boundaries_areas" />
-		</layer>
-		<layer id="basicfeats_nopoi" visible="true" parent="basicfeatsnopoi_parent" >
-			<name lang="en" value="Basic features, without POI" />
-			<overlay id="L_hiking_trails" />
-			<overlay id="L_hiking_nodes" />
-			<overlay id="L_cycling" />
-			<overlay id="L_mtb_trails" />
-			<overlay id="L_winter_sports" />
-			<overlay id="L_highway" />
-			<overlay id="L_railway" />
-			<overlay id="L_access" />
-			<overlay id="L_forest" />
-			<overlay id="L_contourlines" />
-			<overlay id="L_protected_area" />
-			<overlay id="L_boundaries_areas" />
-		</layer>
 		<layer id="allfeats" visible="true" parent="allfeats_parent" >
 			<name lang="en" value="All features" />
 			<overlay id="L_hiking_trails" />
@@ -413,6 +378,39 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<overlay id="L_mast_communication" />
 			<overlay id="L_electricity" />
 			<overlay id="L_white_overlay" />
+		</layer>
+		<layer id="basicfeats" visible="true" parent="basicfeats_parent" >
+			<name lang="en" value="Basic features, with POI" />
+			<overlay id="L_hiking_trails" />
+			<overlay id="L_hiking_nodes" />
+			<overlay id="L_cycling" />
+			<overlay id="L_mtb_trails" />
+			<overlay id="L_winter_sports" />
+			<overlay id="L_highway" />
+			<overlay id="L_railway" />
+			<overlay id="L_barriers_access" />
+			<overlay id="L_publictransport" />
+			<overlay id="L_parking" />
+			<overlay id="L_landscapefeat" />
+			<overlay id="L_forest" />
+			<overlay id="L_contourlines" />
+			<overlay id="L_protected_area" />
+			<overlay id="L_boundaries_areas" />
+		</layer>
+		<layer id="basicfeats_nopoi" visible="true" parent="basicfeatsnopoi_parent" >
+			<name lang="en" value="Basic features, without POI" />
+			<overlay id="L_hiking_trails" />
+			<overlay id="L_hiking_nodes" />
+			<overlay id="L_cycling" />
+			<overlay id="L_mtb_trails" />
+			<overlay id="L_winter_sports" />
+			<overlay id="L_highway" />
+			<overlay id="L_access" />
+			<overlay id="L_railway" />
+			<overlay id="L_forest" />
+			<overlay id="L_contourlines" />
+			<overlay id="L_protected_area" />
+			<overlay id="L_boundaries_areas" />
 		</layer>
 		<layer id="topographic" visible="true" parent="topographic_parent" >
 			<name lang="en" value="Topographic" />
