@@ -519,10 +519,10 @@ Contact: Michael Scheer <theme@tapiola.org>
 
 	<rule e="any" k="landuse" v="*" zoom-min="8">
 		<rule e="way" k="landuse" v="residential|farmyard" zoom-min="10">
-			<rule e="way" k="*" v="*" zoom-max="14">
+			<rule e="way" k="*" v="*" zoom-max="13">
 				<area fill="#e4d9d9" />
 			</rule>
-			<rule e="way" k="*" v="*" zoom-min="15">
+			<rule e="way" k="*" v="*" zoom-min="14">
 				<area fill="#e6e6e6" />
 			</rule>
 			<rule e="way" cat="cities_towns_sub" k="*" v="*" zoom-min="15" zoom-max="19">
