@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 <!--
 
-Tapiola 1.4.2 - 2024-02-11 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.4.2 - 2024-02-18 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapiola is based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
@@ -229,8 +229,13 @@ Contact: Michael Scheer <theme@tapiola.org>
 		<layer id="L_water" enabled="true" visible="false">
 			<name lang="ru" value="💧 Родники, питьевая вода, колодцы" />
 			<name lang="de" value="💧 Quellen, Wasserstellen" />
-			<name lang="en" value="💧 Spring, water" />
+			<name lang="en" value="💧 Spring, water sources" />
 			<cat id="water" />
+		</layer>
+		<layer id="L_waterway" enabled="true" visible="false">
+			<name lang="de" value="🌊 Entwässerungskanäle, Siele" />
+			<name lang="en" value="🌊 Minor waterways" />
+			<cat id="waterway" />
 		</layer>
 		<layer id="L_forest" enabled="true" visible="false">
 			<name lang="ru" value="🌲 Лес" />
@@ -309,6 +314,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 		    <cat id="toilets"/>
 		    <cat id="refuge"/>
 		    <cat id="water"/>
+		    <cat id="waterway"/>
 		    <cat id="hunting_stand"/>
 		    <cat id="misc"/>
 		</layer>
@@ -321,6 +327,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<cat id="barriers_access"/>
 			<cat id="buildings"/>
 			<cat id="building_type"/>
+			<cat id="waterway"/>
 		</layer>
 		<layer id="allfeats_parent">
 		    <cat id="barriers_access"/>
@@ -369,6 +376,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<overlay id="L_hunting_stand" />
 			<overlay id="L_misc" />
 			<overlay id="L_water" />
+			<overlay id="L_waterway" />
 			<overlay id="L_landscapefeat" />
 			<overlay id="L_forest" />
 			<overlay id="L_contourlines" />
@@ -988,7 +996,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 		</rule>
 	</rule>
 
-	<rule e="way" k="tunnel|location" v="yes|underground|culvert" zoom-min="13">
+	<rule cat="waterway" e="way" k="tunnel|location" v="yes|underground|culvert" zoom-min="13">
 		<rule e="way" k="waterway" v="ditch|stream">
 			<line stroke="#90A2CBED" stroke-width="0.4" curve="cubic" stroke-dasharray="20,2" stroke-linecap="butt" />
 		</rule>
@@ -1007,7 +1015,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 
 	<rule e="way" k="tunnel" v="~|no">
 		<rule e="way" k="location" v="~|overground">
-			<rule e="way" k="waterway" v="*" zoom-min="8">
+			<rule cat="waterway" e="way" k="waterway" v="*" zoom-min="8">
 				<rule e="way" k="waterway" v="drain|ditch">
 					<rule e="way" k="intermittent|seasonal" v="~">
 						<line stroke="#59A0D8" curve="cubic" stroke-width="0.4" />
