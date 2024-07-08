@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rendertheme xmlns="http://mapsforge.org/renderTheme"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
-<!--
 
-Tapiola 1.4.2 - 2024-02-18 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+<!--
+Tapiola 1.4.3 - 2024-06-30 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapiola is based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
@@ -16,14 +14,21 @@ https://github.com/TapioOfTapiola/oam_theme_tapiola
 Report issues: https://github.com/TapioOfTapiola/oam_theme_tapiola/issues
 Discuss: https://forum.locusmap.eu/index.php?topic=8518.0
 Contact: Michael Scheer <theme@tapiola.org>
-
 -->
+
+<rendertheme xmlns="http://mapsforge.org/renderTheme" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
 	<stylemenu id="menu" defaultvalue="basicfeats" defaultlang="en">
 		<layer id="L_hiking_trails" visible="false">
 			<name lang="ru" value="🥾 Пешеходные маршруты" />
 			<name lang="de" value="🥾 Wanderwege" />
 			<name lang="en" value="🥾 Hiking network" />
 			<cat id="hiking_trails" />
+		</layer>
+		<layer id="L_hiking_trails_t" visible="false">
+			<name lang="ru" value="🥾 Пешеходные маршруты" />
+			<name lang="de" value="🥾 [TRSP] Wanderwege" />
+			<name lang="en" value="🥾 [TRSP] Hiking network" />
+			<cat id="hiking_trails_t" />
 		</layer>
 		<layer id="L_hiking_nodes" enabled="false" visible="false">
 			<name lang="ru" value="┗ ◾ Указатель номера маршрута" />
@@ -37,11 +42,23 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<name lang="en" value="🚴 Cycling network" />
 			<cat id="cycling" />
 		</layer>
+		<layer id="L_cycling_t" enabled="false" visible="false">
+			<name lang="ru" value="🚴 Велосипед" />
+			<name lang="de" value="🚴 [TRSP] Radwege" />
+			<name lang="en" value="🚴 [TRSP] Cycling network" />
+			<cat id="cycling_t" />
+		</layer>
 		<layer id="L_mtb_trails" enabled="false" visible="false">
 			<name lang="ru" value="🚴‍♀️ Трассы для горного велосипеда" />
 			<name lang="en" value="🚴‍♀️ MTB trails" />
 			<name lang="de" value="🚴‍♀️ MTB-Trails" />
 			<cat id="mtb_trails" />
+		</layer>
+		<layer id="L_mtb_trails_t" enabled="false" visible="false">
+			<name lang="ru" value="🚴‍♀️ Трассы для горного велосипеда" />
+			<name lang="en" value="🚴‍♀️ [TRSP] MTB trails" />
+			<name lang="de" value="🚴‍♀️ [TRSP] MTB-Trails" />
+			<cat id="mtb_trails_t" />
 		</layer>
 		<layer id="L_highway" enabled="true" visible="false">
 			<name lang="en" value="🛣️ Road network" />
@@ -133,10 +150,10 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<name lang="en" value="🔘 Protected areas" />
 			<cat id="protected_area" />
 		</layer>
-		<layer id="L_mil_area" enabled="false" visible="false">
+		<layer id="L_military" enabled="false" visible="false">
 			<name lang="de" value="⚔️ Militärisches Gebiet" />
-			<name lang="en" value="⚔️ Military area" />
-			<cat id="mil_area" />
+			<name lang="en" value="⚔️ Military" />
+			<cat id="military" />
 		</layer>
 		<layer id="L_boundaries_areas" enabled="true" visible="false">
 			<name lang="ru" value="🔘 Административные границы" />
@@ -150,10 +167,10 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<name lang="en" value="🅿️ Parking" />
 			<cat id="parking" />
 		</layer>
-		<layer id="L_parking_lowzoom" enabled="false" visible="false">
+		<layer id="L_parking_aggro" enabled="false" visible="false">
 			<name lang="en" value="┗ 🅿️ Display parking earlier" />
 			<name lang="de" value="┗ 🅿️ Parkplätze früher anzeigen" />
-			<cat id="parking_lowzoom" />
+			<cat id="parking_aggro" />
 		</layer>
 		<layer id="L_publictransport" enabled="true" visible="false">
 			<name lang="ru" value="Ⓜ️ Общественный транспорт" />
@@ -340,9 +357,12 @@ Contact: Michael Scheer <theme@tapiola.org>
 		<layer id="allfeats" visible="true" parent="allfeats_parent" >
 			<name lang="en" value="All features" />
 			<overlay id="L_hiking_trails" />
+			<overlay id="L_hiking_trails_t" />
 			<overlay id="L_hiking_nodes" />
 			<overlay id="L_cycling" />
+			<overlay id="L_cycling_t" />
 			<overlay id="L_mtb_trails" />
+			<overlay id="L_mtb_trails_t" />
 			<overlay id="L_winter_sports" />
 			<overlay id="L_railway" />
 			<overlay id="L_highway" />
@@ -360,7 +380,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<overlay id="L_publictransport" />
 			<overlay id="L_barriers" />
 			<overlay id="L_parking" />
-			<overlay id="L_parking_lowzoom" />
+			<overlay id="L_parking_aggro" />
 			<overlay id="L_sports" />
 			<overlay id="L_restaurants" />
 			<overlay id="L_shops" />
@@ -381,7 +401,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<overlay id="L_forest" />
 			<overlay id="L_contourlines" />
 			<overlay id="L_protected_area" />
-			<overlay id="L_mil_area" />
+			<overlay id="L_military" />
 			<overlay id="L_boundaries_areas" />
 			<overlay id="L_mast_communication" />
 			<overlay id="L_electricity" />
@@ -1230,24 +1250,21 @@ Contact: Michael Scheer <theme@tapiola.org>
 	<rule e="any" k="amenity" v="parking" zoom-min="11">
 		<area fill="#F9F9F9" stroke="#888888" stroke-width="0.1" />
 		<rule e="any" cat="parking" k="access" v="destination|no|private" >
-			<rule e="any" cat="parking_lowzoom" k="*" v="*" zoom-max="16" >
+			<rule e="any" k="*" v="*" zoom-min="17" priority="100" >
 				<area src="file:patterns/access-destination.svg" symbol-percent="60" />
-				<symbol src="file:symbols/parking_private.svg" symbol-percent="65" display="always" />
+				<symbol src="file:symbols/parking_private.svg" symbol-percent="65"  />
 			</rule>
-			<rule e="any" k="*" v="*" zoom-min="17" >
+			<rule e="any" cat="parking_aggro" k="*" v="*" >
 				<area src="file:patterns/access-destination.svg" symbol-percent="60" />
 				<symbol src="file:symbols/parking_private.svg" symbol-percent="65" display="always" />
 			</rule>
 		</rule>
 		<rule e="any" cat="parking" k="access" v="~|yes|public">
-			<rule e="any" cat="parking_lowzoom" k="*" v="*" zoom-max="15" >
-				<symbol src="file:symbols/parking.svg" symbol-percent="65" display="always" />
+			<rule e="any" k="*" v="*" zoom-min="16" >
+				<symbol src="file:symbols/parking.svg" symbol-percent="65" priority="100" />
 			</rule>
-			<rule e="any" k="*" v="*" zoom-min="16" zoom-max="16" >
-				<symbol src="file:symbols/parking.svg" symbol-percent="65" display="always" />
-			</rule>
-			<rule e="any" k="*" v="*" zoom-min="17" >
-				<symbol src="file:symbols/parking.svg" symbol-percent="75" display="always" />
+			<rule e="any" cat="parking_aggro" k="*" v="*" >
+				<symbol src="file:symbols/parking.svg" symbol-percent="70" display="always" />
 			</rule>
 		</rule>
 	</rule>
@@ -2367,42 +2384,6 @@ Contact: Michael Scheer <theme@tapiola.org>
 			<pathText k="ref_mtb" dy="-1" font-style="bold" font-size="10" fill="#cc00cc" stroke="#ffffff" stroke-width="1.5" repeat-start="50" repeat-gap="300" priority="10" />
 		</rule>
 	</rule>
-	<!-- rule cat="mtb_trails" e="any" k="*" v="*" zoom-min="13">
-		<rule e="any" k="mtbnetwork" v="mtb|imn|nmn|rmn|lmn|omn" zoom-max="17" >
-			<line dy="-1.5" stroke="#cc00cc" stroke-width="0.7" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
-		</rule>
-		<rule e="any" k="mtbnetwork" v="mtb|imn|nmn|rmn|lmn|omn" zoom-min="18" >
-			<line dy="-1.5" stroke="#cccc00cc" stroke-width="0.35" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
-		</rule>
-		<rule e="any" k="mtbnetwork" v="mtb|imn|nmn|rmn|lmn|omn|umn" zoom-min="14" zoom-max="17" >
-			<lineSymbol src="file:symbols/bicycle.svg" position="above" symbol-percent="120" dy="-0.7" repeat="true" repeat-start="10" repeat-gap="250" />
-			<pathText priority="10" k="ref_mtb" font-style="bold" font-size="10" fill="#cc00cc" stroke="#ffffff" stroke-width="1.5" dy="-0.7" repeat-start="50" repeat-gap="300" />
-		</rule>
-		<rule e="any" k="mtbnetwork" v="mtb|imn|nmn|rmn|lmn|omn|umn" zoom-min="18" >
-			<lineSymbol src="file:symbols/bicycle.svg" position="above" symbol-percent="150" dy="0" repeat="true" repeat-start="10" repeat-gap="250" />
-			<pathText priority="10" k="ref_mtb" font-style="bold" font-size="10" fill="#cc00cc" stroke="#ffffff" stroke-width="1.5" dy="0" repeat-start="50" repeat-gap="300" />
-		</rule>
-		<rule e="any" k="mtb_scale|mtb_scale_uphill" v="mtbs_0|mtbs_1|mtbs_2|mtbs_3|mtbs_4|mtbs_5|mtbs_6|mtbu_0|mtbu_1|mtbu_2|mtbu_3|mtbu_4|mtbu_5" zoom-max="17" >
-			<lineSymbol src="file:symbols/bicycle.svg" position="above" symbol-percent="120" dy="-1" repeat="true" repeat-start="10" repeat-gap="250" />
-			<line dy="-1.5" stroke="#cc00cc" stroke-width="0.9" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
-		</rule>
-		<rule e="any" k="mtb_scale|mtb_scale_uphill" v="mtbs_0|mtbs_1|mtbs_2|mtbs_3|mtbs_4|mtbs_5|mtbs_6|mtbu_0|mtbu_1|mtbu_2|mtbu_3|mtbu_4|mtbu_5" zoom-min="18" >
-			<lineSymbol src="file:symbols/bicycle.svg" position="above" symbol-percent="150" dy="0" repeat="true" repeat-start="10" repeat-gap="250" />
-			<line dy="-1.5" stroke="#cccc00cc" stroke-width="0.9" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
-		</rule>
-		<rule e="any" k="mtb:scale" v="0|1|2|3|4|5|6" zoom-max="17" >
-			<lineSymbol src="file:symbols/bicycle.svg" position="above" symbol-percent="120" dy="-1" repeat="true" repeat-start="10" repeat-gap="250" />
-			<line dy="-1.5" stroke="#cc00cc" stroke-width="0.9" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
-		</rule>
-		<rule e="any" k="mtb:scale" v="0|1|2|3|4|5|6" zoom-min="18">
-			<lineSymbol src="file:symbols/bicycle.svg" position="above" symbol-percent="150" dy="0" repeat="true" repeat-start="10" repeat-gap="250" />
-			<line dy="-1.5" stroke="#cccc00cc" stroke-width="0.9" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
-		</rule>
-	</rule>
-	<rule cat="mtb_trails" e="any" k="mtb_scale_imba" v="mtba_0|mtba_1|mtba_2|mtba_3|mtba_4" zoom-min="12">
-		<lineSymbol src="file:symbols/bicycle.svg" position="above" symbol-percent="120" dy="-1" repeat="true" repeat-start="10" repeat-gap="250" />
-		<line dy="-1.5" stroke="#cc00cc" stroke-width="0.9" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
-	</rule-->
 
 	<!-- Cycling network -->
 	<rule e="any" k="*" v="*" cat="cycling" zoom-min="10">
@@ -2506,6 +2487,152 @@ Contact: Michael Scheer <theme@tapiola.org>
 		<rule e="any" k="*" v="*" zoom-min="17">
 			<circle radius="10.4" scale-radius="false" fill="#ffffff" stroke="#008131" stroke-width="2" />
 			<caption k="addr:housenumber" display="always" priority="14" font-style="bold" font-size="14" fill="#008131" stroke="#FFFFFF" stroke-width="2" />
+		</rule>
+	</rule>
+
+<!-- Second option of networks - more transparency -->
+
+	<!-- MTB network without mtb:scale values - Lomaps -->
+	<rule cat="mtb_trails_t" e="way" k="route" v="mtb" zoom-min="13">
+		<rule e="way" k="mtb:scale" v="~">
+			<rule e="way" k="*" v="*" zoom-min="13" zoom-max="14">
+				<line dy="-0.5" stroke="#38E588ED" stroke-width="0.8" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+				<line dy="-0.8" stroke="#38E588ED" stroke-width="0.8" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+				<line dy="-1.0" stroke="#38E588ED" stroke-width="1" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+				<line dy="-1.2" stroke="#38E588ED" stroke-width="1" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+				<line dy="-1.6" stroke="#38E588ED" stroke-width="0.8" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="19">
+				<line dy="-2.1" stroke="#38E588ED" stroke-width="0.7" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
+			</rule>
+			<pathText k="ref" font-style="bold" font-size="11" dy="1.4" fill="#80B11BB9" stroke="#ccffffff" stroke-width="2" />
+		</rule>
+	</rule>
+
+	<!-- MTB network - As of now, simplified ruleset -->
+	<rule e="any" cat="mtb_trails_t" k="mtbnetwork|mtb_scale|mtb_scale_uphill" v="*" >
+		<rule e="any" k="*" v="*" zoom-max="17" >
+			<line dy="-1.55" stroke="#80cc00cc" stroke-width="0.9" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
+			<lineSymbol dy="-3.0" src="file:symbols/bicycle.svg" align-center="true" symbol-percent="120" repeat="true" repeat-start="10" repeat-gap="250" />
+			<pathText k="ref_mtb" dy="-0.7" font-style="bold" font-size="10" fill="#80cc00cc" stroke="#ccffffff" stroke-width="1.5" repeat-start="50" repeat-gap="300" priority="10" />
+		</rule>
+		<rule e="any" k="*" v="*" zoom-min="18" >
+			<line dy="-1.5" stroke="#55cc00cc" stroke-width="1" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
+			<lineSymbol dy="-1.5" src="file:symbols/bicycle.svg" align-center="true" symbol-percent="150" repeat="true" repeat-start="10" repeat-gap="250" />
+			<pathText k="ref_mtb" dy="-1" font-style="bold" font-size="10" fill="#80cc00cc" stroke="#ccffffff" stroke-width="1.5" repeat-start="50" repeat-gap="300" priority="10" />
+		</rule>
+	</rule>
+
+	<!-- Cycling network -->
+	<rule e="any" k="*" v="*" cat="cycling_t" zoom-min="10">
+		<rule e="way" k="network" v="rcn|lcn|ocn" zoom-min="12">
+			<rule e="way" k="*" v="*" zoom-max="13">
+				<line dy="-1" stroke="#20474aff" stroke-width="1.8" stroke-linecap="butt" />
+				<line dy="-1" stroke="#6c474aff" stroke-width="1.8" stroke-dasharray="3,1.5" stroke-linecap="butt" scale="all" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="14" zoom-max="15" >
+				<line dy="-1.4" stroke="#20474aff" stroke-width="1.7" stroke-linecap="butt" />
+				<line dy="-1.4" stroke="#6f474aff" stroke-width="1.7" stroke-dasharray="3,2" stroke-linecap="butt" scale="all" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="16" >
+				<line dy="-1.4" stroke="#20474aff" stroke-width="1.4" stroke-linecap="butt" />
+				<line dy="-1.4" stroke="#6a474aff" stroke-width="1.4" stroke-dasharray="3,2" stroke-linecap="butt" scale="all" />
+			</rule>
+			<rule e="any" k="*" v="*" zoom-min="14" zoom-max="17" >
+				<pathText dy="-2" priority="10" k="ref_cycle" font-style="bold" font-size="10" fill="#80b266ff" stroke="#ccffffff" stroke-width="2.5" repeat-start="10" repeat-gap="300" />
+			</rule>
+			<rule e="any" k="*" v="*" zoom-min="18" >
+				<pathText dy="-0.8" priority="10" k="ref_cycle" font-style="bold" font-size="12" fill="#80b266ff" stroke="#ccffffff" stroke-width="2.5" repeat-start="10" repeat-gap="300" />
+			</rule>
+		</rule>
+		<rule e="way" k="network" v="icn|ncn" >
+			<rule e="way" k="*" v="*" zoom-max="12">
+				<line dy="-1" stroke="#7f474aff" stroke-width="2.2" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="13" zoom-max="15" >
+				<line dy="-1.4" stroke="#7f474aff" stroke-width="1.7" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="16" >
+				<line dy="-1.2" stroke="#6a474aff" stroke-width="1.3" stroke-linecap="butt" />
+			</rule>
+			<rule e="any" k="*" v="*" zoom-min="11" zoom-max="17" >
+				<pathText dy="-2" priority="13" k="ref_cycle" font-style="bold" font-size="10" fill="#ccffffff" stroke="#80474aff" stroke-width="2.5" repeat-start="10" repeat-gap="300" />
+			</rule>
+			<rule e="any" k="*" v="*" zoom-min="18" >
+				<pathText dy="-0.8" priority="13" k="ref_cycle" font-style="bold" font-size="11" fill="#ccffffff" stroke="#80474aff" stroke-width="2.5" repeat-start="10" repeat-gap="300" />
+			</rule>
+		</rule>
+	</rule>
+
+	<!-- Hiking network -->
+	<rule e="way" k="hknetwork" v="lwn|rwn|own" cat="hiking_trails_t" zoom-min="12" >
+		<rule e="way" k="*" v="*" zoom-max="13">
+			<line dy="1" stroke="#70fccd93" stroke-width="1.7" stroke-linecap="butt" />
+			<line dy="1" stroke="#5cfc3d03" stroke-width="1.7" stroke-dasharray="3,1.5" stroke-linecap="butt" scale="all" />
+		</rule>
+		<rule e="way" k="*" v="*" zoom-min="14" zoom-max="15" >
+			<line dy="1.4" stroke="#70fccd93" stroke-width="1.7" stroke-linecap="butt" />
+			<line dy="1.4" stroke="#42fc3d03" stroke-width="1.7" stroke-dasharray="3,2" stroke-linecap="butt" scale="all" />
+		</rule>
+		<rule e="way" k="*" v="*" zoom-min="16" >
+			<line dy="1.4" stroke="#50fccd93" stroke-width="1.2" stroke-linecap="butt" />
+			<line dy="1.4" stroke="#52fc3d03" stroke-width="1.2" stroke-dasharray="3,2" stroke-linecap="butt" scale="all" />
+		</rule>
+		<rule e="any" k="hknetwork" v="lwn|rwn|own" zoom-min="14" >
+			<rule e="any" k="*" v="*" zoom-max="17">
+				<pathText repeat-gap="170" repeat-start="10" k="ref_hike" font-style="normal" font-size="10" fill="#b0fc3d03" stroke="#ccffeeee" stroke-width="2.4" dy="1.7" priority="11" />
+			</rule>
+			<rule e="any" k="*" v="lwn|rwn|own" zoom-min="18">
+				<pathText repeat-gap="220" repeat-start="80" k="ref_hike" font-style="bold" font-size="12" fill="#b0fc3d03" stroke="#ccffeeee" stroke-width="2.4" dy="1" priority="11" />
+			</rule>
+		</rule>
+	</rule>
+	<rule e="way" cat="hiking_trails_t" k="hknetwork" v="iwn|nwn" zoom-min="10" >
+		<rule e="way" k="*" v="*" zoom-max="11" >
+			<line dy="1" stroke="#5ffc3d03" stroke-width="1.7" stroke-linecap="butt" />
+		</rule>
+		<rule e="way" k="*" v="*" zoom-min="12" zoom-max="12" >
+			<line dy="1" stroke="#5ff83a00" stroke-width="2.2" stroke-linecap="butt" />
+		</rule>
+		<rule e="way" k="*" v="*" zoom-min="13" zoom-max="14" >
+			<line dy="1.8" stroke="#5fffffff" stroke-width="2.2" stroke-linecap="butt" />
+			<line dy="1.4" stroke="#5ffc3d03" stroke-width="1.8" stroke-linecap="butt" />
+		</rule>
+		<rule e="way" k="*" v="*" zoom-min="15" zoom-max="16" >
+			<line dy="1.4" stroke="#5afc3d03" stroke-width="1.3" stroke-linecap="butt" />
+		</rule>
+		<rule e="way" k="*" v="*" zoom-min="17" >
+			<line dy="1.4" stroke="#47fc3d03" stroke-width="1.3" stroke-linecap="butt" />
+		</rule>
+		<rule e="any" k="hknetwork" v="iwn|nwn" zoom-min="11" >
+			<rule e="any" k="*" v="*" zoom-max="17">
+				<pathText repeat-gap="170" repeat-start="10" k="ref_hike" font-style="bold" font-size="10" fill="#ccffffff" stroke="#80fc3d03" stroke-width="2.4" dy="1.7" priority="14" />
+			</rule>
+			<rule e="any" k="*" v="*" zoom-min="18">
+				<pathText repeat-gap="220" repeat-start="20" k="ref_hike" font-style="bold" font-size="13" fill="#ccffffff" stroke="#80fc3d03" stroke-width="2.4" dy="1" priority="14" />
+			</rule>
+		</rule>
+	</rule>
+	<rule cat="hiking_trails" e="node" k="hike_node" v="*" zoom-min="13">
+		<rule cat="nocity" e="any" k="*" v="*" zoom-min="13" zoom-max="14">
+			<circle radius="6.4" scale-radius="false" fill="#ffffff" stroke="#008131" stroke-width="1.5" />
+			<caption k="addr:housenumber" display="always" priority="14" font-style="bold" font-size="9" fill="#80008131" stroke="#FFFFFF" stroke-width="2" />
+		</rule>
+		<rule e="any" k="*" v="*" zoom-min="15" zoom-max="16">
+			<circle radius="8.0" scale-radius="false" fill="#ffffff" stroke="#008131" stroke-width="2" />
+			<caption k="addr:housenumber" display="always" priority="14" font-style="bold" font-size="10" fill="#80008131" stroke="#FFFFFF" stroke-width="2" />
+		</rule>
+		<rule e="any" k="*" v="*" zoom-min="17">
+			<circle radius="10.4" scale-radius="false" fill="#ffffff" stroke="#008131" stroke-width="2" />
+			<caption k="addr:housenumber" display="always" priority="14" font-style="bold" font-size="14" fill="#80008131" stroke="#FFFFFF" stroke-width="2" />
 		</rule>
 	</rule>
 
@@ -2702,11 +2829,11 @@ Contact: Michael Scheer <theme@tapiola.org>
 	</rule>
 	<rule e="node" cat="pub_transp" k="railway" v="*" zoom-min="12" >
 		<rule e="node" cat="c_railway" k="railway" v="subway_entrance" zoom-min="14">
-			<rule e="node" k="railway" v="subway_entrance" zoom-min="14" zoom-max="14">
+			<rule e="node" k="railway" v="subway_entrance" zoom-min="14" zoom-max="16">
 				<symbol id="id_station_metro" src="file:symbols/metro_logo.svg" symbol-percent="55" priority="50" />
 			</rule>
-			<rule e="node" k="railway" v="subway_entrance" zoom-min="15">
-				<symbol id="id_station_metro" src="file:symbols/metro_logo.svg" symbol-percent="70" display="always" priority="50" />
+			<rule e="node" k="railway" v="subway_entrance" zoom-min="17">
+				<symbol id="id_station_metro" src="file:symbols/metro_logo.svg" symbol-percent="60" display="always" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="15">
 				<caption symbol-id="id_station_metro" k="name" dy="-4" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
@@ -2930,10 +3057,10 @@ Contact: Michael Scheer <theme@tapiola.org>
 	</rule>
 	
 	<rule e="way" k="landuse|military" v="*" zoom-min="8">
-		<rule e="way" cat="mil_area" k="*" v="military" closed="yes" >
+		<rule e="way" cat="military" k="*" v="military" closed="yes" >
 			<area fill="#50808000" />
 		</rule>
-		<rule e="way" cat="architecture_religion" k="military" v="bunker|bunker_disused">
+		<rule e="way" cat="military" k="military" v="bunker|bunker_disused">
 			<symbol src="file:symbols/bunker.svg" symbol-percent="55" />
 		</rule>
 	</rule>
@@ -2977,10 +3104,10 @@ Contact: Michael Scheer <theme@tapiola.org>
 	
 	<rule cat="cities_towns_sub" e="any" k="place" v="locality" zoom-min="12">
 		<rule e="any" k="mountain_pass|natural|tourism" v="~" zoom-max="16">
-			<caption k="name" font-style="italic" font-family="serif" font-size="12" fill="#90000000" stroke="#c0ffffff" stroke-width="3" priority="97" text-wrap-width="135" />
+			<caption k="name" font-style="italic" font-family="serif" font-size="12" fill="#005500" stroke="#eaffffff" stroke-width="2.5" priority="97" text-wrap-width="135" />
 		</rule>
 		<rule e="any" k="mountain_pass|natural|tourism" v="~" zoom-min="17">
-			<caption k="name" font-style="italic" font-family="serif" font-size="15" fill="#90000000" stroke="#c0ffffff" stroke-width="3" priority="97" text-wrap-width="135" />
+			<caption k="name" font-style="italic" font-family="serif" font-size="14" fill="#005500" stroke="#eaffffff" stroke-width="3" priority="97" text-wrap-width="135" />
 		</rule>
 	</rule>
 
