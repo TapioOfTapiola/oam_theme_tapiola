@@ -3611,7 +3611,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 		<rule e="any" k="amenity" v="hospital" zoom-min="14">
 			<symbol id="id_hospital" src="file:symbols/hospital.svg" symbol-percent="60" />
 			<rule e="any" k="amenity" v="*" zoom-min="16">
-				<caption symbol-id="id_hospital" text-wrap-width="110" display="always" priority="100" k="name" font-style="normal" font-family="sans_serif" font-size="12" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+				<caption symbol-id="id_hospital" text-wrap-width="150" display="always" priority="100" k="name" font-style="bold" font-family="sans_serif" font-size="12" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
 			</rule>
 		</rule>
 		<rule e="any" k="amenity" v="clinic|doctors" zoom-min="14">
