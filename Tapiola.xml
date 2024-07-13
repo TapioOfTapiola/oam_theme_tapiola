@@ -1905,7 +1905,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 									<line stroke="#ff0000" stroke-width="2.0" stroke-dasharray="0.3,1.3" stroke-linecap="butt" scale="all" />
 								</rule>
 							</rule>
-							<rule e="way" cat="barriers_access" k="bicycle" v="bic_no|bic_private|bic_forestry">
+							<rule e="way" cat="barriers_access" k="bicycle|mtb" v="bic_no|bic_private|bic_forestry">
 								<rule e="way" cat="access" k="*" v="*">
 									<line stroke="#4444ff" stroke-width="2.4" stroke-dasharray="0.3,1.3" stroke-linecap="butt" scale="all" />
 								</rule>
@@ -2040,7 +2040,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 								<line stroke="#ff0000" stroke-width="2" stroke-dasharray="0.3,1.3" stroke-linecap="butt" scale="all" />
 							</rule>
 						</rule>
-						<rule e="way" cat="barriers_access" k="bicycle" v="bic_no|bic_private|bic_forestry">
+						<rule e="way" cat="barriers_access" k="bicycle|mtb" v="bic_no|bic_private|bic_forestry">
 							<rule e="way" cat="access" k="*" v="*">
 								<line stroke="#4444ff" stroke-width="2.4" stroke-dasharray="0.3,1.3" stroke-linecap="butt" scale="all" />
 							</rule>
@@ -2131,7 +2131,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 						<rule e="way" cat="access" k="*" v="*">
 							<!-- No markers if at least one is "yes" (foot or bicycle) -->
 							<rule e="way" k="foot" v="~|no">
-								<rule e="way" k="bicycle" v="~|no">
+								<rule e="way" k="bicycle|mtb" v="~|no">
 									<line stroke="#ff0000" stroke-width="2" stroke-dasharray="0.3,1.5" stroke-linecap="butt" scale="all" />
 									<rule e="way" k="highway" v="turning_circle|mini_roundabout|pedestrian|service|road|living_street|residential|unclassified|construction">
 										<rule e="way" cat="road_captions" k="*" v="*" zoom-min="16">
@@ -2976,7 +2976,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 			</rule>
 		</rule>
 		<rule e="any" k="amenity" v="charging_station" zoom-min="14">
-			<rule e="any" k="bicycle" v="bic_yes">
+			<rule e="any" k="bicycle|mtb" v="bic_yes">
 				<symbol id="s_bicycle_charging_station" priority="68" src="file:symbols/s_bicycle_charging_station.svg" symbol-height="16" />
 				<rule e="any" k="*" v="*" zoom-min="18">
 					<caption k="name" symbol-id="s_bicycle_charging_station" position="above" font-style="bold" font-size="10" fill="#333333" stroke="#E5FFFFFF" stroke-width="2" text-wrap-width="120" />
