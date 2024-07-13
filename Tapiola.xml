@@ -1905,6 +1905,11 @@ Contact: Michael Scheer <theme@tapiola.org>
 									<line stroke="#ff0000" stroke-width="2.0" stroke-dasharray="0.3,1.3" stroke-linecap="butt" scale="all" />
 								</rule>
 							</rule>
+							<rule e="way" cat="barriers_access" k="bicycle" v="bic_no|bic_private|bic_forestry">
+								<rule e="way" cat="access" k="*" v="*">
+									<line stroke="#4444ff" stroke-width="2.4" stroke-dasharray="0.3,1.3" stroke-linecap="butt" scale="all" />
+								</rule>
+							</rule>
 							<rule e="way" k="*" v="*" zoom-min="15" zoom-max="16">
 								<pathText k="name" dy="2.2" priority="10" font-family="sans_serif" font-style="normal" font-size="12" fill="#000000" stroke="#FFFFFF" stroke-width="2.8" repeat-start="100" repeat-gap="550" />
 							</rule>
@@ -2033,6 +2038,11 @@ Contact: Michael Scheer <theme@tapiola.org>
 						<rule e="way" cat="barriers_access" k="foot" v="ft_no">
 							<rule e="way" cat="access" k="*" v="*">
 								<line stroke="#ff0000" stroke-width="2" stroke-dasharray="0.3,1.3" stroke-linecap="butt" scale="all" />
+							</rule>
+						</rule>
+						<rule e="way" cat="barriers_access" k="bicycle" v="bic_no|bic_private|bic_forestry">
+							<rule e="way" cat="access" k="*" v="*">
+								<line stroke="#4444ff" stroke-width="2.4" stroke-dasharray="0.3,1.3" stroke-linecap="butt" scale="all" />
 							</rule>
 						</rule>
 						<rule e="way" cat="road_captions" k="*" v="*" zoom-min="15">
