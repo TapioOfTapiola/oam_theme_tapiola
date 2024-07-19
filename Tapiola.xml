@@ -1250,21 +1250,21 @@ Contact: Michael Scheer <theme@tapiola.org>
 	<rule e="any" k="amenity" v="parking" zoom-min="11">
 		<area fill="#F9F9F9" stroke="#888888" stroke-width="0.1" />
 		<rule e="any" cat="parking" k="access" v="destination|no|private" >
-			<rule e="any" k="*" v="*" zoom-min="17" priority="100" >
+			<rule e="any" cat="parking_aggro" k="*" v="*" zoom-max="16">
 				<area src="file:patterns/access-destination.svg" symbol-percent="60" />
-				<symbol src="file:symbols/parking_private.svg" symbol-percent="65"  />
+				<symbol src="file:symbols/parking_private.svg" symbol-percent="65" display="always" />
 			</rule>
-			<rule e="any" cat="parking_aggro" k="*" v="*" >
+			<rule e="any" k="*" v="*" zoom-min="17" >
 				<area src="file:patterns/access-destination.svg" symbol-percent="60" />
 				<symbol src="file:symbols/parking_private.svg" symbol-percent="65" display="always" />
 			</rule>
 		</rule>
 		<rule e="any" cat="parking" k="access" v="~|yes|public">
 			<rule e="any" k="*" v="*" zoom-min="16" >
-				<symbol src="file:symbols/parking.svg" symbol-percent="65" priority="100" />
+				<symbol src="file:symbols/parking.svg" symbol-percent="65" display="always" />
 			</rule>
 			<rule e="any" cat="parking_aggro" k="*" v="*" >
-				<symbol src="file:symbols/parking.svg" symbol-percent="70" display="always" />
+				<symbol src="file:symbols/parking.svg" symbol-percent="65" display="always" />
 			</rule>
 		</rule>
 	</rule>
