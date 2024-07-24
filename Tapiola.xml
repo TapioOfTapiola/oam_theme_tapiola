@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-Tapiola 1.4.3 - 2024-06-30 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.4.3d - 2024-07-24 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapiola is based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
@@ -3138,16 +3138,16 @@ Contact: Michael Scheer <theme@tapiola.org>
 					<caption k="name" font-style="italic" font-family="sans_serif" font-size="10" fill="#EE666666" stroke="#EEFFFFFF" stroke-width="1.4" priority="103" text-wrap-width="200" display="always" />
 				</rule>
 				<rule e="node" k="place" v="*" zoom-min="13" zoom-max="13">
-					<caption k="name" font-style="bold_italic" font-family="serif" font-size="11" fill="#CC666666" stroke="#EEFFFFFF" stroke-width="2" priority="103" text-wrap-width="200" display="always" />
+					<caption k="name" font-style="bold_italic" font-family="serif" font-size="11" fill="#CC666666" stroke="#FFFFFF" stroke-width="2" priority="103" text-wrap-width="200" display="always" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="14" zoom-max="14">
-					<caption k="name" font-style="bold_italic" font-family="serif" font-size="13" fill="#CC666666" stroke="#FFFFFFFF" stroke-width="2.5" priority="103" text-wrap-width="280" display="always" />
+					<caption k="name" font-style="bold_italic" font-family="serif" font-size="13" fill="#cc000000" stroke="#FFFFFF" stroke-width="2.5" priority="103" text-wrap-width="280" display="always" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="15" zoom-max="15">
-					<caption k="name" font-style="bold_italic" font-family="serif" font-size="16" fill="#CC444444" stroke="#FFFFFFFF" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
+					<caption k="name" font-style="bold_italic" font-family="serif" font-size="16" fill="#ee444444" stroke="#FFFFFFFF" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="16" zoom-max="16">
-					<caption k="name" font-style="bold_italic" font-family="serif" font-size="28" fill="#88444444" stroke="#CCffffff" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
+					<caption k="name" font-style="bold_italic" font-family="serif" font-size="34" fill="#55000000" stroke="#DFffffff" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
 				</rule>
 			</rule>
 		</rule>
