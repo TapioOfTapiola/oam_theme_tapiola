@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-Tapiola 1.4.3d - 2024-07-24 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.4.5 - 2024-12-17 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapiola is based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
@@ -72,12 +72,12 @@ Contact: Michael Scheer <theme@tapiola.org>
 		</layer>
 		<layer id="L_cities_towns" enabled="true" visible="false">
 			<name lang="de" value="🔤 Städtenamen" />
-			<name lang="en" value="🔤 City/Town/Village names" />
+			<name lang="en" value="🔤 City/Town names" />
 			<cat id="cities_towns" />
 		</layer>
 		<layer id="L_cities_towns_sub" enabled="true" visible="false">
-			<name lang="de" value="🔤 Stadtteil/Industriegebietnamen" />
-			<name lang="en" value="🔤 Suburb/Industrial area names" />
+			<name lang="de" value="🔤 Dorf/Stadtteil/Industrie" />
+			<name lang="en" value="🔤 Village/Suburb/Industrial" />
 			<cat id="cities_towns_sub" />
 		</layer>
 		<layer id="L_road_captions" enabled="true" visible="false">
@@ -2500,7 +2500,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 		</rule>
 	</rule>
 
-<!-- Second option of networks - more transparency -->
+<!-- Second set/option of same networks - more transparency -->
 
 	<!-- MTB network without mtb:scale values - Lomaps -->
 	<rule cat="mtb_trails_t" e="way" k="route" v="mtb" zoom-min="13">
@@ -2541,7 +2541,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 		</rule>
 	</rule>
 
-	<!-- Cycling network -->
+	<!-- Cycling network semi transparent -->
 	<rule e="any" k="*" v="*" cat="cycling_t" zoom-min="10">
 		<rule e="way" k="network" v="rcn|lcn|ocn" zoom-min="12">
 			<rule e="way" k="*" v="*" zoom-max="13">
@@ -2582,7 +2582,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 		</rule>
 	</rule>
 
-	<!-- Hiking network -->
+	<!-- Hiking network semi transparent -->
 	<rule e="way" k="hknetwork" v="lwn|rwn|own" cat="hiking_trails_t" zoom-min="12" >
 		<rule e="way" k="*" v="*" zoom-max="13">
 			<line dy="1" stroke="#70fccd93" stroke-width="1.7" stroke-linecap="butt" />
@@ -3016,12 +3016,12 @@ Contact: Michael Scheer <theme@tapiola.org>
 	</rule>
 	
 	<rule cat="restaurants" e="any" k="*" v="*" zoom-min="9">
-		<rule e="any" k="tourism" v="alpine_hut" zoom-min="14">
+		<!-- rule e="any" k="tourism" v="alpine_hut" zoom-min="14">
 			<rule e="any" k="access|reservation" v="~">
 				<symbol id="s_restaurant" priority="69" src="file:symbols/s_restaurant.svg" symbol-height="16" />
 				<caption k="name" symbol-id="s_restaurant" position="above" font-size="10" font-style="bold" fill="#333333" stroke="#E5FFFFFF" stroke-width="2" text-wrap-width="120" />
 			</rule>
-		</rule>
+		</rule -->
 		<rule e="any" k="amenity" v="restaurant" zoom-min="15">
 			<symbol id="s_restaurant" priority="69" src="file:symbols/restaurant.svg" symbol-height="16" />
 			<rule e="any" k="*" v="*" zoom-min="16">
@@ -3122,8 +3122,8 @@ Contact: Michael Scheer <theme@tapiola.org>
 	</rule>
 
 	<rule e="node" k="place" v="*">
-		<!-- Neighborhoods and Suburbs -->
-		<rule cat="cities_towns_sub" e="node" k="place" v="farm|isolated_dwelling|hamlet|village|suburb|neighbourhood|quarter">
+		<!-- Villages, Neighborhoods and Suburbs -->
+		<rule cat="cities_towns_sub" e="node" k="place" v="farm|isolated_dwelling|hamlet|suburb|neighbourhood|quarter">
 			<rule e="node" k="place" v="farm" zoom-min="14">
 				<caption k="name" dy="16" font-style="normal" font-size="10" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="99" />
 			</rule>
@@ -3151,8 +3151,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 				</rule>
 			</rule>
 		</rule>
-		<!-- Villages, Towns, Cities -->
-		<rule cat="cities_towns" e="node" k="place" v="village" zoom-min="11">
+		<rule cat="cities_towns_sub" e="node" k="place" v="village" zoom-min="11">
 			<rule e="node" k="*" v="*" zoom-min="11" zoom-max="11">
 				<caption k="name" font-style="normal" font-size="11" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="140" />
 			</rule>
@@ -3166,6 +3165,7 @@ Contact: Michael Scheer <theme@tapiola.org>
 				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" display="always" />
 			</rule>
 		</rule>
+<!-- Towns, Cities -->
 		<rule cat="cities_towns" e="node" k="place" v="town" zoom-min="6">
 			<rule e="node" k="popcat" v="pc_20000|pc_30000|pc_50000|pc_100000|pc_200000|pc_500000|pc_1000000" zoom-max="6">
 				<caption k="name" font-style="normal" font-size="10" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
@@ -3790,6 +3790,11 @@ Contact: Michael Scheer <theme@tapiola.org>
 		</rule>
 	</rule>
 	<rule e="any" k="amenity" v="*">
+   	<rule e="any" k="amenity" v="charging_station">
+   		<rule e="any" k="bicycle" v="yes" zoom-min="14">
+   			<symbol src="file:symbols/bike-charge.svg" symbol-percent="80" />
+   		</rule>
+   	</rule>
 		<rule e="any" cat="historical" k="amenity" v="place_of_worship" zoom-min="14">
 			<rule e="any" k="religion" v="christian">
 				<rule e="any" k="building" v="cathedral|church|yes|~">
@@ -4009,6 +4014,11 @@ Contact: Michael Scheer <theme@tapiola.org>
 				<symbol id="id_alpine_hut" src="file:symbols/alpine_hut.svg" symbol-percent="90" display="always" />
 				<caption symbol-id="id_alpine_hut" k="name" position="above" font-style="bold" font-size="11" fill="#000000" stroke="#ffffff" stroke-width="2.0" text-wrap-width="120" />
 				<caption symbol-id="id_alpine_hut" k="ele" position="below" font-style="bold" font-size="11" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
+			</rule>
+			<rule e="any" cat="refuge" k="tourism" v="wilderness_hut">
+				<symbol id="id_wilderness_hut" src="file:symbols/wilderness_hut.svg" symbol-percent="90" display="always" />
+				<caption symbol-id="id_wilderness_hut" k="name" position="above" font-style="bold" font-size="11" fill="#000000" stroke="#ffffff" stroke-width="2.0" text-wrap-width="120" />
+				<caption symbol-id="id_wilderness_hut" k="ele" position="below" font-style="bold" font-size="11" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
 			</rule>
 			<rule cat="architecture_religion" e="any" k="tourism" v="museum">
 				<rule e="any" k="tourism" v="*" zoom-min="15">
