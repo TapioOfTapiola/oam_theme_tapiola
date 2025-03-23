@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-Tapiola 1.4.5 - 2024-12-17 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.4.6 - 2025-03-23 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapiola is based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
@@ -13,7 +13,7 @@ Tapiola is Sibelius' Op. 112.
 https://github.com/TapioOfTapiola/oam_theme_tapiola
 Report issues: https://github.com/TapioOfTapiola/oam_theme_tapiola/issues
 Discuss: https://forum.locusmap.eu/index.php?topic=8518.0
-Contact: Michael Scheer <theme@tapiola.org>
+Contact: theme@tapiola.org
 -->
 
 <rendertheme xmlns="http://mapsforge.org/renderTheme" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/master/resources/renderTheme.xsd" version="5" base-stroke-width="0.9" map-background="#F8F8F8" map-background-outside="#EEEEEE">
@@ -3406,10 +3406,15 @@ Contact: Michael Scheer <theme@tapiola.org>
 		<rule e="way" k="barrier" v="city_wall">
 			<line stroke="#545454" stroke-width="0.05" stroke-linecap="butt" />
 		</rule>
-		<rule e="way" k="barrier" v="fence" zoom-min="14">
-			<line stroke="#80ffffff" stroke-width="0.2" stroke-linecap="butt" />
-			<line stroke="#888888" stroke-width="0.1" scale="all" stroke-dasharray="0.01,0.25,0.5,0.25" stroke-linecap="butt" />
-			<line stroke="#888888" stroke-width="0.2" scale="all" stroke-dasharray="0.01,1" />
+		<rule e="way" k="barrier" v="fence" zoom-min="14" zoom-max="17">
+			<line stroke="#ffffff" stroke-width="0.6" stroke-linecap="butt" />
+			<line stroke="#888888" stroke-width="0.2" scale="all" stroke-dasharray="0.01,0.25,0.5,0.25" stroke-linecap="butt" />
+			<line stroke="#888888" stroke-width="0.5" scale="all" stroke-dasharray="0.01,1" />
+		</rule>
+		<rule e="way" k="barrier" v="fence" zoom-min="18">
+			<line stroke="#ffffff" stroke-width="0.4" stroke-linecap="butt" />
+			<line stroke="#888888" stroke-width="0.2" scale="all" stroke-dasharray="0.01,0.25,0.5,0.25" stroke-linecap="butt" />
+			<line stroke="#888888" stroke-width="0.4" scale="all" stroke-dasharray="0.01,1" />
 		</rule>
 		<rule e="way" k="barrier" v="wall">
 			<line stroke="#C3C3C3" stroke-width="0.5" stroke-linecap="butt" />
@@ -3421,11 +3426,14 @@ Contact: Michael Scheer <theme@tapiola.org>
 		 </rule>
 	</rule>
 	<rule e="node" k="barrier" v="*" zoom-min="16">
-		<rule cat="barriers" e="node" k="barrier" v="gate">
-			<symbol src="file:symbols/s_gate.svg" symbol-height="18" />
+		<rule cat="barriers" e="node" k="barrier" v="gate" zoom-max="19">
+			<symbol src="file:symbols/s_gate.svg" symbol-height="26" />
+		</rule>
+		<rule cat="barriers" e="node" k="barrier" v="gate" zoom-min="20">
+			<symbol src="file:symbols/s_gate.svg" symbol-height="32" />
 		</rule>
 		<rule cat="barriers" e="node" k="barrier" v="lift_gate">
-			<symbol src="file:symbols/lift_gate.svg" symbol-height="16" />
+			<symbol src="file:symbols/lift_gate.svg" symbol-height="24" />
 		</rule>
 	</rule>
 	<rule e="node" k="natural" v="*">
