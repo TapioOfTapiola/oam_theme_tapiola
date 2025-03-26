@@ -1171,26 +1171,26 @@ Contact: theme@tapiola.org
 	</rule>
 
 	<!-- Water related -->
-	<rule e="node" k="landuse|natural" v="reservoir|basin|water" zoom-min="12">
+	<rule e="node" k="landuse|natural" v="reservoir|basin|water" zoom-min="13">
 		<rule e="any" k="bBoxWeight" v="xxxlarge|xxlarge">
 			<caption k="name" font-style="bold_italic" font-size="13" fill="#035FBC" stroke="#ffffff" stroke-width="2.2" priority="395" text-wrap-width="150" />
 		</rule>
 		<rule e="any" k="bBoxWeight" v="xlarge">
-			<caption k="name" font-style="bold_italic" font-size="13" fill="#035FBC" stroke="#ffffff" stroke-width="2.2" priority="395" text-wrap-width="150" />
+			<caption k="name" font-style="bold_italic" font-size="14" fill="#035FBC" stroke="#ffffff" stroke-width="2.2" priority="395" text-wrap-width="150" />
 		</rule>
 		<rule e="any" k="bBoxWeight" v="large">
-			<caption k="name" font-style="bold_italic" font-size="13" fill="#035FBC" stroke="#ffffff" stroke-width="2.2" priority="395" text-wrap-width="150" />
+			<caption k="name" font-style="bold_italic" font-size="15" fill="#035FBC" stroke="#ffffff" stroke-width="2.2" priority="395" text-wrap-width="150" />
 		</rule>
-		<rule e="any" k="bBoxWeight" v="mid" zoom-min="13">
+		<rule e="any" k="bBoxWeight" v="mid" zoom-min="15">
 			<caption k="name" font-style="bold_italic" font-size="13" fill="#035FBC" stroke="#ffffff" stroke-width="2.2" priority="395" text-wrap-width="130" />
 		</rule>
-		<rule e="any" k="bBoxWeight" v="small|~" zoom-min="14">
+		<rule e="any" k="bBoxWeight" v="small|~" zoom-min="16">
 			<caption k="name" font-style="bold_italic" font-size="12" fill="#035FBC" stroke="#ffffff" stroke-width="2.2" priority="395" text-wrap-width="120" />
 		</rule>
-		<rule e="any" k="bBoxWeight" v="xsmall" zoom-min="15">
+		<rule e="any" k="bBoxWeight" v="xsmall" zoom-min="17">
 			<caption k="name" font-style="bold_italic" font-size="12" fill="#035FBC" stroke="#ffffff" stroke-width="2.2" priority="395" text-wrap-width="120" />
 		</rule>
-		<rule e="any" k="bBoxWeight" v="tiny" zoom-min="16">
+		<rule e="any" k="bBoxWeight" v="tiny" zoom-min="17">
 			<caption k="name" font-style="bold_italic" font-size="11" fill="#035FBC" stroke="#ffffff" stroke-width="2.2" priority="395" text-wrap-width="120" />
 		</rule>
 	</rule>
@@ -3426,11 +3426,11 @@ Contact: theme@tapiola.org
 		 </rule>
 	</rule>
 	<rule e="node" k="barrier" v="*" zoom-min="16">
-		<rule cat="barriers" e="node" k="barrier" v="gate" zoom-max="19">
-			<symbol src="file:symbols/s_gate.svg" symbol-height="26" />
+		<rule cat="barriers" e="node" k="barrier" v="gate" zoom-max="18">
+			<symbol src="file:symbols/s_gate.svg" symbol-height="24" />
 		</rule>
-		<rule cat="barriers" e="node" k="barrier" v="gate" zoom-min="20">
-			<symbol src="file:symbols/s_gate.svg" symbol-height="32" />
+		<rule cat="barriers" e="node" k="barrier" v="gate" zoom-min="19">
+			<symbol src="file:symbols/s_gate.svg" symbol-height="30" />
 		</rule>
 		<rule cat="barriers" e="node" k="barrier" v="lift_gate">
 			<symbol src="file:symbols/lift_gate.svg" symbol-height="24" />
