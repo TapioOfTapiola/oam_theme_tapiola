@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-Tapiola 1.4.6 - 2025-03-23 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.4.7 - 2025-04-06 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapiola is based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
@@ -1181,10 +1181,10 @@ Contact: theme@tapiola.org
 		<rule e="any" k="bBoxWeight" v="large">
 			<caption k="name" font-style="bold_italic" font-size="15" fill="#035FBC" stroke="#ffffff" stroke-width="2.2" priority="395" text-wrap-width="150" />
 		</rule>
-		<rule e="any" k="bBoxWeight" v="mid" zoom-min="15">
+		<rule e="any" k="bBoxWeight" v="mid|~" zoom-min="15">
 			<caption k="name" font-style="bold_italic" font-size="13" fill="#035FBC" stroke="#ffffff" stroke-width="2.2" priority="395" text-wrap-width="130" />
 		</rule>
-		<rule e="any" k="bBoxWeight" v="small|~" zoom-min="16">
+		<rule e="any" k="bBoxWeight" v="small" zoom-min="15">
 			<caption k="name" font-style="bold_italic" font-size="12" fill="#035FBC" stroke="#ffffff" stroke-width="2.2" priority="395" text-wrap-width="120" />
 		</rule>
 		<rule e="any" k="bBoxWeight" v="xsmall" zoom-min="17">
@@ -1633,12 +1633,12 @@ Contact: theme@tapiola.org
 					</rule>
 				</rule>
 				<rule e="way" cat="c_highway" k="highway" v="*" >
-					<rule e="way" k="highway" v="motorway" zoom-min="6">
+					<rule e="way" k="highway" v="motorway" >
 						<line stroke="#502f8bd6" stroke-width="2.2" stroke-linecap="butt" />
 						<line stroke="#707070" dy="1.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 						<line stroke="#707070" dy="-1.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="highway" v="motorway_link" zoom-min="11" >
+					<rule e="way" k="highway" v="motorway_link" >
 						<line stroke="#502f8bd6" stroke-width="1.4" stroke-linecap="butt" />
 						<line stroke="#707070" dy="0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 						<line stroke="#707070" dy="-0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
@@ -1762,37 +1762,37 @@ Contact: theme@tapiola.org
 						<line stroke="#ffffff" stroke-width="2.5" stroke-linecap="butt" />
 						<line stroke="#666666" stroke-width="2.1" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="highway" v="motorway" zoom-min="6">
+					<rule e="way" k="highway" v="motorway" zoom-min="13">
 						<line stroke="#353535" stroke-width="3.4" stroke-linecap="butt" />
 						<line stroke="#ffffff" stroke-width="3.0" stroke-linecap="butt" />
 						<line stroke="#575757" stroke-width="2.4" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="highway" v="motorway_link" zoom-min="11">
+					<rule e="way" k="highway" v="motorway_link" zoom-min="13">
 						<line stroke="#353535" stroke-width="2.8" stroke-linecap="butt" />
 						<line stroke="#ffffff" stroke-width="2.4" stroke-linecap="butt" />
 						<line stroke="#575757" stroke-width="2.0" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="highway" v="trunk" zoom-min="6">
+					<rule e="way" k="highway" v="trunk" zoom-min="13">
 						<line stroke="#353535" stroke-width="3.0" stroke-linecap="butt" />
 						<line stroke="#ffffff" stroke-width="2.6" stroke-linecap="butt" />
 						<line stroke="#575757" stroke-width="2.2" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="highway" v="trunk_link" zoom-min="11">
+					<rule e="way" k="highway" v="trunk_link" zoom-min="13">
 						<line stroke="#353535" stroke-width="2.8" stroke-linecap="butt" />
 						<line stroke="#ffffff" stroke-width="2.4" stroke-linecap="butt" />
 						<line stroke="#575757" stroke-width="2.0" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="highway" v="primary|primary_link" zoom-min="9">
+					<rule e="way" k="highway" v="primary|primary_link" zoom-min="13">
 						<line stroke="#353535" stroke-width="2.8" stroke-linecap="butt" />
 						<line stroke="#ffffff" stroke-width="2.4" stroke-linecap="butt" />
 						<line stroke="#575757" stroke-width="2.0" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="highway" v="secondary|secondary_link" zoom-min="9">
+					<rule e="way" k="highway" v="secondary|secondary_link" zoom-min="13">
 						<line stroke="#353535" stroke-width="2.8" stroke-linecap="butt" />
 						<line stroke="#ffffff" stroke-width="2.4" stroke-linecap="butt" />
 						<line stroke="#575757" stroke-width="2.0" stroke-linecap="butt" />
 					</rule>
-					<rule e="way" k="highway" v="tertiary|tertiary_link" zoom-min="11">
+					<rule e="way" k="highway" v="tertiary|tertiary_link" zoom-min="13">
 						<line stroke="#353535" stroke-width="2.6" stroke-linecap="butt" />
 						<line stroke="#ffffff" stroke-width="2.2" stroke-linecap="butt" />
 						<line stroke="#575757" stroke-width="1.8" stroke-linecap="butt" />
@@ -1948,34 +1948,25 @@ Contact: theme@tapiola.org
 					<rule e="way" k="highway" v="tertiary|tertiary_link|raceway" zoom-min="11" >
 						<line stroke="#202020" stroke-width="1.8" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="secondary|secondary_link" zoom-min="12">
+					<rule e="way" k="highway" v="secondary|secondary_link" zoom-min="11">
 						<line stroke="#101010" stroke-width="1.8" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="primary|primary_link" zoom-min="8" zoom-max="8" >
+					<rule e="way" k="highway" v="primary|primary_link" zoom-min="10" >
 						<line stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="primary|primary_link" zoom-min="9" zoom-max="11" >
+					<rule e="way" k="highway" v="trunk_link" zoom-min="10">
+						<line stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
+					</rule>
+					<rule e="way" k="highway" v="trunk" zoom-min="6" zoom-max="6">
+						<line stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
+					</rule>
+					<rule e="way" k="highway" v="trunk" zoom-min="10">
 						<line stroke="#000000" stroke-width="2.2" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="primary|primary_link" zoom-min="12" >
-						<line stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
-					</rule>
-					<rule e="way" k="highway" v="trunk_link" zoom-min="11">
-						<line stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
-					</rule>
-					<rule e="way" k="highway" v="trunk" zoom-min="6" zoom-max="8">
-						<line stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
-					</rule>
-					<rule e="way" k="highway" v="trunk" zoom-min="9">
-						<line stroke="#000000" stroke-width="2.2" stroke-linecap="round" />
-					</rule>
-					<rule e="way" k="highway" v="motorway_link" zoom-min="11">
+					<rule e="way" k="highway" v="motorway_link" zoom-min="10">
 						<line stroke="#000000" stroke-width="2.0" stroke-linecap="round" />
 					</rule>
-					<rule e="way" k="highway" v="motorway" zoom-min="6" zoom-max="8" >
-						<line stroke="#000000" stroke-width="1.8" stroke-linecap="round" />
-					</rule>
-					<rule e="way" k="highway" v="motorway" zoom-min="9">
+					<rule e="way" k="highway" v="motorway" zoom-min="10">
 						<line stroke="#000000" stroke-width="2.4" stroke-linecap="round" />
 					</rule>
 				</rule>
@@ -2382,7 +2373,7 @@ Contact: theme@tapiola.org
 	</rule>
 
 	<!-- MTB network - As of now, simplified ruleset -->
-	<rule e="any" cat="mtb_trails" k="mtbnetwork|mtb_scale|mtb_scale_uphill" v="*" >
+	<rule e="any" cat="mtb_trails" k="mtbnetwork|mtb_scale|mtb_scale_uphill" v="*" zoom-min="10">
 		<rule e="any" k="*" v="*" zoom-max="17" >
 			<line dy="-1.55" stroke="#cc00cc" stroke-width="0.9" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
 			<lineSymbol dy="-3.0" src="file:symbols/bicycle.svg" align-center="true" symbol-percent="120" repeat="true" repeat-start="10" repeat-gap="250" />
@@ -2418,7 +2409,7 @@ Contact: theme@tapiola.org
 			</rule>
 		</rule>
 		<rule e="way" k="network" v="icn|ncn" >
-			<rule e="way" k="*" v="*" zoom-max="12">
+			<rule e="way" k="*" v="*" zoom-min="10" zoom-max="12">
 				<line dy="-1" stroke="#474aff" stroke-width="2.2" stroke-linecap="butt" />
 			</rule>
 			<rule e="way" k="*" v="*" zoom-min="13" zoom-max="15" >
@@ -2528,7 +2519,7 @@ Contact: theme@tapiola.org
 	</rule>
 
 	<!-- MTB network - As of now, simplified ruleset -->
-	<rule e="any" cat="mtb_trails_t" k="mtbnetwork|mtb_scale|mtb_scale_uphill" v="*" >
+	<rule e="any" cat="mtb_trails_t" k="mtbnetwork|mtb_scale|mtb_scale_uphill" v="*" zoom-min="10" >
 		<rule e="any" k="*" v="*" zoom-max="17" >
 			<line dy="-1.55" stroke="#80cc00cc" stroke-width="0.9" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
 			<lineSymbol dy="-3.0" src="file:symbols/bicycle.svg" align-center="true" symbol-percent="120" repeat="true" repeat-start="10" repeat-gap="250" />
@@ -2564,7 +2555,7 @@ Contact: theme@tapiola.org
 			</rule>
 		</rule>
 		<rule e="way" k="network" v="icn|ncn" >
-			<rule e="way" k="*" v="*" zoom-max="12">
+			<rule e="way" k="*" v="*" zoom-min="10" zoom-max="12">
 				<line dy="-1" stroke="#7f474aff" stroke-width="2.2" stroke-linecap="butt" />
 			</rule>
 			<rule e="way" k="*" v="*" zoom-min="13" zoom-max="15" >
@@ -3070,7 +3061,7 @@ Contact: theme@tapiola.org
 		<rule e="way" cat="military" k="*" v="military" closed="yes" >
 			<area fill="#50808000" />
 		</rule>
-		<rule e="way" cat="military" k="military" v="bunker|bunker_disused">
+		<rule e="way" cat="military" k="military" v="bunker|bunker_disused" zoom-min="11" >
 			<symbol src="file:symbols/bunker.svg" symbol-percent="55" />
 		</rule>
 	</rule>
@@ -3166,7 +3157,36 @@ Contact: theme@tapiola.org
 			</rule>
 		</rule>
 <!-- Towns, Cities -->
-		<rule cat="cities_towns" e="node" k="place" v="town" zoom-min="6">
+		<rule cat="cities_towns" e="node" k="place" v="town" zoom-min="8" zoom-max="9">
+			<rule e="node" k="popcat" v="pc_20000|pc_30000|pc_50000|pc_100000|pc_200000|pc_500000|pc_1000000" zoom-max="6">
+				<caption k="name" font-style="normal" font-size="10" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
+			</rule>
+			<rule e="node" k="popcat" v="pc_0|pc_1|pc_1000|pc_5000|pc_10000|~" zoom-min="7" zoom-max="7">
+				<caption k="name" font-style="normal" font-size="12" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
+			</rule>
+			<rule e="node" k="popcat" v="pc_100000|pc_200000|pc_500000|pc_1000000" zoom-min="7" zoom-max="7">
+				<caption k="name" font-style="normal" font-size="10" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
+			</rule>
+			<rule e="node" k="popcat" v="pc_50000|pc_100000|pc_200000|pc_500000|pc_1000000" zoom-min="8" zoom-max="8">
+				<caption k="name" font-style="normal" font-size="10" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
+			</rule>
+			<rule e="node" k="*" v="*" zoom-min="9" zoom-max="9">
+				<caption k="name" font-style="normal" font-size="11" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
+			</rule>
+			<rule e="node" k="*" v="*" zoom-min="10" zoom-max="10">
+				<caption k="name" font-style="bold" font-size="11" fill="#000000" stroke="#FFFFFFFF" stroke-width="2.5" priority="104" text-transform="capitalize" text-wrap-width="130" />
+			</rule>
+			<rule e="node" k="*" v="*" zoom-min="11" zoom-max="11">
+				<caption k="name" font-style="bold" font-size="13" fill="#000000" stroke="#DDFFFFFF" stroke-width="3" priority="104" text-transform="capitalize" text-wrap-width="130" />
+			</rule>
+			<rule e="node" k="*" v="*" zoom-min="12" zoom-max="12">
+				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-wrap-width="160" />
+			</rule>
+			<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
+				<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-wrap-width="250" />
+			</rule>
+		</rule>
+		<rule cat="cities_towns" e="node" k="place" v="town" zoom-min="10">
 			<rule e="node" k="popcat" v="pc_20000|pc_30000|pc_50000|pc_100000|pc_200000|pc_500000|pc_1000000" zoom-max="6">
 				<caption k="name" font-style="normal" font-size="10" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-transform="capitalize" text-wrap-width="130" />
 			</rule>
@@ -3195,14 +3215,34 @@ Contact: theme@tapiola.org
 				<caption k="name" font-style="bold" font-size="18" fill="#000000" stroke="#DDFFFFFF" stroke-width="2" priority="104" text-wrap-width="250" display="always" />
 			</rule>
 		</rule>
-		<rule cat="cities_towns" e="node" k="place" v="city" zoom-min="5">
+		<rule cat="cities_towns" e="node" k="place" v="city" zoom-min="5" zoom-max="9">
 			<rule e="any" k="capital" v="~">
 				<rule e="node" k="*" v="*" zoom-max="8">
-					<caption k="name" font-style="bold" font-size="11" fill="#000000" stroke="#D0FFFFFF" stroke-width="2" priority="104" display="always" />
+					<caption k="name" font-style="bold" font-size="11" fill="#000000" stroke="#D0FFFFFF" stroke-width="2" priority="104" />
 				</rule>
-				<rule e="node" k="*" v="*" zoom-min="9" zoom-max="9">
-					<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#E0FFFFFF" stroke-width="2" priority="104" display="always"/>
+				<rule e="node" k="*" v="*" zoom-min="9">
+					<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#E0FFFFFF" stroke-width="2" priority="104" />
 				</rule>
+			</rule>
+			<rule e="any" k="capital" v="4">
+				<rule e="node" k="*" v="*" zoom-max="8">
+					<caption k="name" font-style="bold" font-size="12" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="106" />
+				</rule>
+				<rule e="node" k="*" v="*" zoom-min="9">
+					<caption k="name" font-style="bold" font-size="15" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="106" display="always" />
+				</rule>
+			</rule>
+			<rule e="any" k="capital" v="2">
+				<rule e="node" k="*" v="*" zoom-max="8">
+					<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="108" />
+				</rule>
+				<rule e="node" k="*" v="*" zoom-min="9">
+					<caption k="name" font-style="bold" font-size="16" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="108" display="always" />
+				</rule>
+			</rule>
+		</rule>
+		<rule cat="cities_towns" e="node" k="place" v="city" zoom-min="10">
+			<rule e="any" k="capital" v="~">
 				<rule e="node" k="*" v="*" zoom-min="10" zoom-max="10">
 					<caption k="name" font-style="bold" font-size="15" fill="#000000" stroke="#FFFFFF" stroke-width="2.5" priority="104" display="always"/>
 				</rule>
@@ -3214,10 +3254,7 @@ Contact: theme@tapiola.org
 				</rule>
 			</rule>
 			<rule e="any" k="capital" v="4">
-				<rule e="node" k="*" v="*" zoom-min="4" zoom-max="8">
-					<caption k="name" font-style="bold" font-size="12" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="106" />
-				</rule>
-				<rule e="node" k="*" v="*" zoom-min="9" zoom-max="12">
+				<rule e="node" k="*" v="*" zoom-max="12">
 					<caption k="name" font-style="bold" font-size="15" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="106" display="always" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
@@ -3225,9 +3262,6 @@ Contact: theme@tapiola.org
 				</rule>
 			</rule>
 			<rule e="any" k="capital" v="2">
-				<rule e="node" k="*" v="*" zoom-min="4" zoom-max="8">
-					<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="108" />
-				</rule>
 				<rule e="node" k="*" v="*" zoom-min="9" zoom-max="12">
 					<caption k="name" font-style="bold" font-size="16" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="108" display="always" />
 				</rule>
@@ -5160,3 +5194,4 @@ Contact: theme@tapiola.org
 	</rule>
 	<!-- End of OSMC Hiking hiking nodes text OAM -->
 </rendertheme>
+
