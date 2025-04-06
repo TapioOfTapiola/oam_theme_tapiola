@@ -930,9 +930,9 @@ Contact: theme@tapiola.org
 	</rule>
 
 	<rule cat="contourlines" e="way" k="contour_ext" v="*">
-		<rule e="way" k="contour_ext" v="*" zoom-min="8" zoom-max="11">
+		<rule e="way" k="contour_ext" v="*" zoom-min="10" zoom-max="11">
 			<rule e="way" k="contour_ext" v="elevation_medium|elevation_major">
-				<line stroke="#A07F5F" stroke-width="0.2" curve="cubic" />
+				<line stroke="#906F4F" stroke-width="0.2" curve="cubic" />
 			</rule>
 		</rule>
 		<rule e="way" k="contour_ext" v="*" zoom-min="12" zoom-max="12">
@@ -940,7 +940,7 @@ Contact: theme@tapiola.org
 				<line stroke="#A07F5F" stroke-width="0.09" curve="cubic" />
 			</rule>
 			<rule e="way" k="contour_ext" v="elevation_medium|elevation_major">
-				<line stroke="#A07F5F" stroke-width="0.25" curve="cubic" />
+				<line stroke="#906F4F" stroke-width="0.25" curve="cubic" />
 			</rule>
 		</rule>
 		<rule e="way" k="contour_ext" v="*" zoom-min="13" zoom-max="13">
@@ -948,7 +948,7 @@ Contact: theme@tapiola.org
 				<line stroke="#A07F5F" stroke-width="0.09" curve="cubic" />
 			</rule>
 			<rule e="way" k="contour_ext" v="elevation_medium|elevation_major">
-				<line stroke="#A07F5F" stroke-width="0.18" curve="cubic" />
+				<line stroke="#906F4F" stroke-width="0.18" curve="cubic" />
 			</rule>
 		</rule>
 		<rule e="way" k="contour_ext" v="*" zoom-min="14" zoom-max="15">
@@ -956,7 +956,7 @@ Contact: theme@tapiola.org
 				<line stroke="#A07F5F" stroke-width="0.08" curve="cubic" />
 			</rule>
 			<rule e="way" k="contour_ext" v="elevation_medium|elevation_major">
-				<line stroke="#A07F5F" stroke-width="0.15" curve="cubic" />
+				<line stroke="#906F4F" stroke-width="0.15" curve="cubic" />
 				<rule e="way" k="*" v="*">
 					<pathText k="ele" font-style="bold" font-size="8" fill="#7C583A" stroke="#ffffff" stroke-width="1.5" repeat-gap="200" text-orientation="left" />
 				</rule>
@@ -967,7 +967,7 @@ Contact: theme@tapiola.org
 				<line stroke="#A07F5F" stroke-width="0.05" curve="cubic" />
 			</rule>
 			<rule e="way" k="contour_ext" v="elevation_medium|elevation_major">
-				<line stroke="#A07F5F" stroke-width="0.10" curve="cubic" />
+				<line stroke="#906F4F" stroke-width="0.10" curve="cubic" />
 				<rule e="way" k="*" v="*">
 					<pathText k="ele" font-style="bold" font-size="9" fill="#7C583A" stroke="#ffffff" stroke-width="2" repeat-gap="350" text-orientation="left" />
 				</rule>
