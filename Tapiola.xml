@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-Tapiola 1.4.7 - 2025-04-06 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.4.8 - 2025-05-18 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapiola is based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
@@ -249,9 +249,14 @@ Contact: theme@tapiola.org
 			<name lang="en" value="💧 Spring, water sources" />
 			<cat id="water" />
 		</layer>
+		<layer id="L_waterway_strong" enabled="false" visible="false">
+			<name lang="de" value="🟦 Deutliche Bäche" />
+			<name lang="en" value="🟦 Bold streams" />
+			<cat id="waterway_strong" />
+		</layer>
 		<layer id="L_waterway" enabled="true" visible="false">
 			<name lang="de" value="🌊 Entwässerungskanäle, Siele" />
-			<name lang="en" value="🌊 Minor waterways" />
+			<name lang="en" value="🌊 Display minor waterways" />
 			<cat id="waterway" />
 		</layer>
 		<layer id="L_forest" enabled="true" visible="false">
@@ -397,6 +402,7 @@ Contact: theme@tapiola.org
 			<overlay id="L_misc" />
 			<overlay id="L_water" />
 			<overlay id="L_waterway" />
+			<overlay id="L_waterway_strong" />
 			<overlay id="L_landscapefeat" />
 			<overlay id="L_forest" />
 			<overlay id="L_contourlines" />
@@ -932,7 +938,7 @@ Contact: theme@tapiola.org
 	<rule cat="contourlines" e="way" k="contour_ext" v="*">
 		<rule e="way" k="contour_ext" v="*" zoom-min="10" zoom-max="11">
 			<rule e="way" k="contour_ext" v="elevation_medium|elevation_major">
-				<line stroke="#906F4F" stroke-width="0.2" curve="cubic" />
+				<line stroke="#A07F5F" stroke-width="0.2" curve="cubic" />
 			</rule>
 		</rule>
 		<rule e="way" k="contour_ext" v="*" zoom-min="12" zoom-max="12">
@@ -1058,6 +1064,9 @@ Contact: theme@tapiola.org
 							<line stroke="#59A0D8" stroke-width="0.3" stroke-dasharray="3,6" />
 						</rule>
 						<pathText k="name" dy="-0.7" repeat-gap="300" font-style="normal" font-size="11" fill="#035FBC" stroke="#ffffff" stroke-width="1.8" />
+					</rule>
+					<rule cat="waterway_strong" e="way" k="*" v="*">
+						<line stroke="#59A0D8" curve="cubic" stroke-width="3.3" />
 					</rule>
 					<rule cat="water" e="way" k="*" v="*" zoom-min="14">
 						<rule e="way" k="*" v="*" zoom-min="14" zoom-max="15">
@@ -2522,16 +2531,16 @@ Contact: theme@tapiola.org
 	<rule e="any" cat="mtb_trails_t" k="mtbnetwork|mtb_scale|mtb_scale_uphill" v="*" zoom-min="10" >
 		<rule e="any" k="*" v="*" zoom-max="17" >
 			<line dy="-1.55" stroke="#80cc00cc" stroke-width="0.9" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
-			<lineSymbol dy="-3.0" src="file:symbols/bicycle.svg" align-center="true" symbol-percent="120" repeat="true" repeat-start="10" repeat-gap="250" />
+			<!-- lineSymbol dy="-3.0" src="file:symbols/bicycle.svg" align-center="true" symbol-percent="120" repeat="true" repeat-start="10" repeat-gap="250" /-->
 			<pathText k="ref_mtb" dy="-0.7" font-style="bold" font-size="10" fill="#80cc00cc" stroke="#ccffffff" stroke-width="1.5" repeat-start="50" repeat-gap="300" priority="10" />
 		</rule>
 		<rule e="any" k="*" v="*" zoom-min="18" >
 			<line dy="-1.5" stroke="#55cc00cc" stroke-width="1" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
-			<lineSymbol dy="-1.5" src="file:symbols/bicycle.svg" align-center="true" symbol-percent="150" repeat="true" repeat-start="10" repeat-gap="250" />
+			<!-- lineSymbol dy="-1.5" src="file:symbols/bicycle.svg" align-center="true" symbol-percent="150" repeat="true" repeat-start="10" repeat-gap="250" /-->
 			<pathText k="ref_mtb" dy="-1" font-style="bold" font-size="10" fill="#80cc00cc" stroke="#ccffffff" stroke-width="1.5" repeat-start="50" repeat-gap="300" priority="10" />
 		</rule>
 	</rule>
-
+	
 	<!-- Cycling network semi transparent -->
 	<rule e="any" k="*" v="*" cat="cycling_t" zoom-min="10">
 		<rule e="way" k="network" v="rcn|lcn|ocn" zoom-min="12">
@@ -2888,7 +2897,7 @@ Contact: theme@tapiola.org
 				<caption k="name" symbol-id="s_marketplace" position="above" font-style="bold" font-size="10" fill="#333333" stroke="#E5FFFFFF" stroke-width="2" text-wrap-width="120" />
 			</rule>
 		</rule>
-		<rule e="any" k="shop" v="bakery" zoom-min="14">
+		<rule e="any" k="shop" v="bakery" zoom-min="15">
 			<symbol id="s_bakery" priority="68" src="file:symbols/s_bakery.svg" symbol-height="16" />
 			<rule e="any" k="*" v="*" zoom-min="18">
 				<caption k="name" symbol-id="s_bakery" position="above" font-style="bold" font-size="10" fill="#333333" stroke="#E5FFFFFF" stroke-width="2" text-wrap-width="120" />
@@ -3061,7 +3070,7 @@ Contact: theme@tapiola.org
 		<rule e="way" cat="military" k="*" v="military" closed="yes" >
 			<area fill="#50808000" />
 		</rule>
-		<rule e="way" cat="military" k="military" v="bunker|bunker_disused" zoom-min="11" >
+		<rule e="way" cat="military" k="military" v="bunker|bunker_disused" zoom-min="15" >
 			<symbol src="file:symbols/bunker.svg" symbol-percent="55" />
 		</rule>
 	</rule>
@@ -3654,7 +3663,7 @@ Contact: theme@tapiola.org
 		</rule>
 	</rule>
 	<rule cat="pharmacies" e="any" k="*" v="*" zoom-min="9">
-		<rule e="any" k="amenity" v="pharmacy" zoom-min="14">
+		<rule e="any" k="amenity" v="pharmacy" zoom-min="15">
 			<symbol id="s_pharmacy" src="file:symbols/pharmacy.svg" symbol-percent="60" />
 			<rule e="any" k="amenity" v="*" zoom-min="17">
 				<caption symbol-id="s_pharmacy" display="always" priority="80" k="name" font-style="bold" font-family="sans_serif" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
@@ -3666,7 +3675,7 @@ Contact: theme@tapiola.org
 				<caption symbol-id="id_hospital" text-wrap-width="150" display="always" priority="100" k="name" font-style="bold" font-family="sans_serif" font-size="12" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
 			</rule>
 		</rule>
-		<rule e="any" k="amenity" v="clinic|doctors" zoom-min="14">
+		<rule e="any" k="amenity" v="clinic|doctors" zoom-min="15">
 			<symbol id="s_doctors" src="file:symbols/hospital.svg" symbol-percent="70" />
 			<rule e="any" k="amenity" v="*" zoom-min="17">
 				<caption symbol-id="s_doctors" display="always" priority="80" k="name" font-style="normal" font-family="sans_serif" font-size="12" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
@@ -3686,7 +3695,7 @@ Contact: theme@tapiola.org
 				<caption k="name" symbol-id="s_firebrigade" font-style="bold" font-family="sans_serif" font-size="12" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
 			</rule>
 		</rule>
-		<rule e="any" k="emergency" v="defibrillator" zoom-min="16">
+		<rule e="any" k="emergency" v="defibrillator" zoom-min="15">
 			<rule e="any" k="*" v="*" zoom-max="16">
 				<symbol src="file:symbols/defibrillator.svg" symbol-height="15" display="always" priority="99" />
 			</rule>
@@ -3892,7 +3901,7 @@ Contact: theme@tapiola.org
 			<symbol src="file:symbols/toilets.svg" symbol-percent="75" display="always" />
 		</rule>
 		<rule cat="benches" e="any" k="amenity" v="bench" zoom-min="15">
-			<symbol src="file:symbols/bench.svg" symbol-percent="120" display="always" />
+			<symbol src="file:symbols/bench.svg" symbol-percent="90" priority="100" />
 		</rule>
 		<rule cat="refuge" e="any" k="amenity" v="shelter" zoom-min="14">
 			<symbol id="id_shelter" src="file:symbols/shelter.svg" symbol-percent="100" display="always" />
@@ -3995,7 +4004,7 @@ Contact: theme@tapiola.org
 			<symbol src="file:symbols/boundary_stone.svg" symbol-percent="30" />
 		</rule>
 	</rule>
-	<rule e="node" k="military" v="bunker|bunker_disused" zoom-min="12">
+	<rule e="node" k="military" v="bunker|bunker_disused" zoom-min="15">
 		<symbol src="file:symbols/bunker.svg" symbol-percent="55" />
 	</rule>
 	<rule e="any" k="tourism" v="*">
@@ -4169,7 +4178,7 @@ Contact: theme@tapiola.org
 		</rule>
 	</rule>
 
-	<rule e="node" cat="architecture_religion" k="military" v="bunker|bunker_disused" zoom-min="12">
+	<rule e="node" cat="architecture_religion" k="military" v="bunker|bunker_disused" zoom-min="15">
 		<symbol src="file:symbols/bunker.svg" symbol-percent="70" />
 	</rule>
 	
