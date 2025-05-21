@@ -250,8 +250,8 @@ Contact: theme@tapiola.org
 			<cat id="water" />
 		</layer>
 		<layer id="L_waterway_strong" enabled="false" visible="false">
-			<name lang="de" value="🟦 Deutliche Bäche" />
-			<name lang="en" value="🟦 Bold streams" />
+			<name lang="de" value="🟦 Deutliche Flüsse/Bäche" />
+			<name lang="en" value="🟦 Bold waterways" />
 			<cat id="waterway_strong" />
 		</layer>
 		<layer id="L_waterway" enabled="true" visible="false">
@@ -420,8 +420,8 @@ Contact: theme@tapiola.org
 			<overlay id="L_cycling" />
 			<overlay id="L_mtb_trails" />
 			<overlay id="L_winter_sports" />
-			<overlay id="L_highway" />
 			<overlay id="L_railway" />
+			<overlay id="L_highway" />
 			<overlay id="L_barriers_access" />
 			<overlay id="L_publictransport" />
 			<overlay id="L_parking" />
@@ -438,9 +438,9 @@ Contact: theme@tapiola.org
 			<overlay id="L_cycling" />
 			<overlay id="L_mtb_trails" />
 			<overlay id="L_winter_sports" />
+			<overlay id="L_railway" />
 			<overlay id="L_highway" />
 			<overlay id="L_access" />
-			<overlay id="L_railway" />
 			<overlay id="L_forest" />
 			<overlay id="L_contourlines" />
 			<overlay id="L_protected_area" />
@@ -1042,6 +1042,10 @@ Contact: theme@tapiola.org
 	<rule e="way" k="tunnel" v="~|no">
 		<rule e="way" k="location" v="~|overground">
 			<rule cat="waterway" e="way" k="waterway" v="*" zoom-min="8">
+				<rule cat="waterway_strong" e="way" k="*" v="*" zoom-min="13" >
+					<line stroke="#2970A8" curve="cubic" stroke-width="3.7" />
+					<line stroke="#59A0D8" curve="cubic" stroke-width="2.9" />
+				</rule>
 				<rule e="way" k="waterway" v="drain|ditch">
 					<rule e="way" k="intermittent|seasonal" v="~">
 						<line stroke="#59A0D8" curve="cubic" stroke-width="0.4" />
@@ -1064,9 +1068,6 @@ Contact: theme@tapiola.org
 							<line stroke="#59A0D8" stroke-width="0.3" stroke-dasharray="3,6" />
 						</rule>
 						<pathText k="name" dy="-0.7" repeat-gap="300" font-style="normal" font-size="11" fill="#035FBC" stroke="#ffffff" stroke-width="1.8" />
-					</rule>
-					<rule cat="waterway_strong" e="way" k="*" v="*">
-						<line stroke="#59A0D8" curve="cubic" stroke-width="3.3" />
 					</rule>
 					<rule cat="water" e="way" k="*" v="*" zoom-min="14">
 						<rule e="way" k="*" v="*" zoom-min="14" zoom-max="15">
