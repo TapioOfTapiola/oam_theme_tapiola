@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-Tapiola 1.4.8 - 2025-05-18 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.4.9 - 2025-06-08 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapiola is based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
@@ -2055,7 +2055,7 @@ Contact: theme@tapiola.org
 				<rule e="way" k="via_ferratal_flag|via_ferrata_scale|via_ferrata" v="set|yes|*" zoom-min="14">
 					<line stroke="#fff71c" stroke-width="0.4" stroke-linecap="butt" scale="stroke" />
 					<line stroke="#AA1718" stroke-width="0.4" stroke-dasharray="15,6" stroke-linecap="butt" scale="stroke" />
-					<lineSymbol src="file:symbols/via_ferrata.svg" priority="20" position="center" symbol-percent="80" repeat="true" repeat-start="30" repeat-gap="200" />
+					<lineSymbol src="file:symbols/via_ferrata.svg" priority="20" position="center" symbol-percent="110" repeat="true" repeat-start="15" repeat-gap="120" />
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="15" zoom-max="16">
 						<pathText k="name" dy="-2.0" priority="15" font-family="sans_serif" font-style="normal" font-size="11" fill="#000000" stroke="#FFFFFF" stroke-width="2.8" repeat-start="100" repeat-gap="250" />
 					</rule>
@@ -2070,7 +2070,7 @@ Contact: theme@tapiola.org
 				<rule e="way" k="highway" v="via_ferrata" zoom-min="14">
 					<line stroke="#fff71c" stroke-width="0.4" stroke-linecap="butt" scale="stroke" />
 					<line stroke="#AA1718" stroke-width="0.4" stroke-dasharray="15,6" stroke-linecap="butt" scale="stroke" />
-					<lineSymbol src="file:symbols/via_ferrata.svg" priority="20" position="center" symbol-percent="80" repeat="true" repeat-start="30" repeat-gap="200" />
+					<lineSymbol src="file:symbols/via_ferrata.svg" priority="20" position="center" symbol-percent="110" repeat="true" repeat-start="15" repeat-gap="120" />
 					<rule e="way" cat="road_captions" k="*" v="*" zoom-min="15" zoom-max="16">
 						<pathText k="name" dy="-2.0" priority="15" font-family="sans_serif" font-style="normal" font-size="11" fill="#000000" stroke="#FFFFFF" stroke-width="2.8" repeat-start="100" repeat-gap="250" />
 					</rule>
@@ -3941,7 +3941,7 @@ Contact: theme@tapiola.org
 			</rule>
 		</rule>
 		<rule e="any" k="historic" v="wayside_cross|wayside_shrine" zoom-min="13">
-			<symbol src="file:symbols/wayside_cross.svg" symbol-percent="50" />
+			<symbol src="file:symbols/wayside_cross.svg" symbol-percent="80" />
 		</rule>
 		<rule e="any" k="historic" v="monument" zoom-min="15">
 			<symbol id="id_monument" src="file:symbols/monument.svg" symbol-percent="65" />
@@ -4266,18 +4266,18 @@ Contact: theme@tapiola.org
 				<line stroke="#4d4d4d" stroke-width="0.42" stroke-linecap="butt" />
 				<line stroke="#4d4d4d" stroke-width="2.1" stroke-dasharray="1,26" />
 				<line stroke="#EDEDED" stroke-width="1.2" stroke-dasharray="1,26" />
-				<lineSymbol src="file:symbols/cable_car.svg" symbol-percent="80" repeat="true" repeat-gap="150" priority="10" symbol-orientation="auto" display="always" />
+				<lineSymbol src="file:symbols/cable_car.svg" symbol-percent="100" repeat="true" repeat-gap="150" priority="10" symbol-orientation="auto" display="always" />
 			</rule>
 			<rule e="way" k="aerialway" v="gondola|mixed_lift">
 				<line stroke="#4d4d4d" stroke-width="0.42" stroke-linecap="butt" />
 				<line stroke="#4d4d4d" stroke-width="2.1" stroke-dasharray="1,26" />
 				<line stroke="#EDEDED" stroke-width="1.2" stroke-dasharray="1,26" />
-				<lineSymbol src="file:symbols/gondola.svg" symbol-percent="75" repeat="true" repeat-gap="150" priority="10" symbol-orientation="auto" display="always" />
+				<lineSymbol src="file:symbols/gondola.svg" symbol-percent="95" repeat="true" repeat-gap="150" priority="10" symbol-orientation="auto" display="always" />
 			</rule>
 			<rule e="way" k="aerialway" v="chair_lift">
 				<line stroke="#4d4d4d" stroke-width="0.40" stroke-linecap="butt" />
 				<line stroke="#4d4d4d" stroke-width="1.0" stroke-dasharray="2,22" stroke-linecap="butt" />
-				<lineSymbol src="file:symbols/chair_lift.svg" symbol-percent="85" repeat="true" repeat-gap="60" priority="10" symbol-orientation="auto" display="always" />
+				<lineSymbol src="file:symbols/chair_lift.svg" symbol-percent="105" repeat="true" repeat-gap="60" priority="10" symbol-orientation="auto" display="always" />
 			</rule>
 			<rule e="way" k="aerialway" v="drag_lift|t-bar|j-bar|platter|rope_tow">
 				<line stroke="#4d4d4d" stroke-width="0.35" stroke-linecap="butt" />
