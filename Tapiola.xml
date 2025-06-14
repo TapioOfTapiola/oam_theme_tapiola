@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-Tapiola 1.4.9 - 2025-06-08 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.4.9 - 2025-06-14 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapiola is based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
@@ -506,7 +506,7 @@ Contact: theme@tapiola.org
 		<rule e="way" k="*" v="*" zoom-min="19">
 			<line stroke="#401C9E1F" stroke-width="0.14" stroke-dasharray="0.3, 5.0" />
 		</rule>
-		<rule e="way" k="*" v="*" zoom-min="12" zoom-max="13">
+		<!-- rule e="way" k="*" v="*" zoom-min="12" zoom-max="13">
 			<rule e="any" k="wood|leaf_type" v="deciduous|broadleaved">
 				<area fill="#FFb7db88" />
 				<area src="file:patterns/wood_deciduous.svg" symbol-width="40" />
@@ -519,8 +519,8 @@ Contact: theme@tapiola.org
 				<area fill="#FFadd47b" />
 				<area src="file:patterns/wood_coniferous.svg" symbol-width="40" />
 			</rule>
-		</rule>
-		<rule e="way" k="*" v="*" zoom-min="14">
+		</rule -->
+		<rule e="way" k="*" v="*" zoom-min="12">
 			<rule e="any" k="wood|leaf_type" v="deciduous|broadleaved">
 				<area fill="#FFb8de85" />
 				<area src="file:patterns/wood_deciduous.svg" symbol-width="40" />
@@ -1555,7 +1555,7 @@ Contact: theme@tapiola.org
 	<rule e="any" cat="buildings" k="*" v="*" >
 		<rule e="any" k="building" v="*" zoom-min="14">
 			<rule e="any" k="*" v="*" zoom-max="15" >
-				<area fill="#f2c8c8" stroke="#444444" stroke-width="0.12" />
+				<area fill="#f2c8c8" stroke="#77444444" stroke-width="0.12" />
 			</rule>
 			<rule e="any" k="*" v="*" zoom-min="16" zoom-max="16" >
 				<area fill="#eec4c4" stroke="#444444" stroke-width="0.1" />
@@ -3134,34 +3134,34 @@ Contact: theme@tapiola.org
 			</rule>
 			<rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="12">
 				<rule e="node" k="*" v="*" zoom-min="12" zoom-max="12">
-					<caption k="name" font-style="italic" font-family="sans_serif" font-size="10" fill="#EE666666" stroke="#EEFFFFFF" stroke-width="1.4" priority="103" text-wrap-width="200" display="always" />
+					<caption k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#EE666666" stroke="#EEFFFFFF" stroke-width="1.4" priority="102" text-wrap-width="200" display="always" />
 				</rule>
 				<rule e="node" k="place" v="*" zoom-min="13" zoom-max="13">
-					<caption k="name" font-style="bold_italic" font-family="serif" font-size="11" fill="#CC666666" stroke="#FFFFFF" stroke-width="2" priority="103" text-wrap-width="200" display="always" />
+					<caption k="name" font-style="bold" font-family="serif" font-size="11" fill="#CC666666" stroke="#FFFFFF" stroke-width="2" priority="102" text-wrap-width="200" display="always" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="14" zoom-max="14">
-					<caption k="name" font-style="bold_italic" font-family="serif" font-size="13" fill="#cc000000" stroke="#FFFFFF" stroke-width="2.5" priority="103" text-wrap-width="280" display="always" />
+					<caption k="name" font-style="bold" font-family="serif" font-size="13" fill="#cc000000" stroke="#FFFFFF" stroke-width="2.5" priority="102" text-wrap-width="280" display="always" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="15" zoom-max="15">
-					<caption k="name" font-style="bold_italic" font-family="serif" font-size="20" fill="#bb000000" stroke="#FFFFFF" stroke-width="3.2" priority="103" text-wrap-width="280" display="always" />
+					<caption k="name" font-style="bold" font-family="serif" font-size="16" fill="#bb000000" stroke="#FFFFFF" stroke-width="3.2" priority="102" text-wrap-width="280" display="always" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="16" zoom-max="16">
-					<caption k="name" font-style="bold_italic" font-family="serif" font-size="34" fill="#55000000" stroke="#DFffffff" stroke-width="3" priority="103" text-wrap-width="280" display="always" />
+					<caption k="name" font-style="bold" font-family="serif" font-size="26" fill="#55000000" stroke="#DFffffff" stroke-width="3" priority="102" text-wrap-width="280" display="always" />
 				</rule>
 			</rule>
 		</rule>
 		<rule cat="cities_towns_sub" e="node" k="place" v="village" zoom-min="11">
 			<rule e="node" k="*" v="*" zoom-min="11" zoom-max="11">
-				<caption k="name" font-style="normal" font-size="11" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="140" />
+				<caption k="name" font-style="normal" font-size="11" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="103" text-transform="capitalize" text-wrap-width="140" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="12" zoom-max="13">
-				<caption k="name" font-style="normal" font-size="13" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="140" display="always" />
+				<caption k="name" font-style="normal" font-size="13" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="103" text-transform="capitalize" text-wrap-width="140" display="always" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="13" zoom-max="14">
-				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" text-wrap-width="140" display="always" />
+				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="103" text-transform="capitalize" text-wrap-width="140" display="always" />
 			</rule>
 			<rule e="node" k="*" v="*" zoom-min="15" zoom-max="16">
-				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="102" text-transform="capitalize" display="always" />
+				<caption k="name" font-style="bold" font-size="14" fill="#000000" stroke="#C0FFFFFF" stroke-width="2" priority="103" text-transform="capitalize" display="always" />
 			</rule>
 		</rule>
 <!-- Towns, Cities -->
@@ -3902,13 +3902,13 @@ Contact: theme@tapiola.org
 		<rule cat="benches" e="any" k="amenity" v="bench" zoom-min="15">
 			<symbol src="file:symbols/bench.svg" symbol-percent="90" priority="100" />
 			<rule cat="waterway_strong" e="any" k="*" v="*" >
-				<symbol src="file:symbols/bench.svg" symbol-percent="180" priority="900" />
+				<symbol src="file:symbols/bench.svg" symbol-percent="180" priority="98" />
 			</rule>
 		</rule>
 		<rule cat="refuge" e="any" k="amenity" v="shelter" >
-			<symbol id="id_shelter" src="file:symbols/shelter.svg" symbol-percent="100" priority="900" />
+			<symbol id="id_shelter" src="file:symbols/shelter.svg" symbol-percent="100" priority="98" />
 			<rule cat="waterway_strong" e="any" k="*" v="*" >
-				<symbol id="id_shelter" src="file:symbols/shelter.svg" symbol-percent="180" priority="901" />
+				<symbol id="id_shelter" src="file:symbols/shelter.svg" symbol-percent="180" priority="99" />
 			</rule>
 			<rule e="any" k="*" v="*" zoom-min="16">
 				<caption symbol-id="id_shelter" k="name" priority="10" font-style="normal" font-family="sans_serif" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="1.8" />
@@ -4044,7 +4044,7 @@ Contact: theme@tapiola.org
 			<rule e="any" cat="accommodation" k="tourism" v="camp_site" zoom-min="13">
 				<symbol id="id_camp_site" src="file:symbols/s_camp_site.svg" symbol-percent="100" priority="20" />
 				<rule cat="waterway_strong" e="any" k="*" v="*" >
-					<symbol id="id_camp_site" src="file:symbols/s_camp_site.svg" symbol-percent="200" priority="900" />
+					<symbol id="id_camp_site" src="file:symbols/s_camp_site.svg" symbol-percent="200" priority="98" />
 				</rule>
 				<rule e="any" k="*" v="*" zoom-min="15">
 					<caption symbol-id="id_camp_site" k="name" font-style="italic" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="2.8" text-wrap-width="120" />
@@ -4070,17 +4070,17 @@ Contact: theme@tapiola.org
 				</rule>
 			</rule>
 			<rule e="any" cat="refuge" k="tourism" v="alpine_hut">
-				<symbol id="id_alpine_hut" src="file:symbols/alpine_hut.svg" symbol-percent="90" priority="900" />
+				<symbol id="id_alpine_hut" src="file:symbols/alpine_hut.svg" symbol-percent="90" priority="98" />
 				<rule cat="waterway_strong" e="any" k="*" v="*" >
-					<symbol id="id_alpine_hut" src="file:symbols/alpine_hut.svg" symbol-percent="180" priority="901" />
+					<symbol id="id_alpine_hut" src="file:symbols/alpine_hut.svg" symbol-percent="180" priority="99" />
 				</rule>
 				<caption symbol-id="id_alpine_hut" k="name" position="above" font-style="bold" font-size="11" fill="#000000" stroke="#ffffff" stroke-width="2.0" text-wrap-width="120" />
 				<caption symbol-id="id_alpine_hut" k="ele" position="below" font-style="bold" font-size="11" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
 			</rule>
 			<rule e="any" cat="refuge" k="tourism" v="wilderness_hut">
-				<symbol id="id_wilderness_hut" src="file:symbols/wilderness_hut.svg" symbol-percent="90" priority="900" />
+				<symbol id="id_wilderness_hut" src="file:symbols/wilderness_hut.svg" symbol-percent="90" priority="98" />
 				<rule cat="waterway_strong" e="any" k="*" v="*" >
-					<symbol id="id_wilderness_hut" src="file:symbols/wilderness_hut.svg" symbol-percent="180" priority="901" />
+					<symbol id="id_wilderness_hut" src="file:symbols/wilderness_hut.svg" symbol-percent="180" priority="99" />
 				</rule>
 				<caption symbol-id="id_wilderness_hut" k="name" position="above" font-style="bold" font-size="11" fill="#000000" stroke="#ffffff" stroke-width="2.0" text-wrap-width="120" />
 				<caption symbol-id="id_wilderness_hut" k="ele" position="below" font-style="bold" font-size="11" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
@@ -4140,9 +4140,9 @@ Contact: theme@tapiola.org
 			</rule>
 		</rule>
 		<rule cat="benches" e="node" k="tourism" v="picnic_site" zoom-min="14">
-			<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="100" priority="900" />
+			<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="100" priority="98" />
 			<rule cat="waterway_strong" e="any" k="*" v="*" >
-				<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="200" priority="901" />
+				<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="200" priority="99" />
 			</rule>
 			<rule e="any" k="*" v="*" zoom-min="15">
 				<caption symbol-id="id_picnic_table" k="name" font-style="normal" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="0.5" text-wrap-width="120" />
@@ -4151,9 +4151,9 @@ Contact: theme@tapiola.org
 		<rule e="way" cat="benches" k="tourism" v="picnic_site" zoom-min="14">
 			<line stroke="#8077b045" stroke-width="0.2" />
 			<area fill="#D7E9CE" />
-			<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="100" priority="900" />
+			<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="100" priority="98" />
 			<rule cat="waterway_strong" e="any" k="*" v="*" >
-				<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="200" priority="901" />
+				<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="200" priority="99" />
 			</rule>
 			<rule e="any" k="*" v="*" zoom-min="15">
 				<caption symbol-id="id_picnic_table" k="name" font-style="normal" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="0.5" text-wrap-width="120" />
@@ -4192,9 +4192,9 @@ Contact: theme@tapiola.org
 	</rule>
 
 	<rule cat="benches" e="node" k="leisure" v="picnic_table" zoom-min="14">
-		<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="100" priority="900" />
+		<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="100" priority="98" />
 		<rule cat="waterway_strong" e="any" k="*" v="*" >
-			<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="200" priority="901" />
+			<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="200" priority="99" />
 		</rule>
 		<rule e="any" k="*" v="*" zoom-min="15">
 			<caption symbol-id="id_picnic_table" k="name" dy="-4" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" text-wrap-width="120" />
