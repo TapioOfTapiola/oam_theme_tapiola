@@ -249,10 +249,10 @@ Contact: theme@tapiola.org
 			<name lang="en" value="💧 Spring, water sources" />
 			<cat id="water" />
 		</layer>
-		<layer id="L_waterway_strong" enabled="false" visible="false">
-			<name lang="de" value="🟦 Deutliche Flüsse/Bäche" />
-			<name lang="en" value="🟦 Bold waterways" />
-			<cat id="waterway_strong" />
+		<layer id="L_tapios_exaggerations" enabled="false" visible="false">
+			<name lang="de" value="🟦 Tapios Übertreibungen" />
+			<name lang="en" value="🟦 Tapios exaggerations" />
+			<cat id="tapios_exaggerations" />
 		</layer>
 		<layer id="L_waterway" enabled="true" visible="false">
 			<name lang="de" value="🌊 Entwässerungskanäle, Siele" />
@@ -402,7 +402,7 @@ Contact: theme@tapiola.org
 			<overlay id="L_misc" />
 			<overlay id="L_water" />
 			<overlay id="L_waterway" />
-			<overlay id="L_waterway_strong" />
+			<overlay id="L_tapios_exaggerations" />
 			<overlay id="L_landscapefeat" />
 			<overlay id="L_forest" />
 			<overlay id="L_contourlines" />
@@ -1042,7 +1042,7 @@ Contact: theme@tapiola.org
 	<rule e="way" k="tunnel" v="~|no">
 		<rule e="way" k="location" v="~|overground">
 			<rule cat="waterway" e="way" k="waterway" v="*" zoom-min="8">
-				<rule cat="waterway_strong" e="way" k="*" v="*" zoom-min="13" >
+				<rule cat="tapios_exaggerations" e="way" k="*" v="*" zoom-min="13" >
 					<line stroke="#2970A8" curve="cubic" stroke-width="3.7" />
 					<line stroke="#59A0D8" curve="cubic" stroke-width="2.9" />
 				</rule>
@@ -3901,13 +3901,18 @@ Contact: theme@tapiola.org
 		</rule>
 		<rule cat="benches" e="any" k="amenity" v="bench" zoom-min="15">
 			<symbol src="file:symbols/bench.svg" symbol-percent="90" priority="100" />
-			<rule cat="waterway_strong" e="any" k="*" v="*" >
+			<rule cat="tapios_exaggerations" e="any" k="*" v="*" >
 				<symbol src="file:symbols/bench.svg" symbol-percent="180" priority="98" />
 			</rule>
 		</rule>
-		<rule cat="refuge" e="any" k="amenity" v="shelter" >
+		<rule cat="refuge" e="any" k="amenity" v="shelter" zoom-min="15" >
 			<symbol id="id_shelter" src="file:symbols/shelter.svg" symbol-percent="100" priority="98" />
-			<rule cat="waterway_strong" e="any" k="*" v="*" >
+			<rule e="any" k="*" v="*" zoom-min="16">
+				<caption symbol-id="id_shelter" k="name" priority="10" font-style="normal" font-family="sans_serif" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="1.8" />
+			</rule>
+		</rule>
+		<rule cat="refuge" e="any" k="amenity" v="shelter" >
+			<rule cat="tapios_exaggerations" e="any" k="*" v="*" >
 				<symbol id="id_shelter" src="file:symbols/shelter.svg" symbol-percent="180" priority="99" />
 			</rule>
 			<rule e="any" k="*" v="*" zoom-min="16">
@@ -4043,7 +4048,7 @@ Contact: theme@tapiola.org
 			</rule>
 			<rule e="any" cat="accommodation" k="tourism" v="camp_site" zoom-min="13">
 				<symbol id="id_camp_site" src="file:symbols/s_camp_site.svg" symbol-percent="100" priority="20" />
-				<rule cat="waterway_strong" e="any" k="*" v="*" >
+				<rule cat="tapios_exaggerations" e="any" k="*" v="*" >
 					<symbol id="id_camp_site" src="file:symbols/s_camp_site.svg" symbol-percent="200" priority="98" />
 				</rule>
 				<rule e="any" k="*" v="*" zoom-min="15">
@@ -4069,17 +4074,25 @@ Contact: theme@tapiola.org
 					<caption symbol-id="id_caravan_site" k="name" font-style="bold" font-size="11" fill="#797979" stroke="#ffffff" stroke-width="1.5" text-wrap-width="120" />
 				</rule>
 			</rule>
-			<rule e="any" cat="refuge" k="tourism" v="alpine_hut">
+			<rule e="any" cat="refuge" k="tourism" v="alpine_hut" zoom-min="15" >
 				<symbol id="id_alpine_hut" src="file:symbols/alpine_hut.svg" symbol-percent="90" priority="98" />
-				<rule cat="waterway_strong" e="any" k="*" v="*" >
+				<caption symbol-id="id_alpine_hut" k="name" position="above" font-style="bold" font-size="11" fill="#000000" stroke="#ffffff" stroke-width="2.0" text-wrap-width="120" />
+				<caption symbol-id="id_alpine_hut" k="ele" position="below" font-style="bold" font-size="11" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
+			</rule>
+			<rule e="any" cat="refuge" k="tourism" v="alpine_hut">
+				<rule cat="tapios_exaggerations" e="any" k="*" v="*" >
 					<symbol id="id_alpine_hut" src="file:symbols/alpine_hut.svg" symbol-percent="180" priority="99" />
 				</rule>
 				<caption symbol-id="id_alpine_hut" k="name" position="above" font-style="bold" font-size="11" fill="#000000" stroke="#ffffff" stroke-width="2.0" text-wrap-width="120" />
 				<caption symbol-id="id_alpine_hut" k="ele" position="below" font-style="bold" font-size="11" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
 			</rule>
-			<rule e="any" cat="refuge" k="tourism" v="wilderness_hut">
+			<rule e="any" cat="refuge" k="tourism" v="wilderness_hut" zoom-min="15" >
 				<symbol id="id_wilderness_hut" src="file:symbols/wilderness_hut.svg" symbol-percent="90" priority="98" />
-				<rule cat="waterway_strong" e="any" k="*" v="*" >
+				<caption symbol-id="id_wilderness_hut" k="name" position="above" font-style="bold" font-size="11" fill="#000000" stroke="#ffffff" stroke-width="2.0" text-wrap-width="120" />
+				<caption symbol-id="id_wilderness_hut" k="ele" position="below" font-style="bold" font-size="11" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
+			</rule>
+			<rule e="any" cat="refuge" k="tourism" v="wilderness_hut">
+				<rule cat="tapios_exaggerations" e="any" k="*" v="*" >
 					<symbol id="id_wilderness_hut" src="file:symbols/wilderness_hut.svg" symbol-percent="180" priority="99" />
 				</rule>
 				<caption symbol-id="id_wilderness_hut" k="name" position="above" font-style="bold" font-size="11" fill="#000000" stroke="#ffffff" stroke-width="2.0" text-wrap-width="120" />
@@ -4139,20 +4152,30 @@ Contact: theme@tapiola.org
 				<caption symbol-id="id_zoo" k="name" font-style="italic" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="1.5" text-wrap-width="120" />
 			</rule>
 		</rule>
-		<rule cat="benches" e="node" k="tourism" v="picnic_site" zoom-min="14">
-			<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="100" priority="98" />
-			<rule cat="waterway_strong" e="any" k="*" v="*" >
+		<rule e="way" cat="benches" k="tourism" v="picnic_site" >
+			<line stroke="#8077b045" stroke-width="0.2" />
+			<area fill="#D7E9CE" />
+			<rule cat="tapios_exaggerations" e="any" k="*" v="*" >
 				<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="200" priority="99" />
 			</rule>
 			<rule e="any" k="*" v="*" zoom-min="15">
 				<caption symbol-id="id_picnic_table" k="name" font-style="normal" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="0.5" text-wrap-width="120" />
 			</rule>
 		</rule>
-		<rule e="way" cat="benches" k="tourism" v="picnic_site" zoom-min="14">
-			<line stroke="#8077b045" stroke-width="0.2" />
-			<area fill="#D7E9CE" />
+		<rule e="way" cat="benches" k="tourism" v="picnic_site" zoom-min="15">
 			<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="100" priority="98" />
-			<rule cat="waterway_strong" e="any" k="*" v="*" >
+			<rule e="any" k="*" v="*" zoom-min="15">
+				<caption symbol-id="id_picnic_table" k="name" font-style="normal" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="0.5" text-wrap-width="120" />
+			</rule>
+		</rule>
+		<rule cat="benches" e="node" k="tourism" v="picnic_site" zoom-min="15">
+			<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="100" priority="98" />
+			<rule e="any" k="*" v="*" zoom-min="15">
+				<caption symbol-id="id_picnic_table" k="name" font-style="normal" font-size="11" fill="#333333" stroke="#ffffff" stroke-width="0.5" text-wrap-width="120" />
+			</rule>
+		</rule>
+		<rule cat="benches" e="node" k="tourism" v="picnic_site" >
+			<rule cat="tapios_exaggerations" e="any" k="*" v="*" >
 				<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="200" priority="99" />
 			</rule>
 			<rule e="any" k="*" v="*" zoom-min="15">
@@ -4193,7 +4216,7 @@ Contact: theme@tapiola.org
 
 	<rule cat="benches" e="node" k="leisure" v="picnic_table" zoom-min="14">
 		<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="100" priority="98" />
-		<rule cat="waterway_strong" e="any" k="*" v="*" >
+		<rule cat="tapios_exaggerations" e="any" k="*" v="*" >
 			<symbol id="id_picnic_table" src="file:symbols/picnic_site.svg" symbol-percent="200" priority="99" />
 		</rule>
 		<rule e="any" k="*" v="*" zoom-min="15">
