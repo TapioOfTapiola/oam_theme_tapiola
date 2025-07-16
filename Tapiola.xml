@@ -167,10 +167,10 @@ Contact: theme@tapiola.org
 			<name lang="en" value="🅿️ Parking" />
 			<cat id="parking" />
 		</layer>
-		<layer id="L_parking_aggro" enabled="false" visible="false">
+		<layer id="L_parking_plus" enabled="false" visible="false">
 			<name lang="en" value="┗ 🅿️ Display parking earlier" />
 			<name lang="de" value="┗ 🅿️ Parkplätze früher anzeigen" />
-			<cat id="parking_aggro" />
+			<cat id="parking_plus" />
 		</layer>
 		<layer id="L_publictransport" enabled="true" visible="false">
 			<name lang="ru" value="Ⓜ️ Общественный транспорт" />
@@ -385,7 +385,7 @@ Contact: theme@tapiola.org
 			<overlay id="L_publictransport" />
 			<overlay id="L_barriers" />
 			<overlay id="L_parking" />
-			<overlay id="L_parking_aggro" />
+			<overlay id="L_parking_plus" />
 			<overlay id="L_sports" />
 			<overlay id="L_restaurants" />
 			<overlay id="L_shops" />
@@ -1264,21 +1264,21 @@ Contact: theme@tapiola.org
 	<rule e="any" k="amenity" v="parking" zoom-min="11">
 		<area fill="#F9F9F9" stroke="#888888" stroke-width="0.1" />
 		<rule e="any" cat="parking" k="access" v="destination|no|private" >
-			<rule e="any" cat="parking_aggro" k="*" v="*" zoom-max="16">
+			<rule e="any" cat="parking_plus" k="*" v="*" zoom-max="16">
 				<area src="file:patterns/access-destination.svg" symbol-percent="60" />
-				<symbol src="file:symbols/parking_private.svg" symbol-percent="65" display="always" />
+				<symbol src="file:symbols/parking_private.svg" symbol-percent="65" priority="98" display="always" />
 			</rule>
 			<rule e="any" k="*" v="*" zoom-min="17" >
 				<area src="file:patterns/access-destination.svg" symbol-percent="60" />
-				<symbol src="file:symbols/parking_private.svg" symbol-percent="65" display="always" />
+				<symbol src="file:symbols/parking_private.svg" symbol-percent="65" priority="98" display="always" />
 			</rule>
 		</rule>
 		<rule e="any" cat="parking" k="access" v="~|yes|public">
 			<rule e="any" k="*" v="*" zoom-min="16" >
-				<symbol src="file:symbols/parking.svg" symbol-percent="65" display="always" />
+				<symbol src="file:symbols/parking.svg" symbol-percent="65" priority="98" />
 			</rule>
-			<rule e="any" cat="parking_aggro" k="*" v="*" >
-				<symbol src="file:symbols/parking.svg" symbol-percent="65" display="always" />
+			<rule e="any" cat="parking_plus" k="*" v="*" >
+				<symbol src="file:symbols/parking.svg" symbol-percent="65" priority="99" display="always" />
 			</rule>
 		</rule>
 	</rule>
@@ -3138,7 +3138,7 @@ Contact: theme@tapiola.org
 			</rule>
 			<rule e="node" k="place" v="suburb|neighbourhood|quarter" zoom-min="12">
 				<rule e="node" k="*" v="*" zoom-min="12" zoom-max="12">
-					<caption k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#EE666666" stroke="#EEFFFFFF" stroke-width="1.4" priority="102" text-wrap-width="200" display="always" />
+					<caption k="name" font-style="bold" font-family="sans_serif" font-size="8" fill="#EE888888" stroke="#EEFFFFFF" stroke-width="1.2" priority="102" text-wrap-width="200" display="always" />
 				</rule>
 				<rule e="node" k="place" v="*" zoom-min="13" zoom-max="13">
 					<caption k="name" font-style="bold_italic" font-family="sans_serif" font-size="11" fill="#CC666666" stroke="#FFFFFF" stroke-width="2" priority="102" text-wrap-width="200" display="always" />
@@ -3147,10 +3147,10 @@ Contact: theme@tapiola.org
 					<caption k="name" font-style="bold_italic" font-family="sans_serif" font-size="14" fill="#99000000" stroke="#FFFFFF" stroke-width="2.6" priority="102" text-wrap-width="280" display="always" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="15" zoom-max="15">
-					<caption k="name" font-style="bold_italic" font-family="sans_serif" font-size="15" fill="#88000000" stroke="#FFFFFF" stroke-width="4.6" priority="102" text-wrap-width="280" display="always" />
+					<caption k="name" font-style="bold_italic" font-family="sans_serif" font-size="15" fill="#88000000" stroke="#FFFFFF" stroke-width="4.2" priority="102" text-wrap-width="280" display="always" />
 				</rule>
 				<rule e="node" k="*" v="*" zoom-min="16" zoom-max="16">
-					<caption k="name" font-style="bold_italic" font-family="sans_serif" font-size="20" fill="#99000000" stroke="#DFffffff" stroke-width="5.4" priority="102" text-wrap-width="280" display="always" />
+					<caption k="name" font-style="bold_italic" font-family="sans_serif" font-size="20" fill="#99000000" stroke="#DFffffff" stroke-width="5.0" priority="102" text-wrap-width="280" display="always" />
 				</rule>
 			</rule>
 		</rule>
