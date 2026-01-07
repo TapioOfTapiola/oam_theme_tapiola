@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-Tapiola 1.5.0 - 2025-07-15 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+Tapiola 1.5.1 - 2026-01-07 - Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
 
 Tapiola is based on Settler v2.0.25 from Andrey Nekrasov, andrey.nekrasov@gmail.com - https://github.com/andrey-nekrasov/oam_theme_settler
 Settler is based on: active RT5 (active RenderTheme Version 5)" - https://github.com/FrankSchoeneck/active_RT5
@@ -61,31 +61,37 @@ Contact: theme@tapiola.org
 			<cat id="mtb_trails_t" />
 		</layer>
 		<layer id="L_highway" enabled="true" visible="false">
+			<name lang="ru" value="🛣️ Дорожная сеть" />			
 			<name lang="en" value="🛣️ Road network" />
 			<name lang="de" value="🛣️ Straßennetz" />
 			<cat id="c_highway" />
 		</layer>
 		<layer id="L_railway" enabled="true" visible="false">
+			<name lang="ru" value="🛤️ Железные дороги" />			
 			<name lang="en" value="🛤️ Railways" />
 			<name lang="de" value="🛤️ Schienennetz" />
 			<cat id="c_railway" />
 		</layer>
 		<layer id="L_cities_towns" enabled="true" visible="false">
+			<name lang="ru" value="🔤 Названия городов" />			
 			<name lang="de" value="🔤 Städtenamen" />
 			<name lang="en" value="🔤 City/Town names" />
 			<cat id="cities_towns" />
 		</layer>
 		<layer id="L_cities_towns_sub" enabled="true" visible="false">
+			<name lang="ru" value="🔤 Названия деревень/пригородов/промышленных районов" />			
 			<name lang="de" value="🔤 Dorf/Stadtteil/Industrie" />
 			<name lang="en" value="🔤 Village/Suburb/Industrial" />
 			<cat id="cities_towns_sub" />
 		</layer>
 		<layer id="L_road_captions" enabled="true" visible="false">
+			<name lang="ru" value="┗ 🔤 Названия дорог" />			
 			<name lang="en" value="┗ 🔤 Road names" />
 			<name lang="de" value="┗ 🔤 Straßennamen" />
 			<cat id="road_captions" />
 		</layer>
 		<layer id="L_buildings" enabled="true" visible="false">
+			<name lang="ru" value="🏠 Здания/строения" />			
 			<name lang="de" value="🏠 Gebäude" />
 			<name lang="en" value="🏠 Buildings" />
 			<cat id="buildings" />
@@ -97,11 +103,13 @@ Contact: theme@tapiola.org
 			<cat id="building_type" />
 		</layer>
 		<layer id="L_house_numbers" enabled="true" visible="false">
+			<name lang="ru" value="┗ 🔢 Номера домов" />			
 			<name lang="en" value="┗ 🔢 House numbers" />
 			<name lang="de" value="┗ 🔢 Hausnummern" />
 			<cat id="house_numbers" />
 		</layer>
 		<layer id="L_house_nr_early" enabled="false" visible="false">
+			<name lang="ru" value="  ┗ 🔢 Номера домов раньше (ZL=16)" />			
 			<name lang="en" value="  ┗ 🔢 House numbers earlier" />
 			<name lang="de" value="  ┗ 🔢 Hausnummern eher" />
 			<cat id="house_nr_early" />
@@ -113,21 +121,25 @@ Contact: theme@tapiola.org
 			<cat id="barriers" />
 		</layer>
 		<layer id="L_access" enabled="true" visible="false">
+			<name lang="ru" value="┗ ⛔ Ограничения доступа" />			
 			<name lang="en" value="┗ ⛔ Access restriction indicators" />
 			<name lang="de" value="┗ ⛔ Symbole für Zugangsbeschränkungen" />
 			<cat id="access" />
 		</layer>
 		<layer id="L_surface_text" enabled="false" visible="false">
+			<name lang="ru" value="┗ ♒ Поверхность как текст" />			
 			<name lang="en" value="┗ ♒ Surface as text" />
 			<name lang="de" value="┗ ♒ Oberfläche als Text" />
 			<cat id="surface_text" />
 		</layer>
 		<layer id="L_unpaved" enabled="false" visible="false">
+			<name lang="ru" value="┗ ♒ Указатели грунтовых дорог" />			
 			<name lang="en" value="┗ ♒ Unpaved road indicators" />
 			<name lang="de" value="┗ ♒ Symbole für unbefestigte Straßen" />
 			<cat id="unpaved" />
 		</layer>
 		<layer id="L_grades" enabled="true" visible="false">
+			<name lang="ru" value="┗ 3️⃣ Различать типы полевых дорог" />			
 			<name lang="en" value="┗ 3️⃣ Track grade codes" />
 			<name lang="de" value="┗ 3️⃣ Oberflächengüte und Tragfähigkeit"/>
 			<cat id="grades" />
@@ -151,6 +163,7 @@ Contact: theme@tapiola.org
 			<cat id="protected_area" />
 		</layer>
 		<layer id="L_military" enabled="false" visible="false">
+			<name lang="ru" value="⚔️ Военные территории и бункеры" />			
 			<name lang="de" value="⚔️ Militärisches Gebiet" />
 			<name lang="en" value="⚔️ Military" />
 			<cat id="military" />
@@ -168,6 +181,7 @@ Contact: theme@tapiola.org
 			<cat id="parking" />
 		</layer>
 		<layer id="L_parking_plus" enabled="false" visible="false">
+			<name lang="ru" value="┗ ??️ Показать парковки раньше" />			
 			<name lang="en" value="┗ 🅿️ Display parking earlier" />
 			<name lang="de" value="┗ 🅿️ Parkplätze früher anzeigen" />
 			<cat id="parking_plus" />
@@ -209,6 +223,7 @@ Contact: theme@tapiola.org
 			<cat id="emergency" />
 		</layer>
 		<layer id="L_attractions" enabled="true" visible="false">
+			<name lang="ru" value="🎡 Туристические достопримечательности" />			
 			<name lang="de" value="🎡 Tourismus/Attraktionen" />
 			<name lang="en" value="🎡 Tourist/Attractions" />
 			<cat id="attractions" />
@@ -250,11 +265,13 @@ Contact: theme@tapiola.org
 			<cat id="water" />
 		</layer>
 		<layer id="L_tapios_exaggerations" enabled="false" visible="false">
+			<name lang="ru" value="🟦 Расширения Tapio" />			
 			<name lang="de" value="🟦 Tapios Übertreibungen" />
 			<name lang="en" value="🟦 Tapios exaggerations" />
 			<cat id="tapios_exaggerations" />
 		</layer>
 		<layer id="L_waterway" enabled="true" visible="false">
+			<name lang="ru" value="🌊 Реки, ручьи, каналы, канавы.." />			
 			<name lang="de" value="🌊 Entwässerungskanäle, Siele" />
 			<name lang="en" value="🌊 Display minor waterways" />
 			<cat id="waterway" />
@@ -272,18 +289,19 @@ Contact: theme@tapiola.org
 			<cat id="landscapefeat" />
 		</layer>
 		<layer id="L_contourlines" enabled="true" visible="false">
-			<name lang="ru" value="📈 Изолинии" />
+			<name lang="ru" value="📈 Изолинии высот" />
 			<name lang="de" value="📈 Höhenlinien" />
 			<name lang="en" value="📈 Contour lines" />
 			<cat id="contourlines" />
 		</layer>
 		<layer id="L_hunting_stand" enabled="true" visible="false">
-			<name lang="ru" value="🏹 Hunting stands" />
+			<name lang="ru" value="🏹 Охотничьи вышки" />
 			<name lang="de" value="🏹 Hochsitze" />
 			<name lang="en" value="🏹 Hunting stands" />
 			<cat id="hunting_stand" />
 		</layer>
 		<layer id="L_misc" enabled="true" visible="false">
+			<name lang="ru" value="➕ Броды, мосты, стройки, геодезические знаки" />
 			<name lang="en" value="➕ Miscellaneous" />
 			<name lang="de" value="➕ Verschiedenes" />
 			<cat id="misc" />
@@ -295,11 +313,13 @@ Contact: theme@tapiola.org
 			<cat id="mast_communication" />
 		</layer>
 		<layer id="L_electricity" enabled="true" visible="false">
+			<name lang="ru" value="⚡ Электрические линии и опоры" />			
 			<name lang="de" value="⚡ Elektrizität" />
 			<name lang="en" value="⚡ Electricity" />
 			<cat id="electricity" />
 		</layer>
 		<layer id="L_white_overlay" enabled="false" visible="false">
+			<name lang="ru" value="⬜ Осветлить карту" />
 			<name lang="de" value="⬜ Gamma" />
 			<name lang="en" value="⬜ Map gamma" />
 			<cat id="white_overlay" />
@@ -307,6 +327,7 @@ Contact: theme@tapiola.org
 		<!-- Combined settings follow -->
 		<layer id="L_barriers_access" enabled="true" visible="false">
 			<name lang="en" value="⛔ Barriers and access" />
+			<name lang="ru" value="⛔ Препятствия и ограничения доступа" />			
 			<cat id="barriers_access" />
 		</layer>
 		
@@ -361,6 +382,7 @@ Contact: theme@tapiola.org
 		<!-- The visible theme options, in order of visibility -->
 		<layer id="allfeats" visible="true" parent="allfeats_parent" >
 			<name lang="en" value="All features" />
+			<name lang="ru" value="Полный функционал" />			
 			<overlay id="L_hiking_trails" />
 			<overlay id="L_hiking_trails_t" />
 			<overlay id="L_hiking_nodes" />
@@ -415,6 +437,7 @@ Contact: theme@tapiola.org
 		</layer>
 		<layer id="basicfeats" visible="true" parent="basicfeats_parent" >
 			<name lang="en" value="Basic features, with POI" />
+			<name lang="ru" value="Базовые функции, с POI" />				
 			<overlay id="L_hiking_trails" />
 			<overlay id="L_hiking_nodes" />
 			<overlay id="L_cycling" />
@@ -433,6 +456,7 @@ Contact: theme@tapiola.org
 		</layer>
 		<layer id="basicfeats_nopoi" visible="true" parent="basicfeatsnopoi_parent" >
 			<name lang="en" value="Basic features, without POI" />
+			<name lang="ru" value="Базовые функции, без POI" />				
 			<overlay id="L_hiking_trails" />
 			<overlay id="L_hiking_nodes" />
 			<overlay id="L_cycling" />
@@ -448,6 +472,7 @@ Contact: theme@tapiola.org
 		</layer>
 		<layer id="topographic" visible="true" parent="topographic_parent" >
 			<name lang="en" value="Topographic" />
+			<name lang="ru" value="Топографический вид" />				
 			<overlay id="L_cities_towns" />
 			<overlay id="L_landscapefeat" />
 			<overlay id="L_contourlines" />
@@ -985,22 +1010,22 @@ Contact: theme@tapiola.org
 		<rule e="way" k="*" v="*" zoom-max="15">
 			<line stroke="#BFbc4b00" scale="all" stroke-width="0.4" stroke-dasharray="2,3" stroke-linecap="round" />
 			<pathText k="name" dy="3" font-style="italic" font-size="13" fill="#BFa75c2c" stroke="#80bbbbbb" stroke-width="0.8" priority="-20" repeat-start="50" repeat-gap="300" />
-			<lineSymbol src="file:symbols/s_ridge2.svg" symbol-height="14" align-center="true" repeat="true" repeat-gap="105" repeat-start="10" priority="-20" />
+			<lineSymbol src="file:symbols/s_ridge2.svg" symbol-height="14" position="center" repeat="true" repeat-gap="105" repeat-start="10" priority="-20" />
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
 			<line stroke="#BFbc4b00" scale="all" stroke-width="0.32" stroke-dasharray="3,4.4" stroke-linecap="round" />
 			<pathText k="name" dy="2" font-style="italic" font-size="13" fill="#BFa75c2c" stroke="#80bbbbbb" stroke-width="0.8" priority="-20" repeat-start="50" repeat-gap="300" />
-			<lineSymbol src="file:symbols/s_ridge2.svg" symbol-height="20" align-center="true" repeat="true" repeat-gap="190" repeat-start="10" priority="-20" />
+			<lineSymbol src="file:symbols/s_ridge2.svg" symbol-height="20" position="center" repeat="true" repeat-gap="190" repeat-start="10" priority="-20" />
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
 			<line stroke="#BFbc4b00" scale="all" stroke-width="0.26" stroke-dasharray="4,4.8" stroke-linecap="round" />
 			<pathText k="name" dy="1.6" font-style="italic" font-size="13" fill="#BFa75c2c" stroke="#80bbbbbb" stroke-width="0.8" priority="-20" repeat-start="50" repeat-gap="300" />
-			<lineSymbol src="file:symbols/s_ridge2.svg" symbol-height="24" align-center="true" repeat="true" repeat-gap="275" repeat-start="10" priority="-20" />
+			<lineSymbol src="file:symbols/s_ridge2.svg" symbol-height="24" position="center" repeat="true" repeat-gap="275" repeat-start="10" priority="-20" />
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="18">
 			<line stroke="#BFbc4b00" scale="all" stroke-width="0.20" stroke-dasharray="4.2,5.0" stroke-linecap="round" />
 			<pathText k="name" dy="1.2" font-style="italic" font-size="13" fill="#BFa75c2c" stroke="#80bbbbbb" stroke-width="0.8" priority="-20" repeat-start="50" repeat-gap="300" />
-			<lineSymbol src="file:symbols/s_ridge2.svg" symbol-height="28" align-center="true" repeat="true" repeat-gap="295" repeat-start="10" priority="-20" />
+			<lineSymbol src="file:symbols/s_ridge2.svg" symbol-height="28" position="center" repeat="true" repeat-gap="295" repeat-start="10" priority="-20" />
 		</rule>
 	</rule>
 
@@ -2244,7 +2269,7 @@ Contact: theme@tapiola.org
 							<line stroke="#687600bc" stroke-width="2.5" stroke-dasharray="3,3" stroke-linecap="butt" scale="all" />
 						</rule>
 						<rule e="way" k="*" v="*" zoom-min="17" >
-							<!-- lineSymbol src="file:patterns/down-chevron.svg" symbol-percent="100" align-center="true" repeat="true" repeat-gap="0.01" repeat-start="0" /-->
+							<!-- lineSymbol src="file:patterns/down-chevron.svg" symbol-percent="100" position="center" repeat="true" repeat-gap="0.01" repeat-start="0" /-->
 							<line stroke="#587600bc" stroke-width="2.2" stroke-dasharray="2,2" stroke-linecap="butt" scale="all" />
 						</rule>
 					</rule>
@@ -2305,10 +2330,10 @@ Contact: theme@tapiola.org
 					</rule>
 				</rule>
 				<rule e="way" cat="c_highway" k="oneway" v="yes|1" zoom-min="16" zoom-max="17" >
-					<lineSymbol src="file:symbols/s_oneway.svg" symbol-percent="80" align-center="true" repeat="true" repeat-gap="100" repeat-start="2" />
+					<lineSymbol src="file:symbols/s_oneway.svg" symbol-percent="80" position="center" repeat="true" repeat-gap="100" repeat-start="2" />
 				</rule>
 				<rule e="way" cat="c_highway" k="oneway" v="yes|1" zoom-min="18">
-					<lineSymbol src="file:symbols/s_oneway.svg" symbol-percent="110" align-center="true" repeat="true" repeat-gap="100" repeat-start="2" />
+					<lineSymbol src="file:symbols/s_oneway.svg" symbol-percent="110" position="center" repeat="true" repeat-gap="100" repeat-start="2" />
 				</rule>
 				<rule e="way" k="railway|highway" v="tram|light_rail|bus_guideway">
 					<line stroke="#8C6900" stroke-width="0.5" stroke-linecap="butt" />
@@ -2390,12 +2415,12 @@ Contact: theme@tapiola.org
 	<rule e="any" cat="mtb_trails" k="mtbnetwork|mtb_scale|mtb_scale_uphill" v="*" zoom-min="10">
 		<rule e="any" k="*" v="*" zoom-max="17" >
 			<line dy="-1.55" stroke="#cc00cc" stroke-width="0.9" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
-			<lineSymbol dy="-3.0" src="file:symbols/bicycle.svg" align-center="true" symbol-percent="120" repeat="true" repeat-start="10" repeat-gap="250" />
+			<lineSymbol dy="-3.0" src="file:symbols/bicycle.svg" position="center" symbol-percent="120" repeat="true" repeat-start="10" repeat-gap="250" />
 			<pathText k="ref_mtb" dy="-0.7" font-style="bold" font-size="10" fill="#cc00cc" stroke="#ffffff" stroke-width="1.5" repeat-start="50" repeat-gap="300" priority="10" />
 		</rule>
 		<rule e="any" k="*" v="*" zoom-min="18" >
 			<line dy="-1.5" stroke="#aacc00cc" stroke-width="1" stroke-dasharray="4,2" stroke-linecap="butt" scale="all" />
-			<lineSymbol dy="-1.5" src="file:symbols/bicycle.svg" align-center="true" symbol-percent="150" repeat="true" repeat-start="10" repeat-gap="250" />
+			<lineSymbol dy="-1.5" src="file:symbols/bicycle.svg" position="center" symbol-percent="150" repeat="true" repeat-start="10" repeat-gap="250" />
 			<pathText k="ref_mtb" dy="-1" font-style="bold" font-size="10" fill="#cc00cc" stroke="#ffffff" stroke-width="1.5" repeat-start="50" repeat-gap="300" priority="10" />
 		</rule>
 	</rule>
@@ -3846,7 +3871,7 @@ Contact: theme@tapiola.org
 	<rule e="any" k="amenity" v="*">
    	<rule e="any" k="amenity" v="charging_station">
    		<rule e="any" k="bicycle" v="yes" zoom-min="14">
-   			<symbol src="file:symbols/bike-charge.svg" symbol-percent="80" />
+   			<symbol src="file:symbols/s_bicycle_charging_station.svg" symbol-percent="80" />   <!-- bike-charge.svg -->
    		</rule>
    	</rule>
 		<rule e="any" cat="historical" k="amenity" v="place_of_worship" zoom-min="14">
@@ -5253,4 +5278,3 @@ Contact: theme@tapiola.org
 	</rule>
 	<!-- End of OSMC Hiking hiking nodes text OAM -->
 </rendertheme>
-
